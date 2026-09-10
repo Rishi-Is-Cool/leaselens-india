@@ -1,0 +1,31 @@
+# Secrets
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Uploaded lease documents are personal data — never commit them
+data/uploads/
+data/*.pdf
+data/*.png
+data/*.jpg
+data/*.jpeg
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
