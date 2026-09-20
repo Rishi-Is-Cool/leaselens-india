@@ -7,16 +7,17 @@ from app.ingestion.segment import segment
 
 TEST_LEASES = Path(__file__).resolve().parents[2] / "data" / "test-leases"
 
-# Operative clause counts per source document, plus the one synthetic "State: ... |
-# Format: ..." header line the fixture generator emits, which is not lease content.
+# Operative clause counts per source document. The title block (instrument title plus the
+# fixture generator's "State: ... | City: ..." line) is not lease content and is excluded
+# by the segmenter, so these are exact.
 EXPECTED_CLAUSES = {
     "01_maharashtra_leave_license_mumbai.pdf": 13,
     "02_delhi_rent_agreement.pdf": 12,
     "03_karnataka_rental_agreement_bangalore.pdf": 12,
     "04_tamil_nadu_lease_agreement_chennai.pdf": 7,
     "05_uttar_pradesh_lease_deed_lucknow.pdf": 12,
+    "06_gujarat_rent_agreement.pdf": 8,
 }
-SYNTHETIC_HEADER_CLAUSES = 1
 
 ACCURACY_TARGET = 90.0
 
@@ -29,14 +30,14 @@ def clauses_for(name: str):
 @pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
 def test_clause_count_matches_source_document(name):
     _, clauses = clauses_for(name)
-    assert len(clauses) - SYNTHETIC_HEADER_CLAUSES == EXPECTED_CLAUSES[name]
+    assert len(clauses) == EXPECTED_CLAUSES[name]
 
 
 @pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
 def test_no_clause_is_split_mid_sentence(name):
     """The handoff's hard rule: a clause must never begin or end mid-sentence."""
     _, clauses = clauses_for(name)
-    for clause in clauses[SYNTHETIC_HEADER_CLAUSES:]:
+    for clause in clauses:
         assert not clause.text[0].islower(), f"{name} {clause.clause_id} starts mid-sentence"
         assert clause.text.rstrip().endswith(
             (".", ";", ":", "!", "?")
@@ -48,7 +49,7 @@ def test_corpus_accuracy_meets_target():
     matched = 0
     for name, count in EXPECTED_CLAUSES.items():
         _, clauses = clauses_for(name)
-        produced = len(clauses) - SYNTHETIC_HEADER_CLAUSES
+        produced = len(clauses)
         matched += max(0, count - abs(produced - count))
     assert matched / expected * 100 >= ACCURACY_TARGET
 
@@ -94,3 +95,52 @@ def test_signature_lines_are_not_emitted_as_clauses():
         _, clauses = clauses_for(name)
         for clause in clauses:
             assert "____" not in clause.text
+
+
+def test_all_caps_run_in_heading_is_extracted():
+    """Bug: "USE OF PREMISES The Tenant shall..." left the heading inside text."""
+    _, clauses = clauses_for("06_gujarat_rent_agreement.pdf")
+    use = next(c for c in clauses if c.section_heading == "USE OF PREMISES")
+    assert use.text.startswith("The Tenant shall use the premises")
+
+
+def test_spelled_out_clause_numbering_is_recognised():
+    """Bug: "Clause 3. Maintenance." was unmatched; only bare "3." was handled."""
+    _, clauses = clauses_for("06_gujarat_rent_agreement.pdf")
+    headings = {c.section_heading for c in clauses}
+    assert {"Premises", "Term and Rent", "Maintenance", "Inspection and Jurisdiction"} <= headings
+    for clause in clauses:
+        assert not clause.text.startswith("Clause ")
+
+
+def test_title_block_is_not_emitted_as_a_clause():
+    """Bug: the "State: ... | City: ..." masthead line became a clause object."""
+    for name in EXPECTED_CLAUSES:
+        _, clauses = clauses_for(name)
+        for clause in clauses:
+            assert not clause.text.startswith("State:")
+            assert clause.section_heading != "State"
+
+
+def test_title_block_split_keeps_the_agreement_body():
+    from app.ingestion.segment import split_title_block
+
+    title, body = split_title_block(
+        [
+            "RENT AGREEMENT",
+            "State: Gujarat | City: Ahmedabad",
+            "This Rent Agreement is made at Ahmedabad on this 5th day of June, 2026.",
+            "Clause 1. Premises. The Owner lets out Flat No. 502.",
+        ]
+    )
+    assert title == ["RENT AGREEMENT", "State: Gujarat | City: Ahmedabad"]
+    assert len(body) == 2
+    assert body[0].startswith("This Rent Agreement")
+
+
+def test_sentence_opening_is_not_mistaken_for_a_heading():
+    """"2. The Tenant shall pay ... Rs. 28,000" ends a full stop after "Rs"."""
+    _, clauses = clauses_for("03_karnataka_rental_agreement_bangalore.pdf")
+    rent = next(c for c in clauses if "28,000" in c.text)
+    assert rent.section_heading == "TERMS AND CONDITIONS"
+    assert rent.text.startswith("2. The Tenant shall pay")

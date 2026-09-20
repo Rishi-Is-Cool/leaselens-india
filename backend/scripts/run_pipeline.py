@@ -24,17 +24,14 @@ TEST_LEASES = Path(__file__).resolve().parents[2] / "data" / "test-leases"
 
 # Expected operative clause counts, established by reading each source PDF: the
 # parties/recital paragraphs, each numbered or headed clause, and the closing
-# attestation. Title lines and signature rules are not clauses.
-#
-# `synthetic_header` counts the "State: ... | Format: ..." line the fixture generator
-# writes as line 2 of every file. It is not lease content and would not appear in a
-# real document, so accuracy is reported both with and without it.
+# attestation. The title block and signature rules are not clauses.
 EXPECTED = {
-    "01_maharashtra_leave_license_mumbai.pdf": {"clauses": 13, "synthetic_header": 1},
-    "02_delhi_rent_agreement.pdf": {"clauses": 12, "synthetic_header": 1},
-    "03_karnataka_rental_agreement_bangalore.pdf": {"clauses": 12, "synthetic_header": 1},
-    "04_tamil_nadu_lease_agreement_chennai.pdf": {"clauses": 7, "synthetic_header": 1},
-    "05_uttar_pradesh_lease_deed_lucknow.pdf": {"clauses": 12, "synthetic_header": 1},
+    "01_maharashtra_leave_license_mumbai.pdf": 13,
+    "02_delhi_rent_agreement.pdf": 12,
+    "03_karnataka_rental_agreement_bangalore.pdf": 12,
+    "04_tamil_nadu_lease_agreement_chennai.pdf": 7,
+    "05_uttar_pradesh_lease_deed_lucknow.pdf": 12,
+    "06_gujarat_rent_agreement.pdf": 8,
 }
 
 
@@ -55,16 +52,14 @@ def main() -> int:
     for path in sorted(TEST_LEASES.glob("*.pdf")):
         document = extract_pdf(path.read_bytes())
         clauses = segment(document.paragraphs)
-        expected = EXPECTED.get(path.name, {})
-        expected_clauses = expected.get("clauses", 0)
-        header_noise = expected.get("synthetic_header", 0)
+        expected_clauses = EXPECTED.get(path.name, 0)
 
         print("=" * 100)
         print(f"{path.name}")
         print(
             f"pages={document.page_count} method={document.method} "
             f"paragraphs={len(document.paragraphs)} clauses={len(clauses)} "
-            f"expected={expected_clauses} (+{header_noise} synthetic header)"
+            f"expected={expected_clauses}"
         )
         print("=" * 100)
 
@@ -74,16 +69,14 @@ def main() -> int:
             print("--- END RAW TEXT " + "-" * 83)
 
         for clause in clauses:
-            # The synthetic header occupies order 0 and is excluded from clause metrics.
-            is_header = clause.order < header_noise
-            fragment = looks_mid_sentence(clause.text) and not is_header
-            label = "  <-- SYNTHETIC HEADER" if is_header else ("  <-- FRAGMENT" if fragment else "")
+            fragment = looks_mid_sentence(clause.text)
+            label = "  <-- FRAGMENT" if fragment else ""
             heading = clause.section_heading or "-"
             print(f"[{clause.order:2d}] {clause.clause_id} | {heading[:30]:32} | {clause.text[:70]}{label}")
             fragments += fragment
         print()
 
-        produced_real = len(clauses) - header_noise
+        produced_real = len(clauses)
         # Penalise over- and under-splitting alike, rather than capping at the expected
         # count, which would hide a segmenter that shatters clauses into fragments.
         total_expected += expected_clauses

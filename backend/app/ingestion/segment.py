@@ -11,14 +11,23 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-# "1. GRANT OF LICENSE. The Licensor hereby grants..." — number plus run-in caps heading.
-NUMBERED_CAPS_HEADING = re.compile(
-    r"^(\d+)\.\s+([A-Z][A-Z0-9 &,'\-/()]{2,60}?)\.\s+(?=[A-Z\"“])"
+# "1. GRANT OF LICENSE. ..." and "Clause 3. Maintenance. ..." — a number, optionally
+# spelled out as "Clause N", followed by a run-in heading closed with a full stop. The
+# heading may be all-caps or title case; length and word-count guards below stop an
+# ordinary sentence ("2. The Tenant shall pay ... Rs.") being mistaken for one.
+NUMBERED_RUN_IN_HEADING = re.compile(
+    r"^(?:(?i:clause|article|section|para(?:graph)?)\s+)?(\d+)\.\s+"
+    r"([A-Za-z][A-Za-z &'\-/]{2,60}?)\.\s+(?=[A-Z\"“(])"
 )
+# "USE OF PREMISES The Tenant shall use..." — an all-caps heading run straight into its
+# body with neither number nor colon. The trailing title-case word is what separates a
+# heading from an ordinary opening like "THIS LEASE DEED is executed...", where the next
+# word is lower case.
+CAPS_RUN_IN_HEADING = re.compile(r"^([A-Z][A-Z &'\-/()]{2,45}?)\s+(?=[A-Z][a-z])")
 # "2.1 The term of this lease..." — hierarchical sub-clause numbering.
 SUB_NUMBERED = re.compile(r"^(\d+\.\d+(?:\.\d+)*)\s+")
-# "4. The Tenant shall pay..." — plain numbering.
-NUMBERED = re.compile(r"^(\d+)[.)]\s+")
+# "4. The Tenant shall pay..." / "Clause 4. ..." — plain numbering.
+NUMBERED = re.compile(r"^(?:(?i:clause|article|section|para(?:graph)?)\s+)?(\d+)[.)]\s+")
 # "ARTICLE 2 – TERM AND RENT 2.1 The term..." — a section banner that often shares a
 # paragraph with the clause beneath it. The title is the run of all-caps words, so the
 # body is left intact rather than absorbed into the heading.
@@ -105,26 +114,66 @@ def _merge_orphan_headings(paragraphs: list[str]) -> list[str]:
     return merged
 
 
+MAX_HEADING_WORDS = 5
+MAX_HEADING_CHARS = 45
+
+
+def _is_plausible_heading(candidate: str) -> bool:
+    """Guard against a sentence opening being lifted out as a heading.
+
+    "2. The Tenant shall pay a monthly rent of Rs. 28,000" ends its first full stop
+    after "Rs", which otherwise reads as a run-in heading. Real headings are short.
+    """
+    return len(candidate) <= MAX_HEADING_CHARS and len(candidate.split()) <= MAX_HEADING_WORDS
+
+
 def _split_heading(paragraph: str) -> tuple[str | None, str]:
     """Pull an inline heading off the front of a paragraph, if it has one."""
-    match = NUMBERED_CAPS_HEADING.match(paragraph)
-    if match:
+    match = NUMBERED_RUN_IN_HEADING.match(paragraph)
+    if match and _is_plausible_heading(match.group(2)):
         return match.group(2).strip(), paragraph[match.end() :].strip()
 
     match = RUN_IN_HEADING.match(paragraph)
-    if match:
+    if match and _is_plausible_heading(match.group(1)):
+        return match.group(1).strip(), paragraph[match.end() :].strip()
+
+    match = CAPS_RUN_IN_HEADING.match(paragraph)
+    if match and _is_plausible_heading(match.group(1)):
         return match.group(1).strip(), paragraph[match.end() :].strip()
 
     return None, paragraph.strip()
 
 
-def segment(paragraphs: list[str], *, skip_document_title: bool = True) -> list[Clause]:
-    candidates = _merge_orphan_headings([p.strip() for p in paragraphs if p.strip()])
+MAX_TITLE_BLOCK_PARAGRAPHS = 3
+MAX_TITLE_LINE_CHARS = 150
 
-    if skip_document_title and candidates:
-        # The first line is the instrument's title ("LEASE DEED"), not a clause.
-        if _is_bare_heading(candidates[0]):
-            candidates = candidates[1:]
+
+def split_title_block(paragraphs: list[str]) -> tuple[list[str], list[str]]:
+    """Separate the masthead from the agreement body.
+
+    A lease opens with a title, and sometimes a filing or reference line, before the
+    operative text begins. These are short and are not sentences, whereas the body
+    opens with one ("This Rent Agreement is made at..."). So the block runs from the
+    top until the first paragraph that terminates like prose — bounded to a few
+    paragraphs so an unusual document cannot swallow real clauses.
+    """
+    title: list[str] = []
+    for index, paragraph in enumerate(paragraphs):
+        if index >= MAX_TITLE_BLOCK_PARAGRAPHS:
+            break
+        if paragraph.rstrip().endswith((".", ";", "!", "?")):
+            break
+        if len(paragraph) > MAX_TITLE_LINE_CHARS:
+            break
+        title.append(paragraph)
+    return title, paragraphs[len(title) :]
+
+
+def segment(paragraphs: list[str], *, skip_title_block: bool = True) -> list[Clause]:
+    cleaned = [p.strip() for p in paragraphs if p.strip()]
+    if skip_title_block:
+        _, cleaned = split_title_block(cleaned)
+    candidates = _merge_orphan_headings(cleaned)
 
     clauses: list[Clause] = []
     current_section: str | None = None

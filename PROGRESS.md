@@ -86,7 +86,7 @@ the database offline between sessions (the direct host stops resolving and the p
 returns "Tenant or user not found"). Restoring it from the dashboard brought it back on
 the same credentials. Expect this recurrence on the free tier; it matters for Phase 7.
 
-**Measured segmentation accuracy: 100.0% (56 / 56 clauses), 0 mid-sentence fragments.**
+**Measured segmentation accuracy: 100.0% (64 / 64 clauses), 0 mid-sentence fragments.**
 
 Reproduce with `python scripts/run_pipeline.py` (add `--raw` to dump extracted text).
 
@@ -97,10 +97,29 @@ Reproduce with `python scripts/run_pipeline.py` (add `--raw` to dump extracted t
 | 03 Karnataka | numbered + lettered sub-points | 12 | 12 |
 | 04 Tamil Nadu | prose only, no numbering or headings | 7 | 7 |
 | 05 Uttar Pradesh | ARTICLE headings + 2.1 / 2.3(a) nesting | 12 | 12 |
+| 06 Gujarat | `Clause N.` numbering + bare caps heading | 8 | 8 |
 
-Counts exclude one synthetic header line per file (see *Fixture caveat* below).
 Accuracy penalises over- and under-splitting alike rather than capping at the expected
 count, so a segmenter that shattered clauses would score below 100, not at it.
+
+**Held-out document (2026-09-20).** Document 06 was run blind, having been written
+without the segmenter in view, and it failed in two ways that the first five could not
+have caught. Both are fixed and regression-tested; the document is now part of the
+corpus, so its value as a blind test is spent.
+
+- *`Clause N.` numbering was unrecognised.* Numbering was matched as a bare `1.`, so
+  `Clause 1. Premises.` matched nothing at all — neither the number nor its heading.
+  Numbering now accepts a spelled-out `Clause` / `Article` / `Section` / `Para` prefix.
+- *A caps heading run into its body was not extracted.* Every heading style in the first
+  five carried a positional cue: a preceding number (Maharashtra), a trailing colon
+  (Delhi), a standalone line, or an `ARTICLE` banner (UP). Gujarat's
+  `USE OF PREMISES The Tenant shall...` has none, so the heading stayed inside `text`.
+  A caps run followed by a title-case word is now recognised; the following word's case
+  is what distinguishes it from an ordinary opening like `THIS LEASE DEED is executed`.
+
+Lifting run-in headings out of sentences needs a guard, since `2. The Tenant shall pay
+... Rs. 28,000` closes its first full stop after `Rs`. Headings are therefore capped at 5
+words and 45 characters, which is asserted by a test.
 
 **How paragraphs are recovered.** PDF extraction yields no blank lines between
 paragraphs, so boundaries come from line geometry: within a paragraph lines sit ~15px
@@ -124,13 +143,16 @@ development. This is what makes the no-numbering Tamil Nadu document tractable.
   separate. `order` is stored as `order_index` because `order` is reserved in SQL, and is
   mapped back to `order` in the API response so the published contract is unchanged.
 
-**Fixture caveat.** Every test PDF carries a generated second line —
-`State: Tamil Nadu | City: Chennai | Format: Plain prose paragraphs, no numbering` —
-which is not lease content and would not appear in a real document. It is **not**
-special-cased in the segmenter (doing so would be tuning to the test set), so it surfaces
-as one extra clause per file and is excluded from the counts above. Worth regenerating
-the fixtures without it: besides polluting output, it states the expected format, which
-any future ML-based segmenter would learn to cheat from.
+**Title block.** A lease opens with its title, and sometimes a filing or reference line,
+before the operative text starts. These are no longer emitted as clauses: the block runs
+from the top until the first paragraph that terminates like prose, bounded to three
+paragraphs and 150 characters a line so an unusual document cannot swallow real clauses.
+The rule is positional, not a pattern match on the fixtures' `State: ... | Format: ...`
+line — matching that text would tune the segmenter to the test set.
+
+Those generated lines are still worth removing from the fixtures, because each states the
+document's expected format, which any future ML-based segmenter would learn to cheat
+from.
 
 **Exit criteria:**
 
@@ -140,9 +162,10 @@ any future ML-based segmenter would learn to cheat from.
 | No clause split mid-sentence / no clauses merged | **pass** — 0 fragments, enforced by test |
 | Clauses stored in Postgres, linked to source document | **pass** — 61 clause rows across 5 documents, FK `on delete cascade`, order preserved |
 | `POST /documents` → `GET /documents/{id}` round trip | **pass** — all 5 upload 201 and read back 200 over live HTTP |
-| Pipeline runs on 8–10 documents | **blocked** — 5 supplied |
+| Pipeline runs on 8–10 documents | **blocked** — 6 supplied |
 | 2–3 scanned/photographed documents, OCR demonstrably triggering | **blocked** — none supplied; Tesseract binary also not installed |
 
-Backend test suite: **20 passed**, including per-document clause counts, a mid-sentence
-guard, the ≥90% accuracy threshold as a regression gate, and a test pinning the
-`{clause_id, section_heading, text, order}` contract.
+Backend test suite: **27 passed**, including per-document clause counts, a mid-sentence
+guard, the ≥90% accuracy threshold as a regression gate, a test pinning the
+`{clause_id, section_heading, text, order}` contract, and one test per heading style so
+a future change cannot silently narrow heading detection again.
