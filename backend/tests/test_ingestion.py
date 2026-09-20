@@ -1,0 +1,96 @@
+from pathlib import Path
+
+import pytest
+
+from app.ingestion.extract import extract_pdf
+from app.ingestion.segment import segment
+
+TEST_LEASES = Path(__file__).resolve().parents[2] / "data" / "test-leases"
+
+# Operative clause counts per source document, plus the one synthetic "State: ... |
+# Format: ..." header line the fixture generator emits, which is not lease content.
+EXPECTED_CLAUSES = {
+    "01_maharashtra_leave_license_mumbai.pdf": 13,
+    "02_delhi_rent_agreement.pdf": 12,
+    "03_karnataka_rental_agreement_bangalore.pdf": 12,
+    "04_tamil_nadu_lease_agreement_chennai.pdf": 7,
+    "05_uttar_pradesh_lease_deed_lucknow.pdf": 12,
+}
+SYNTHETIC_HEADER_CLAUSES = 1
+
+ACCURACY_TARGET = 90.0
+
+
+def clauses_for(name: str):
+    document = extract_pdf((TEST_LEASES / name).read_bytes())
+    return document, segment(document.paragraphs)
+
+
+@pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
+def test_clause_count_matches_source_document(name):
+    _, clauses = clauses_for(name)
+    assert len(clauses) - SYNTHETIC_HEADER_CLAUSES == EXPECTED_CLAUSES[name]
+
+
+@pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
+def test_no_clause_is_split_mid_sentence(name):
+    """The handoff's hard rule: a clause must never begin or end mid-sentence."""
+    _, clauses = clauses_for(name)
+    for clause in clauses[SYNTHETIC_HEADER_CLAUSES:]:
+        assert not clause.text[0].islower(), f"{name} {clause.clause_id} starts mid-sentence"
+        assert clause.text.rstrip().endswith(
+            (".", ";", ":", "!", "?")
+        ), f"{name} {clause.clause_id} ends mid-sentence"
+
+
+def test_corpus_accuracy_meets_target():
+    expected = sum(EXPECTED_CLAUSES.values())
+    matched = 0
+    for name, count in EXPECTED_CLAUSES.items():
+        _, clauses = clauses_for(name)
+        produced = len(clauses) - SYNTHETIC_HEADER_CLAUSES
+        matched += max(0, count - abs(produced - count))
+    assert matched / expected * 100 >= ACCURACY_TARGET
+
+
+def test_clause_objects_match_the_published_contract():
+    """Phase 2 and Phase 4 build against this shape; it must not drift silently."""
+    _, clauses = clauses_for("02_delhi_rent_agreement.pdf")
+    assert set(clauses[0].as_dict()) == {"clause_id", "section_heading", "text", "order"}
+    assert [c.order for c in clauses] == list(range(len(clauses)))
+    assert len({c.clause_id for c in clauses}) == len(clauses)
+
+
+def test_unnumbered_prose_document_is_split_by_paragraph():
+    """Tamil Nadu has no numbering or headings; it must not come back as one clause."""
+    _, clauses = clauses_for("04_tamil_nadu_lease_agreement_chennai.pdf")
+    assert len(clauses) > 5
+
+
+def test_run_in_headings_are_recognised():
+    """Delhi labels clauses as "Rent:" / "Security Deposit:" with no numbering."""
+    _, clauses = clauses_for("02_delhi_rent_agreement.pdf")
+    headings = {c.section_heading for c in clauses}
+    assert {"Rent", "Security Deposit", "Notice Period"} <= headings
+
+
+def test_article_sections_scope_their_sub_clauses():
+    """UP nests 2.1/2.2/2.3 beneath "ARTICLE 2 - TERM AND RENT"."""
+    _, clauses = clauses_for("05_uttar_pradesh_lease_deed_lucknow.pdf")
+    term_and_rent = [c for c in clauses if c.section_heading == "TERM AND RENT"]
+    assert len(term_and_rent) == 3
+
+
+def test_all_pages_extract_without_ocr():
+    """The corpus is born-digital; a text page must never be routed to OCR."""
+    for name in EXPECTED_CLAUSES:
+        document, _ = clauses_for(name)
+        assert document.method == "text"
+        assert document.ocr_page_numbers == []
+
+
+def test_signature_lines_are_not_emitted_as_clauses():
+    for name in EXPECTED_CLAUSES:
+        _, clauses = clauses_for(name)
+        for clause in clauses:
+            assert "____" not in clause.text

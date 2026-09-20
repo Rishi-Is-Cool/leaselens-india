@@ -1,9 +1,10 @@
+from collections.abc import Iterator
 from dataclasses import dataclass
 from urllib.parse import urlsplit
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session, sessionmaker
 
 from app.config import get_settings
 
@@ -40,6 +41,24 @@ engine = (
     else None
 )
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False) if engine else None
+
+
+def get_session() -> Iterator["Session"]:
+    if SessionLocal is None:
+        raise RuntimeError("DATABASE_URL is not configured.")
+    session = SessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
+
+
+def create_tables() -> None:
+    from app.models import Base
+
+    if engine is None:
+        raise RuntimeError("DATABASE_URL is not configured.")
+    Base.metadata.create_all(engine)
 
 
 @dataclass

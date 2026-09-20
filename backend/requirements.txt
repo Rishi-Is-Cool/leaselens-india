@@ -5,6 +5,12 @@ psycopg[binary]==3.2.3
 pydantic-settings==2.7.0
 python-dotenv==1.0.1
 
+# ingestion
+pdfplumber==0.11.4
+python-multipart==0.0.20
+pytesseract==0.3.13
+pillow==11.0.0
+
 # dev / test
 pytest==8.3.4
 httpx==0.28.1
