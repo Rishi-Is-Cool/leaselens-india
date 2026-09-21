@@ -17,6 +17,9 @@ dist/
 .vite/
 *.tsbuildinfo
 
+# Local unpacking of the fixture archive; the PDFs are tracked in data/test-leases/
+lease_synthetic_document/
+
 # Uploaded lease documents are personal data — never commit them
 data/uploads/
 data/*.pdf
