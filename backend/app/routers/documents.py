@@ -39,6 +39,7 @@ class DocumentOut(BaseModel):
     clause_count: int
     clauses: list[ClauseOut]
     title_block: list[str]
+    section_headings: list[str]
     signature_block: list[str]
 
 
@@ -84,6 +85,7 @@ async def upload_document(
         page_count=extracted.page_count,
         extraction_method=extracted.method,
         title_block=parsed.title_block,
+        section_headings=parsed.section_headings,
         signature_block=parsed.signature_block,
         clauses=[
             Clause(
@@ -126,6 +128,7 @@ def _to_out(document: Document) -> DocumentOut:
         extraction_method=document.extraction_method,
         clause_count=len(document.clauses),
         title_block=document.title_block or [],
+        section_headings=document.section_headings or [],
         signature_block=document.signature_block or [],
         clauses=[ClauseOut.model_validate(c) for c in document.clauses],
     )

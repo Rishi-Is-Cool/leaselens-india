@@ -25,6 +25,7 @@ class Document(Base):
     # Kept so that every paragraph of the source survives somewhere: the masthead and
     # the signing lines are not clauses, but discarding them would lose source text.
     title_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
+    section_headings: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     signature_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 

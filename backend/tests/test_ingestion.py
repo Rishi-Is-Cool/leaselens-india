@@ -163,36 +163,8 @@ def test_signature_lines_are_preserved_not_discarded(name):
     assert any("_" in line for line in parsed.signature_block)
 
 
-@pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
-def test_no_substantive_source_text_is_lost(name):
-    """Every source word must survive into the title, a clause, or the signature block.
-
-    Structural markers consumed when a heading is lifted out ("Clause", "1.",
-    "ARTICLE") are the only permitted losses.
-    """
-    import re
-    from collections import Counter
-
-    from app.ingestion.segment import segment_document
-
-    def words(text: str) -> list[str]:
-        return re.findall(r"[A-Za-z0-9][A-Za-z0-9'/,.-]*", text)
-
-    document = extract_pdf((TEST_LEASES / name).read_bytes())
-    parsed = segment_document(document.paragraphs)
-    source = Counter(words(" ".join(document.paragraphs)))
-    emitted = Counter(
-        words(
-            " ".join(
-                parsed.title_block
-                + [f"{c.section_heading or ''} {c.text}" for c in parsed.clauses]
-                + parsed.signature_block
-            )
-        )
-    )
-    marker = re.compile(r"^(?:\d+\.?|ARTICLE|SECTION|Clause|[A-Za-z]+\.)$")
-    unexplained = {w: n for w, n in (source - emitted).items() if not marker.match(w)}
-    assert not unexplained, f"{name} silently lost: {unexplained}"
+# Superseded by test_no_source_text_is_silently_dropped, which measures coverage
+# across every corpus and accounts for section headings.
 
 
 def test_numbered_caps_headings_are_extracted():
@@ -232,3 +204,76 @@ def test_roman_numeral_clauses_segment():
     _, clauses = clauses_for("06_west_bengal_tenancy_agreement_kolkata.pdf")
     assert len(clauses) == 10
     assert any(c.text.startswith("I. The tenancy") for c in clauses)
+
+
+# --- content completeness ------------------------------------------------------------
+# Clause-count accuracy cannot see text that is dropped rather than mis-split, which is
+# how the filled-form content loss went unnoticed. These measure coverage directly.
+
+ALL_CORPORA = (
+    sorted((Path(__file__).resolve().parents[2] / "data" / "test-leases").glob("*.pdf"))
+    + sorted((Path(__file__).resolve().parents[2] / "official_format").glob("*.pdf"))
+    + sorted((Path(__file__).resolve().parents[2] / "test").glob("*.pdf"))
+)
+MIN_COVERAGE = 95.0
+
+
+@pytest.mark.parametrize("path", ALL_CORPORA, ids=lambda p: p.name)
+def test_no_source_text_is_silently_dropped(path):
+    from app.ingestion.coverage import measure
+    from app.ingestion.segment import segment_document
+
+    document = extract_pdf(path.read_bytes(), allow_ocr=False)
+    parsed = segment_document(document.paragraphs)
+    coverage = measure(document.paragraphs, parsed)
+    assert not coverage.unexplained, f"{path.name} dropped {coverage.unexplained}"
+    assert coverage.percent >= MIN_COVERAGE, f"{path.name} coverage {coverage.percent:.1f}%"
+
+
+def test_filled_form_keeps_every_reported_element():
+    """The four pieces reported missing from the filled Tamil Nadu deed."""
+    from app.ingestion.segment import segment_document
+
+    path = Path(__file__).resolve().parents[2] / "test" / "tamil_nadu_FILLED_lease_deed.pdf"
+    document = extract_pdf(path.read_bytes())
+    parsed = segment_document(document.paragraphs)
+    everything = " ".join(
+        parsed.title_block
+        + parsed.section_headings
+        + [f"{c.section_heading or ''} {c.text}" for c in parsed.clauses]
+        + parsed.signature_block
+    )
+    assert "THIS AGREEMENT OF LEASE is entered into" in everything
+    assert "WHEREAS" in everything
+    assert "DEMISED PREMISES" in everything
+    assert any("LESSOR:" in s for s in parsed.signature_block)
+    assert any("LESSEE:" in s for s in parsed.signature_block)
+
+
+def test_deed_connectors_are_detected_consistently():
+    """BETWEEN and AND play the same structural role and must be treated alike."""
+    from app.ingestion.segment import segment_document
+
+    path = Path(__file__).resolve().parents[2] / "test" / "tamil_nadu_FILLED_lease_deed.pdf"
+    parsed = segment_document(extract_pdf(path.read_bytes()).paragraphs)
+    headings = [c.section_heading for c in parsed.clauses]
+    assert "BETWEEN" in headings and "AND" in headings
+
+
+def test_section_heading_does_not_carry_into_the_closing_clause():
+    """The attestation must not inherit the schedule heading above it."""
+    from app.ingestion.segment import segment_document
+
+    path = Path(__file__).resolve().parents[2] / "test" / "tamil_nadu_FILLED_lease_deed.pdf"
+    parsed = segment_document(extract_pdf(path.read_bytes()).paragraphs)
+    closing = next(c for c in parsed.clauses if c.text.startswith("IN WITNESSES WHEREOF"))
+    assert closing.section_heading is None
+
+
+def test_witness_slots_stay_distinct():
+    from app.ingestion.segment import segment_document
+
+    path = Path(__file__).resolve().parents[2] / "test" / "tamil_nadu_FILLED_lease_deed.pdf"
+    parsed = segment_document(extract_pdf(path.read_bytes()).paragraphs)
+    numbered = [s for s in parsed.signature_block if s[0].isdigit()]
+    assert len(numbered) == 2

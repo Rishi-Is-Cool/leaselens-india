@@ -9,7 +9,7 @@ neither — the paragraph boundaries themselves.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 # "1. GRANT OF LICENSE. ..." and "Clause 3. Maintenance. ..." — a number, optionally
 # spelled out as "Clause N", followed by a run-in heading closed with a full stop. The
@@ -47,14 +47,27 @@ ARTICLE = re.compile(
 # "Rent:" / "Security Deposit:" — a heading run into the start of its own paragraph.
 RUN_IN_HEADING = re.compile(r"^([A-Z][A-Za-z][A-Za-z ,/&'\-]{1,44}):\s+(?=\S)")
 # "TERMS AND CONDITIONS:" — a standalone all-caps banner on its own.
-STANDALONE_HEADING = re.compile(r"^[A-Z0-9][A-Z0-9 &,.'\-/()]{2,60}:?$")
+STANDALONE_HEADING = re.compile(r"^[(A-Z0-9][A-Z0-9 &,.'\-/()]{2,60}:?$")
+
+# The closing attestation ends the operative sections, so it must not inherit the
+# section heading of whatever clause preceded it.
+CLOSING_FORMULA = re.compile(r"^IN\s+WITNESS(?:ES)?\s+WHERE", re.IGNORECASE)
 # "TERMS AND CONDITIONS: 1. This Agreement..." — the same banner, but sharing a paragraph
 # with the first clause it governs. It scopes every clause that follows, not just this one.
 INLINE_BANNER = re.compile(r"^([A-Z][A-Z0-9 &,'/()-]{2,60}):\s+(?=\d+[.)]\s)")
 
 # "LESSOR: ______________" — a signing line. These trail the closing clause, sometimes in
 # the same paragraph, so they are stripped out rather than used to discard the paragraph.
-SIGNATURE_RUN = re.compile(r"[A-Z][A-Z\s.0-9]*:\s*_{3,}[\s_]*")
+SIGNATURE_RUN = re.compile(r"(?:[A-Z][A-Z\s.0-9]*:|\d{1,2}\.)\s*_{3,}[\s_]*")
+
+# "BETWEEN :" and "AND" introduce the parties to a deed. They are fixed structural
+# keywords of the instrument, like ARTICLE, and one carries a colon while the other
+# does not — so they are matched by name to keep their treatment consistent.
+DEED_CONNECTOR = re.compile(r"^(BETWEEN|AND|WITNESSETH)\b\s*:?\s+(?=\S)")
+
+# An all-caps line closing with a colon or semicolon divides the recitals from the
+# operative terms, so the recital heading must not carry on past it.
+SECTION_DIVIDER = re.compile(r"^[A-Z0-9][^a-z]{10,}[;:]\s*$")
 MIN_CLAUSE_CHARS = 20
 
 
@@ -172,6 +185,10 @@ def _split_heading(paragraph: str) -> tuple[str | None, str]:
     if match and _is_plausible_heading(match.group(1)):
         return match.group(1).strip(), paragraph[match.end() :].strip()
 
+    match = DEED_CONNECTOR.match(paragraph)
+    if match:
+        return match.group(1), paragraph[match.end() :].strip()
+
     return None, paragraph.strip()
 
 
@@ -192,7 +209,9 @@ def split_title_block(paragraphs: list[str]) -> tuple[list[str], list[str]]:
     for index, paragraph in enumerate(paragraphs):
         if index >= MAX_TITLE_BLOCK_PARAGRAPHS:
             break
-        if paragraph.rstrip().endswith((".", ";", "!", "?")):
+        # A colon ends an operative opening ("...is entered into on 14th March 2026:")
+        # as surely as a full stop does, so it closes the masthead too.
+        if paragraph.rstrip().endswith((".", ";", "!", "?", ":")):
             break
         if len(paragraph) > MAX_TITLE_LINE_CHARS:
             break
@@ -207,6 +226,10 @@ class SegmentedDocument:
     title_block: list[str]
     clauses: list[Clause]
     signature_block: list[str]
+    # Banners such as "NOW THIS AGREEMENT WITNESSETH AS FOLLOWS:" scope the clauses
+    # beneath them, but a clause carrying its own run-in heading never adopts one.
+    # Recording every banner keeps that text in the output instead of dropping it.
+    section_headings: list[str] = field(default_factory=list)
 
 
 def segment(paragraphs: list[str]) -> list[Clause]:
@@ -217,15 +240,17 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
     cleaned = [p.strip() for p in paragraphs if p.strip()]
     title_block, cleaned = split_title_block(cleaned)
     signature_block: list[str] = []
+    section_headings: list[str] = []
     candidates = _merge_orphan_headings(_merge_bullet_lists(cleaned))
 
     clauses: list[Clause] = []
     current_section: str | None = None
+    section_pending = False
 
     for paragraph in candidates:
         paragraph, signatures = _split_signature_runs(paragraph)
         signature_block.extend(signatures)
-        if len(paragraph) < MIN_CLAUSE_CHARS:
+        if not paragraph:
             continue
 
         article = ARTICLE.match(paragraph)
@@ -240,18 +265,32 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
                 continue
 
         if _is_bare_heading(paragraph):
-            current_section = paragraph.rstrip(":").strip()
+            heading = paragraph.rstrip(":").strip()
+            # Consecutive standalone headings are one compound section, so a
+            # subheading such as "(DEMISED PREMISES)" joins the line above it
+            # rather than replacing it or being dropped.
+            current_section = f"{current_section} {heading}" if section_pending else heading
+            if section_pending and section_headings:
+                section_headings[-1] = current_section
+            else:
+                section_headings.append(current_section)
+            section_pending = True
             continue
+
+        if CLOSING_FORMULA.match(paragraph) or SECTION_DIVIDER.match(paragraph):
+            current_section = None
 
         banner = INLINE_BANNER.match(paragraph)
         if banner:
             current_section = banner.group(1).strip()
+            section_headings.append(current_section)
             paragraph = paragraph[banner.end() :].strip()
 
         inline_heading, text = _split_heading(paragraph)
         if not text:
             continue
 
+        section_pending = False
         order = len(clauses)
         clauses.append(
             Clause(
@@ -262,8 +301,12 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
             )
         )
 
+    # A heading no clause ever consumed still has to survive: a document ending
+    # "WITNESSES : 1. ____ 2. ____" leaves the label with nothing beneath it once the
+    # signing slots are lifted out, and dropping it would lose source text.
     return SegmentedDocument(
         title_block=title_block,
         clauses=clauses,
         signature_block=signature_block,
+        section_headings=section_headings,
     )

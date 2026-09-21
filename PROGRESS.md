@@ -140,6 +140,25 @@ words and 45 characters, which is asserted by a test.
   arrived as its own paragraph and split away from the heading introducing them.
   Consecutive bullet lines now attach to the clause above.
 
+**Filled official form (2026-09-21) — silent content loss, since fixed.** A completed
+Tamil Nadu deed (`test/tamil_nadu_FILLED_lease_deed.pdf`) dropped four pieces of source
+text outright. One root cause accounted for most of it: the minimum clause-length guard
+ran *before* heading detection, so any heading shorter than 20 characters — `WHEREAS`,
+`(DEMISED PREMISES)` — was discarded before it was ever examined. Also fixed:
+
+- The title-block scan stopped only at `.`, `;`, `!`, `?`, so an opening line ending in a
+  colon was absorbed into the masthead. It now stops at a colon too.
+- `BETWEEN` was detected but `AND` was not. Not word-matching, as suspected — `BETWEEN`
+  carries a colon in this document and `AND` does not. Both are now matched as deed
+  connectors, which are fixed keywords of the instrument in the same way `ARTICLE` is.
+- A section heading carried onto the closing attestation. The heading now resets at the
+  closing formula and at an all-caps divider ending in a colon or semicolon.
+- Witness signing slots (`1. ____`, `2. ____`) merged into one line; numbered slots are
+  now recognised alongside labelled ones and stay distinct.
+
+Section banners gained their own bucket: a clause carrying its own run-in heading never
+adopts the banner above it, so banner text was being lost even when correctly detected.
+
 **Real official templates (2026-09-21) — a class the segmenter does not yet handle.**
 Three genuine state-government draft templates were run: Tamil Nadu Registration Dept,
 Maharashtra IGR, and West Bengal Directorate of Registration and Stamp Revenue, held in
@@ -158,9 +177,12 @@ markers in the source that begin their own clause object:
 
 | Document | Numbered in source | Clause objects | Recall |
 | --- | --- | --- | --- |
-| Tamil Nadu official | 11 | 8 | 18% |
-| Maharashtra official | 30 | 57 | 13% |
-| West Bengal official | 16 | 13 | 6% |
+| Tamil Nadu official | 11 | 11 | 18% |
+| Maharashtra official | 30 | 76 | 13% |
+| West Bengal official | 16 | 14 | 6% |
+
+Clause-object counts above shifted after the filled-form fixes restored dropped
+paragraphs; the recall figures predate those fixes and are due a re-measure.
 
 Maharashtra is a different failure again: most of its 13 pages are a five-column table
 (`Cl.no | Title | Clause | Compulsory | data to be filled`), which extraction flattens
@@ -210,9 +232,21 @@ development. This is what makes the no-numbering Tamil Nadu document tractable.
   separate. `order` is stored as `order_index` because `order` is reserved in SQL, and is
   mapped back to `order` in the API response so the published contract is unchanged.
 
-**Nothing from the source is discarded.** Segmentation returns three parts — a title
-block, the clauses, and a signature block — and every paragraph of the source lands in
-exactly one of them. Signing lines (`OWNER: ______`) were previously stripped and
+**Content coverage: 96.6% minimum, 99.2% mean across 13 documents, with zero
+unexplained losses.** Clause-count accuracy cannot see text that is *dropped* rather than
+mis-split — a segmenter that silently discards a paragraph still reports the expected
+clause count — so coverage is now measured and gated separately by
+`app/ingestion/coverage.py`. It compares source tokens against everything emitted and
+fails the build on any loss that is not an absorbed structural marker. The residual 0.4–3.4%
+is exactly those markers: the `Clause` / `ARTICLE` keyword, the clause number, and the
+full stop closing a lifted heading.
+
+This check was added *before* fixing the filled-form bug below, and it reproduced the
+loss immediately. It would have caught it the day it was introduced.
+
+**Nothing from the source is discarded.** Segmentation returns four parts — a title
+block, section headings, the clauses, and a signature block — and every paragraph of the
+source lands in at least one of them. Signing lines (`OWNER: ______`) were previously stripped and
 dropped, which silently lost them; they are now captured, persisted on the document, and
 returned by the API. A test asserts per document that no source word disappears.
 
@@ -245,7 +279,7 @@ from.
 | Pipeline runs on 8–10 documents | **pass** — 9 supplied |
 | 2–3 scanned/photographed documents, OCR demonstrably triggering | **blocked** — none supplied; Tesseract binary also not installed |
 
-Backend test suite: **55 passed**, including per-document clause counts, a mid-sentence
+Backend test suite: **63 passed**, including per-document clause counts, a mid-sentence
 guard, the ≥90% accuracy threshold as a regression gate, a test pinning the
 `{clause_id, section_heading, text, order}` contract, and one test per heading style so
 a future change cannot silently narrow heading detection again.
