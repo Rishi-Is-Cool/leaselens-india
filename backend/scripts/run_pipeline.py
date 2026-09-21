@@ -31,13 +31,25 @@ EXPECTED = {
     "03_karnataka_rental_agreement_bangalore.pdf": 12,
     "04_tamil_nadu_lease_agreement_chennai.pdf": 7,
     "05_uttar_pradesh_lease_deed_lucknow.pdf": 12,
-    "06_gujarat_rent_agreement.pdf": 8,
+    "06_west_bengal_tenancy_agreement_kolkata.pdf": 10,
+    "07_punjab_rent_deed_chandigarh.pdf": 8,
+    "08_rajasthan_leave_license_jaipur.pdf": 10,
+    "09_gujarat_rent_agreement.pdf": 8,
 }
 
 
 def looks_mid_sentence(text: str) -> bool:
-    """A clause that opens lower-case or never terminates was split mid-sentence."""
-    return bool(text) and (text[0].islower() or not text.rstrip().endswith((".", ";", ":", "!", "?")))
+    """A clause that opens lower-case or never terminates was split mid-sentence.
+
+    A clause ending in a list item is exempt, since bullets carry no full stop.
+    """
+    if not text:
+        return False
+    if text[0].islower():
+        return True
+    if "•" in text:
+        return False
+    return not text.rstrip().endswith((".", ";", ":", "!", "?"))
 
 
 def main() -> int:

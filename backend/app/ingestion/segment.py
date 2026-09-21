@@ -23,7 +23,16 @@ NUMBERED_RUN_IN_HEADING = re.compile(
 # body with neither number nor colon. The trailing title-case word is what separates a
 # heading from an ordinary opening like "THIS LEASE DEED is executed...", where the next
 # word is lower case.
-CAPS_RUN_IN_HEADING = re.compile(r"^([A-Z][A-Z &'\-/()]{2,45}?)\s+(?=[A-Z][a-z])")
+# Covers both "USE OF PREMISES The Tenant..." and "1. PREMISES AND TERM The Landlord...",
+# where the heading closes with no full stop. The body may open with a title-case word or
+# with a bullet, as it does when a heading introduces a list.
+CAPS_RUN_IN_HEADING = re.compile(
+    r"^(?:(?i:clause|article|section|para(?:graph)?)\s+)?(?:\d+[.)]\s+)?"
+    r"([A-Z][A-Z &'\-/()]{2,45}?)\s+(?=[A-Z][a-z]|[••])"
+)
+
+# A list item continuing the clause above it, rather than starting a new one.
+BULLET_LINE = re.compile(r"^\s*[••▪◦‣·*]\s+")
 # "2.1 The term of this lease..." — hierarchical sub-clause numbering.
 SUB_NUMBERED = re.compile(r"^(\d+\.\d+(?:\.\d+)*)\s+")
 # "4. The Tenant shall pay..." / "Clause 4. ..." — plain numbering.
@@ -89,6 +98,22 @@ def _is_section_banner(paragraph: str) -> bool:
     """An all-caps banner heads a run of clauses; it is context, not a clause label."""
     stripped = paragraph.rstrip(":").strip()
     return bool(stripped) and stripped == stripped.upper() and any(c.isalpha() for c in stripped)
+
+
+def _merge_bullet_lists(paragraphs: list[str]) -> list[str]:
+    """Attach list items to the clause that introduces them.
+
+    A bullet list is laid out with its own line spacing, so each item arrives as its
+    own paragraph. The items qualify the heading above them ("SCHEDULE OF FIXTURES
+    INCLUDED"), and splitting them into separate clauses would strip that context.
+    """
+    merged: list[str] = []
+    for paragraph in paragraphs:
+        if merged and BULLET_LINE.match(paragraph):
+            merged[-1] = f"{merged[-1]} {paragraph.strip()}"
+            continue
+        merged.append(paragraph)
+    return merged
 
 
 def _merge_orphan_headings(paragraphs: list[str]) -> list[str]:
@@ -192,7 +217,7 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
     cleaned = [p.strip() for p in paragraphs if p.strip()]
     title_block, cleaned = split_title_block(cleaned)
     signature_block: list[str] = []
-    candidates = _merge_orphan_headings(cleaned)
+    candidates = _merge_orphan_headings(_merge_bullet_lists(cleaned))
 
     clauses: list[Clause] = []
     current_section: str | None = None

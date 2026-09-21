@@ -10,6 +10,7 @@ with leases that carry no numbering or headings at all.
 from __future__ import annotations
 
 import io
+import re
 import statistics
 from dataclasses import dataclass, field
 from typing import Literal
@@ -97,15 +98,35 @@ def _rejoin_split_paragraphs(paragraphs: list[str]) -> list[str]:
     return joined
 
 
+# pdfminer (under pdfplumber) emits "(cid:N)" when a font supplies no usable ToUnicode
+# entry for a glyph. PyMuPDF resolves the same glyphs natively, so this is an extractor
+# limitation rather than a damaged file. Only bullet-like codes are mapped: guessing at
+# an arbitrary cid would silently substitute a wrong character, so anything unrecognised
+# is deliberately left visible.
+CID_ARTIFACT = re.compile(r"\(cid:(\d+)\)")
+KNOWN_CID_CHARS = {
+    127: "•",  # bullet, as used by Helvetica/Symbol subsets
+    149: "•",
+    183: "•",
+}
+
+
+def _normalize_cid_artifacts(text: str) -> str:
+    return CID_ARTIFACT.sub(
+        lambda m: KNOWN_CID_CHARS.get(int(m.group(1)), m.group(0)), text
+    )
+
+
 def _cluster_words_into_lines(words: list[dict]) -> list[tuple[float, str]]:
     """Group words sharing a baseline into lines, ordered top to bottom."""
     lines: list[tuple[float, str]] = []
     for word in sorted(words, key=lambda w: (w["top"], w["x0"])):
+        text = _normalize_cid_artifacts(word["text"])
         if lines and abs(word["top"] - lines[-1][0]) <= LINE_TOLERANCE_PX:
-            top, text = lines[-1]
-            lines[-1] = (top, f"{text} {word['text']}")
+            top, existing = lines[-1]
+            lines[-1] = (top, f"{existing} {text}")
         else:
-            lines.append((word["top"], word["text"]))
+            lines.append((word["top"], text))
     return lines
 
 

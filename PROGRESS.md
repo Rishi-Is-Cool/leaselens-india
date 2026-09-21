@@ -1,8 +1,8 @@
 # LeaseLens Build Progress
 
 - [x] Phase 0 — Scaffolding & environment
-- [ ] Phase 1 — Document ingestion & clause segmentation (segmentation done and measured;
-      blocked on Postgres availability, OCR samples, and test-set size)
+- [ ] Phase 1 — Document ingestion & clause segmentation (100% on a 9-document corpus;
+      blocked only on scanned samples to exercise the OCR fallback)
 - [ ] Phase 2 — Dataset audit & risk classifier
 - [ ] Phase 3 — Statute knowledge base (pilot jurisdictions)
 - [ ] Phase 4 — LLM explanation layer & cross-clause detection
@@ -76,17 +76,17 @@ Frontend production build: **clean** (`tsc -b && vite build`, 28 modules).
 
 ### Phase 1 — Document ingestion & clause segmentation
 
-**Status:** in progress (2026-09-20). Extraction, segmentation, and Postgres persistence
-are complete, measured, and verified end to end over live HTTP. Two exit criteria remain
-open, both awaiting test material rather than code: the corpus is 5 documents rather than
-8–10, and no scanned samples exist yet to exercise the OCR fallback.
+**Status:** in progress (2026-09-21). Extraction, segmentation, and Postgres persistence
+are complete, measured, and verified end to end over live HTTP. The corpus now stands at
+9 documents, meeting the 8–10 target. One exit criterion remains open and awaits test
+material rather than code: no scanned samples exist yet to exercise the OCR fallback.
 
 **Operational note.** The Supabase project paused itself after ~7 days idle, which took
 the database offline between sessions (the direct host stops resolving and the pooler
 returns "Tenant or user not found"). Restoring it from the dashboard brought it back on
 the same credentials. Expect this recurrence on the free tier; it matters for Phase 7.
 
-**Measured segmentation accuracy: 100.0% (64 / 64 clauses), 0 mid-sentence fragments.**
+**Measured segmentation accuracy: 100.0% (92 / 92 clauses), 0 mid-sentence fragments.**
 
 Reproduce with `python scripts/run_pipeline.py` (add `--raw` to dump extracted text).
 
@@ -97,7 +97,13 @@ Reproduce with `python scripts/run_pipeline.py` (add `--raw` to dump extracted t
 | 03 Karnataka | numbered + lettered sub-points | 12 | 12 |
 | 04 Tamil Nadu | prose only, no numbering or headings | 7 | 7 |
 | 05 Uttar Pradesh | ARTICLE headings + 2.1 / 2.3(a) nesting | 12 | 12 |
-| 06 Gujarat | `Clause N.` numbering + bare caps heading | 8 | 8 |
+| 06 West Bengal | Roman-numeral clauses (I, II, III) | 10 | 10 |
+| 07 Punjab | numbered caps headings + bullet schedule | 8 | 8 |
+| 08 Rajasthan | numbered + embedded escalation schedule | 10 | 10 |
+| 09 Gujarat | `Clause N.` numbering + bare caps heading | 8 | 8 |
+
+**Note on numbering.** Document 09 is the Gujarat holdout, renamed from `06` when the
+fixture generator later produced its own `06` (West Bengal). Renumbering it kept both.
 
 Accuracy penalises over- and under-splitting alike rather than capping at the expected
 count, so a segmenter that shattered clauses would score below 100, not at it.
@@ -120,6 +126,27 @@ corpus, so its value as a blind test is spent.
 Lifting run-in headings out of sentences needs a guard, since `2. The Tenant shall pay
 ... Rs. 28,000` closes its first full stop after `Rs`. Headings are therefore capped at 5
 words and 45 characters, which is asserted by a test.
+
+**Second held-out round (2026-09-21).** West Bengal (Roman numerals) and Rajasthan
+(embedded escalation schedule) passed untouched. Punjab failed in two further ways:
+
+- *A numbered caps heading closed by no full stop.* `1. PREMISES AND TERM The Landlord
+  lets out...` was matched by neither rule — the period-terminated pattern needs a full
+  stop, and the bare-caps pattern is anchored at the start of the paragraph, so the
+  leading number blocked it. The bare-caps rule now accepts an optional number prefix.
+- *A bullet list became four clauses.* List items carry their own line spacing, so each
+  arrived as its own paragraph and split away from the heading introducing them.
+  Consecutive bullet lines now attach to the clause above.
+
+**Font-mapping artifact.** Punjab's bullet glyph extracted as `(cid:127)`. pdfminer
+(under `pdfplumber`) emits that form when a font supplies no usable ToUnicode entry;
+PyMuPDF resolves the same glyph to `U+2022` and produces no artifacts, so this is an
+extractor limitation rather than a damaged file. Extraction now maps the bullet-like cid
+codes to `•`. Unrecognised codes are deliberately left visible — cid numbers are
+font-specific, so guessing would silently substitute a wrong character. A test asserts no
+`(cid:` artifact survives anywhere in the corpus. The fuller fix, if these recur on real
+scans, is to move text extraction to PyMuPDF; the geometry logic would need porting with
+it, so it is not worth doing on one known glyph.
 
 **How paragraphs are recovered.** PDF extraction yields no blank lines between
 paragraphs, so boundaries come from line geometry: within a paragraph lines sit ~15px
@@ -175,10 +202,10 @@ from.
 | No clause split mid-sentence / no clauses merged | **pass** — 0 fragments, enforced by test |
 | Clauses stored in Postgres, linked to source document | **pass** — 61 clause rows across 5 documents, FK `on delete cascade`, order preserved |
 | `POST /documents` → `GET /documents/{id}` round trip | **pass** — all 5 upload 201 and read back 200 over live HTTP |
-| Pipeline runs on 8–10 documents | **blocked** — 6 supplied |
+| Pipeline runs on 8–10 documents | **pass** — 9 supplied |
 | 2–3 scanned/photographed documents, OCR demonstrably triggering | **blocked** — none supplied; Tesseract binary also not installed |
 
-Backend test suite: **39 passed**, including per-document clause counts, a mid-sentence
+Backend test suite: **55 passed**, including per-document clause counts, a mid-sentence
 guard, the ≥90% accuracy threshold as a regression gate, a test pinning the
 `{clause_id, section_heading, text, order}` contract, and one test per heading style so
 a future change cannot silently narrow heading detection again.

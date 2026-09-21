@@ -16,7 +16,10 @@ EXPECTED_CLAUSES = {
     "03_karnataka_rental_agreement_bangalore.pdf": 12,
     "04_tamil_nadu_lease_agreement_chennai.pdf": 7,
     "05_uttar_pradesh_lease_deed_lucknow.pdf": 12,
-    "06_gujarat_rent_agreement.pdf": 8,
+    "06_west_bengal_tenancy_agreement_kolkata.pdf": 10,
+    "07_punjab_rent_deed_chandigarh.pdf": 8,
+    "08_rajasthan_leave_license_jaipur.pdf": 10,
+    "09_gujarat_rent_agreement.pdf": 8,
 }
 
 ACCURACY_TARGET = 90.0
@@ -39,6 +42,9 @@ def test_no_clause_is_split_mid_sentence(name):
     _, clauses = clauses_for(name)
     for clause in clauses:
         assert not clause.text[0].islower(), f"{name} {clause.clause_id} starts mid-sentence"
+        # A clause ending in a list item is complete; bullets carry no full stop.
+        if "•" in clause.text:
+            continue
         assert clause.text.rstrip().endswith(
             (".", ";", ":", "!", "?")
         ), f"{name} {clause.clause_id} ends mid-sentence"
@@ -99,14 +105,14 @@ def test_signature_lines_are_not_emitted_as_clauses():
 
 def test_all_caps_run_in_heading_is_extracted():
     """Bug: "USE OF PREMISES The Tenant shall..." left the heading inside text."""
-    _, clauses = clauses_for("06_gujarat_rent_agreement.pdf")
+    _, clauses = clauses_for("09_gujarat_rent_agreement.pdf")
     use = next(c for c in clauses if c.section_heading == "USE OF PREMISES")
     assert use.text.startswith("The Tenant shall use the premises")
 
 
 def test_spelled_out_clause_numbering_is_recognised():
     """Bug: "Clause 3. Maintenance." was unmatched; only bare "3." was handled."""
-    _, clauses = clauses_for("06_gujarat_rent_agreement.pdf")
+    _, clauses = clauses_for("09_gujarat_rent_agreement.pdf")
     headings = {c.section_heading for c in clauses}
     assert {"Premises", "Term and Rent", "Maintenance", "Inspection and Jurisdiction"} <= headings
     for clause in clauses:
@@ -187,3 +193,42 @@ def test_no_substantive_source_text_is_lost(name):
     marker = re.compile(r"^(?:\d+\.?|ARTICLE|SECTION|Clause|[A-Za-z]+\.)$")
     unexplained = {w: n for w, n in (source - emitted).items() if not marker.match(w)}
     assert not unexplained, f"{name} silently lost: {unexplained}"
+
+
+def test_numbered_caps_headings_are_extracted():
+    """Bug: "1. PREMISES AND TERM The Landlord..." has no full stop closing the heading."""
+    _, clauses = clauses_for("07_punjab_rent_deed_chandigarh.pdf")
+    headings = {c.section_heading for c in clauses}
+    assert {
+        "PREMISES AND TERM",
+        "RENT AND DEPOSIT",
+        "SCHEDULE OF FIXTURES INCLUDED",
+        "GENERAL CONDITIONS",
+        "TERMINATION",
+        "JURISDICTION",
+    } <= headings
+
+
+def test_bullet_list_stays_one_clause():
+    """Bug: four fixture bullets became four clauses, detached from their heading."""
+    _, clauses = clauses_for("07_punjab_rent_deed_chandigarh.pdf")
+    fixtures = [c for c in clauses if c.section_heading == "SCHEDULE OF FIXTURES INCLUDED"]
+    assert len(fixtures) == 1
+    assert fixtures[0].text.count("\u2022") == 4
+    assert "air-conditioner" in fixtures[0].text and "wardrobe" in fixtures[0].text
+
+
+def test_cid_font_artifacts_are_normalised():
+    """pdfminer emits "(cid:127)" for a glyph it cannot map; PyMuPDF resolves it."""
+    for name in EXPECTED_CLAUSES:
+        document, clauses = clauses_for(name)
+        assert "(cid:" not in document.full_text, f"{name} leaks a cid artifact"
+        for clause in clauses:
+            assert "(cid:" not in clause.text
+
+
+def test_roman_numeral_clauses_segment():
+    """West Bengal numbers its clauses I, II, III rather than 1, 2, 3."""
+    _, clauses = clauses_for("06_west_bengal_tenancy_agreement_kolkata.pdf")
+    assert len(clauses) == 10
+    assert any(c.text.startswith("I. The tenancy") for c in clauses)
