@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
-from app.ingestion.segment import segment
+from app.ingestion.segment import segment_document
 from app.models import Clause, Document
 
 router = APIRouter(prefix="/documents", tags=["documents"])
@@ -38,6 +38,8 @@ class DocumentOut(BaseModel):
     extraction_method: str
     clause_count: int
     clauses: list[ClauseOut]
+    title_block: list[str]
+    signature_block: list[str]
 
 
 @router.post("", response_model=DocumentOut, status_code=status.HTTP_201_CREATED)
@@ -67,7 +69,8 @@ async def upload_document(
     except ValueError as exc:
         raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, str(exc)) from exc
 
-    clauses = segment(extracted.paragraphs)
+    parsed = segment_document(extracted.paragraphs)
+    clauses = parsed.clauses
     if not clauses:
         raise HTTPException(
             status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -80,6 +83,8 @@ async def upload_document(
         byte_size=len(data),
         page_count=extracted.page_count,
         extraction_method=extracted.method,
+        title_block=parsed.title_block,
+        signature_block=parsed.signature_block,
         clauses=[
             Clause(
                 clause_id=c.clause_id,
@@ -120,5 +125,7 @@ def _to_out(document: Document) -> DocumentOut:
         page_count=document.page_count,
         extraction_method=document.extraction_method,
         clause_count=len(document.clauses),
+        title_block=document.title_block or [],
+        signature_block=document.signature_block or [],
         clauses=[ClauseOut.model_validate(c) for c in document.clauses],
     )

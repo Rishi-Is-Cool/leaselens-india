@@ -144,3 +144,46 @@ def test_sentence_opening_is_not_mistaken_for_a_heading():
     rent = next(c for c in clauses if "28,000" in c.text)
     assert rent.section_heading == "TERMS AND CONDITIONS"
     assert rent.text.startswith("2. The Tenant shall pay")
+
+
+@pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
+def test_signature_lines_are_preserved_not_discarded(name):
+    """Signing lines are not clauses, but they must not vanish from the output."""
+    from app.ingestion.segment import segment_document
+
+    document = extract_pdf((TEST_LEASES / name).read_bytes())
+    parsed = segment_document(document.paragraphs)
+    assert parsed.signature_block, f"{name} lost its signature block"
+    assert any("_" in line for line in parsed.signature_block)
+
+
+@pytest.mark.parametrize("name", sorted(EXPECTED_CLAUSES))
+def test_no_substantive_source_text_is_lost(name):
+    """Every source word must survive into the title, a clause, or the signature block.
+
+    Structural markers consumed when a heading is lifted out ("Clause", "1.",
+    "ARTICLE") are the only permitted losses.
+    """
+    import re
+    from collections import Counter
+
+    from app.ingestion.segment import segment_document
+
+    def words(text: str) -> list[str]:
+        return re.findall(r"[A-Za-z0-9][A-Za-z0-9'/,.-]*", text)
+
+    document = extract_pdf((TEST_LEASES / name).read_bytes())
+    parsed = segment_document(document.paragraphs)
+    source = Counter(words(" ".join(document.paragraphs)))
+    emitted = Counter(
+        words(
+            " ".join(
+                parsed.title_block
+                + [f"{c.section_heading or ''} {c.text}" for c in parsed.clauses]
+                + parsed.signature_block
+            )
+        )
+    )
+    marker = re.compile(r"^(?:\d+\.?|ARTICLE|SECTION|Clause|[A-Za-z]+\.)$")
+    unexplained = {w: n for w, n in (source - emitted).items() if not marker.match(w)}
+    assert not unexplained, f"{name} silently lost: {unexplained}"

@@ -143,6 +143,19 @@ development. This is what makes the no-numbering Tamil Nadu document tractable.
   separate. `order` is stored as `order_index` because `order` is reserved in SQL, and is
   mapped back to `order` in the API response so the published contract is unchanged.
 
+**Nothing from the source is discarded.** Segmentation returns three parts — a title
+block, the clauses, and a signature block — and every paragraph of the source lands in
+exactly one of them. Signing lines (`OWNER: ______`) were previously stripped and
+dropped, which silently lost them; they are now captured, persisted on the document, and
+returned by the API. A test asserts per document that no source word disappears.
+
+The one permitted loss is structural markers consumed when a heading is lifted out — the
+`Clause` / `ARTICLE` keyword, the clause number, and the full stop closing the heading.
+No substantive lease text is affected. **Open question:** clause numbering is citable
+content, so if Phase 2 or a user-facing view needs "Clause 4", it should be carried in a
+field rather than absorbed. That would add to the published clause contract, so it needs
+a decision before downstream work depends on the current shape.
+
 **Title block.** A lease opens with its title, and sometimes a filing or reference line,
 before the operative text starts. These are no longer emitted as clauses: the block runs
 from the top until the first paragraph that terminates like prose, bounded to three
@@ -165,7 +178,7 @@ from.
 | Pipeline runs on 8–10 documents | **blocked** — 6 supplied |
 | 2–3 scanned/photographed documents, OCR demonstrably triggering | **blocked** — none supplied; Tesseract binary also not installed |
 
-Backend test suite: **27 passed**, including per-document clause counts, a mid-sentence
+Backend test suite: **39 passed**, including per-document clause counts, a mid-sentence
 guard, the ≥90% accuracy threshold as a regression gate, a test pinning the
 `{clause_id, section_heading, text, order}` contract, and one test per heading style so
 a future change cannot silently narrow heading detection again.

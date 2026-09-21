@@ -65,11 +65,17 @@ class Clause:
         }
 
 
-def _strip_signature_runs(paragraph: str) -> str:
-    """Drop signing lines, keeping any clause prose that shares the paragraph."""
+def _split_signature_runs(paragraph: str) -> tuple[str, list[str]]:
+    """Separate signing lines from any clause prose sharing the paragraph.
+
+    Returns the prose and the signing lines, rather than discarding the latter: a
+    closing attestation often shares its paragraph with "LESSOR: ______", and no
+    text from the source document should vanish from the output.
+    """
     if "_" not in paragraph:
-        return paragraph
-    return SIGNATURE_RUN.sub("", paragraph).strip(" _")
+        return paragraph, []
+    signatures = [m.strip() for m in SIGNATURE_RUN.findall(paragraph) if m.strip()]
+    return SIGNATURE_RUN.sub("", paragraph).strip(" _"), signatures
 
 
 def _is_bare_heading(paragraph: str) -> bool:
@@ -169,17 +175,31 @@ def split_title_block(paragraphs: list[str]) -> tuple[list[str], list[str]]:
     return title, paragraphs[len(title) :]
 
 
-def segment(paragraphs: list[str], *, skip_title_block: bool = True) -> list[Clause]:
+@dataclass
+class SegmentedDocument:
+    """Every paragraph of the source lands in exactly one of these three parts."""
+
+    title_block: list[str]
+    clauses: list[Clause]
+    signature_block: list[str]
+
+
+def segment(paragraphs: list[str]) -> list[Clause]:
+    return segment_document(paragraphs).clauses
+
+
+def segment_document(paragraphs: list[str]) -> SegmentedDocument:
     cleaned = [p.strip() for p in paragraphs if p.strip()]
-    if skip_title_block:
-        _, cleaned = split_title_block(cleaned)
+    title_block, cleaned = split_title_block(cleaned)
+    signature_block: list[str] = []
     candidates = _merge_orphan_headings(cleaned)
 
     clauses: list[Clause] = []
     current_section: str | None = None
 
     for paragraph in candidates:
-        paragraph = _strip_signature_runs(paragraph)
+        paragraph, signatures = _split_signature_runs(paragraph)
+        signature_block.extend(signatures)
         if len(paragraph) < MIN_CLAUSE_CHARS:
             continue
 
@@ -217,4 +237,8 @@ def segment(paragraphs: list[str], *, skip_title_block: bool = True) -> list[Cla
             )
         )
 
-    return clauses
+    return SegmentedDocument(
+        title_block=title_block,
+        clauses=clauses,
+        signature_block=signature_block,
+    )

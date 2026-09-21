@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 
 from sqlalchemy import DateTime, ForeignKey, Index, Integer, String, Text, func
+from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.dialects.postgresql import UUID as PgUUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
@@ -21,6 +22,10 @@ class Document(Base):
     byte_size: Mapped[int] = mapped_column(Integer)
     page_count: Mapped[int] = mapped_column(Integer)
     extraction_method: Mapped[str] = mapped_column(String(16))
+    # Kept so that every paragraph of the source survives somewhere: the masthead and
+    # the signing lines are not clauses, but discarding them would lose source text.
+    title_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
+    signature_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     clauses: Mapped[list[Clause]] = relationship(
