@@ -86,7 +86,9 @@ the database offline between sessions (the direct host stops resolving and the p
 returns "Tenant or user not found"). Restoring it from the dashboard brought it back on
 the same credentials. Expect this recurrence on the free tier; it matters for Phase 7.
 
-**Measured segmentation accuracy: 100.0% (92 / 92 clauses), 0 mid-sentence fragments.**
+**Measured segmentation accuracy: 100.0% (92 / 92 clauses), 0 mid-sentence fragments —
+across the 9 synthetic documents only.** The three real official templates are a separate,
+currently failing class; their numbers are reported below rather than averaged in.
 
 Reproduce with `python scripts/run_pipeline.py` (add `--raw` to dump extracted text).
 
@@ -137,6 +139,44 @@ words and 45 characters, which is asserted by a test.
 - *A bullet list became four clauses.* List items carry their own line spacing, so each
   arrived as its own paragraph and split away from the heading introducing them.
   Consecutive bullet lines now attach to the clause above.
+
+**Real official templates (2026-09-21) — a class the segmenter does not yet handle.**
+Three genuine state-government draft templates were run: Tamil Nadu Registration Dept,
+Maharashtra IGR, and West Bengal Directorate of Registration and Stamp Revenue, held in
+`official_format/`. These are blank, fillable forms rather than executed agreements.
+
+*Extraction is clean.* Blank-fill markers survive intact — underscore runs
+(`____________`), numbered parenthetical blanks (`(4)`, `(16)`), and dotted leaders. The
+dotted blanks are genuine `U+2026 HORIZONTAL ELLIPSIS` (103 in the West Bengal form) and
+there is not one `U+FFFD` replacement character or `(cid:N)` artifact across the three.
+A long blank run does **not** cause a spurious paragraph split.
+
+*Segmentation under-splits badly.* These forms set numbered clauses as continuous prose
+with no extra leading between them, so paragraph geometry — the signal the whole
+segmenter rests on — gives nothing to cut on. Measured as the share of numbered clause
+markers in the source that begin their own clause object:
+
+| Document | Numbered in source | Clause objects | Recall |
+| --- | --- | --- | --- |
+| Tamil Nadu official | 11 | 8 | 18% |
+| Maharashtra official | 30 | 57 | 13% |
+| West Bengal official | 16 | 13 | 6% |
+
+Maharashtra is a different failure again: most of its 13 pages are a five-column table
+(`Cl.no | Title | Clause | Compulsory | data to be filled`), which extraction flattens
+into interleaved prose. Its 57 objects are mostly table rows, not clauses.
+
+Three further defects this class exposes, all currently unfixed:
+
+- The title-block scan stops at `.`, `;`, `!` or `?`, so Tamil Nadu's opening line —
+  which ends in a colon — is swallowed as masthead and lost.
+- Cross-page rejoin only fires when the continuation opens lower case, so Tamil Nadu's
+  `LESSEE agrees to take...` starts a clause mid-sentence.
+- Signing lines in these forms (`LESSOR   LESSEE`, `Signature of the Lessor`) carry no
+  underscore run, so the signature block comes back empty and those lines are dropped.
+
+These numbers are reported separately rather than folded into the corpus accuracy below:
+averaging a failing document class into a passing one would hide it.
 
 **Font-mapping artifact.** Punjab's bullet glyph extracted as `(cid:127)`. pdfminer
 (under `pdfplumber`) emits that form when a font supplies no usable ToUnicode entry;
