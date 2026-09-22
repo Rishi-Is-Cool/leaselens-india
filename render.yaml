@@ -1,0 +1,28 @@
+# Render blueprint for the LeaseLens API.
+# The database is Supabase, not a Render Postgres, so DATABASE_URL is set by hand in the
+# dashboard rather than declared here — it carries a password and must not live in git.
+services:
+  - type: web
+    name: leaselens-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.2"
+      - key: ENVIRONMENT
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: RETENTION_HOURS
+        value: "24"
+      # Set in the dashboard: the Supabase session-pooler URI, scheme rewritten to
+      # postgresql+psycopg://
+      - key: DATABASE_URL
+        sync: false
+      # Set in the dashboard once Vercel has issued the frontend URL.
+      - key: CORS_ORIGINS
+        sync: false

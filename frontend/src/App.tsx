@@ -50,6 +50,15 @@ export default function App() {
         </span>
       </header>
 
+      {health?.demo_mode && (
+        <aside className="demo-banner">
+          <strong>Demo — work in progress.</strong> This is Phase 1 of an unfinished
+          build: clause segmentation only, with no risk analysis or legal interpretation.
+          Please don't upload a real lease. Anything uploaded is deleted automatically
+          after {health.retention_hours} hours and cannot be saved.
+        </aside>
+      )}
+
       <section
         className={`dropzone ${dragging ? "dropzone-active" : ""}`}
         onDragOver={(e) => {

@@ -8,6 +8,7 @@
   --accent: #2f6f4f;
   --good: #1a7f4b;
   --bad: #b3261e;
+  --warn: #a86a00;
   --good-bg: #e7f3ec;
   --bad-bg: #fbeae9;
 }
@@ -22,6 +23,7 @@
     --accent: #6ee7a8;
     --good: #4ade80;
     --bad: #f87171;
+    --warn: #fbbf24;
     --good-bg: #16301f;
     --bad-bg: #331a19;
   }
@@ -203,4 +205,19 @@ h1 {
   border-top: 1px solid var(--border);
   font-size: 0.82rem;
   color: var(--muted);
+}
+
+.demo-banner {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1.05rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--warn, #a86a00);
+  border-radius: 9px;
+  background: var(--card);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.demo-banner strong {
+  color: var(--warn, #a86a00);
 }

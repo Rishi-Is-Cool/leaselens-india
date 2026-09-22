@@ -6,6 +6,8 @@ export type HealthResponse = {
   status: "ok" | "degraded";
   service: string;
   environment: string;
+  demo_mode: boolean;
+  retention_hours: number;
   database: {
     connected: boolean;
     server_version: string | null;

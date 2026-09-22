@@ -11,6 +11,7 @@ from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
 from app.ingestion.segment import segment_document
 from app.models import Clause, Document
+from app.retention import expiry_for_new_upload, purge_expired_documents
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 
@@ -48,6 +49,9 @@ async def upload_document(
     file: UploadFile = File(...),
     session: Session = Depends(get_session),
 ) -> DocumentOut:
+    # Enforce the retention window on every upload: a free-tier host has no cron.
+    purge_expired_documents(session)
+
     if file.content_type not in SUPPORTED_CONTENT_TYPES:
         raise HTTPException(
             status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
@@ -84,6 +88,7 @@ async def upload_document(
         byte_size=len(data),
         page_count=extracted.page_count,
         extraction_method=extracted.method,
+        expires_at=expiry_for_new_upload(),
         title_block=parsed.title_block,
         section_headings=parsed.section_headings,
         signature_block=parsed.signature_block,
