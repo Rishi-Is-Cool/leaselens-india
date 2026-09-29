@@ -1,0 +1,22 @@
+{
+  "total_rows": 195,
+  "n_templates_rule_based": 47,
+  "n_templates_embedding": 141,
+  "rule_vs_embedding_mismatches": 43,
+  "rule_based_false_merges_labels_or_topics": 0,
+  "train_rows": 153,
+  "test_rows": 42,
+  "train_templates": 36,
+  "test_templates": 11,
+  "leaked_templates_across_split": 0,
+  "train_label_dist": {
+    "GREEN": 50,
+    "YELLOW": 50,
+    "RED": 53
+  },
+  "test_label_dist": {
+    "GREEN": 15,
+    "YELLOW": 15,
+    "RED": 12
+  }
+}

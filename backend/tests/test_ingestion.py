@@ -63,7 +63,13 @@ def test_corpus_accuracy_meets_target():
 def test_clause_objects_match_the_published_contract():
     """Phase 2 and Phase 4 build against this shape; it must not drift silently."""
     _, clauses = clauses_for("02_delhi_rent_agreement.pdf")
-    assert set(clauses[0].as_dict()) == {"clause_id", "section_heading", "text", "order"}
+    assert set(clauses[0].as_dict()) == {
+        "clause_id",
+        "clause_number",
+        "section_heading",
+        "text",
+        "order",
+    }
     assert [c.order for c in clauses] == list(range(len(clauses)))
     assert len({c.clause_id for c in clauses}) == len(clauses)
 
@@ -277,3 +283,80 @@ def test_witness_slots_stay_distinct():
     parsed = segment_document(extract_pdf(path.read_bytes()).paragraphs)
     numbered = [s for s in parsed.signature_block if s[0].isdigit()]
     assert len(numbered) == 2
+
+
+OFFICIAL_FORMATS = Path(__file__).resolve().parents[2] / "official_format"
+
+
+def _official_top_level_numbers(name: str) -> set[int]:
+    from app.ingestion.segment import segment_document
+
+    parsed = segment_document(extract_pdf((OFFICIAL_FORMATS / name).read_bytes(), allow_ocr=False).paragraphs)
+    return {
+        int(c.clause_number.split(".")[0]) for c in parsed.clauses if c.clause_number
+    }
+
+
+@pytest.mark.parametrize(
+    "name, clause_total",
+    [
+        ("tamil_nadu_official_lease_deed.pdf", 11),
+        ("west_bengal_official_deed_of_lease.pdf", 16),
+        ("maharashtra_official_leave_license.pdf", 12),
+    ],
+)
+def test_official_form_numbered_clauses_are_each_recovered(name, clause_total):
+    """Government forms set numbered clauses as one run of prose; each must still split."""
+    found = _official_top_level_numbers(name)
+    assert set(range(1, clause_total + 1)) <= found
+
+
+def test_official_forms_lose_no_source_text():
+    from app.ingestion.coverage import measure
+    from app.ingestion.segment import segment_document
+
+    for path in sorted(OFFICIAL_FORMATS.glob("*.pdf")):
+        paragraphs = extract_pdf(path.read_bytes(), allow_ocr=False).paragraphs
+        report = measure(paragraphs, segment_document(paragraphs))
+        assert not report.unexplained, f"{path.name}: {report.unexplained[:5]}"
+
+
+def test_clause_number_is_carried_as_a_field():
+    """The number is citable ("Clause 4"), so it must survive heading lifting."""
+    from app.ingestion.segment import segment
+
+    clauses = segment(
+        [
+            "AGREEMENT OF LEASE made at Pune on the first day of March.",
+            "Clause 4. Maintenance. The Tenant shall bear day to day upkeep.",
+            "5. The Tenant shall pay the rent on or before the fifth of each month.",
+            "2.3 The deposit is refundable on vacating the premises.",
+            "IV. The Landlord may inspect the premises on reasonable notice.",
+        ]
+    )
+    by_number = {c.clause_number: c for c in clauses}
+    assert by_number["4"].section_heading == "Maintenance"
+    assert {"4", "5", "2.3", "IV"} <= set(by_number)
+    assert clauses[0].clause_number is None
+
+
+def test_stray_number_in_prose_is_not_a_clause_boundary():
+    """Sequence is required: 'Rs. 5. The' must not be cut into a phantom clause 5."""
+    from app.ingestion.segment import _split_numbered_runs
+
+    text = "1. The rent is Rs. 5. The tenant pays monthly. 2. The deposit is Rs. 50000."
+    pieces = _split_numbered_runs([text])
+    assert [p.split(".")[0] for p in pieces] == ["1", "2"]
+
+
+def test_defined_term_continuing_across_a_page_break_is_rejoined():
+    from app.ingestion.extract import ExtractedDocument, Page
+
+    document = ExtractedDocument(
+        pages=[
+            Page(1, ["2. That the LESSOR let out the premises at a monthly rent of Rs 5000"], "text"),
+            Page(2, ["LESSEE agrees to take the premises on lease.", "3. That the deposit is Rs 10000."], "text"),
+        ]
+    )
+    assert document.paragraphs[0].endswith("LESSEE agrees to take the premises on lease.")
+    assert document.paragraphs[1].startswith("3.")

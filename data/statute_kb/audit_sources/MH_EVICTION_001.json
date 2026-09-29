@@ -1,0 +1,23 @@
+{
+  "id": "MH_EVICTION_001",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "eviction",
+    "non_payment_of_rent"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 15",
+  "citation": "Section 15, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "15. No ejectment ordinarily to be made if tenant pays or is ready and willing to pay standard rent and permitted increases.— (1) A landlord shall not be entitled to the recovery of possession of any premises so long as the tenant pays, or is ready and willing to pay, the amount of the standard rent and permitted increases, if any, and observes and performs the other conditions of the tenancy, in so far as they are consistent with the provisions of this Act. (2) No suit for recovery of possession shall be instituted by a landlord against the tenant on the ground of non-payment of the standard rent or permitted increases due, until the expiration of ninety days next after notice in writing of the demand of the standard rent or permitted increases has been served upon the tenant in the manner provided in section 106 of the Transfer of Property Act, 1882 (IV of 1882). (3) No decree for eviction shall be passed by the court in any suit for recovery of possession on the ground of arrears of standard rent and permitted increase if, within a period of ninety days from the date of service of the summons of the suit, the tenant pays or tenders in court the standard rent and permitted increases then due together with simple interest on the amount of arrears at fifteen per cent. per annum; and thereafter continues to pay or tenders in court regularly such standard rent and permitted increases till the suit is finally decided and also pays cost of the suit as directed by the court. (4) Pending the disposal of any suit, the court may, out of any amount paid or tendered by the tenant, pay to the landlord such amount towards the payment of rent or permitted increases due to him as the court thinks fit.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "Sub-section (1) provides that a landlord is not entitled to recover possession so long as the tenant pays or is ready and willing to pay standard rent and permitted increases and observes the other conditions of tenancy consistent with the Act. Sub-section (2) requires a landlord to serve 90 days' written notice of demand (in the manner of TPA Section 106) before instituting a non-payment suit at all. Sub-section (3) provides a further cure opportunity: no eviction decree on arrears grounds if the tenant pays/tenders the arrears plus 15% simple interest within 90 days of summons and continues regular payment through the suit. The section refers throughout to 'standard rent' as defined and fixed under this Act, not necessarily the contractual rent figure in every modern agreement.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'tenant' and 'standard rent' as defined under the Maharashtra Rent Control Act, 1999 — i.e., tenancies within the Act's scope (see Section 2 and Schedules I/II). Does not, by its terms, extend to leave-and-license agreements, which are addressed separately under Section 24.",
+  "applies_to_clause_examples": [
+    "Landlord may terminate this agreement immediately upon any delay in rent payment, with no notice or cure period.",
+    "Any single missed or late rent payment is grounds for immediate eviction."
+  ]
+}

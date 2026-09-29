@@ -52,7 +52,10 @@ class ExtractedDocument:
 
     @property
     def paragraphs(self) -> list[str]:
-        return _rejoin_split_paragraphs([p for page in self.pages for p in page.paragraphs])
+        flat: list[tuple[str, bool]] = []
+        for page in self.pages:
+            flat.extend((p, i == 0) for i, p in enumerate(page.paragraphs))
+        return _rejoin_split_paragraphs(flat)
 
     @property
     def full_text(self) -> str:
@@ -76,24 +79,33 @@ class ExtractedDocument:
         return "mixed"
 
 
-def _rejoin_split_paragraphs(paragraphs: list[str]) -> list[str]:
+# "LESSEE agrees to take..." — a defined term (one all-caps word) opening a sentence that
+# carries on from the previous page. A run of two or more caps words is a heading instead.
+DEFINED_TERM_OPENING = re.compile(r"^[A-Z]{2,}\s+[a-z]")
+NUMBERED_OPENING = re.compile(r"^(?:\d{1,3}|[IVXLC]+)[.)]")
+
+
+def _rejoin_split_paragraphs(items: list[tuple[str, bool]]) -> list[str]:
     """Reunite a paragraph torn in two by a page break.
 
     Paragraph geometry is per-page, so a clause continuing onto the next page
     surfaces as two fragments. An unterminated paragraph followed by one opening
     in lower case is that continuation, and joining them is what keeps a clause
-    from being split mid-sentence.
+    from being split mid-sentence. At a page boundary only, an opening defined term
+    ("LESSEE agrees...") is treated the same way, since forms capitalise those.
     """
     joined: list[str] = []
-    for paragraph in paragraphs:
+    for paragraph, starts_page in items:
         previous = joined[-1] if joined else None
-        if (
-            previous
-            and not previous.rstrip().endswith((".", ";", ":", "!", "?"))
-            and paragraph[:1].islower()
-        ):
-            joined[-1] = f"{previous} {paragraph}"
-            continue
+        if previous and not previous.rstrip().endswith((".", ";", ":", "!", "?")):
+            continues = paragraph[:1].islower() or (
+                starts_page
+                and DEFINED_TERM_OPENING.match(paragraph)
+                and not NUMBERED_OPENING.match(paragraph)
+            )
+            if continues:
+                joined[-1] = f"{previous} {paragraph}"
+                continue
         joined.append(paragraph)
     return joined
 

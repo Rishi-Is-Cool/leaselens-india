@@ -1,0 +1,23 @@
+{
+  "id": "MH_EVICTION_005",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "eviction",
+    "non_use_of_premises"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 16(1)(n)",
+  "citation": "Section 16(1)(n), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "(n) that the premises have not been used, without reasonable cause for the purpose for which they were let for for a continuous period of six months immediately preceding the date of the suit.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "This ground requires (i) non-use of the premises for the purpose for which they were let, (ii) without reasonable cause, and (iii) for a continuous period of six months immediately preceding the date of the suit. All three elements must be satisfied; 'without reasonable cause' is a qualifier the statute itself preserves and a court would need to assess on the facts (the text does not define what counts as reasonable cause). VERIFIED SOURCE ANOMALY: the excerpt_text's repeated word ('...they were let for for a continuous period...') is not a transcription error introduced in this KB — it is present verbatim in the official India Code primary-source PDF (text as on 7 March 2025) at this exact location. It has been preserved as-is rather than silently corrected, consistent with the rule that excerpt_text must be the exact statutory wording, typographical errors in the official text included.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'tenant' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground under Section 16(1).",
+  "applies_to_clause_examples": [
+    "Tenant must occupy the premises continuously and may not leave it vacant for any period, however brief, without cause specified.",
+    "Any vacancy of the premises by the tenant, regardless of duration, constitutes a breach entitling immediate termination."
+  ]
+}

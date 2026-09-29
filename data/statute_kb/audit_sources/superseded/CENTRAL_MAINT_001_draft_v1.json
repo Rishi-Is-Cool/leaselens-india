@@ -1,0 +1,25 @@
+{
+  "id": "CENTRAL_MAINT_001",
+  "jurisdiction": "Central",
+  "topic_tags": [
+    "maintenance",
+    "repairs",
+    "repair_cost_recovery"
+  ],
+  "act": "Transfer of Property Act, 1882",
+  "act_number": "Act No. 4 of 1882, Section 108(f)",
+  "section": "Section 108(f)",
+  "citation": "Section 108(f), Transfer of Property Act, 1882",
+  "excerpt_text": "(f) if the lessor neglects to make, within a reasonable time after notice, any repairs which he is bound to make to the property, the lessee may make the same himself, and deduct the expense of such repairs with interest from the rent, or otherwise recover it from the lessor:",
+  "source_url": "https://indiacode.nic.in/handle/123456789/2338",
+  "last_verified_date": "2026-09-26",
+  "notes": "SOURCE LIMITATION DISCLOSED: this excerpt is verified as accurate by cross-checking two independent reproductions of the Bare Act text (a legal-education platform and a legal-reference site), both matching word for word. However, a direct India Code bitstream PDF URL for the Transfer of Property Act, 1882 could not be located via the search tools available in this session (the India Code handle page for this Act did not expose a direct downloadable file link at the time of verification). The source_url given is the official India Code handle/landing page for this Act, not a direct PDF. This entry's confidence is accordingly marked distinctly from entries verified against a fetched India Code PDF. LEGAL CONTENT: Clause (f) is a default rule, applicable 'in the absence of a contract or local usage to the contrary' (per the chapeau of Section 108). It requires: (i) the lessor to be already bound to make the repair, (ii) notice to the lessor, (iii) the lessor's neglect to repair within a reasonable time after that notice — only then may the lessee repair and deduct the expense (with interest) from rent, or otherwise recover it from the lessor. It does not itself state who is 'bound' to repair; that depends on the lease contract or other applicable law (e.g., MH_MAINT_001 under the Maharashtra Rent Control Act, for tenancies within that Act's scope).",
+  "confidence": "verified_cross_checked_secondary_sources",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'lessor' and 'lessee' of immovable property as defined under the Transfer of Property Act, 1882 — i.e., genuine leases. It is a DEFAULT rule displaced by contrary contract or local usage. Does NOT apply to leave-and-license agreements, which fall outside the lessor-lessee framework of this Act (see the Indian Easements Act, 1882 for licences, and MH_LICENCE_001 for the Maharashtra-specific licence-expiry provision). Relevant as fallback/general law primarily where a genuine lease exists and either the Maharashtra Rent Control Act does not apply to it, or its own repair provisions are silent on the point.",
+  "applies_to_clause_examples": [
+    "Lease agreement (not structured as a licence) is silent on landlord's repair obligations and on any tenant remedy if repairs are neglected.",
+    "Clause purporting to deny the lessee any remedy at all if the lessor neglects a repair the lessor is contractually bound to make."
+  ],
+  "superseded_by": "audit_sources/CENTRAL_MAINT_002.json"
+}

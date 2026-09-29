@@ -1,0 +1,71 @@
+{
+  "Maharashtra": {
+    "security_deposit": [
+      "MH_SEC_001"
+    ],
+    "registration": [
+      "MH_REG_001"
+    ],
+    "eviction": [
+      "MH_EVICTION_001",
+      "MH_EVICTION_002",
+      "MH_EVICTION_003",
+      "MH_EVICTION_004",
+      "MH_EVICTION_005",
+      "MH_LICENCE_001"
+    ],
+    "maintenance": [
+      "MH_MAINT_001",
+      "MH_MAINT_002"
+    ],
+    "notice": [
+      "MH_NOTICE_001"
+    ],
+    "rent_escalation": [
+      "MH_RENT_001"
+    ]
+  },
+  "Delhi": {
+    "security_deposit": [
+      "DL_SEC_001",
+      "DL_SEC_002"
+    ],
+    "registration": [
+      "DL_REG_004"
+    ],
+    "eviction": [
+      "DL_EVICTION_001",
+      "DL_EVICTION_002"
+    ],
+    "maintenance": [
+      "DL_MAINT_001",
+      "DL_MAINT_004"
+    ],
+    "notice": [
+      "DL_NOTICE_001"
+    ],
+    "rent_escalation": [
+      "DL_RENT_001",
+      "DL_NOTICE_001"
+    ]
+  },
+  "Central": {
+    "notice": [
+      "CENTRAL_EVICTION_003"
+    ],
+    "registration": [
+      "CENTRAL_REG_001",
+      "CENTRAL_REG_002",
+      "CENTRAL_REG_003"
+    ],
+    "eviction": [
+      "CENTRAL_EVICTION_003",
+      "CENTRAL_EVICTION_004"
+    ],
+    "maintenance": [
+      "CENTRAL_MAINT_002",
+      "CENTRAL_MAINT_003"
+    ],
+    "other": []
+  }
+}

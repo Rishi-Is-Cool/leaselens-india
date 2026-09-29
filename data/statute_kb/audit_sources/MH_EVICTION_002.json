@@ -1,0 +1,24 @@
+{
+  "id": "MH_EVICTION_002",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "eviction",
+    "property_damage",
+    "unauthorized_alterations"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 16(1)(a) and 16(1)(b)",
+  "citation": "Section 16(1)(a), 16(1)(b), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "16. When landlord may recover possession.— (1) Notwithstanding anything contained in this Act but subject to the provisions of section 25, a landlord shall be entitled to recover possession of any premises if the court is satisfied— (a) that the tenant has committed any act contrary to the provisions of clause (o) of section 108 of the Transfer of Property Act, 1882 (IV of 1882); Explanation.— For the purposes of this clause, replacing of tiles or closing of balcony of the premises shall not be regarded as an act of a causing damage to the building or destructive or permanently injurious thereto; or (b) that the tenant has, without the landlord's consent given in writing, erected on the premises any permanent structure; Explanation.— For the purposes of this clause, the expression “permanent structure” does not include the carrying out of any work with the permission, wherever necessary, of the municipal authority, for providing a wooden partition, standing cooking platform in kitchen, door, lattice work of opening of a window necessary for ventilation, a false ceiling, installation of air-conditioner, an exhaust outlet or a smoke chimney; or",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "Clause (a) is a ground where the tenant has committed an act contrary to TPA Section 108(o) (which requires a lessee not to damage, waste or destroy the property). Its Explanation carves out replacing tiles or closing a balcony as NOT amounting to damage/destruction. Clause (b) is a ground for erecting a permanent structure without the landlord's written consent, but its Explanation excludes a specific list of minor works (wooden partition, kitchen platform, door, ventilation lattice, false ceiling, AC installation, exhaust outlet/smoke chimney) done with municipal permission where necessary, from counting as 'permanent structure'.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'tenant' and 'landlord' as defined under the Maharashtra Rent Control Act, 1999. Both are court-adjudicated grounds (a landlord must obtain a court order under Section 16(1) — they do not authorize self-help eviction or automatic forfeiture on breach).",
+  "applies_to_clause_examples": [
+    "Tenant shall not make any alterations to the premises, including installing an air conditioner or false ceiling, without landlord's prior written permission, on pain of immediate termination.",
+    "Any damage to the premises, however minor, is grounds for immediate eviction without recourse."
+  ]
+}

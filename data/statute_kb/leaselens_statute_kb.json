@@ -1,0 +1,655 @@
+{
+  "metadata": {
+    "project": "LeaseLens",
+    "phase": "Phase 3",
+    "purpose": "Statute Knowledge Base & Official Law Reference",
+    "jurisdictions": [
+      "Maharashtra",
+      "Delhi"
+    ],
+    "topics": [
+      "eviction",
+      "maintenance",
+      "notice",
+      "registration",
+      "rent_escalation",
+      "security_deposit"
+    ],
+    "last_verified_date": "2026-09-26",
+    "source_priority": "primary_legislation",
+    "status": "verified_with_documented_gaps",
+    "consolidation_note": "Maharashtra Phase 3 records (security deposit, registration, eviction x5, maintenance x2, and the licence-expiry record MH_LICENCE_001) added in this consolidation pass, sourced directly from the verified project files. Delhi and Central entries from the prior consolidation are preserved unchanged. CENTRAL_MAINT_001 (TPA S.108(f), notice-period adjacent) and CENTRAL_NOTICE_001 (TPA S.106) exist as separately-verified records from a different work session but were NOT added here, per explicit instruction to add only the listed Maharashtra IDs; see validation report for details, including an ID/content collision found between this session's unconsolidated Delhi drafts and the master's existing Delhi entries. Step 12 added four verified entries: MH_NOTICE_001 (MRCA s.15(2), scoped non-payment notice), MH_RENT_001 (MRCA s.11(1), 4% annual increase), DL_RENT_001 (DRCA s.6A, 10% every three years), and DL_NOTICE_001 (DRCA s.8, 30-day rent-increase notice). General termination notice remains separately governed by applicable contract/local law and, where applicable, Central TPA s.106."
+  },
+  "entries": [
+    {
+      "id": "DL_SEC_001",
+      "citation": "Section 5, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Unlawful charges not to be claimed or received. (1) Subject to the provisions of this Act, no person shall claim or receive any rent in excess of the standard rent, notwithstanding any agreement to the contrary. (2) No person shall, in consideration of the grant, renewal or continuance of a tenancy or sub-tenancy of any premises,-- (a) claim or receive the payment of any sum as premium or pugree or claim or receive any consideration whatsoever, in cash or in kind, in addition to the rent; or (b) except with the previous permission of the Controller, claim or receive the payment of any sum exceeding one month's rent of such premises as rent in advance. (3) It shall not be lawful for the tenant or any other person acting or purporting to act on behalf of the tenant or a sub-tenant to claim or receive any payment in consideration of the relinquishment, transfer or assignment of his tenancy or sub-tenancy, as the case may be, of any premises. (4) Nothing in this section shall apply-- (a) to any payment made in pursuance of an agreement entered into before the 1st day of January, 1939; or (b) to any payment made under an agreement by any person to a landlord for the purpose of financing the construction of the whole or part of any premises on the land belonging to, or taken on lease by, the landlord, if one of the conditions of the agreement is that the landlord is to let to that person the whole or part of the premises when completed for the use of that person or any member of his family: Provided that such payment does not exceed the amount of agreed rent for a period of five years of the whole or part of the premises to be let to such person. Explanation.--For the purposes of clause (b) of this sub-section, a \"member of the family\" of a person means, in the case of an undivided Hindu family, any member of the family of that person and in the case of any other family, the husband, wife, son, daughter, father, mother, brother, sister or any other relative dependent on that person.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "advance_rent",
+        "security_deposit"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Landlord/tenant (and sub-tenant) relationships under premises to which the Delhi Rent Control Act, 1958 applies. Does not automatically apply to leave-and-licence arrangements or to premises excluded under Section 3 (including certain higher-rent or post-1988 construction premises).",
+      "notes": "Section 5(2)(b) prohibits claiming or receiving more than one month's rent as rent in advance without the previous permission of the Controller. The provision refers specifically to 'rent in advance' and does not use the term 'security deposit'. It applies only to tenancies/sub-tenancies governed by the Delhi Rent Control Act, 1958 (subject to the Act's territorial and exclusion provisions, including those under Section 3). It does not create a general statutory maximum for a refundable security deposit for damages or other purposes. Premium/pugree under clause (a) is separately prohibited. Exceptions exist for pre-1939 agreements and certain construction-finance payments. The Act does not apply to licences (see definition of 'tenant').",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 5",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "The Tenant shall pay an advance rent equivalent to three months' rent upon signing this Agreement.",
+        "Landlord requires payment of six months' rent in advance as a condition of granting the tenancy."
+      ]
+    },
+    {
+      "id": "DL_SEC_002",
+      "citation": "Section 27, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Deposit of rent by the tenant. (1) Where the landlord does not accept any rent tendered by the tenant within the time referred to in section 26 or refuses or neglects to deliver a receipt referred to therein or where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may deposit such rent with the Controller in the prescribed manner: Provided that in cases where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may remit such rent to the Controller by postal money order. (2) The deposit shall be accompanied by an application by the tenant containing the following particulars, namely:-- (a) the premises for which the rent is deposited with a description sufficient for identifying the premises; (b) the period for which the rent is deposited; (c) the name and address of the landlord or the person or persons claiming to be entitled to such rent; (d) the reasons and circumstances for which the application for depositing the rent is made; (e) such other particulars as may be prescribed. (3) On such deposit of the rent being made, the Controller shall send in the prescribed manner a copy or copies of the application to the landlord or persons claiming to be entitled to the rent with an endorsement of the date of the deposit. (4) If an application is made for the withdrawal of any deposit of rent, the Controller shall, if satisfied that the applicant is the person entitled to receive the rent deposited, order the amount of the rent to be paid to him in the manner prescribed: Provided that no order for payment of any deposit of rent shall be made by the Controller under this sub-section without giving all persons named by the tenant in his application under sub-section (2) as claiming to be entitled to payment of such rent an opportunity of being heard and such order shall be without prejudice to the rights of such persons to the said rent being decided by a court of competent jurisdiction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "deposit_of_rent"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Tenant under a tenancy governed by the Delhi Rent Control Act, 1958, in the limited circumstances set out in the section. Does not apply to security deposits paid to landlords or to leave-and-licence arrangements.",
+      "notes": "This provision concerns the tenant's right to deposit periodic rent with the Controller in specified circumstances (landlord non-acceptance, refusal/neglect of receipt, or bona fide doubt as to payee). It is not a provision regulating a security deposit paid to a landlord at the start of a tenancy. Related provisions appear in Sections 26 and 28. It applies only within the framework of the Delhi Rent Control Act, 1958.",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 27",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "If the Landlord refuses to accept rent, the Tenant may deposit the rent with the Rent Controller under applicable law.",
+        "Tenant shall be entitled to deposit rent with the Controller where the Landlord fails to issue a receipt."
+      ]
+    },
+    {
+      "id": "CENTRAL_REG_001",
+      "citation": "Section 17(1)(d), Registration Act, 1908",
+      "excerpt_text": "Documents of which registration is compulsory. (1) The following documents shall be registered, if the property to which they relate is situate in a district in which, and if they have been executed on or after the date on which, Act XVI of 1864, or the Indian Registration Act, 1866, or the Indian Registration Act, 1871, or the Indian Registration Act, 1877, or this Act came or comes into force, namely:— (a) instruments of gift of immovable property; (b) other non-testamentary instruments which purport or operate to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property; (c) non-testamentary instruments which acknowledge the receipt or payment of any consideration on account of the creation, declaration, assignment, limitation or extinction of any such right, title or interest; and (d) leases of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent; (e) non-testamentary instruments transferring or assigning any decree or order of a Court or any award when such decree or order or award purports or operates to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property: Provided that the State Government may, by order published in the Official Gazette, exempt from the operation of this sub-section any leases executed in any district, or part of a district, the terms granted by which do not exceed five years and the annual rents reserved by which do not exceed fifty rupees.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "lease"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Leases of immovable property situate in a district where the Act is in force. Applies to lessor/lessee relationships. Does not automatically apply to licences (licensor/licensee).",
+      "notes": "Compulsory registration applies specifically to leases of immovable property that are (i) from year to year, or (ii) for any term exceeding one year, or (iii) reserving a yearly rent. Leases for a term of one year or less that do not reserve a yearly rent and are not from year to year fall outside this compulsory category (subject to the State Government exemption power in the proviso). The provision concerns leases; it does not by its terms apply to licences/leave-and-licence arrangements.",
+      "act": "Registration Act, 1908",
+      "section": "Section 17(1)(d)",
+      "act_number": "Act No. 16 of 1908",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "This Lease is for a term of two years commencing from the date of execution.",
+        "The Tenant shall pay yearly rent of Rs. X and the tenancy shall be from year to year."
+      ]
+    },
+    {
+      "id": "CENTRAL_REG_002",
+      "citation": "Section 107, Transfer of Property Act, 1882",
+      "excerpt_text": "Leases how made. A lease of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument. All other leases of immovable property may be made either by a registered instrument or by oral agreement accompanied by delivery of possession. Where a lease of immovable property is made by a registered instrument, such instrument or, where there are more instruments than one, each such instrument shall be executed by both the lessor and the lessee: Provided that the State Government may, from time to time, by notification in the Official Gazette, direct that leases of immovable property, other than leases from year to year, or for any term exceeding one year, or reserving a yearly rent, or any class of such leases, may be made by unregistered instrument or by oral agreement without delivery of possession.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "lease"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Leases of immovable property (lessor/lessee). Does not apply to licences under the Indian Easements Act, 1882.",
+      "notes": "A lease from year to year, or for any term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument. All other leases may be made by registered instrument or by oral agreement accompanied by delivery of possession. Where a registered instrument is used, both lessor and lessee must execute it. State Governments may notify exceptions for leases other than the three compulsory categories. This is the mode-of-creation rule; it works together with Section 17 of the Registration Act, 1908.",
+      "act": "Transfer of Property Act, 1882",
+      "section": "Section 107",
+      "act_number": "Act No. 4 of 1882",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "The parties hereby create a lease for a term of 24 months by this registered instrument executed by both Lessor and Lessee.",
+        "This month-to-month tenancy is created by oral agreement accompanied by delivery of possession."
+      ]
+    },
+    {
+      "id": "CENTRAL_REG_003",
+      "citation": "Section 49, Registration Act, 1908",
+      "excerpt_text": "Effect of non-registration of documents required to be registered. No document required by section 17 or by any provision of the Transfer of Property Act, 1882 (4 of 1882), to be registered shall— (a) affect any immovable property comprised therein, or (b) confer any power to adopt, or (c) be received as evidence of any transaction affecting such property or conferring such power, unless it has been registered: Provided that an unregistered document affecting immovable property and required by this Act or the Transfer of Property Act, 1882 (4 of 1882), to be registered may be received as evidence of a contract in a suit for specific performance under Chapter II of the Specific Relief Act, 1877, or as evidence of any collateral transaction not required to be effected by registered instrument.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "non_registration",
+        "evidence"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Documents required by Section 17 of the Registration Act, 1908 or by any provision of the Transfer of Property Act, 1882 to be registered. Applies to leases falling within the compulsory categories.",
+      "notes": "An unregistered document that is required to be registered under Section 17 (or under the Transfer of Property Act, 1882) cannot affect the immovable property comprised in it, cannot confer a power to adopt, and cannot be received as evidence of any transaction affecting such property (or conferring such power). The proviso permits limited use: as evidence of a contract in a suit for specific performance, or as evidence of any collateral transaction not required to be effected by registered instrument. The statute does not state that the document is simply 'invalid' in all respects; the limitation is as set out above. (Note: the reference to part-performance under Section 53A TPA was omitted by Act 48 of 2001 with effect from 24-9-2001.)",
+      "act": "Registration Act, 1908",
+      "section": "Section 49",
+      "act_number": "Act No. 16 of 1908",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "This unregistered lease for a term of three years shall not be used as evidence of the transaction affecting the property except as permitted by the proviso to Section 49.",
+        "The parties acknowledge that an unregistered instrument required to be registered cannot affect the immovable property comprised therein."
+      ]
+    },
+    {
+      "id": "DL_REG_004",
+      "citation": "Official statement of registration fees, Department of Revenue, Government of NCT of Delhi",
+      "excerpt_text": "Lease deed of immovable property : Rs. 1000/- per instrument plus Rs. 100/- for pasting fee.",
+      "source_url": "https://revenue.delhi.gov.in/revenue/important-information-regarding-registration-property",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "registration_fee",
+        "lease"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Lease deeds of immovable property presented for registration in Delhi.",
+      "notes": "The Department of Revenue, Government of NCT of Delhi, officially states the registration fee for a lease deed of immovable property as Rs. 1,000 per instrument plus Rs. 100 pasting fee. This is separate from stamp duty. Stamp duty is governed by the Indian Stamp Act, 1899 as applicable in Delhi (Schedule entries for leases). Exact current stamp-duty rates for different lease durations depend on the applicable Schedule article and any amending notifications; secondary sources commonly cite percentage rates based on average annual rent, but those rates must be verified against the current official Schedule before use in the knowledge base.",
+      "act": "Department of Revenue, Government of NCT of Delhi — Official registration fee information",
+      "section": "Registration fee for lease deed of immovable property",
+      "act_number": "N/A (administrative notification of fees)",
+      "confidence": "verified_primary_text",
+      "source_type": "official_government_source",
+      "applies_to_clause_examples": [
+        "Registration fee of Rs. 1,000 plus pasting fee of Rs. 100 shall be paid for registration of this lease deed.",
+        "The parties shall bear the registration fee for the lease deed as prescribed by the Department of Revenue, NCT of Delhi."
+      ]
+    },
+    {
+      "id": "DL_EVICTION_001",
+      "citation": "Section 3, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Act not to apply to certain premises. Nothing in this Act shall apply— (a) to any premises belonging to the Government; (b) to any tenancy or other like relationship created by a grant from the Government in respect of the premises taken on lease, or requisitioned, by the Government: Provided that where any premises belonging to Government have been or are lawfully let by any person by virtue of an agreement with the Government or otherwise, then, notwithstanding any judgment, decree or order of any court or other authority, the provisions of this Act shall apply to such tenancy; (c) to any premises, whether residential or not, whose monthly rent exceeds three thousand and five hundred rupees; or (d) to any premises constructed on or after the commencement of the Delhi Rent Control (Amendment) Act, 1988, for a period of ten years from the date of completion of such construction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "eviction",
+        "applicability",
+        "rent_control"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Premises in areas to which the Delhi Rent Control Act, 1958 extends. The Act does not apply where any exclusion in section 3 is attracted. Does not automatically apply to licences.",
+      "notes": "Section 3 excludes specified categories of premises from the Act. Under clause (c), premises whose monthly rent exceeds three thousand and five hundred rupees fall outside the application of the Act, subject to the other exclusions and applicability conditions of the Act. The Delhi Rent Act, 1995 received Presidential assent in 1995 but, under its section 1(3), comes into force only on such date as the Central Government may by notification in the Official Gazette appoint; no such commencement notification has been issued, and the 1995 Act is therefore not operative law.",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 3",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "Monthly rent under this Agreement is Rs. 45,000; section 3(c) of the Delhi Rent Control Act, 1958 therefore excludes these premises from the Act.",
+        "This tenancy is governed by the Transfer of Property Act, 1882 and the terms of this Agreement."
+      ]
+    },
+    {
+      "id": "DL_EVICTION_002",
+      "citation": "Section 14(1), Delhi Rent Control Act, 1958",
+      "excerpt_text": "Protection of tenant against eviction. (1) Notwithstanding anything to the contrary contained in any other law or contract, no order or decree for the recovery of possession of any premises shall be made by any court or Controller in favour of the landlord against a tenant: Provided that the Controller may, on an application made to him in the prescribed manner, make an order for the recovery of possession of the premises on one or more of the following grounds only, namely:— (a) that the tenant has neither paid nor tendered the whole of the arrears of the rent legally recoverable from him within two months of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (4 of 1882); (b) that the tenant has, on or after the 9th day of June, 1952, sub-let, assigned or otherwise parted with the possession of the whole or any part of the premises without obtaining the consent in writing of the landlord; (c) that the tenant has used the premises for a purpose other than that for which they were let— (i) if the premises have been let on or after the 9th day of June, 1952, without obtaining the consent in writing of the landlord; or (ii) if the premises have been let before the said date without obtaining his consent; (d) that the premises were let for use as a residence and neither the tenant nor any member of his family has been residing therein for a period of six months immediately before the date of the filing of the application for the recovery of possession thereof; (e) that the premises are required bona fide by the landlord for occupation as a residence for himself or for any member of his family dependent on him, if he is the owner thereof, or for any person for whose benefit the premises are held and that the landlord or such person has no other reasonably suitable accommodation.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "eviction",
+        "non_payment",
+        "subletting",
+        "misuse",
+        "bona_fide_requirement"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Tenancies to which the Delhi Rent Control Act, 1958 applies. Does not apply to licences or to premises excluded by section 3.",
+      "notes": "Applies only where the Delhi Rent Control Act, 1958 itself applies (see section 3). Subsection (1) provides that no order or decree for recovery of possession shall be made against a tenant except on one or more of the grounds listed in the proviso. The excerpt above sets out clauses (a) to (e). Additional clauses of the proviso to section 14(1) exist in the Act but are not included in this excerpt and are not elevated as separate verified entries in this version. Non-payment under clause (a) requires a prior notice of demand served in the manner provided in section 106 of the Transfer of Property Act, 1882, and non-payment or non-tender within two months of that notice.",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 14(1)",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "If the Tenant fails to pay or tender the whole of the arrears of rent legally recoverable within two months of a notice of demand served in the manner provided in section 106 of the Transfer of Property Act, 1882, the Landlord may seek an order under section 14(1)(a) of the Delhi Rent Control Act, 1958.",
+        "The Tenant shall not sub-let, assign or otherwise part with possession of the whole or any part of the premises without the Landlord’s prior written consent."
+      ]
+    },
+    {
+      "id": "CENTRAL_EVICTION_003",
+      "citation": "Section 106, Transfer of Property Act, 1882",
+      "excerpt_text": "Duration of certain leases in absence of written contract or local usage. (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months’ notice; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days’ notice. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "eviction",
+        "termination",
+        "notice",
+        "lease"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Leases of immovable property (lessor/lessee). Does not apply to licences. Subject to any contrary contract or local law (including rent-control statutes where they apply).",
+      "notes": "Primary rule for termination of periodic leases where there is no contrary contract or local law. For ordinary (non-agricultural/non-manufacturing) leases the statutory notice is fifteen days from receipt. Where the Delhi Rent Control Act, 1958 applies, recovery of possession remains controlled by section 14 of that Act; a notice under section 106 of the Transfer of Property Act alone does not override the statutory grounds in section 14. For premises outside the Delhi Rent Control Act, termination is governed by the contract and sections 106 and 111 of the Transfer of Property Act. SOURCE-URL LIMITATION DISCLOSED (found and fixed during Phase 3 integration review): the India Code bitstream PDF given as source_url contains the ORIGINAL 1882 text of section 106, which was substituted by the Transfer of Property (Amendment) Act, 2002 (Act No. 3 of 2003). The excerpt_text above is the CURRENT, amended, legally operative text - independently cross-verified word-for-word against IndiaKanoon (https://indiankanoon.org/doc/80042/), a widely-used Indian case-law/bare-act database - but was NOT confirmed against a fetched India Code copy that itself contains the amendment; none could be located. Treat this citation's source_url as evidence for the Act's identity and the pre-2003 baseline text, not as a verified primary-source match for the amended excerpt quoted here.",
+      "act": "Transfer of Property Act, 1882",
+      "section": "Section 106",
+      "act_number": "Act No. 4 of 1882",
+      "confidence": "verified_current_text_secondary_cross_check",
+      "source_type": "primary_legislation_url_predates_amendment",
+      "applies_to_clause_examples": [
+        "Either party may terminate this month-to-month tenancy by giving fifteen days’ written notice in accordance with section 106 of the Transfer of Property Act, 1882.",
+        "Notice under this Agreement shall be deemed served when received by the other party."
+      ],
+      "citation_decision": "DECISION (2026-09-30): keep this source_url. Considered replacing it with an official source containing the amended text (4 genuine attempts, all failed - see PROGRESS.md Phase 3); no working alternative found. Confidence and notes fields on this entry disclose the pre-/post-amendment discrepancy and the IndianKanoon cross-check. Re-open if India Code republishes a working, current-text copy of this Act."
+    },
+    {
+      "id": "CENTRAL_EVICTION_004",
+      "citation": "Section 111, Transfer of Property Act, 1882",
+      "excerpt_text": "Determination of lease. A lease of immovable property determines— (a) by efflux of the time limited thereby; (b) where such time is limited conditionally on the happening of some event—by the happening of such event; (c) where the interest of the lessor in the property terminates on, or his power to dispose of the same extends only to, the happening of any event—by the happening of such event; (d) in case the interests of the lessee and the lessor in the whole of the property become vested at the same time in one person in the same right; (e) by express surrender; that is to say, in case the lessee yields up his interest under the lease to the lessor, by mutual agreement between them; (f) by implied surrender; (g) by forfeiture; that is to say, (1) in case the lessee breaks an express condition which provides that, on breach thereof, the lessor may re-enter; or (2) in case the lessee renounces his character as such by setting up a title in a third person or by claiming title in himself; or (3) the lessee is adjudicated an insolvent and the lease provides that the lessor may re-enter on the happening of such event; and in any of these cases the lessor or his transferee gives notice in writing to the lessee of his intention to determine the lease; (h) on the expiration of a notice to determine the lease, or to quit, or of intention to quit, the property leased, duly given by one party to the other.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "eviction",
+        "termination",
+        "determination_of_lease"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Leases of immovable property. Does not apply to pure licences.",
+      "notes": "Lists the statutory modes by which a lease determines. Efflux of time, express or implied surrender, forfeiture (with written notice of intention to determine), and expiration of a notice to quit are the principal practical routes. Forfeiture under clause (g) requires an express re-entry condition and written notice. This is general property law; where the Delhi Rent Control Act, 1958 applies, recovery of possession remains restricted to the grounds in section 14 of that Act.",
+      "act": "Transfer of Property Act, 1882",
+      "section": "Section 111",
+      "act_number": "Act No. 4 of 1882",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "This Lease shall determine by efflux of the term stated in Clause X.",
+        "On breach of any express condition entitling the Lessor to re-enter, the Lessor may determine the Lease by written notice under section 111(g) of the Transfer of Property Act, 1882."
+      ]
+    },
+    {
+      "id": "DL_MAINT_001",
+      "citation": "Section 44, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Landlord's duty to keep the premises in good repair. (1) Every landlord shall be bound to keep the premises in good and tenantable repairs. (2) If the landlord neglects or fails to make, within a reasonable time after notice in writing, any repairs which he is bound to make under sub-section (1) the tenant may make the same himself and deduct the expenses of such repairs from the rent or otherwise recover them from the landlord: Provided that the amount so deducted or recoverable in any year shall not exceed one-twelfth of the rent payable by the tenant for that year. (3) Where any repairs without which the premises are not habitable or usable except with undue inconvenience are to be made and the landlord neglects or fails to make them after notice in writing, the tenant may apply to the Controller for permission to make such repairs himself and may submit to the Controller an estimate of the cost of such repairs, and, thereupon, the Controller may, after giving the landlord an opportunity of being heard and after considering such estimate of the cost and making such inquiries as he may consider necessary, by an order in writing, permit the tenant to make such repairs at such cost as may be specified in the order and it shall thereafter be lawful for the tenant to make such repairs himself and to deduct the cost thereof, which shall in no case exceed the amount so specified, from the rent or otherwise recover it from the landlord: Provided that the amount so deducted or recoverable in any year shall not exceed one-half of the rent payable by the tenant for that year: Provided further that if any repairs not covered by the said amount are necessary in the opinion of the Controller, and the tenant agrees to bear the excess cost himself, the Controller may permit the tenant to make such repairs.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "maintenance",
+        "repairs",
+        "landlord_duty",
+        "tenant_remedy",
+        "notice",
+        "controller"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to premises and tenancies governed by the Delhi Rent Control Act, 1958. Subject to the exclusions in section 3 of that Act (including premises whose monthly rent exceeds three thousand and five hundred rupees). Does not automatically apply to pure leave-and-licence arrangements.",
+      "notes": "Section 44 imposes a statutory duty on the landlord to keep the premises in good and tenantable repairs. Sub-section (2) permits the tenant, after written notice and the landlord's failure within a reasonable time, to carry out ordinary repairs and deduct or recover the expense, subject to a yearly ceiling of one-twelfth of the rent. Sub-section (3) deals with repairs without which the premises are not habitable or usable except with undue inconvenience; the tenant must obtain the Controller's permission and is subject to the cost limit specified in the Controller's order and a yearly ceiling of one-half of the rent. The provision does not state that the tenant may withhold rent generally or that every repair is the landlord's responsibility regardless of contract."
+    },
+    {
+      "id": "CENTRAL_MAINT_002",
+      "citation": "Section 108(f), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (f) if the lessor neglects to make, within a reasonable time after notice, any repairs which he is bound to make to the property, the lessee may make the same himself, and deduct the expense of such repairs with interest from the rent, or otherwise recover it from the lessor:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "maintenance",
+        "repairs",
+        "lessor_duty",
+        "lessee_remedy",
+        "notice"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to leases of immovable property in the absence of a contract or local usage to the contrary. Subject to any applicable local rent-control statute. Does not automatically apply to pure leave-and-licence arrangements.",
+      "notes": "Clause (f) of section 108 applies only where the lessor is bound to make the repairs (typically by contract or local usage) and neglects to do so within a reasonable time after notice. The lessee may then make the repairs and deduct the expense with interest from the rent or otherwise recover it. The opening words of section 108 make the rules subject to contract or local usage to the contrary. Where the Delhi Rent Control Act, 1958 applies, section 44 of that Act is the more specific statutory regime."
+    },
+    {
+      "id": "CENTRAL_MAINT_003",
+      "citation": "Section 108(m), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (m) the lessee is bound to keep, and on the termination of the lease to restore, the property in as good condition as it was in at the time when he was put in possession, subject only to the changes caused by reasonable wear and tear or irresistible force, and to allow the lessor and his agents, at all reasonable times during the term, to enter upon the property and inspect the condition thereof and give or leave notice of any defect in such condition; and, when such defect has been caused by any act or default on the part of the lessee, his servants or agents, he is bound to make it good within three months after such notice has been given or left:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "maintenance",
+        "repairs",
+        "lessee_duty",
+        "preservation"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to leases of immovable property in the absence of a contract or local usage to the contrary. Subject to any applicable local rent-control statute. Does not automatically apply to pure leave-and-licence arrangements.",
+      "notes": "Clause (m) of section 108 imposes on the lessee a duty to keep and restore the property in as good condition as when possession was given, subject only to reasonable wear and tear or irresistible force. The lessee must also permit inspection and, where a defect is caused by the lessee's act or default, make it good within three months after notice. The opening words of section 108 make the rules subject to contract or local usage to the contrary."
+    },
+    {
+      "id": "DL_MAINT_004",
+      "citation": "Section 3, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Act not to apply to certain premises. Nothing in this Act shall apply— (a) to any premises belonging to the Government; (b) to any tenancy or other like relationship created by a grant from the Government in respect of the premises taken on lease, or requisitioned, by the Government: Provided that where any premises belonging to Government have been or are lawfully let by any person by virtue of an agreement with the Government or otherwise, then, notwithstanding any judgment, decree or order of any court or other authority, the provisions of this Act shall apply to such tenancy; (c) to any premises, whether residential or not, whose monthly rent exceeds three thousand and five hundred rupees; or (d) to any premises constructed on or after the commencement of the Delhi Rent Control (Amendment) Act, 1988, for a period of ten years from the date of completion of such construction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "maintenance",
+        "applicability",
+        "rent_control"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Determines whether the Delhi Rent Control Act, 1958 (including section 44) applies to particular premises.",
+      "notes": "Supporting applicability record. Under section 3(c), premises whose monthly rent exceeds three thousand and five hundred rupees fall outside the Act. Where the Act does not apply, maintenance and repair obligations are governed by the contract and, in the absence of contrary contract or local usage, by section 108 of the Transfer of Property Act, 1882."
+    },
+    {
+      "id": "MH_SEC_001",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "security_deposit"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 56(ii)",
+      "citation": "Section 56(ii), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "Notwithstanding anything contained in this Act, it shall be lawful for,— (ii) the landlord or any person acting or purporting to act on behalf of the landlord to receive any fine, premium or other like sum or deposit or any consideration in respect of the grant, or renewal of a lease of any premises, or for giving his consent to the transfer of a lease to any other person.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25",
+      "notes": "Section 56(ii) provides that it is lawful for a landlord or a person acting on behalf of the landlord to receive a deposit in connection with the grant or renewal of a lease, or consent to transfer of a lease. Section 56(ii) does not specify a numeric month-based cap on the deposit amount. Do not encode a specific deposit cap unless supported by a separately verified legal provision or rule.",
+      "confidence": "verified_primary_text",
+      "applies_to_clause_examples": [
+        "Tenant shall pay a security deposit of ₹X at the time of signing this agreement."
+      ],
+      "source_type": "primary_legislation",
+      "applicability": "Maharashtra lease/rental context covered by the Act"
+    },
+    {
+      "id": "MH_REG_001",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "registration"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 55",
+      "citation": "Section 55, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(1) Notwithstanding anything contained in this Act or any other law for the time being in force, any agreement for leave and licence or letting of any premises, entered into between the landlord and the tenant or the licensee, as the case may be, after the commencement of this Act, shall be in writing and shall be registered under the Registration Act, 1908 (XVI of 1908). (2) The responsibility of getting such agreement registered shall be on the landlord and in the absence of the written registered agreement, the contention of the tenant about the terms and conditions, subject to which a premises have been given to him by the landlord on leave and licence or have been let to him, shall prevail, unless proved otherwise. (3) Any landlord who contravenes the provisions of this section shall, on conviction, be punished with imprisonment which may extend to three months or with fine not exceeding rupees five thousand or with both.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25",
+      "notes": "Sub-section (2) places responsibility for registration on the landlord. Where there is no written registered agreement, the tenant's contention about the terms and conditions is stated to prevail unless proved otherwise. Sub-section (3) specifies a penalty for contravention.",
+      "confidence": "verified_primary_text",
+      "applies_to_clause_examples": [
+        "This agreement is a leave and licence / rent agreement that is unregistered or silent on registration."
+      ],
+      "source_type": "primary_legislation",
+      "applicability": "Maharashtra lease/rental context covered by the Act"
+    },
+    {
+      "id": "MH_EVICTION_001",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "eviction",
+        "non_payment_of_rent"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 15",
+      "citation": "Section 15, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "15. No ejectment ordinarily to be made if tenant pays or is ready and willing to pay standard rent and permitted increases.— (1) A landlord shall not be entitled to the recovery of possession of any premises so long as the tenant pays, or is ready and willing to pay, the amount of the standard rent and permitted increases, if any, and observes and performs the other conditions of the tenancy, in so far as they are consistent with the provisions of this Act. (2) No suit for recovery of possession shall be instituted by a landlord against the tenant on the ground of non-payment of the standard rent or permitted increases due, until the expiration of ninety days next after notice in writing of the demand of the standard rent or permitted increases has been served upon the tenant in the manner provided in section 106 of the Transfer of Property Act, 1882 (IV of 1882). (3) No decree for eviction shall be passed by the court in any suit for recovery of possession on the ground of arrears of standard rent and permitted increase if, within a period of ninety days from the date of service of the summons of the suit, the tenant pays or tenders in court the standard rent and permitted increases then due together with simple interest on the amount of arrears at fifteen per cent. per annum; and thereafter continues to pay or tenders in court regularly such standard rent and permitted increases till the suit is finally decided and also pays cost of the suit as directed by the court. (4) Pending the disposal of any suit, the court may, out of any amount paid or tendered by the tenant, pay to the landlord such amount towards the payment of rent or permitted increases due to him as the court thinks fit.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Sub-section (1) provides that a landlord is not entitled to recover possession so long as the tenant pays or is ready and willing to pay standard rent and permitted increases and observes the other conditions of tenancy consistent with the Act. Sub-section (2) requires a landlord to serve 90 days' written notice of demand (in the manner of TPA Section 106) before instituting a non-payment suit at all. Sub-section (3) provides a further cure opportunity: no eviction decree on arrears grounds if the tenant pays/tenders the arrears plus 15% simple interest within 90 days of summons and continues regular payment through the suit. The section refers throughout to 'standard rent' as defined and fixed under this Act, not necessarily the contractual rent figure in every modern agreement.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'tenant' and 'standard rent' as defined under the Maharashtra Rent Control Act, 1999 — i.e., tenancies within the Act's scope (see Section 2 and Schedules I/II). Does not, by its terms, extend to leave-and-license agreements, which are addressed separately under Section 24.",
+      "applies_to_clause_examples": [
+        "Landlord may terminate this agreement immediately upon any delay in rent payment, with no notice or cure period.",
+        "Any single missed or late rent payment is grounds for immediate eviction."
+      ]
+    },
+    {
+      "id": "MH_EVICTION_002",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "eviction",
+        "property_damage",
+        "unauthorized_alterations"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 16(1)(a) and 16(1)(b)",
+      "citation": "Section 16(1)(a), 16(1)(b), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "16. When landlord may recover possession.— (1) Notwithstanding anything contained in this Act but subject to the provisions of section 25, a landlord shall be entitled to recover possession of any premises if the court is satisfied— (a) that the tenant has committed any act contrary to the provisions of clause (o) of section 108 of the Transfer of Property Act, 1882 (IV of 1882); Explanation.— For the purposes of this clause, replacing of tiles or closing of balcony of the premises shall not be regarded as an act of a causing damage to the building or destructive or permanently injurious thereto; or (b) that the tenant has, without the landlord's consent given in writing, erected on the premises any permanent structure; Explanation.— For the purposes of this clause, the expression “permanent structure” does not include the carrying out of any work with the permission, wherever necessary, of the municipal authority, for providing a wooden partition, standing cooking platform in kitchen, door, lattice work of opening of a window necessary for ventilation, a false ceiling, installation of air-conditioner, an exhaust outlet or a smoke chimney; or",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Clause (a) is a ground where the tenant has committed an act contrary to TPA Section 108(o) (which requires a lessee not to damage, waste or destroy the property). Its Explanation carves out replacing tiles or closing a balcony as NOT amounting to damage/destruction. Clause (b) is a ground for erecting a permanent structure without the landlord's written consent, but its Explanation excludes a specific list of minor works (wooden partition, kitchen platform, door, ventilation lattice, false ceiling, AC installation, exhaust outlet/smoke chimney) done with municipal permission where necessary, from counting as 'permanent structure'.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'tenant' and 'landlord' as defined under the Maharashtra Rent Control Act, 1999. Both are court-adjudicated grounds (a landlord must obtain a court order under Section 16(1) — they do not authorize self-help eviction or automatic forfeiture on breach).",
+      "applies_to_clause_examples": [
+        "Tenant shall not make any alterations to the premises, including installing an air conditioner or false ceiling, without landlord's prior written permission, on pain of immediate termination.",
+        "Any damage to the premises, however minor, is grounds for immediate eviction without recourse."
+      ]
+    },
+    {
+      "id": "MH_EVICTION_003",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "eviction",
+        "nuisance",
+        "illegal_use"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 16(1)(c)",
+      "citation": "Section 16(1)(c), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(c) that the tenant, his agent, servant, persons inducted by tenant or claiming under the tenant or, any person residing with the tenant has been guilty of conduct which is a nuisance or annoyance to the adjoining or neighbouring occupier, or has been convicted of using the premises or allowing the premises to be used for immoral or illegal purposes or that the tenant has in respect of the premises been convicted of an offence of contravention of any of the provisions of clause (a) of sub-section (1) of section 394 or of section 394A of the Mumbai Municipal Corporation Act (Bom. III of 1888) or of sub-section 394 or of section 376 or of section 376A of the Bombay Provincial Municipal Corporations Act, 1949 (Bom. LIX of 1949), or of section 229 of the City of Nagpur Municipal Corporation Act, 1949 (C. P. and Berar II of 1950); or of section 280 or of section 281 of the Maharashtra Municipal Councils, Nagar Panchayats and Industrial Townships Act, 1965 (Mah. XL of 1965); or",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "This ground covers conduct by the tenant or persons connected with the tenant (agent, servant, inducted persons, co-residents) that is a nuisance or annoyance to neighbouring occupiers, OR a conviction for using/allowing the premises to be used for immoral or illegal purposes, OR a conviction under specific listed municipal-corporation-act building/construction offence provisions. Note that several referenced provisions are conviction-based (require an actual criminal conviction, not mere allegation), and some referenced Acts have since been renamed/repealed by later Maharashtra legislation (see the source PDF's own footnotes on the Mumbai/Nagpur Municipal Corporation Act renaming and repeal).",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'tenant' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground under Section 16(1), not self-executing.",
+      "applies_to_clause_examples": [
+        "Tenant agrees not to cause nuisance or disturbance to neighbours.",
+        "Premises shall not be used for any illegal or immoral purpose."
+      ]
+    },
+    {
+      "id": "MH_EVICTION_004",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "eviction",
+        "bona_fide_requirement",
+        "landlord_occupation"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 16(1)(g), 16(2), 16(3)",
+      "citation": "Section 16(1)(g), 16(2), 16(3), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(g) that the premises are reasonably and bona fide required by the landlord for occupation by himself or by any person for whose benefit the premises are held or where the landlord is a trustee of a public charitable trust that the premises are required for occupation for the purposes of the trust; or (2) No decree for eviction shall be passed on the ground, specified in clause (g) of sub-section (1), if court is satisfied that, having regard to all the circumstances of the case including the question whether other reasonable accommodation is available for the landlord or the tenant, greater hardship would be caused by passing the decree than by refusing to pass it. Where the court is satisfied that no hardship would be caused either to the tenant or to the landlord by passing the decree in respect of such part of the premises, the court shall the decree in respect of such part only. Explanation.— For the purposes of clause (g) of sub-section (1) the expression “landlord” shall not include a rent-farmer or rent-collector or estate-manager. (3) A landlord shall not be entitled to recover possession of any premises under the provisions of clause (g) of sub-section (1) if the premises are let to the Central Government in a cantonment area and such premises, are being used for residence by members of the armed forces of the Union, or their families.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Clause (g) allows recovery where the premises are 'reasonably and bona fide required' by the landlord (or a beneficiary, or a public charitable trust) for occupation. This is NOT an unconditional right: sub-section (2) requires the court to weigh a mandatory comparative-hardship test between landlord and tenant before granting the decree, and permits a partial decree limited to the part causing no hardship. The Explanation to sub-section (2) excludes a rent-farmer, rent-collector or estate-manager from counting as 'landlord' for this ground. Sub-section (3) creates a specific carve-out: this ground is unavailable where the premises are let to the Central Government in a cantonment area for residence of armed forces members/families.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'tenant'/'landlord' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground subject to the mandatory hardship balancing test in sub-section (2), not a self-executing right to repossess on a bare claim of need.",
+      "applies_to_clause_examples": [
+        "Landlord may terminate this agreement at any time if the landlord wishes to occupy the premises, with no consideration of tenant hardship.",
+        "Clause purporting to give the landlord an unconditional right to reclaim the premises for personal use."
+      ]
+    },
+    {
+      "id": "MH_EVICTION_005",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "eviction",
+        "non_use_of_premises"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 16(1)(n)",
+      "citation": "Section 16(1)(n), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(n) that the premises have not been used, without reasonable cause for the purpose for which they were let for for a continuous period of six months immediately preceding the date of the suit.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "This ground requires (i) non-use of the premises for the purpose for which they were let, (ii) without reasonable cause, and (iii) for a continuous period of six months immediately preceding the date of the suit. All three elements must be satisfied; 'without reasonable cause' is a qualifier the statute itself preserves and a court would need to assess on the facts (the text does not define what counts as reasonable cause). VERIFIED SOURCE ANOMALY: the excerpt_text's repeated word ('...they were let for for a continuous period...') is not a transcription error introduced in this KB — it is present verbatim in the official India Code primary-source PDF (text as on 7 March 2025) at this exact location. It has been preserved as-is rather than silently corrected, consistent with the rule that excerpt_text must be the exact statutory wording, typographical errors in the official text included.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'tenant' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground under Section 16(1).",
+      "applies_to_clause_examples": [
+        "Tenant must occupy the premises continuously and may not leave it vacant for any period, however brief, without cause specified.",
+        "Any vacancy of the premises by the tenant, regardless of duration, constitutes a breach entitling immediate termination."
+      ]
+    },
+    {
+      "id": "MH_MAINT_001",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "maintenance",
+        "repairs",
+        "repair_cost_recovery"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 14",
+      "citation": "Section 14, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "14. Landlords’ duty to keep premises in good repair.— (1) Notwithstanding anything contained in any law for the time being in force and in the absence of an agreement to the contrary by the tenant, every landlord shall be bound to keep the premises in good and tenantable repair. (2) If the landlord neglects to make any repairs, which he is bound to make under sub-section (1), within a reasonable time after a notice of fifteen days is served upon him by post or in any other manner by a tenant or jointly by tenants interested in such repairs, such tenant or tenants may themselves make the same and deduct the expenses of such repairs from the rent or otherwise recover them from the landlord. Provided that, where the repairs are jointly made by the tenants, the amount to be deducted or recovered with interest by each tenant shall bear the same proportion as the rent payable by him in respect of his premises bears to the total amount of the expenses incurred for such repairs together with simple interest at fifteen per cent. per annum on such amount: Provided further that, the amount so deducted or recoverable in any year shall not exceed one-fourth of the rent payable by the tenant of that year. (3) For the purpose of calculating the expenses of the repairs made under sub-section (2), the accounts together with the vouchers maintained by the tenants shall be conclusive evidence of such expenditure and shall be binding on the landlord.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Sub-section (1) makes the landlord bound to keep the premises in 'good and tenantable repair', but this is expressly conditional: it applies only 'in the absence of an agreement to the contrary by the tenant' — so a contractual term allocating repair duty differently can displace this default obligation. Sub-section (2) sets a specific procedure and cap for a tenant's self-help remedy if the landlord neglects a repair he is bound to make: (i) a written 15-day notice must first be served on the landlord; (ii) the landlord must fail to act within a reasonable time after that notice; only then may the tenant carry out the repair and deduct/recover the expense. The amount deducted/recoverable in any year is capped at one-fourth of that year's rent, and where multiple tenants jointly repair, costs are apportioned by each tenant's rent share plus simple interest at 15% per annum. Sub-section (3) makes the tenants' accounts and vouchers conclusive evidence of the expenditure, binding on the landlord. The section does not address structural/substantial repairs separately — see MH_MAINT_002 for the statute's distinct treatment of 'improvements or structural alterations' under Section 11.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'landlord' and 'tenant' as defined under the Maharashtra Rent Control Act, 1999. Does not by its terms apply to a leave-and-license relationship, which is addressed separately under Section 24 of this Act (see MH_LICENCE_001) and does not carry an equivalent statutory repair-and-deduct mechanism under this Act.",
+      "applies_to_clause_examples": [
+        "Tenant is solely responsible for all repairs to the premises, including those arising from normal wear and tear, at all times.",
+        "Landlord shall have no obligation to repair the premises under any circumstances.",
+        "In the event of disrepair, tenant has no remedy other than to continue paying full rent."
+      ]
+    },
+    {
+      "id": "MH_MAINT_002",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "maintenance",
+        "structural_repairs",
+        "rent_increase"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 11(2)",
+      "citation": "Section 11(2), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(2) A landlord shall also be entitled to make such increase in the rent of the premises as may be reasonable for an improvement or structural alterations of the premises which has been made with the consent of the seventy per cent. of the tenants given in writing. Explanation.— In this sub-section, improvements and alterations do not include the repairs which the landlord is bound to make under sub-section (1) of section 14.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "This provision does not itself impose a repair obligation; it entitles a landlord to a reasonable rent increase for an 'improvement or structural alteration' made with the written consent of 70% of the tenants. The Explanation expressly excludes repairs that the landlord is bound to make under Section 14(1) from the 'improvements and alterations' covered by this sub-section (see MH_MAINT_001 for Section 14). Beyond that textual exclusion, the statute does not describe a general standalone 'structural repair' obligation distinct from these two categories (ordinary repair under Section 14, and improvement/structural alteration under Section 11(2)).",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to a 'landlord' and 'tenant'/'tenants' as defined under the Maharashtra Rent Control Act, 1999, in the context of rent increases tied to improvements/structural alterations. Does not by its terms apply to leave-and-license agreements.",
+      "applies_to_clause_examples": [
+        "Landlord may unilaterally increase rent for any renovation or alteration made to the building, without tenant consent.",
+        "Clause characterizing a routine repair (e.g., fixing a leak) as an 'improvement' justifying a rent increase."
+      ]
+    },
+    {
+      "id": "MH_LICENCE_001",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "licence_expiry",
+        "possession_after_expiry",
+        "overstay"
+      ],
+      "act": "Maharashtra Rent Control Act, 1999",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "section": "Section 24",
+      "citation": "Section 24, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(1) Notwithstanding anything contained in this Act, a licensee in possession or occupation of premises given to him on licence for residence shall deliver possession of such premises to the landlord on expiry of the period of licence; and on the failure of the licensee to so deliver the possession of the licensed premises, a landlord shall be entitled to recover possession of such premises from a licensee, on the expiry of the period of licence, by making an application to the Competent Authority, and, the Competent Authority, on being satisfied that the period of licence has expired, shall pass an order for eviction of a licensee. (2) Any licensee who does not deliver possession of the premises to the landlord on expiry of the period of licence and continues to be in possession of the licensed premises till he is dispossessed by the Competent Authority shall be liable to pay damages at double the rate of the licence fee or charge of the premises fixed under the agreement of licence. (3) The Competent Authority shall not entertain any claim of whatever nature from any other person who is not a licensee according to the agreement of licence. Explanation.—For the purposes of this section,— (a) the expression \"landlord\" includes a successor-in-interest who becomes the landlord of the premises as a result of death of such landlord; but does not include a tenant or a sub-tenant who has given premises on licence; (b) an agreement of licence in writing shall be conclusive evidence of the fact stated therein.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25",
+      "notes": "Section 24 does not prescribe a fixed statutory notice period. It addresses expiry of a residential leave-and-license period and the consequences of continued occupation after expiry. Upon expiry, the licensee is required to deliver possession to the landlord. Section 24(2) provides for damages at double the licence fee or charge fixed under the licence agreement where the licensee continues in possession until dispossession by the Competent Authority. Explanation (b) provides that a written licence agreement is conclusive evidence of the facts stated in it.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Applies to licensees in possession or occupation of residential premises given on licence under Section 24 of the Maharashtra Rent Control Act, 1999.",
+      "applies_to_clause_examples": [
+        "This licence agreement ends on [date] and the licensee must vacate upon expiry.",
+        "The agreement is silent about what happens when the licence period expires.",
+        "The licensee remains in possession after expiry of the licence period."
+      ]
+    },
+    {
+      "id": "MH_NOTICE_001",
+      "citation": "Section 15(2), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(2) No suit for recovery of possession shall be instituted by a landlord against the tenant on the ground of non-payment of the standard rent or permitted increases due, until the expiration of ninety days next after notice in writing of the demand of the standard rent or permitted increases has been served upon the tenant in the manner provided in section 106 of the Transfer of Property Act, 1882.",
+      "source_url": "https://maharashtra.gov.in/Upload/PDF/THE_MAHARASHTRA_RENT_CONTROL_ACT.pdf",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "notice",
+        "notice_period",
+        "non_payment",
+        "eviction"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to tenants and recovery-of-possession suits under the Maharashtra Rent Control Act on the ground of non-payment of standard rent or permitted increases. It is not a general statutory termination notice for every tenancy or leave-and-license agreement.",
+      "notes": "Section 15(2) requires a written demand notice and a 90-day waiting period before a suit for recovery of possession may be instituted on the specified non-payment ground. The notice must be served in the manner provided in section 106 of the Transfer of Property Act, 1882. This entry is deliberately scoped to the statutory non-payment notice; it must not be presented as a universal 90-day termination notice.",
+      "act": "Maharashtra Rent Control Act, 1999",
+      "section": "Section 15(2)",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "Landlord must wait 90 days after serving the statutory demand notice before filing a possession suit for non-payment of rent or permitted increases."
+      ]
+    },
+    {
+      "id": "MH_RENT_001",
+      "citation": "Section 11(1), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(1) After the commencement of this Act a landlord shall be entitled to make an increase of 4 per cent per annum in the rent of the premises let for any of the purposes referred to in sub-section (1) of section 2. Explanation.-For the purposes of this sub-section, the period of one year on completion of which rent shall be so increased shall be computed from the date of commencement of this Act.",
+      "source_url": "https://maharashtra.gov.in/Upload/PDF/THE_MAHARASHTRA_RENT_CONTROL_ACT.pdf",
+      "jurisdiction": "Maharashtra",
+      "topic_tags": [
+        "rent_escalation",
+        "rent_increase"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to premises within the application of section 2(1) of the Maharashtra Rent Control Act, subject to the Act and its exemptions. It does not by itself establish that every modern leave-and-license agreement is governed by this rent-control provision.",
+      "notes": "Section 11(1) provides a statutory 4% per-annum increase in rent for premises covered by section 2(1). This is a statutory rent-increase rule, distinct from a contractual escalation clause.",
+      "act": "Maharashtra Rent Control Act, 1999",
+      "section": "Section 11(1)",
+      "act_number": "Mah. Act No. 18 of 2000",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "The lease provides for a statutory or automatic annual rent increase above 4% in premises covered by the Maharashtra Rent Control Act."
+      ]
+    },
+    {
+      "id": "DL_RENT_001",
+      "citation": "Section 6A, Delhi Rent Control Act, 1958 (Act No. 59 of 1958)",
+      "excerpt_text": "6A. Revision of rent.-Notwithstanding anything contained in this Act, the standard rent, or, where no standard rent is fixed under the provisions of this Act in respect of any premises, the rent agreed upon between the landlord and the tenant, may be increased by ten per cent every three years.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "rent_escalation",
+        "rent_increase"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to premises to which the Delhi Rent Control Act, 1958 applies. Section 3 exclusions and the Act’s other provisions remain relevant.",
+      "notes": "Section 6A permits a 10% increase every three years in the standard rent, or, where no standard rent is fixed, the rent agreed between landlord and tenant. This statutory rule should not be represented as a blanket rule for premises excluded from the Delhi Rent Control Act. The text was cross-checked against the official India Code Act PDF and a Delhi High Court report reproducing sections 6A and 8.",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 6A",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "The rent is increased by 10% every three years under the statutory rent-revision provision."
+      ]
+    },
+    {
+      "id": "DL_NOTICE_001",
+      "citation": "Section 8, Delhi Rent Control Act, 1958 (Act No. 59 of 1958)",
+      "excerpt_text": "8. Notice of increase of rent.-(1) Where a landlord wishes to increase the rent of any premises, he shall give the tenant notice of his intention to make the increase and in so far as such increase is lawful under this Act, it shall be due and recoverable only in respect of the period of the tenancy after the expiry of thirty days from the date on which the notice is given. (2) Every notice under sub-section (1) shall be in writing signed by or on behalf of the landlord and given in the manner provided in section 106 of the Transfer of Property Act, 1882 (4 of 1882).",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "notice",
+        "notice_period",
+        "rent_escalation",
+        "rent_increase"
+      ],
+      "last_verified_date": "2026-09-26",
+      "applicability": "Applies to a landlord seeking to increase rent for premises to which the Delhi Rent Control Act, 1958 applies. It is a notice period for a rent increase, not a general termination notice.",
+      "notes": "Section 8 requires written notice of intention to increase rent and makes the lawful increase recoverable only after 30 days from the notice. The notice must be given in the manner provided in section 106 of the Transfer of Property Act, 1882. This entry must not be displayed as a universal one-month tenancy termination rule. The text was cross-checked against the official India Code Act PDF and a Delhi High Court report reproducing sections 6A and 8.",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 8",
+      "act_number": "Act No. 59 of 1958",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applies_to_clause_examples": [
+        "Landlord must give written notice before a lawful rent increase becomes recoverable, with the increase effective only after 30 days from notice."
+      ]
+    }
+  ]
+}

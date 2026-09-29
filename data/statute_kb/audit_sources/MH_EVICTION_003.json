@@ -1,0 +1,24 @@
+{
+  "id": "MH_EVICTION_003",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "eviction",
+    "nuisance",
+    "illegal_use"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 16(1)(c)",
+  "citation": "Section 16(1)(c), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "(c) that the tenant, his agent, servant, persons inducted by tenant or claiming under the tenant or, any person residing with the tenant has been guilty of conduct which is a nuisance or annoyance to the adjoining or neighbouring occupier, or has been convicted of using the premises or allowing the premises to be used for immoral or illegal purposes or that the tenant has in respect of the premises been convicted of an offence of contravention of any of the provisions of clause (a) of sub-section (1) of section 394 or of section 394A of the Mumbai Municipal Corporation Act (Bom. III of 1888) or of sub-section 394 or of section 376 or of section 376A of the Bombay Provincial Municipal Corporations Act, 1949 (Bom. LIX of 1949), or of section 229 of the City of Nagpur Municipal Corporation Act, 1949 (C. P. and Berar II of 1950); or of section 280 or of section 281 of the Maharashtra Municipal Councils, Nagar Panchayats and Industrial Townships Act, 1965 (Mah. XL of 1965); or",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "This ground covers conduct by the tenant or persons connected with the tenant (agent, servant, inducted persons, co-residents) that is a nuisance or annoyance to neighbouring occupiers, OR a conviction for using/allowing the premises to be used for immoral or illegal purposes, OR a conviction under specific listed municipal-corporation-act building/construction offence provisions. Note that several referenced provisions are conviction-based (require an actual criminal conviction, not mere allegation), and some referenced Acts have since been renamed/repealed by later Maharashtra legislation (see the source PDF's own footnotes on the Mumbai/Nagpur Municipal Corporation Act renaming and repeal).",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'tenant' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground under Section 16(1), not self-executing.",
+  "applies_to_clause_examples": [
+    "Tenant agrees not to cause nuisance or disturbance to neighbours.",
+    "Premises shall not be used for any illegal or immoral purpose."
+  ]
+}

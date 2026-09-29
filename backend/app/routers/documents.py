@@ -22,6 +22,7 @@ class ClauseOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     clause_id: str
+    clause_number: str | None = None
     section_heading: str | None
     text: str
     # Stored as order_index because "order" is a reserved SQL word.
@@ -90,6 +91,7 @@ async def upload_document(
         clauses=[
             Clause(
                 clause_id=c.clause_id,
+                clause_number=c.clause_number,
                 section_heading=c.section_heading,
                 text=c.text,
                 order_index=c.order,

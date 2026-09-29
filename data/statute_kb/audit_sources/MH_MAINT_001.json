@@ -1,0 +1,25 @@
+{
+  "id": "MH_MAINT_001",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "maintenance",
+    "repairs",
+    "repair_cost_recovery"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 14",
+  "citation": "Section 14, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "14. Landlords’ duty to keep premises in good repair.— (1) Notwithstanding anything contained in any law for the time being in force and in the absence of an agreement to the contrary by the tenant, every landlord shall be bound to keep the premises in good and tenantable repair. (2) If the landlord neglects to make any repairs, which he is bound to make under sub-section (1), within a reasonable time after a notice of fifteen days is served upon him by post or in any other manner by a tenant or jointly by tenants interested in such repairs, such tenant or tenants may themselves make the same and deduct the expenses of such repairs from the rent or otherwise recover them from the landlord. Provided that, where the repairs are jointly made by the tenants, the amount to be deducted or recovered with interest by each tenant shall bear the same proportion as the rent payable by him in respect of his premises bears to the total amount of the expenses incurred for such repairs together with simple interest at fifteen per cent. per annum on such amount: Provided further that, the amount so deducted or recoverable in any year shall not exceed one-fourth of the rent payable by the tenant of that year. (3) For the purpose of calculating the expenses of the repairs made under sub-section (2), the accounts together with the vouchers maintained by the tenants shall be conclusive evidence of such expenditure and shall be binding on the landlord.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "Sub-section (1) makes the landlord bound to keep the premises in 'good and tenantable repair', but this is expressly conditional: it applies only 'in the absence of an agreement to the contrary by the tenant' — so a contractual term allocating repair duty differently can displace this default obligation. Sub-section (2) sets a specific procedure and cap for a tenant's self-help remedy if the landlord neglects a repair he is bound to make: (i) a written 15-day notice must first be served on the landlord; (ii) the landlord must fail to act within a reasonable time after that notice; only then may the tenant carry out the repair and deduct/recover the expense. The amount deducted/recoverable in any year is capped at one-fourth of that year's rent, and where multiple tenants jointly repair, costs are apportioned by each tenant's rent share plus simple interest at 15% per annum. Sub-section (3) makes the tenants' accounts and vouchers conclusive evidence of the expenditure, binding on the landlord. The section does not address structural/substantial repairs separately — see MH_MAINT_002 for the statute's distinct treatment of 'improvements or structural alterations' under Section 11.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'landlord' and 'tenant' as defined under the Maharashtra Rent Control Act, 1999. Does not by its terms apply to a leave-and-license relationship, which is addressed separately under Section 24 of this Act (see MH_LICENCE_001) and does not carry an equivalent statutory repair-and-deduct mechanism under this Act.",
+  "applies_to_clause_examples": [
+    "Tenant is solely responsible for all repairs to the premises, including those arising from normal wear and tear, at all times.",
+    "Landlord shall have no obligation to repair the premises under any circumstances.",
+    "In the event of disrepair, tenant has no remedy other than to continue paying full rent."
+  ]
+}

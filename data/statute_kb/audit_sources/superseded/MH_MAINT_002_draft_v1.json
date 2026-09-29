@@ -1,0 +1,25 @@
+{
+  "id": "MH_MAINT_002",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "maintenance",
+    "structural_repairs",
+    "rent_increase"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 11(2)",
+  "citation": "Section 11(2), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "(2) A landlord shall also be entitled to make such increase in the rent of the premises as may be reasonable for an improvement or structural alterations of the premises which has been made with the consent of the seventy per cent. of the tenants given in writing. Explanation.— In this sub-section, improvements and alterations do not include the repairs which the landlord is bound to make under sub-section (1) of section 14.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "This provision does not itself impose a repair obligation; it entitles a landlord to a reasonable rent increase for an 'improvement or structural alteration' made with the written consent of 70% of the tenants. Its Explanation is the statute's own textual line between ordinary repairs and structural/improvement work: 'improvements and alterations' under this sub-section explicitly EXCLUDE the repairs the landlord is already bound to make under Section 14(1) (see MH_MAINT_001). In other words, routine repair is a landlord duty with no consent requirement and no separate charge to tenants, while a structural improvement/alteration is a distinct category requiring majority tenant consent and entitling the landlord to a rent increase — the statute does not describe a general standalone 'structural repair' obligation distinct from these two categories.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'landlord' and 'tenant'/'tenants' as defined under the Maharashtra Rent Control Act, 1999, in the context of rent increases tied to improvements/structural alterations. Does not by its terms apply to leave-and-license agreements.",
+  "applies_to_clause_examples": [
+    "Landlord may unilaterally increase rent for any renovation or alteration made to the building, without tenant consent.",
+    "Clause characterizing a routine repair (e.g., fixing a leak) as an 'improvement' justifying a rent increase."
+  ],
+  "superseded_by": "audit_sources/MH_MAINT_002.json"
+}

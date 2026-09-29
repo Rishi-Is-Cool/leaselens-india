@@ -59,6 +59,10 @@ def create_tables() -> None:
     if engine is None:
         raise RuntimeError("DATABASE_URL is not configured.")
     Base.metadata.create_all(engine)
+    # create_all never alters an existing table, so columns added after the first
+    # deploy are applied here.
+    with engine.begin() as conn:
+        conn.execute(text("ALTER TABLE clauses ADD COLUMN IF NOT EXISTS clause_number VARCHAR(32)"))
 
 
 @dataclass

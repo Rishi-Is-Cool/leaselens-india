@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "project": "LeaseLens",
+    "phase": "Phase 3 — Statute Knowledge Base",
+    "jurisdiction": "Delhi / Central",
+    "topic": "registration",
+    "last_verified_date": "2026-09-26",
+    "source_priority": "primary_legislation (India Code exact PDFs) + official Delhi Revenue sources",
+    "source_verification_status": "corrected — exact India Code PDF URLs applied"
+  },
+  "entries": [
+    {
+      "id": "CENTRAL_REG_001",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "lease"
+      ],
+      "act": "Registration Act, 1908",
+      "act_number": "Act No. 16 of 1908",
+      "section": "Section 17(1)(d)",
+      "citation": "Section 17(1)(d), Registration Act, 1908",
+      "excerpt_text": "Documents of which registration is compulsory. (1) The following documents shall be registered, if the property to which they relate is situate in a district in which, and if they have been executed on or after the date on which, Act XVI of 1864, or the Indian Registration Act, 1866, or the Indian Registration Act, 1871, or the Indian Registration Act, 1877, or this Act came or comes into force, namely:— (a) instruments of gift of immovable property; (b) other non-testamentary instruments which purport or operate to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property; (c) non-testamentary instruments which acknowledge the receipt or payment of any consideration on account of the creation, declaration, assignment, limitation or extinction of any such right, title or interest; and (d) leases of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent; (e) non-testamentary instruments transferring or assigning any decree or order of a Court or any award when such decree or order or award purports or operates to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property: Provided that the State Government may, by order published in the Official Gazette, exempt from the operation of this sub-section any leases executed in any district, or part of a district, the terms granted by which do not exceed five years and the annual rents reserved by which do not exceed fifty rupees.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Compulsory registration applies specifically to leases of immovable property that are (i) from year to year, or (ii) for any term exceeding one year, or (iii) reserving a yearly rent. Leases for a term of one year or less that do not reserve a yearly rent and are not from year to year fall outside this compulsory category (subject to the State Government exemption power in the proviso). The provision concerns leases; it does not by its terms apply to licences/leave-and-licence arrangements.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Leases of immovable property situate in a district where the Act is in force. Applies to lessor/lessee relationships. Does not automatically apply to licences (licensor/licensee).",
+      "applies_to_clause_examples": [
+        "This Lease is for a term of two years commencing from the date of execution.",
+        "The Tenant shall pay yearly rent of Rs. X and the tenancy shall be from year to year."
+      ]
+    },
+    {
+      "id": "CENTRAL_REG_002",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "lease"
+      ],
+      "act": "Transfer of Property Act, 1882",
+      "act_number": "Act No. 4 of 1882",
+      "section": "Section 107",
+      "citation": "Section 107, Transfer of Property Act, 1882",
+      "excerpt_text": "Leases how made. A lease of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument. All other leases of immovable property may be made either by a registered instrument or by oral agreement accompanied by delivery of possession. Where a lease of immovable property is made by a registered instrument, such instrument or, where there are more instruments than one, each such instrument shall be executed by both the lessor and the lessee: Provided that the State Government may, from time to time, by notification in the Official Gazette, direct that leases of immovable property, other than leases from year to year, or for any term exceeding one year, or reserving a yearly rent, or any class of such leases, may be made by unregistered instrument or by oral agreement without delivery of possession.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "A lease from year to year, or for any term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument. All other leases may be made by registered instrument or by oral agreement accompanied by delivery of possession. Where a registered instrument is used, both lessor and lessee must execute it. State Governments may notify exceptions for leases other than the three compulsory categories. This is the mode-of-creation rule; it works together with Section 17 of the Registration Act, 1908.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Leases of immovable property (lessor/lessee). Does not apply to licences under the Indian Easements Act, 1882.",
+      "applies_to_clause_examples": [
+        "The parties hereby create a lease for a term of 24 months by this registered instrument executed by both Lessor and Lessee.",
+        "This month-to-month tenancy is created by oral agreement accompanied by delivery of possession."
+      ]
+    },
+    {
+      "id": "CENTRAL_REG_003",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "registration",
+        "non_registration",
+        "evidence"
+      ],
+      "act": "Registration Act, 1908",
+      "act_number": "Act No. 16 of 1908",
+      "section": "Section 49",
+      "citation": "Section 49, Registration Act, 1908",
+      "excerpt_text": "Effect of non-registration of documents required to be registered. No document required by section 17 or by any provision of the Transfer of Property Act, 1882 (4 of 1882), to be registered shall— (a) affect any immovable property comprised therein, or (b) confer any power to adopt, or (c) be received as evidence of any transaction affecting such property or conferring such power, unless it has been registered: Provided that an unregistered document affecting immovable property and required by this Act or the Transfer of Property Act, 1882 (4 of 1882), to be registered may be received as evidence of a contract in a suit for specific performance under Chapter II of the Specific Relief Act, 1877, or as evidence of any collateral transaction not required to be effected by registered instrument.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "An unregistered document that is required to be registered under Section 17 (or under the Transfer of Property Act, 1882) cannot affect the immovable property comprised in it, cannot confer a power to adopt, and cannot be received as evidence of any transaction affecting such property (or conferring such power). The proviso permits limited use: as evidence of a contract in a suit for specific performance, or as evidence of any collateral transaction not required to be effected by registered instrument. The statute does not state that the document is simply 'invalid' in all respects; the limitation is as set out above. (Note: the reference to part-performance under Section 53A TPA was omitted by Act 48 of 2001 with effect from 24-9-2001.)",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Documents required by Section 17 of the Registration Act, 1908 or by any provision of the Transfer of Property Act, 1882 to be registered. Applies to leases falling within the compulsory categories.",
+      "applies_to_clause_examples": [
+        "This unregistered lease for a term of three years shall not be used as evidence of the transaction affecting the property except as permitted by the proviso to Section 49.",
+        "The parties acknowledge that an unregistered instrument required to be registered cannot affect the immovable property comprised therein."
+      ]
+    },
+    {
+      "id": "DL_REG_004",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "registration_fee",
+        "lease"
+      ],
+      "act": "Department of Revenue, Government of NCT of Delhi — Official registration fee information",
+      "act_number": "N/A (administrative notification of fees)",
+      "section": "Registration fee for lease deed of immovable property",
+      "citation": "Official statement of registration fees, Department of Revenue, Government of NCT of Delhi",
+      "excerpt_text": "Lease deed of immovable property : Rs. 1000/- per instrument plus Rs. 100/- for pasting fee.",
+      "source_url": "https://revenue.delhi.gov.in/revenue/important-information-regarding-registration-property",
+      "last_verified_date": "2026-09-26",
+      "notes": "The Department of Revenue, Government of NCT of Delhi, officially states the registration fee for a lease deed of immovable property as Rs. 1,000 per instrument plus Rs. 100 pasting fee. This is separate from stamp duty. Stamp duty is governed by the Indian Stamp Act, 1899 as applicable in Delhi (Schedule entries for leases). Exact current stamp-duty rates for different lease durations depend on the applicable Schedule article and any amending notifications; secondary sources commonly cite percentage rates based on average annual rent, but those rates must be verified against the current official Schedule before use in the knowledge base.",
+      "confidence": "verified_primary_text",
+      "source_type": "official_government_source",
+      "applicability": "Lease deeds of immovable property presented for registration in Delhi.",
+      "applies_to_clause_examples": [
+        "Registration fee of Rs. 1,000 plus pasting fee of Rs. 100 shall be paid for registration of this lease deed.",
+        "The parties shall bear the registration fee for the lease deed as prescribed by the Department of Revenue, NCT of Delhi."
+      ]
+    }
+  ],
+  "source_verification": [
+    {
+      "id": "DL_REG_001",
+      "act": "Registration Act, 1908",
+      "section": "s. 17(1)(d)",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_REG_002",
+      "act": "Transfer of Property Act, 1882",
+      "section": "s. 107",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_REG_003",
+      "act": "Registration Act, 1908",
+      "section": "s. 49",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_REG_004",
+      "act": "Dept. of Revenue, NCT of Delhi",
+      "section": "Registration fee statement for lease deed",
+      "primary_source": "Official Government of NCT of Delhi Revenue page",
+      "exact_source_url": "https://revenue.delhi.gov.in/revenue/important-information-regarding-registration-property",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    }
+  ]
+}

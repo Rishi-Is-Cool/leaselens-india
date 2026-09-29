@@ -31,6 +31,20 @@ CAPS_RUN_IN_HEADING = re.compile(
     r"([A-Z][A-Z &'\-/()]{2,45}?)\s+(?=[A-Z][a-z]|[••])"
 )
 
+# The clause's own number as printed: "4.", "Clause 4.", "2.1", "2.3(a)" or a Roman
+# numeral "IV.". Captured into `clause_number` so it stays citable even when the number
+# is absorbed while a run-in heading is lifted out of the text.
+CLAUSE_NUMBER = re.compile(
+    r"^(?:(?i:clause|article|section|para(?:graph)?)\s+)?"
+    r"(\d+(?:\.\d+)+|\d+(?=[.)]\s*[A-Z(])|[IVXLC]+(?=[.)]\s))"
+)
+
+# "... rent. 3. Rs.5000 will be paid" — a numbered clause run straight on from the one
+# before it, as government forms set them (no leading between clauses). Only used by
+# `_split_numbered_runs`, which also demands the number be the next in sequence.
+INLINE_NUMBER_MARKER = re.compile(r"(?<![\w.])(\d{1,3})((?:\.\d{1,2})*)[.)]\s*(?=[A-Z\"“(])")
+SENTENCE_ENDINGS = (".", ";", ":", "!", "?", ")", "”", '"', "-", "–", "—")
+
 # A list item continuing the clause above it, rather than starting a new one.
 BULLET_LINE = re.compile(r"^\s*[••▪◦‣·*]\s+")
 # "2.1 The term of this lease..." — hierarchical sub-clause numbering.
@@ -77,10 +91,12 @@ class Clause:
     section_heading: str | None
     text: str
     order: int
+    clause_number: str | None = None
 
     def as_dict(self) -> dict:
         return {
             "clause_id": self.clause_id,
+            "clause_number": self.clause_number,
             "section_heading": self.section_heading,
             "text": self.text,
             "order": self.order,
@@ -98,6 +114,52 @@ def _split_signature_runs(paragraph: str) -> tuple[str, list[str]]:
         return paragraph, []
     signatures = [m.strip() for m in SIGNATURE_RUN.findall(paragraph) if m.strip()]
     return SIGNATURE_RUN.sub("", paragraph).strip(" _"), signatures
+
+
+def _split_numbered_runs(paragraphs: list[str]) -> list[str]:
+    """Cut a paragraph holding several consecutively numbered clauses.
+
+    Forms with no leading between clauses arrive as one long paragraph, so paragraph
+    geometry offers nothing to split on. Numbering does: a marker is a clause start only
+    if it is the next number in sequence, or a restart at 1 that follows sentence-ending
+    punctuation. Requiring strict sequence is what keeps a stray "Rs. 5. The" or a
+    reference to "clause 3." from being cut.
+    """
+    result: list[str] = []
+    last: int | None = None
+    for paragraph in paragraphs:
+        cuts: list[int] = []
+        for match in INLINE_NUMBER_MARKER.finditer(paragraph):
+            number = int(match.group(1))
+            is_sub_number = bool(match.group(2))
+            before = paragraph[: match.start()].rstrip()
+            at_start = match.start() == 0
+            boundary = at_start or before.endswith(SENTENCE_ENDINGS)
+            # "WHEREAS 1. The Lessor..." opens a numbered list with no punctuation before it.
+            after_caps_word = bool(re.search(r"\b[A-Z]{3,}$", before))
+            if number == 1 and not is_sub_number and (boundary or after_caps_word):
+                last = 1
+                if boundary and not at_start:
+                    cuts.append(match.start())
+            # Once a sequence is running, the next number alone is enough: forms often
+            # end a clause with no full stop ("...the Lease deed 3. That the lease...").
+            elif last is not None and (
+                number == last + 1 or (is_sub_number and number == last)
+            ):
+                # "2.1)", "2.4)" continue clause 2; only a new top-level number advances.
+                last = number
+                if not at_start:
+                    cuts.append(match.start())
+        if not cuts:
+            result.append(paragraph)
+            continue
+        bounds = [0, *cuts, len(paragraph)]
+        result.extend(
+            piece
+            for piece in (paragraph[a:b].strip() for a, b in zip(bounds, bounds[1:]))
+            if piece
+        )
+    return result
 
 
 def _is_bare_heading(paragraph: str) -> bool:
@@ -141,9 +203,15 @@ def _merge_orphan_headings(paragraphs: list[str]) -> list[str]:
 
     for paragraph in paragraphs:
         if pending is not None:
-            merged.append(f"{pending} {paragraph}")
+            # A numbered paragraph is a clause in its own right; gluing it onto the
+            # label above would swallow the next clause's number.
+            if CLAUSE_NUMBER.match(paragraph):
+                merged.append(pending)
+            else:
+                merged.append(f"{pending} {paragraph}")
+                pending = None
+                continue
             pending = None
-            continue
         if (
             _is_bare_heading(paragraph)
             and not _is_section_banner(paragraph)
@@ -169,6 +237,11 @@ def _is_plausible_heading(candidate: str) -> bool:
     after "Rs", which otherwise reads as a run-in heading. Real headings are short.
     """
     return len(candidate) <= MAX_HEADING_CHARS and len(candidate.split()) <= MAX_HEADING_WORDS
+
+
+def _extract_clause_number(paragraph: str) -> str | None:
+    match = CLAUSE_NUMBER.match(paragraph)
+    return match.group(1) if match else None
 
 
 def _split_heading(paragraph: str) -> tuple[str | None, str]:
@@ -241,7 +314,7 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
     title_block, cleaned = split_title_block(cleaned)
     signature_block: list[str] = []
     section_headings: list[str] = []
-    candidates = _merge_orphan_headings(_merge_bullet_lists(cleaned))
+    candidates = _merge_orphan_headings(_merge_bullet_lists(_split_numbered_runs(cleaned)))
 
     clauses: list[Clause] = []
     current_section: str | None = None
@@ -286,6 +359,7 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
             section_headings.append(current_section)
             paragraph = paragraph[banner.end() :].strip()
 
+        clause_number = _extract_clause_number(paragraph)
         inline_heading, text = _split_heading(paragraph)
         if not text:
             continue
@@ -295,6 +369,7 @@ def segment_document(paragraphs: list[str]) -> SegmentedDocument:
         clauses.append(
             Clause(
                 clause_id=f"c{order + 1:03d}",
+                clause_number=clause_number,
                 section_heading=inline_heading or current_section,
                 text=text,
                 order=order,

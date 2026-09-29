@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "project": "LeaseLens",
+    "phase": "Phase 3 — Statute Knowledge Base",
+    "jurisdiction": "Delhi / Central",
+    "topic": "eviction",
+    "last_verified_date": "2026-09-26",
+    "source_priority": "primary_legislation (India Code exact PDFs)",
+    "source_verification_status": "corrected — exact DRCA PDF URL applied; notes tightened to statutory text only"
+  },
+  "entries": [
+    {
+      "id": "DL_EVICTION_001",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "eviction",
+        "applicability",
+        "rent_control"
+      ],
+      "act": "Delhi Rent Control Act, 1958",
+      "act_number": "Act No. 59 of 1958",
+      "section": "Section 3",
+      "citation": "Section 3, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Act not to apply to certain premises. Nothing in this Act shall apply— (a) to any premises belonging to the Government; (b) to any tenancy or other like relationship created by a grant from the Government in respect of the premises taken on lease, or requisitioned, by the Government: Provided that where any premises belonging to Government have been or are lawfully let by any person by virtue of an agreement with the Government or otherwise, then, notwithstanding any judgment, decree or order of any court or other authority, the provisions of this Act shall apply to such tenancy; (c) to any premises, whether residential or not, whose monthly rent exceeds three thousand and five hundred rupees; or (d) to any premises constructed on or after the commencement of the Delhi Rent Control (Amendment) Act, 1988, for a period of ten years from the date of completion of such construction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Section 3 excludes specified categories of premises from the Act. Under clause (c), premises whose monthly rent exceeds three thousand and five hundred rupees fall outside the application of the Act, subject to the other exclusions and applicability conditions of the Act. The Delhi Rent Act, 1995 received Presidential assent in 1995 but, under its section 1(3), comes into force only on such date as the Central Government may by notification in the Official Gazette appoint; no such commencement notification has been issued, and the 1995 Act is therefore not operative law.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Premises in areas to which the Delhi Rent Control Act, 1958 extends. The Act does not apply where any exclusion in section 3 is attracted. Does not automatically apply to licences.",
+      "applies_to_clause_examples": [
+        "Monthly rent under this Agreement is Rs. 45,000; section 3(c) of the Delhi Rent Control Act, 1958 therefore excludes these premises from the Act.",
+        "This tenancy is governed by the Transfer of Property Act, 1882 and the terms of this Agreement."
+      ]
+    },
+    {
+      "id": "DL_EVICTION_002",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "eviction",
+        "non_payment",
+        "subletting",
+        "misuse",
+        "bona_fide_requirement"
+      ],
+      "act": "Delhi Rent Control Act, 1958",
+      "act_number": "Act No. 59 of 1958",
+      "section": "Section 14(1)",
+      "citation": "Section 14(1), Delhi Rent Control Act, 1958",
+      "excerpt_text": "Protection of tenant against eviction. (1) Notwithstanding anything to the contrary contained in any other law or contract, no order or decree for the recovery of possession of any premises shall be made by any court or Controller in favour of the landlord against a tenant: Provided that the Controller may, on an application made to him in the prescribed manner, make an order for the recovery of possession of the premises on one or more of the following grounds only, namely:— (a) that the tenant has neither paid nor tendered the whole of the arrears of the rent legally recoverable from him within two months of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (4 of 1882); (b) that the tenant has, on or after the 9th day of June, 1952, sub-let, assigned or otherwise parted with the possession of the whole or any part of the premises without obtaining the consent in writing of the landlord; (c) that the tenant has used the premises for a purpose other than that for which they were let— (i) if the premises have been let on or after the 9th day of June, 1952, without obtaining the consent in writing of the landlord; or (ii) if the premises have been let before the said date without obtaining his consent; (d) that the premises were let for use as a residence and neither the tenant nor any member of his family has been residing therein for a period of six months immediately before the date of the filing of the application for the recovery of possession thereof; (e) that the premises are required bona fide by the landlord for occupation as a residence for himself or for any member of his family dependent on him, if he is the owner thereof, or for any person for whose benefit the premises are held and that the landlord or such person has no other reasonably suitable accommodation.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Applies only where the Delhi Rent Control Act, 1958 itself applies (see section 3). Subsection (1) provides that no order or decree for recovery of possession shall be made against a tenant except on one or more of the grounds listed in the proviso. The excerpt above sets out clauses (a) to (e). Additional clauses of the proviso to section 14(1) exist in the Act but are not included in this excerpt and are not elevated as separate verified entries in this version. Non-payment under clause (a) requires a prior notice of demand served in the manner provided in section 106 of the Transfer of Property Act, 1882, and non-payment or non-tender within two months of that notice.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Tenancies to which the Delhi Rent Control Act, 1958 applies. Does not apply to licences or to premises excluded by section 3.",
+      "applies_to_clause_examples": [
+        "If the Tenant fails to pay or tender the whole of the arrears of rent legally recoverable within two months of a notice of demand served in the manner provided in section 106 of the Transfer of Property Act, 1882, the Landlord may seek an order under section 14(1)(a) of the Delhi Rent Control Act, 1958.",
+        "The Tenant shall not sub-let, assign or otherwise part with possession of the whole or any part of the premises without the Landlord’s prior written consent."
+      ]
+    },
+    {
+      "id": "CENTRAL_EVICTION_003",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "eviction",
+        "termination",
+        "notice",
+        "lease"
+      ],
+      "act": "Transfer of Property Act, 1882",
+      "act_number": "Act No. 4 of 1882",
+      "section": "Section 106",
+      "citation": "Section 106, Transfer of Property Act, 1882",
+      "excerpt_text": "Duration of certain leases in absence of written contract or local usage. (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months’ notice; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days’ notice. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Primary rule for termination of periodic leases where there is no contrary contract or local law. For ordinary (non-agricultural/non-manufacturing) leases the statutory notice is fifteen days from receipt. Where the Delhi Rent Control Act, 1958 applies, recovery of possession remains controlled by section 14 of that Act; a notice under section 106 of the Transfer of Property Act alone does not override the statutory grounds in section 14. For premises outside the Delhi Rent Control Act, termination is governed by the contract and sections 106 and 111 of the Transfer of Property Act.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Leases of immovable property (lessor/lessee). Does not apply to licences. Subject to any contrary contract or local law (including rent-control statutes where they apply).",
+      "applies_to_clause_examples": [
+        "Either party may terminate this month-to-month tenancy by giving fifteen days’ written notice in accordance with section 106 of the Transfer of Property Act, 1882.",
+        "Notice under this Agreement shall be deemed served when received by the other party."
+      ]
+    },
+    {
+      "id": "CENTRAL_EVICTION_004",
+      "jurisdiction": "Central",
+      "topic_tags": [
+        "eviction",
+        "termination",
+        "determination_of_lease"
+      ],
+      "act": "Transfer of Property Act, 1882",
+      "act_number": "Act No. 4 of 1882",
+      "section": "Section 111",
+      "citation": "Section 111, Transfer of Property Act, 1882",
+      "excerpt_text": "Determination of lease. A lease of immovable property determines— (a) by efflux of the time limited thereby; (b) where such time is limited conditionally on the happening of some event—by the happening of such event; (c) where the interest of the lessor in the property terminates on, or his power to dispose of the same extends only to, the happening of any event—by the happening of such event; (d) in case the interests of the lessee and the lessor in the whole of the property become vested at the same time in one person in the same right; (e) by express surrender; that is to say, in case the lessee yields up his interest under the lease to the lessor, by mutual agreement between them; (f) by implied surrender; (g) by forfeiture; that is to say, (1) in case the lessee breaks an express condition which provides that, on breach thereof, the lessor may re-enter; or (2) in case the lessee renounces his character as such by setting up a title in a third person or by claiming title in himself; or (3) the lessee is adjudicated an insolvent and the lease provides that the lessor may re-enter on the happening of such event; and in any of these cases the lessor or his transferee gives notice in writing to the lessee of his intention to determine the lease; (h) on the expiration of a notice to determine the lease, or to quit, or of intention to quit, the property leased, duly given by one party to the other.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Lists the statutory modes by which a lease determines. Efflux of time, express or implied surrender, forfeiture (with written notice of intention to determine), and expiration of a notice to quit are the principal practical routes. Forfeiture under clause (g) requires an express re-entry condition and written notice. This is general property law; where the Delhi Rent Control Act, 1958 applies, recovery of possession remains restricted to the grounds in section 14 of that Act.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Leases of immovable property. Does not apply to pure licences.",
+      "applies_to_clause_examples": [
+        "This Lease shall determine by efflux of the term stated in Clause X.",
+        "On breach of any express condition entitling the Lessor to re-enter, the Lessor may determine the Lease by written notice under section 111(g) of the Transfer of Property Act, 1882."
+      ]
+    }
+  ],
+  "coverage_report": [
+    {
+      "topic": "Non-payment of rent",
+      "found": true,
+      "provision": "DRCA s.14(1)(a)",
+      "jurisdiction": "Delhi",
+      "notes": "Requires notice of demand in the manner of TPA s.106 and non-payment/non-tender within two months. Only where DRCA applies."
+    },
+    {
+      "topic": "Subletting / assignment",
+      "found": true,
+      "provision": "DRCA s.14(1)(b)",
+      "jurisdiction": "Delhi",
+      "notes": "Without written consent of landlord, on or after 9 June 1952. Only where DRCA applies."
+    },
+    {
+      "topic": "Misuse / change of use",
+      "found": true,
+      "provision": "DRCA s.14(1)(c)",
+      "jurisdiction": "Delhi",
+      "notes": "Use for a purpose other than that for which the premises were let, without consent. Only where DRCA applies."
+    },
+    {
+      "topic": "Bona-fide requirement of landlord",
+      "found": true,
+      "provision": "DRCA s.14(1)(e)",
+      "jurisdiction": "Delhi",
+      "notes": "As stated in the verified excerpt. Only where DRCA applies. Additional judicial interpretation or residual statutory clauses are not included in this verified entry."
+    },
+    {
+      "topic": "Structural damage / unauthorised construction",
+      "found": "partial",
+      "provision": null,
+      "jurisdiction": "Delhi",
+      "notes": "Not established as a fully verified continuous excerpt in this version. Residual clauses of the proviso to s.14(1) exist but have not been extracted and verified as separate KB entries."
+    },
+    {
+      "topic": "Expiry / termination of term",
+      "found": true,
+      "provision": "TPA s.111(a), (h); s.106",
+      "jurisdiction": "Central",
+      "notes": "Efflux of time; notice to quit."
+    },
+    {
+      "topic": "Statutory notice / cure period",
+      "found": true,
+      "provision": "DRCA s.14(1)(a); TPA s.106",
+      "jurisdiction": "Delhi / Central",
+      "notes": "Distinct regimes depending on whether DRCA applies."
+    },
+    {
+      "topic": "Leave-and-licence",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "DRCA speaks of tenant. Licencee status is not automatically covered by DRCA eviction provisions."
+    },
+    {
+      "topic": "Delhi Rent Act, 1995 eviction regime",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "The 1995 Act was enacted and received assent but, under its s.1(3), requires a Central Government commencement notification that has not been issued. It is not operative law."
+    }
+  ],
+  "source_verification": [
+    {
+      "id": "DL_EVICTION_001",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "s.3",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_EVICTION_002",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "s.14(1)",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_EVICTION_003",
+      "act": "Transfer of Property Act, 1882",
+      "section": "s.106",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_EVICTION_004",
+      "act": "Transfer of Property Act, 1882",
+      "section": "s.111",
+      "primary_source": "India Code official PDF",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "exact_excerpt_verified": true,
+      "confidence": "verified_primary_text"
+    }
+  ],
+  "changes_made": [
+    "DL_EVICTION_001 and DL_EVICTION_002 source_url replaced with exact India Code PDF https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+    "DL_EVICTION_001 notes rewritten to statutory formulation only (removed market-frequency claim)",
+    "DL_EVICTION_002 notes stripped of Satyawati Sharma, s.14(6), and residual-clause claims not present in the verified excerpt",
+    "1995 Act status stated strictly in terms of enactment vs non-commencement under s.1(3)",
+    "Structural damage kept as partial / not fully verified",
+    "TPA entries unchanged (already on exact PDF)"
+  ],
+  "remaining_gaps": [
+    "Full continuous text of residual clauses of the proviso to DRCA s.14(1) (f–l) and of ss.14A–14D, 14(6), 15, 16 not elevated as separate verified entries",
+    "No separate verified entry for structural damage / unauthorised construction",
+    "No primary-source verification of any commencement notification for the Delhi Rent Act, 1995 (none located; Act remains non-operative)"
+  ]
+}

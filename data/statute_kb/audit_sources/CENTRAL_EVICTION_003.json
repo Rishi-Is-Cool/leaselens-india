@@ -1,0 +1,25 @@
+{
+  "id": "CENTRAL_EVICTION_003",
+  "jurisdiction": "Central",
+  "topic_tags": [
+    "notice_period",
+    "lease_termination"
+  ],
+  "act": "Transfer of Property Act, 1882",
+  "act_number": "Act No. 4 of 1882",
+  "section": "Section 106",
+  "citation": "Section 106, Transfer of Property Act, 1882",
+  "excerpt_text": "106. Duration of certain leases in absence of written contract or local usage.— (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months' notice expiring with the end of a year of the tenancy; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days' notice expiring with the end of a month of the tenancy. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+  "last_verified_date": "2026-09-25",
+  "notes": "Section 106 is a default rule: it applies in the absence of a contract, local law, or usage to the contrary. Where a lease agreement specifies a notice period, that contractual provision may govern instead of the statutory default. The section applies to leases of immovable property covered by the Transfer of Property Act and does not directly govern leave-and-license agreements, which are legally distinct from leases. For leases covered by Section 106 with no contrary term or applicable local law/usage, the default is six months' notice for agricultural or manufacturing leases and fifteen days' notice for other purposes. The notice must be in writing and comply with the delivery requirements stated in sub-section (4).",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to leases of immovable property covered by Section 105 of the Transfer of Property Act, 1882, where there is no contrary contract, local law, or usage. Does not directly apply to leave-and-license agreements.",
+  "applies_to_clause_examples": [
+    "This lease may be terminated by either party without notice.",
+    "The lease agreement is silent on the notice period required to terminate a month-to-month tenancy.",
+    "The lease specifies a notice period and the system needs to distinguish the contractual term from the statutory default."
+  ],
+  "id_correction_note": "Originally saved as 'CENTRAL_NOTICE_001', which never matched the KB entry it documents (DL_EVICTION_003, renamed CENTRAL_EVICTION_003 in the Central-ID-prefix fix). Corrected here to the actual final id. SOURCE-URL LIMITATION DISCLOSED (found and fixed during Phase 3 integration review): the India Code bitstream PDF given as source_url contains the ORIGINAL 1882 text of section 106, which was substituted by the Transfer of Property (Amendment) Act, 2002 (Act No. 3 of 2003). The excerpt_text above is the CURRENT, amended, legally operative text - independently cross-verified word-for-word against IndiaKanoon (https://indiankanoon.org/doc/80042/), a widely-used Indian case-law/bare-act database - but was NOT confirmed against a fetched India Code copy that itself contains the amendment; none could be located. Treat this citation's source_url as evidence for the Act's identity and the pre-2003 baseline text, not as a verified primary-source match for the amended excerpt quoted here."
+}

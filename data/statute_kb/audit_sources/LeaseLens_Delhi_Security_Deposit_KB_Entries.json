@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "project": "LeaseLens",
+    "phase": "Phase 3 — Statute Knowledge Base",
+    "jurisdiction": "Delhi",
+    "topic": "security_deposit",
+    "last_verified_date": "2026-09-26",
+    "source_priority": "primary_legislation (India Code)"
+  },
+  "entries": [
+    {
+      "id": "DL_SEC_001",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "advance_rent",
+        "security_deposit"
+      ],
+      "act": "Delhi Rent Control Act, 1958",
+      "act_number": "Act No. 59 of 1958",
+      "section": "Section 5",
+      "citation": "Section 5, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Unlawful charges not to be claimed or received. (1) Subject to the provisions of this Act, no person shall claim or receive any rent in excess of the standard rent, notwithstanding any agreement to the contrary. (2) No person shall, in consideration of the grant, renewal or continuance of a tenancy or sub-tenancy of any premises,-- (a) claim or receive the payment of any sum as premium or pugree or claim or receive any consideration whatsoever, in cash or in kind, in addition to the rent; or (b) except with the previous permission of the Controller, claim or receive the payment of any sum exceeding one month's rent of such premises as rent in advance. (3) It shall not be lawful for the tenant or any other person acting or purporting to act on behalf of the tenant or a sub-tenant to claim or receive any payment in consideration of the relinquishment, transfer or assignment of his tenancy or sub-tenancy, as the case may be, of any premises. (4) Nothing in this section shall apply-- (a) to any payment made in pursuance of an agreement entered into before the 1st day of January, 1939; or (b) to any payment made under an agreement by any person to a landlord for the purpose of financing the construction of the whole or part of any premises on the land belonging to, or taken on lease by, the landlord, if one of the conditions of the agreement is that the landlord is to let to that person the whole or part of the premises when completed for the use of that person or any member of his family: Provided that such payment does not exceed the amount of agreed rent for a period of five years of the whole or part of the premises to be let to such person. Explanation.--For the purposes of clause (b) of this sub-section, a \"member of the family\" of a person means, in the case of an undivided Hindu family, any member of the family of that person and in the case of any other family, the husband, wife, son, daughter, father, mother, brother, sister or any other relative dependent on that person.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "Section 5(2)(b) prohibits claiming or receiving more than one month's rent as rent in advance without the previous permission of the Controller. The provision refers specifically to 'rent in advance' and does not use the term 'security deposit'. It applies only to tenancies/sub-tenancies governed by the Delhi Rent Control Act, 1958 (subject to the Act's territorial and exclusion provisions, including those under Section 3). It does not create a general statutory maximum for a refundable security deposit for damages or other purposes. Premium/pugree under clause (a) is separately prohibited. Exceptions exist for pre-1939 agreements and certain construction-finance payments. The Act does not apply to licences (see definition of 'tenant').",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Landlord/tenant (and sub-tenant) relationships under premises to which the Delhi Rent Control Act, 1958 applies. Does not automatically apply to leave-and-licence arrangements or to premises excluded under Section 3 (including certain higher-rent or post-1988 construction premises).",
+      "applies_to_clause_examples": [
+        "The Tenant shall pay an advance rent equivalent to three months' rent upon signing this Agreement.",
+        "Landlord requires payment of six months' rent in advance as a condition of granting the tenancy."
+      ]
+    },
+    {
+      "id": "DL_SEC_002",
+      "jurisdiction": "Delhi",
+      "topic_tags": [
+        "deposit_of_rent"
+      ],
+      "act": "Delhi Rent Control Act, 1958",
+      "act_number": "Act No. 59 of 1958",
+      "section": "Section 27",
+      "citation": "Section 27, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Deposit of rent by the tenant. (1) Where the landlord does not accept any rent tendered by the tenant within the time referred to in section 26 or refuses or neglects to deliver a receipt referred to therein or where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may deposit such rent with the Controller in the prescribed manner: Provided that in cases where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may remit such rent to the Controller by postal money order. (2) The deposit shall be accompanied by an application by the tenant containing the following particulars, namely:-- (a) the premises for which the rent is deposited with a description sufficient for identifying the premises; (b) the period for which the rent is deposited; (c) the name and address of the landlord or the person or persons claiming to be entitled to such rent; (d) the reasons and circumstances for which the application for depositing the rent is made; (e) such other particulars as may be prescribed. (3) On such deposit of the rent being made, the Controller shall send in the prescribed manner a copy or copies of the application to the landlord or persons claiming to be entitled to the rent with an endorsement of the date of the deposit. (4) If an application is made for the withdrawal of any deposit of rent, the Controller shall, if satisfied that the applicant is the person entitled to receive the rent deposited, order the amount of the rent to be paid to him in the manner prescribed: Provided that no order for payment of any deposit of rent shall be made by the Controller under this sub-section without giving all persons named by the tenant in his application under sub-section (2) as claiming to be entitled to payment of such rent an opportunity of being heard and such order shall be without prejudice to the rights of such persons to the said rent being decided by a court of competent jurisdiction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26",
+      "notes": "This provision concerns the tenant's right to deposit periodic rent with the Controller in specified circumstances (landlord non-acceptance, refusal/neglect of receipt, or bona fide doubt as to payee). It is not a provision regulating a security deposit paid to a landlord at the start of a tenancy. Related provisions appear in Sections 26 and 28. It applies only within the framework of the Delhi Rent Control Act, 1958.",
+      "confidence": "verified_primary_text",
+      "source_type": "primary_legislation",
+      "applicability": "Tenant under a tenancy governed by the Delhi Rent Control Act, 1958, in the limited circumstances set out in the section. Does not apply to security deposits paid to landlords or to leave-and-licence arrangements.",
+      "applies_to_clause_examples": [
+        "If the Landlord refuses to accept rent, the Tenant may deposit the rent with the Rent Controller under applicable law.",
+        "Tenant shall be entitled to deposit rent with the Controller where the Landlord fails to issue a receipt."
+      ]
+    }
+  ],
+  "coverage_report": [
+    {
+      "topic": "Security deposit maximum",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "No statutory maximum for a refundable security deposit appears in the Delhi Rent Control Act, 1958."
+    },
+    {
+      "topic": "Security deposit number-of-months limit",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "Common claims of a “two-month limit” are not established by the Delhi Rent Control Act, 1958. Section 5(2)(b) addresses “rent in advance” (one-month limit without Controller permission), not security deposit."
+    },
+    {
+      "topic": "Advance rent/deposit",
+      "found": true,
+      "provision": "Section 5(2)(b), Delhi Rent Control Act, 1958",
+      "jurisdiction": "Delhi",
+      "notes": "Limits claim/receipt of more than one month’s rent as rent in advance without previous permission of the Controller. Applies only to covered tenancies."
+    },
+    {
+      "topic": "Deposit refund",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "No specific statutory refund timeline or procedure for landlord-held security deposits located. Section 13 addresses refund of certain premiums/sums paid in contravention of the Act."
+    },
+    {
+      "topic": "Deposit deductions",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "No primary provision regulating deductions from a security deposit."
+    },
+    {
+      "topic": "Deposit retention",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "No primary provision regulating circumstances of retention of a security deposit."
+    },
+    {
+      "topic": "Deposit interest",
+      "found": false,
+      "provision": null,
+      "jurisdiction": null,
+      "notes": "No primary provision requiring or regulating interest on a security deposit."
+    },
+    {
+      "topic": "Deposit of rent with Controller",
+      "found": true,
+      "provision": "Section 27 (and related Sections 26, 28), Delhi Rent Control Act, 1958",
+      "jurisdiction": "Delhi",
+      "notes": "Allows tenant to deposit periodic rent with the Controller in specified circumstances. Distinct from security deposit paid to landlord."
+    },
+    {
+      "topic": "Other relevant deposit provisions",
+      "found": "partial",
+      "provision": "Section 5 (premium/pugree); Section 13 (refund of certain unlawful payments)",
+      "jurisdiction": "Delhi",
+      "notes": "Premium/pugree prohibited; limited refund mechanism for sums paid in contravention. No general security-deposit regime."
+    }
+  ],
+  "source_verification": [
+    {
+      "id": "DL_SEC_001",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 5",
+      "primary_source": "India Code (official PDF of Act No. 59 of 1958)",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "exact_excerpt_verified": true,
+      "applicability": "Landlord/tenant (and sub-tenant) under premises to which the Act applies; excludes licences and certain excluded premises under Section 3",
+      "security_deposit_or_rent_deposit": "Regulates “rent in advance” (and premium/pugree); does not create a security-deposit rule",
+      "confidence": "verified_primary_text"
+    },
+    {
+      "id": "DL_SEC_002",
+      "act": "Delhi Rent Control Act, 1958",
+      "section": "Section 27",
+      "primary_source": "India Code (official PDF of Act No. 59 of 1958)",
+      "exact_source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "exact_excerpt_verified": true,
+      "applicability": "Tenant under the Act in the limited circumstances of non-acceptance of rent, non-delivery of receipt, or bona fide doubt as to payee",
+      "security_deposit_or_rent_deposit": "Deposit of rent (periodic rent with Controller); not security deposit",
+      "confidence": "verified_primary_text"
+    }
+  ],
+  "research_notes": [
+    "No primary statutory maximum on security deposits (as distinct from “rent in advance”) was established under the Delhi Rent Control Act, 1958.",
+    "Section 5(2)(b) limits advance rent to one month’s rent without Controller permission for covered tenancies.",
+    "Section 27 addresses deposit of rent with the Controller and is not a security-deposit provision.",
+    "Common secondary claims of a two-month security-deposit limit in Delhi are not grounded in the primary text of the Delhi Rent Control Act, 1958.",
+    "The Act’s application is limited by its own exclusions (including under Section 3). Leave-and-licence arrangements fall outside the tenant definition.",
+    "The Model Tenancy Act, 2021 (Central model law) contains a two-month residential security-deposit cap, but it has not been adopted as binding primary legislation applicable generally in Delhi; therefore no entry is created for it under Delhi jurisdiction."
+  ]
+}

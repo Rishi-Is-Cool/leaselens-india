@@ -1,0 +1,572 @@
+{
+  "no_central": {
+    "Maharashtra": [
+      {
+        "clause_id": "MH-C01",
+        "topic": "security_deposit",
+        "text": "The tenant shall pay a security deposit equal to ten months' rent at the commencement of this agreement, which is non-refundable under any circumstances.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_SEC_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C02",
+        "topic": "security_deposit",
+        "text": "The security deposit shall be adjusted against the last two months of rent and any unpaid utility bills at the end of the tenancy.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_SEC_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C03",
+        "topic": "notice",
+        "text": "Either party may terminate this leave and license agreement by giving 15 days' written notice to the other party.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C04",
+        "topic": "notice",
+        "text": "The landlord may terminate this agreement immediately without any notice period if the licensee is found to be in default.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C05",
+        "topic": "eviction",
+        "text": "The landlord may re-enter and take possession of the premises immediately upon any breach by the tenant, without recourse to any court or authority.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_EVICTION_002",
+          "MH_EVICTION_001",
+          "MH_EVICTION_005",
+          "MH_LICENCE_001",
+          "MH_EVICTION_004",
+          "MH_EVICTION_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C06",
+        "topic": "eviction",
+        "text": "This agreement is a licence for residence and shall automatically terminate on expiry of the licence period stated above, at which point the licensee must vacate.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_LICENCE_001",
+          "MH_EVICTION_001",
+          "MH_EVICTION_004",
+          "MH_EVICTION_002",
+          "MH_EVICTION_005",
+          "MH_EVICTION_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C07",
+        "topic": "maintenance",
+        "text": "The tenant shall be solely responsible for all repairs to the premises, including structural repairs, throughout the tenancy, and the landlord shall bear no repair obligations whatsoever.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_MAINT_001",
+          "MH_MAINT_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C08",
+        "topic": "maintenance",
+        "text": "The landlord shall carry out structural repairs, and any such repair costing above a certain threshold may result in a permitted rent increase.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_MAINT_001",
+          "MH_MAINT_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C09",
+        "topic": "registration",
+        "text": "This leave and license agreement shall be registered as required under applicable law, and the licensee shall bear the registration cost.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_REG_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C10",
+        "topic": "rent_escalation",
+        "text": "The licence fee shall increase by four percent annually, compounded, at the landlord's discretion.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_RENT_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      }
+    ],
+    "Delhi": [
+      {
+        "clause_id": "DL-C01",
+        "topic": "security_deposit",
+        "text": "The tenant shall deposit an amount equal to twelve months' rent as an interest-free, refundable security deposit.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_SEC_001",
+          "DL_SEC_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C02",
+        "topic": "security_deposit",
+        "text": "The landlord may claim a premium of Rs. 5,00,000 in addition to rent as a condition for granting this tenancy.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_SEC_001",
+          "DL_SEC_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C03",
+        "topic": "notice",
+        "text": "This tenancy may be terminated by either party giving one month's written notice.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C04",
+        "topic": "notice",
+        "text": "The landlord reserves the right to terminate this tenancy at will without notice, for any reason.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C05",
+        "topic": "eviction",
+        "text": "The landlord may recover possession of the premises if the tenant fails to pay rent within two months of a written demand for arrears.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_EVICTION_002",
+          "DL_EVICTION_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C06",
+        "topic": "eviction",
+        "text": "The landlord may recover possession at any time without any grounds or Controller's order, simply upon giving notice to the tenant.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_EVICTION_002",
+          "DL_EVICTION_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C07",
+        "topic": "maintenance",
+        "text": "The landlord shall keep the premises in good and tenantable repair at all times, and the tenant may deduct repair costs from rent if the landlord fails to act after notice.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_MAINT_001",
+          "DL_MAINT_004"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C08",
+        "topic": "maintenance",
+        "text": "The tenant shall be responsible for all repairs to the premises, including major structural repairs, without exception.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_MAINT_001",
+          "DL_MAINT_004"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C09",
+        "topic": "rent_escalation",
+        "text": "Rent shall be increased by 15% every eleven months at the sole discretion of the landlord, without any statutory basis cited.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_RENT_001",
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C10",
+        "topic": "registration",
+        "text": "This rent agreement shall not be registered with any authority, and the parties waive any right to registration.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_REG_004"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      }
+    ]
+  },
+  "with_central": {
+    "Maharashtra": [
+      {
+        "clause_id": "MH-C01",
+        "topic": "security_deposit",
+        "text": "The tenant shall pay a security deposit equal to ten months' rent at the commencement of this agreement, which is non-refundable under any circumstances.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_SEC_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C02",
+        "topic": "security_deposit",
+        "text": "The security deposit shall be adjusted against the last two months of rent and any unpaid utility bills at the end of the tenancy.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_SEC_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C03",
+        "topic": "notice",
+        "text": "Either party may terminate this leave and license agreement by giving 15 days' written notice to the other party.",
+        "matched": true,
+        "retrieved_ids": [
+          "CENTRAL_EVICTION_003",
+          "MH_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C04",
+        "topic": "notice",
+        "text": "The landlord may terminate this agreement immediately without any notice period if the licensee is found to be in default.",
+        "matched": true,
+        "retrieved_ids": [
+          "CENTRAL_EVICTION_003",
+          "MH_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C05",
+        "topic": "eviction",
+        "text": "The landlord may re-enter and take possession of the premises immediately upon any breach by the tenant, without recourse to any court or authority.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_EVICTION_002",
+          "MH_EVICTION_001",
+          "MH_EVICTION_005",
+          "MH_LICENCE_001",
+          "MH_EVICTION_004",
+          "CENTRAL_EVICTION_004",
+          "MH_EVICTION_003",
+          "CENTRAL_EVICTION_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C06",
+        "topic": "eviction",
+        "text": "This agreement is a licence for residence and shall automatically terminate on expiry of the licence period stated above, at which point the licensee must vacate.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_LICENCE_001",
+          "CENTRAL_EVICTION_003",
+          "MH_EVICTION_001",
+          "CENTRAL_EVICTION_004",
+          "MH_EVICTION_004",
+          "MH_EVICTION_002",
+          "MH_EVICTION_005",
+          "MH_EVICTION_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C07",
+        "topic": "maintenance",
+        "text": "The tenant shall be solely responsible for all repairs to the premises, including structural repairs, throughout the tenancy, and the landlord shall bear no repair obligations whatsoever.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_MAINT_001",
+          "MH_MAINT_002",
+          "CENTRAL_MAINT_002",
+          "CENTRAL_MAINT_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C08",
+        "topic": "maintenance",
+        "text": "The landlord shall carry out structural repairs, and any such repair costing above a certain threshold may result in a permitted rent increase.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_MAINT_001",
+          "MH_MAINT_002",
+          "CENTRAL_MAINT_002",
+          "CENTRAL_MAINT_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C09",
+        "topic": "registration",
+        "text": "This leave and license agreement shall be registered as required under applicable law, and the licensee shall bear the registration cost.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_REG_001",
+          "CENTRAL_REG_003",
+          "CENTRAL_REG_001",
+          "CENTRAL_REG_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Maharashtra"
+        ]
+      },
+      {
+        "clause_id": "MH-C10",
+        "topic": "rent_escalation",
+        "text": "The licence fee shall increase by four percent annually, compounded, at the landlord's discretion.",
+        "matched": true,
+        "retrieved_ids": [
+          "MH_RENT_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Maharashtra"
+        ]
+      }
+    ],
+    "Delhi": [
+      {
+        "clause_id": "DL-C01",
+        "topic": "security_deposit",
+        "text": "The tenant shall deposit an amount equal to twelve months' rent as an interest-free, refundable security deposit.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_SEC_001",
+          "DL_SEC_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C02",
+        "topic": "security_deposit",
+        "text": "The landlord may claim a premium of Rs. 5,00,000 in addition to rent as a condition for granting this tenancy.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_SEC_001",
+          "DL_SEC_002"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C03",
+        "topic": "notice",
+        "text": "This tenancy may be terminated by either party giving one month's written notice.",
+        "matched": true,
+        "retrieved_ids": [
+          "CENTRAL_EVICTION_003",
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C04",
+        "topic": "notice",
+        "text": "The landlord reserves the right to terminate this tenancy at will without notice, for any reason.",
+        "matched": true,
+        "retrieved_ids": [
+          "CENTRAL_EVICTION_003",
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C05",
+        "topic": "eviction",
+        "text": "The landlord may recover possession of the premises if the tenant fails to pay rent within two months of a written demand for arrears.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_EVICTION_002",
+          "CENTRAL_EVICTION_003",
+          "CENTRAL_EVICTION_004",
+          "DL_EVICTION_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C06",
+        "topic": "eviction",
+        "text": "The landlord may recover possession at any time without any grounds or Controller's order, simply upon giving notice to the tenant.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_EVICTION_002",
+          "CENTRAL_EVICTION_003",
+          "CENTRAL_EVICTION_004",
+          "DL_EVICTION_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C07",
+        "topic": "maintenance",
+        "text": "The landlord shall keep the premises in good and tenantable repair at all times, and the tenant may deduct repair costs from rent if the landlord fails to act after notice.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_MAINT_001",
+          "CENTRAL_MAINT_003",
+          "CENTRAL_MAINT_002",
+          "DL_MAINT_004"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C08",
+        "topic": "maintenance",
+        "text": "The tenant shall be responsible for all repairs to the premises, including major structural repairs, without exception.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_MAINT_001",
+          "DL_MAINT_004",
+          "CENTRAL_MAINT_002",
+          "CENTRAL_MAINT_003"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C09",
+        "topic": "rent_escalation",
+        "text": "Rent shall be increased by 15% every eleven months at the sole discretion of the landlord, without any statutory basis cited.",
+        "matched": true,
+        "retrieved_ids": [
+          "DL_RENT_001",
+          "DL_NOTICE_001"
+        ],
+        "retrieved_jurisdictions": [
+          "Delhi"
+        ]
+      },
+      {
+        "clause_id": "DL-C10",
+        "topic": "registration",
+        "text": "This rent agreement shall not be registered with any authority, and the parties waive any right to registration.",
+        "matched": true,
+        "retrieved_ids": [
+          "CENTRAL_REG_002",
+          "CENTRAL_REG_001",
+          "CENTRAL_REG_003",
+          "DL_REG_004"
+        ],
+        "retrieved_jurisdictions": [
+          "Central",
+          "Delhi"
+        ]
+      }
+    ]
+  }
+}

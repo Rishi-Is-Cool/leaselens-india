@@ -1,0 +1,24 @@
+{
+  "id": "MH_EVICTION_004",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "eviction",
+    "bona_fide_requirement",
+    "landlord_occupation"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 16(1)(g), 16(2), 16(3)",
+  "citation": "Section 16(1)(g), 16(2), 16(3), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "(g) that the premises are reasonably and bona fide required by the landlord for occupation by himself or by any person for whose benefit the premises are held or where the landlord is a trustee of a public charitable trust that the premises are required for occupation for the purposes of the trust; or (2) No decree for eviction shall be passed on the ground, specified in clause (g) of sub-section (1), if court is satisfied that, having regard to all the circumstances of the case including the question whether other reasonable accommodation is available for the landlord or the tenant, greater hardship would be caused by passing the decree than by refusing to pass it. Where the court is satisfied that no hardship would be caused either to the tenant or to the landlord by passing the decree in respect of such part of the premises, the court shall the decree in respect of such part only. Explanation.— For the purposes of clause (g) of sub-section (1) the expression “landlord” shall not include a rent-farmer or rent-collector or estate-manager. (3) A landlord shall not be entitled to recover possession of any premises under the provisions of clause (g) of sub-section (1) if the premises are let to the Central Government in a cantonment area and such premises, are being used for residence by members of the armed forces of the Union, or their families.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-26",
+  "notes": "Clause (g) allows recovery where the premises are 'reasonably and bona fide required' by the landlord (or a beneficiary, or a public charitable trust) for occupation. This is NOT an unconditional right: sub-section (2) requires the court to weigh a mandatory comparative-hardship test between landlord and tenant before granting the decree, and permits a partial decree limited to the part causing no hardship. The Explanation to sub-section (2) excludes a rent-farmer, rent-collector or estate-manager from counting as 'landlord' for this ground. Sub-section (3) creates a specific carve-out: this ground is unavailable where the premises are let to the Central Government in a cantonment area for residence of armed forces members/families.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to a 'tenant'/'landlord' as defined under the Maharashtra Rent Control Act, 1999; a court-adjudicated ground subject to the mandatory hardship balancing test in sub-section (2), not a self-executing right to repossess on a bare claim of need.",
+  "applies_to_clause_examples": [
+    "Landlord may terminate this agreement at any time if the landlord wishes to occupy the premises, with no consideration of tenant hardship.",
+    "Clause purporting to give the landlord an unconditional right to reclaim the premises for personal use."
+  ]
+}

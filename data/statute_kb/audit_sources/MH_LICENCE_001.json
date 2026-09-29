@@ -1,0 +1,25 @@
+{
+  "id": "MH_LICENCE_001",
+  "jurisdiction": "Maharashtra",
+  "topic_tags": [
+    "licence_expiry",
+    "possession_after_expiry",
+    "overstay"
+  ],
+  "act": "Maharashtra Rent Control Act, 1999",
+  "act_number": "Mah. Act No. 18 of 2000",
+  "section": "Section 24",
+  "citation": "Section 24, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+  "excerpt_text": "(1) Notwithstanding anything contained in this Act, a licensee in possession or occupation of premises given to him on licence for residence shall deliver possession of such premises to the landlord on expiry of the period of licence; and on the failure of the licensee to so deliver the possession of the licensed premises, a landlord shall be entitled to recover possession of such premises from a licensee, on the expiry of the period of licence, by making an application to the Competent Authority, and, the Competent Authority, on being satisfied that the period of licence has expired, shall pass an order for eviction of a licensee. (2) Any licensee who does not deliver possession of the premises to the landlord on expiry of the period of licence and continues to be in possession of the licensed premises till he is dispossessed by the Competent Authority shall be liable to pay damages at double the rate of the licence fee or charge of the premises fixed under the agreement of licence. (3) The Competent Authority shall not entertain any claim of whatever nature from any other person who is not a licensee according to the agreement of licence. Explanation.—For the purposes of this section,— (a) the expression \"landlord\" includes a successor-in-interest who becomes the landlord of the premises as a result of death of such landlord; but does not include a tenant or a sub-tenant who has given premises on licence; (b) an agreement of licence in writing shall be conclusive evidence of the fact stated therein.",
+  "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+  "last_verified_date": "2026-09-25",
+  "notes": "Section 24 does not prescribe a fixed statutory notice period. It addresses expiry of a residential leave-and-license period and the consequences of continued occupation after expiry. Upon expiry, the licensee is required to deliver possession to the landlord. Section 24(2) provides for damages at double the licence fee or charge fixed under the licence agreement where the licensee continues in possession until dispossession by the Competent Authority. Explanation (b) provides that a written licence agreement is conclusive evidence of the facts stated in it.",
+  "confidence": "verified_primary_text",
+  "source_type": "primary_legislation",
+  "applicability": "Applies to licensees in possession or occupation of residential premises given on licence under Section 24 of the Maharashtra Rent Control Act, 1999.",
+  "applies_to_clause_examples": [
+    "This licence agreement ends on [date] and the licensee must vacate upon expiry.",
+    "The agreement is silent about what happens when the licence period expires.",
+    "The licensee remains in possession after expiry of the licence period."
+  ]
+}
