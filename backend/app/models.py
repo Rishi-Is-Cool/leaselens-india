@@ -28,6 +28,10 @@ class Document(Base):
     section_headings: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     signature_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    # Hard deletion deadline; see purge_expired_documents.
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True, index=True
+    )
 
     clauses: Mapped[list[Clause]] = relationship(
         back_populates="document",

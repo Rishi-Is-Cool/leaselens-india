@@ -17,6 +17,8 @@ class HealthResponse(BaseModel):
     status: str
     service: str
     environment: str
+    demo_mode: bool
+    retention_hours: int
     database: DatabaseHealth
 
 
@@ -30,6 +32,8 @@ def health() -> HealthResponse:
         status="ok" if db.connected else "degraded",
         service=settings.app_name,
         environment=settings.environment,
+        demo_mode=settings.demo_mode,
+        retention_hours=settings.retention_hours,
         database=DatabaseHealth(
             connected=db.connected,
             server_version=db.server_version,

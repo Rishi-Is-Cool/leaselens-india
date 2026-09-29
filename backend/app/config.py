@@ -13,6 +13,11 @@ class Settings(BaseSettings):
     environment: str = "development"
     database_url: str = ""
     cors_origins: str = "http://localhost:5173"
+    # Uploaded leases are personal data. The full opt-in-to-save policy is Phase 7 work;
+    # until then every upload is deleted after this window, with no way to retain it.
+    retention_hours: int = 24
+    # Shown in the UI so nobody mistakes an unfinished pipeline for a finished product.
+    demo_mode: bool = False
 
     @property
     def cors_origin_list(self) -> list[str]:
