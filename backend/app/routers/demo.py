@@ -17,9 +17,23 @@ RAW_PATH = Path(__file__).resolve().parents[3] / "data" / "phase4_raw_results.js
 SAMPLE_PATH = Path(__file__).resolve().parents[3] / "data" / "phase4_demo_safe_sample.json"
 
 
+def _load(path: Path) -> dict[str, dict]:
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
 def _sample() -> dict[str, dict]:
-    path = RAW_PATH if RAW_PATH.exists() else SAMPLE_PATH
-    return json.loads(path.read_text(encoding="utf-8"))
+    """Best saved record per document.
+
+    The full-corpus run was cut short by a daily token cap, so most of its clauses carry
+    an error instead of an explanation. The verified-clean sample is therefore laid over
+    it per document, rather than the whole file being preferred or ignored: a document in
+    both takes the clean record, and the rest keep whatever the full run did produce.
+    """
+    return {**_load(RAW_PATH), **_load(SAMPLE_PATH)}
+
+
+def _explained(document: dict) -> int:
+    return sum(1 for clause in document.get("clauses", []) if clause.get("explanation"))
 
 
 @router.get("/documents")
@@ -29,6 +43,7 @@ def list_analysed_documents() -> list[dict]:
             "filename": filename,
             "jurisdiction": document.get("jurisdiction"),
             "clause_count": len(document.get("clauses", [])),
+            "explained_count": _explained(document),
             "connection_count": len(document.get("cross_clause", [])),
         }
         for filename, document in _sample().items()

@@ -5,19 +5,20 @@ not as they are written.
 
 ## A. Do first — demo blockers
 
-- [ ] **Commit and push the working UI.** Uncommitted: frontend rebuild (`App.tsx`,
-      `api.ts`, `styles.css`), `backend/app/routers/demo.py`, `main.py`, `documents.py`
-      (list endpoint), `test/maharashtra.pdf`. None of it is on GitHub yet.
-- [ ] Add `*.pid` to `.gitignore` (`backend/.server.pid`, `.frontend-server.pid`).
-- [ ] **Fix the demo data.** `demo.py:21` prefers `data/phase4_raw_results.json`, which has
-      82 errors in 92 clauses and 0 cross-clause connections. Point it at the clean
-      sample, or regenerate the results (back up first).
-- [ ] **Fix CI (red since Sep 22).** `tests/test_retention.py` fails on an empty Postgres
-      because the `documents` table doesn't exist there. 117 pass, 2 fail.
-- [ ] Install missing deps: `pip install -r backend/requirements.txt` (`numpy` and
-      `openpyxl` missing, so 5 test files cannot be collected locally).
-- [ ] Put Tesseract on PATH (`C:\Program Files\Tesseract-OCR`).
-- [ ] Rotate exposed secrets: Supabase `service_role`, `sb_secret_`, and the DB password.
+- [x] **Commit and push the working UI** (`9662a21`).
+- [x] Add `*.pid` to `.gitignore`.
+- [x] **Fix the demo data.** The endpoint now serves the best record per document: the
+      clean Maharashtra sample (13/13 explained, 2 connections) over the broken full run.
+      The other 8 samples still have risk labels only. They cannot be regenerated until LLM
+      quota is available (see B), and the UI says so rather than showing blanks.
+- [ ] **Fix CI (red since Sep 22).** Retention tests now create their tables. Passes
+      locally (125 passed); **confirm green on the next CI run before ticking.**
+- [x] Install missing deps (`numpy`, `openpyxl`, `scikit-learn`, `sentence-transformers`).
+      All test files now collect; 125 passed locally.
+- [x] Tesseract: code now finds the default Windows install (or `TESSERACT_CMD`), no PATH
+      edit needed. Verified: the image-only page of the West Bengal form routes to OCR.
+- [ ] **Rotate exposed secrets** (you must do this in the dashboards): Supabase
+      `service_role` and `sb_secret_` keys, and the database password.
 
 ## B. Product gaps
 
@@ -50,6 +51,9 @@ not as they are written.
 - [ ] Opt-in "save to account" option (24h auto-delete is already enforced)
 - [ ] Privacy note visible before upload
 - [ ] Plan for Supabase free-tier pausing after ~7 idle days
+- [ ] **Scope `GET /documents` before any public deploy.** It lists every recent upload
+      (filename and id) to anyone, and `GET /documents/{id}` returns the full clauses. On
+      a shared host that exposes other people's leases. Needs per-session ownership.
 
 ## C. Docs that currently say untrue things
 
@@ -61,7 +65,7 @@ not as they are written.
 
 ## D. Done and verified
 
-- [x] Phases 0–4 built; CI shows 117 tests passing
+- [x] Phases 0–4 built; 125 tests pass locally
 - [x] Segmentation 100% (92/92) on 9 synthetic leases; content coverage 99.2% mean
 - [x] 24h upload retention enforced and tested against Supabase
 - [x] Code on GitHub with single-author history; no secrets found in full git history

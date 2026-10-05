@@ -7,6 +7,7 @@ import {
   listDocuments,
   uploadDocument,
   type AnalysedClause,
+  type AnalysisSummary,
   type DemoDocument,
   type HealthResponse,
   type ParsedDocument,
@@ -209,7 +210,7 @@ function AnalysisLibrary({
   onOpen: (filename: string) => void;
   current: string | null;
 }) {
-  const [items, setItems] = useState<{ filename: string; jurisdiction: string | null }[]>([]);
+  const [items, setItems] = useState<AnalysisSummary[]>([]);
 
   useEffect(() => {
     listAnalyses().then(setItems).catch(() => setItems([]));
@@ -228,7 +229,14 @@ function AnalysisLibrary({
           <span className="document-icon">◆</span>
           <span>
             <strong>{item.filename.replace(/^\d+_/, "").replace(/\.pdf$/i, "")}</strong>
-            <small>{item.jurisdiction ?? "Jurisdiction not supported yet"}</small>
+            <small>
+              {item.jurisdiction ?? "Jurisdiction not supported yet"} ·{" "}
+              {item.explained_count === item.clause_count
+                ? "fully explained"
+                : item.explained_count === 0
+                  ? "risk labels only"
+                  : `${item.explained_count}/${item.clause_count} explained`}
+            </small>
           </span>
         </button>
       ))}
@@ -293,6 +301,8 @@ function AnalysisResult({ document }: { document: DemoDocument }) {
     {} as Record<string, number>,
   );
 
+  const unexplained = document.clauses.filter((c) => !c.explanation).length;
+
   return (
     <div className="result analysis-result">
       <div className="result-header">
@@ -306,6 +316,14 @@ function AnalysisResult({ document }: { document: DemoDocument }) {
         </div>
         <span className="demo-chip">Analysis ready</span>
       </div>
+
+      {unexplained > 0 && (
+        <p className="notice">
+          {unexplained === document.clauses.length
+            ? "This saved review has risk labels only — plain-language explanations were not generated for it."
+            : `Plain-language explanations are missing for ${unexplained} of ${document.clauses.length} clauses in this saved review.`}
+        </p>
+      )}
 
       <div className="risk-summary">
         <div>

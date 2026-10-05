@@ -82,6 +82,7 @@ export type AnalysisSummary = {
   filename: string;
   jurisdiction: string | null;
   clause_count: number;
+  explained_count: number;
   connection_count: number;
 };
 

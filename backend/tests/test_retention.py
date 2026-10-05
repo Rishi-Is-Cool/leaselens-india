@@ -5,11 +5,19 @@ from datetime import datetime, timedelta, timezone
 import pytest
 from sqlalchemy import func, select
 
-from app.db import SessionLocal
+from app.db import SessionLocal, create_tables
 from app.models import Clause, Document
 from app.retention import expiry_for_new_upload, purge_expired_documents
 
 pytestmark = pytest.mark.skipif(SessionLocal is None, reason="DATABASE_URL not configured")
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _tables():
+    """The API creates its tables on startup, which these tests bypass. A real database
+    already has them; CI's empty Postgres does not, so create them idempotently."""
+    if SessionLocal is not None:
+        create_tables()
 
 
 def _document(expires_at):

@@ -10,9 +10,12 @@ with leases that carry no numbering or headings at all.
 from __future__ import annotations
 
 import io
+import os
 import re
+import shutil
 import statistics
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Literal
 
 import pdfplumber
@@ -181,12 +184,27 @@ def _group_lines_into_paragraphs(lines: list[tuple[float, str]]) -> list[str]:
     return [p for p in paragraphs if p]
 
 
+# The Windows installer does not add Tesseract to PATH, so a default install is invisible
+# to pytesseract. Check the standard location rather than making every developer edit
+# their system PATH; TESSERACT_CMD overrides it for any other layout.
+_WINDOWS_TESSERACT = Path("C:/Program Files/Tesseract-OCR/tesseract.exe")
+
+
+def _locate_tesseract(pytesseract) -> None:
+    configured = os.environ.get("TESSERACT_CMD")
+    if configured:
+        pytesseract.pytesseract.tesseract_cmd = configured
+    elif shutil.which("tesseract") is None and _WINDOWS_TESSERACT.exists():
+        pytesseract.pytesseract.tesseract_cmd = str(_WINDOWS_TESSERACT)
+
+
 def _ocr_page_image(page) -> str:
     try:
         import pytesseract
     except ImportError as exc:  # pragma: no cover - dependency is declared
         raise OcrUnavailableError("pytesseract is not installed") from exc
 
+    _locate_tesseract(pytesseract)
     from pytesseract import TesseractNotFoundError
 
     image = page.to_image(resolution=300).original
@@ -237,6 +255,7 @@ def extract_image(data: bytes) -> ExtractedDocument:
     except ImportError as exc:  # pragma: no cover - dependencies are declared
         raise OcrUnavailableError("pytesseract and Pillow are required for image input") from exc
 
+    _locate_tesseract(pytesseract)
     from pytesseract import TesseractNotFoundError
 
     try:
