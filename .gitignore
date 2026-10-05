@@ -36,3 +36,6 @@ Thumbs.db
 # cached embeddings
 data/.embeddings_*.npy
 data/.llm_cache.jsonl
+
+# Local dev server process ids
+*.pid

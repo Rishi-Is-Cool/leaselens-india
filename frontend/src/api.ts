@@ -30,27 +30,95 @@ export type ParsedDocument = {
   extraction_method: "text" | "ocr" | "mixed";
   clause_count: number;
   clauses: Clause[];
+  title_block: string[];
+  section_headings: string[];
+  signature_block: string[];
 };
 
-export async function fetchHealth(): Promise<HealthResponse> {
-  const response = await fetch(`${API_BASE}/health`);
-  if (!response.ok) {
-    throw new Error(`Health check failed with HTTP ${response.status}`);
-  }
-  return response.json();
-}
+// --- Phase 2-4: risk label, statute evidence, plain-language explanation ---
 
-export async function uploadDocument(file: File): Promise<ParsedDocument> {
-  const body = new FormData();
-  body.append("file", file);
+export type RiskLabel = "GREEN" | "YELLOW" | "RED";
 
-  const response = await fetch(`${API_BASE}/documents`, { method: "POST", body });
+export type StatuteSupport = {
+  entry_id: string;
+  how_it_applies: string;
+};
+
+export type Explanation = {
+  clause_id: string;
+  risk_label: RiskLabel;
+  document_says: string;
+  concern: string;
+  statute_support: StatuteSupport[];
+  disclaimer: string;
+};
+
+export type AnalysedClause = {
+  clause_id: string;
+  text: string;
+  risk_label: RiskLabel;
+  risk_confidence: number;
+  topic: string | null;
+  retrieved_statutes: unknown[];
+  explanation: Explanation | null;
+  error: string | null;
+};
+
+export type CrossClause = {
+  clause_id_a: string;
+  clause_id_b: string;
+  relationship_type: string;
+  explanation: string;
+};
+
+export type DemoDocument = {
+  filename: string;
+  jurisdiction: string | null;
+  clauses: AnalysedClause[];
+  cross_clause: CrossClause[];
+};
+
+export type AnalysisSummary = {
+  filename: string;
+  jurisdiction: string | null;
+  clause_count: number;
+  connection_count: number;
+};
+
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${API_BASE}${path}`, init);
   if (!response.ok) {
     const detail = await response
       .json()
       .then((b) => b.detail)
       .catch(() => null);
-    throw new Error(detail ?? `Upload failed with HTTP ${response.status}`);
+    throw new Error(detail ?? `Request failed with HTTP ${response.status}`);
   }
   return response.json();
+}
+
+export function fetchHealth(): Promise<HealthResponse> {
+  return request<HealthResponse>("/health");
+}
+
+export function listDocuments(): Promise<ParsedDocument[]> {
+  return request<ParsedDocument[]>("/documents");
+}
+
+export function fetchDocument(id: string): Promise<ParsedDocument> {
+  return request<ParsedDocument>(`/documents/${id}`);
+}
+
+export function listAnalyses(): Promise<AnalysisSummary[]> {
+  return request<AnalysisSummary[]>("/analysis/documents");
+}
+
+export function fetchAnalysis(filename: string): Promise<DemoDocument> {
+  return request<DemoDocument>(`/analysis/documents/${encodeURIComponent(filename)}`);
+}
+
+export function uploadDocument(file: File): Promise<ParsedDocument> {
+  const body = new FormData();
+  body.append("file", file);
+  return request<ParsedDocument>("/documents", { method: "POST", body });
 }

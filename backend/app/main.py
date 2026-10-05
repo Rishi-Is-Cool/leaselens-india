@@ -8,7 +8,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from app.config import get_settings
 from app.db import create_tables, engine
-from app.routers import documents, health
+from app.routers import demo, documents, health
 
 settings = get_settings()
 
@@ -38,3 +38,4 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(documents.router)
+app.include_router(demo.router)

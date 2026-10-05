@@ -5,7 +5,8 @@ import uuid
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.exc import OperationalError
-from sqlalchemy.orm import Session
+from sqlalchemy import select
+from sqlalchemy.orm import Session, selectinload
 
 from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
@@ -43,6 +44,14 @@ class DocumentOut(BaseModel):
     title_block: list[str]
     section_headings: list[str]
     signature_block: list[str]
+
+
+class DocumentSummary(BaseModel):
+    id: uuid.UUID
+    filename: str
+    page_count: int
+    extraction_method: str
+    clause_count: int
 
 
 @router.post("", response_model=DocumentOut, status_code=status.HTTP_201_CREATED)
@@ -116,6 +125,28 @@ async def upload_document(
         ) from exc
 
     return _to_out(document)
+
+
+@router.get("", response_model=list[DocumentSummary])
+def list_documents(session: Session = Depends(get_session)) -> list[DocumentSummary]:
+    """Return the latest temporary uploads for the local review screen."""
+    purge_expired_documents(session)
+    documents = session.scalars(
+        select(Document)
+        .options(selectinload(Document.clauses))
+        .order_by(Document.created_at.desc())
+        .limit(12)
+    ).all()
+    return [
+        DocumentSummary(
+            id=document.id,
+            filename=document.filename,
+            page_count=document.page_count,
+            extraction_method=document.extraction_method,
+            clause_count=len(document.clauses),
+        )
+        for document in documents
+    ]
 
 
 @router.get("/{document_id}", response_model=DocumentOut)
