@@ -11,8 +11,8 @@ not as they are written.
       clean Maharashtra sample (13/13 explained, 2 connections) over the broken full run.
       The other 8 samples still have risk labels only. They cannot be regenerated until LLM
       quota is available (see B), and the UI says so rather than showing blanks.
-- [ ] **Fix CI (red since Sep 22).** Retention tests now create their tables. Passes
-      locally (125 passed); **confirm green on the next CI run before ticking.**
+- [x] **Fix CI (red since Sep 22).** Retention tests now create their tables. Confirmed
+      green on GitHub Actions: 125 passed, backend and frontend jobs both succeed.
 - [x] Install missing deps (`numpy`, `openpyxl`, `scikit-learn`, `sentence-transformers`).
       All test files now collect; 125 passed locally.
 - [x] Tesseract: code now finds the default Windows install (or `TESSERACT_CMD`), no PATH
