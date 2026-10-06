@@ -15,6 +15,7 @@ a jurisdiction Phase 3 doesn't cover).
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from app.classifier.api import classify_clause
@@ -73,12 +74,21 @@ def explain_document(
     explain_client: LLMClient | None = None,
     cross_clause_client: LLMClient | None = None,
     run_cross_clause: bool = True,
+    explain: bool = True,
+    on_progress: Callable[[int, int], None] | None = None,
 ) -> DocumentExplanations:
     """clauses: objects with `.clause_id`, `.text`, and optionally `.section_heading`
-    (matching app.ingestion.segment.Clause)."""
-    result = DocumentExplanations(jurisdiction=jurisdiction)
+    (matching app.ingestion.segment.Clause).
 
-    for clause in clauses:
+    `explain=False` skips the LLM explanation step and still returns risk labels and
+    retrieved statutes, which need no provider. `on_progress(done, total)` is called after
+    each clause so a caller can report progress on a long run."""
+    result = DocumentExplanations(jurisdiction=jurisdiction)
+    total = len(clauses)
+
+    for done, clause in enumerate(clauses, start=1):
+        if on_progress is not None and done > 1:
+            on_progress(done - 1, total)
         heading = getattr(clause, "section_heading", None)
         topic, retrieved = _retrieve_for_clause(clause.text, heading, jurisdiction)
         try:
@@ -91,14 +101,17 @@ def explain_document(
             ))
             continue
 
-        try:
-            explanation = generate_explanation(
-                clause.clause_id, clause.text, classification.label, retrieved, client=explain_client
-            )
-            grounding = check_grounding(explanation, clause.text, retrieved)
-            error = None
-        except Exception as exc:  # noqa: BLE001 - one clause's failure must not stop the batch
-            explanation, grounding, error = None, None, f"explanation generation failed: {exc}"
+        if not explain:
+            explanation, grounding, error = None, None, None
+        else:
+            try:
+                explanation = generate_explanation(
+                    clause.clause_id, clause.text, classification.label, retrieved, client=explain_client
+                )
+                grounding = check_grounding(explanation, clause.text, retrieved)
+                error = None
+            except Exception as exc:  # noqa: BLE001 - one clause's failure must not stop the batch
+                explanation, grounding, error = None, None, f"explanation generation failed: {exc}"
 
         result.clauses.append(ClauseExplanation(
             clause_id=clause.clause_id,
@@ -126,4 +139,6 @@ def explain_document(
             except Exception:  # noqa: BLE001 - a failed pair check must not stop the batch
                 continue
 
+    if on_progress is not None:
+        on_progress(total, total)
     return result

@@ -22,8 +22,14 @@ not as they are written.
 
 ## B. Product gaps
 
-- [ ] **Live analysis endpoint.** No route runs classify + explain on an uploaded lease, so
-      new uploads only get clause splitting. (~42 LLM calls for a 13-clause document.)
+- [x] **Live analysis of uploaded leases** (local app). Upload → state inferred and confirmed
+      by the user → background review with a progress bar → risk level for every clause +
+      matching statutes with official links. Stored per document, re-runnable with a
+      different state, deleted with the upload. Verified in the browser on a Delhi lease.
+- [ ] **Plain-language explanations on uploads need an LLM key.** Without one the review
+      runs on the offline model (less accurate) and skips explanations + cross-clause links,
+      and says so. Setting `LLM_BASE_URL` / `LLM_API_KEY` / `LLM_MODEL` in `.env` turns them
+      on with no code change (~42 calls for a 13-clause lease).
 - [ ] LLM capacity: add a paid key, or verify fresh free-tier headroom before any live run.
 - [ ] Re-run Phase 4 on the full corpus and keep a clean copy. The only clean data now is
       13 Maharashtra clauses; the 92/92 grounding and 29-connection runs are lost.
@@ -36,7 +42,8 @@ not as they are written.
 
 **Phase 6 — frontend**
 - [ ] Obligation map (tenant must-do / landlord can-do / payments / key dates)
-- [ ] Jurisdiction selector with a clear "not supported yet" note
+- [x] Jurisdiction selector: inferred from the lease, confirmed by the user, with an
+      "Another state (no law check yet)" option
 - [ ] Highlighting on the document itself
 - [ ] Phone-width check of the new analysis view
 
@@ -70,7 +77,7 @@ not as they are written.
 
 ## D. Done and verified
 
-- [x] Phases 0–4 built; 125 tests pass locally
+- [x] Phases 0–4 built; 141 tests pass locally
 - [x] Segmentation 100% (92/92) on 9 synthetic leases; content coverage 99.2% mean
 - [x] 24h upload retention enforced and tested against Supabase
 - [x] Code on GitHub with single-author history; no secrets found in full git history

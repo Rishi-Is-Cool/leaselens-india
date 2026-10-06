@@ -2,16 +2,17 @@ from __future__ import annotations
 
 import uuid
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, BackgroundTasks, Body, Depends, File, HTTPException, UploadFile, status
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.exc import OperationalError
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
+from app.analysis import service as analysis_service
 from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
 from app.ingestion.segment import segment_document
-from app.models import Clause, Document
+from app.models import Analysis, Clause, Document
 from app.retention import expiry_for_new_upload, purge_expired_documents
 
 router = APIRouter(prefix="/documents", tags=["documents"])
@@ -155,6 +156,45 @@ def get_document(document_id: uuid.UUID, session: Session = Depends(get_session)
     if document is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found.")
     return _to_out(document)
+
+
+class AnalysisRequest(BaseModel):
+    # None means "a state we hold no law for": risk levels still run, statutes are skipped.
+    jurisdiction: str | None = None
+
+
+def _document_or_404(session: Session, document_id: uuid.UUID) -> Document:
+    document = session.get(Document, document_id)
+    if document is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found.")
+    return document
+
+
+@router.get("/{document_id}/analysis")
+def get_analysis(document_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+    """Status, progress and (once done) the result. Before any run it also returns the
+    jurisdiction inferred from the lease, which the user confirms before starting."""
+    document = _document_or_404(session, document_id)
+    return analysis_service.describe(document, session.get(Analysis, document_id))
+
+
+@router.post("/{document_id}/analysis", status_code=status.HTTP_202_ACCEPTED)
+def start_analysis(
+    document_id: uuid.UUID,
+    background: BackgroundTasks,
+    request: AnalysisRequest = Body(default_factory=AnalysisRequest),
+    session: Session = Depends(get_session),
+) -> dict:
+    document = _document_or_404(session, document_id)
+    try:
+        analysis = analysis_service.start(session, document, request.jurisdiction)
+    except analysis_service.AnalysisAlreadyRunning as exc:
+        raise HTTPException(status.HTTP_409_CONFLICT, str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_ENTITY, str(exc)) from exc
+    # Runs after the response is sent, so the request returns immediately and the UI polls.
+    background.add_task(analysis_service.run, document.id)
+    return analysis_service.describe(document, analysis)
 
 
 def _to_out(document: Document) -> DocumentOut:

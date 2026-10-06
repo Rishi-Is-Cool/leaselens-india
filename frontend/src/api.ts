@@ -12,6 +12,7 @@ export type HealthResponse = {
   environment: string;
   demo_mode: boolean;
   retention_hours: number;
+  llm_configured: boolean;
   database: {
     connected: boolean;
     server_version: string | null;
@@ -67,6 +68,7 @@ export type Statute = {
 
 export type AnalysedClause = {
   clause_id: string;
+  section_heading?: string | null;
   text: string;
   risk_label: RiskLabel;
   risk_confidence: number;
@@ -157,4 +159,39 @@ export function uploadDocument(file: File): Promise<ParsedDocument> {
   const body = new FormData();
   body.append("file", file);
   return request<ParsedDocument>("/documents", { method: "POST", body });
+}
+
+// --- Live analysis of an uploaded document (Phases 2-4 run on demand) ---
+
+export type JurisdictionHint = {
+  jurisdiction: string | null;
+  evidence: string[];
+  unsupported_state: string | null;
+  ambiguous: boolean;
+};
+
+export type LiveAnalysis = {
+  document_id: string;
+  filename: string;
+  supported_jurisdictions: string[];
+  jurisdiction_hint: JurisdictionHint;
+  llm_configured: boolean;
+  status: "not_started" | "running" | "done" | "failed";
+  jurisdiction: string | null;
+  explanations_available: boolean;
+  progress: { done: number; total: number };
+  result: { clauses: AnalysedClause[]; cross_clause: CrossClause[] } | null;
+  error: string | null;
+};
+
+export function fetchLiveAnalysis(documentId: string): Promise<LiveAnalysis> {
+  return request<LiveAnalysis>(`/documents/${documentId}/analysis`);
+}
+
+export function startLiveAnalysis(documentId: string, jurisdiction: string | null): Promise<LiveAnalysis> {
+  return request<LiveAnalysis>(`/documents/${documentId}/analysis`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ jurisdiction }),
+  });
 }

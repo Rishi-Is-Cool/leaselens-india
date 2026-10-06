@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 
 from sqlalchemy import CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, String, Text, func
-from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 from sqlalchemy.dialects.postgresql import UUID as PgUUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
@@ -87,4 +87,32 @@ class StatuteEntry(Base):
             "jurisdiction IN ('Maharashtra', 'Delhi', 'Central')", name="ck_statute_entries_jurisdiction"
         ),
         Index("ix_statute_entries_jurisdiction", "jurisdiction"),
+    )
+
+
+class Analysis(Base):
+    """Risk, statute and explanation review of one uploaded document.
+
+    One row per document. It is written by a background job that can take minutes when an
+    LLM provider is configured, so it carries a status and progress the UI polls. It cascades
+    with its document, so the upload retention window removes it too.
+    """
+
+    __tablename__ = "analyses"
+
+    document_id: Mapped[uuid.UUID] = mapped_column(
+        PgUUID(as_uuid=True), ForeignKey("documents.id", ondelete="CASCADE"), primary_key=True
+    )
+    status: Mapped[str] = mapped_column(String(16))  # running | done | failed
+    jurisdiction: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    explanations_available: Mapped[bool] = mapped_column(default=False)
+    progress_done: Mapped[int] = mapped_column(Integer, default=0)
+    progress_total: Mapped[int] = mapped_column(Integer, default=0)
+    # {"clauses": [...], "cross_clause": [...]}, shaped like the saved Phase 4 results so the
+    # same UI renders both.
+    result: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    error: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )

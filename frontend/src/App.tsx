@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { LiveAnalysisPanel } from "./LiveAnalysis";
 import {
   fetchAnalysis,
   fetchDocument,
@@ -11,6 +12,7 @@ import {
   type AnalysisSummary,
   type DemoDocument,
   type HealthResponse,
+  type LiveAnalysis,
   type ParsedDocument,
 } from "./api";
 
@@ -55,12 +57,10 @@ export default function App() {
     setUpload({ phase: "parsing", filename: file.name });
     try {
       const parsed = await uploadDocument(file);
+      // The uploaded lease is reviewed live; a saved sample with the same filename is a
+      // different document's result and must not stand in for it.
       setSelected(parsed);
-      try {
-        setAnalysis(await fetchAnalysis(parsed.filename));
-      } catch {
-        setAnalysis(null);
-      }
+      setAnalysis(null);
       setUpload({ phase: "parsed" });
       await refreshLibrary();
     } catch (error) {
@@ -193,7 +193,8 @@ export default function App() {
             {analysis ? (
               <AnalysisResult document={analysis} />
             ) : selected ? (
-              <Result
+              <DocumentReview
+                key={selected.id}
                 document={selected}
                 onUploadAnother={() => inputRef.current?.click()}
               />
@@ -320,7 +321,13 @@ function UploadCard({
   );
 }
 
-function AnalysisResult({ document }: { document: DemoDocument }) {
+function AnalysisResult({
+  document,
+  live,
+}: {
+  document: DemoDocument;
+  live?: { explanationsAvailable: boolean; onChangeState: () => void };
+}) {
   const counts = document.clauses.reduce(
     (acc, clause) => ({ ...acc, [clause.risk_label]: (acc[clause.risk_label] ?? 0) + 1 }),
     {} as Record<string, number>,
@@ -332,17 +339,40 @@ function AnalysisResult({ document }: { document: DemoDocument }) {
     <div className="result analysis-result">
       <div className="result-header">
         <div>
-          <span className="eyebrow">LEASE ANALYSIS</span>
+          <span className="eyebrow">{live ? "YOUR LEASE · LIVE REVIEW" : "LEASE ANALYSIS"}</span>
           <h2>{document.filename}</h2>
           <p>
-            {document.jurisdiction ?? "Jurisdiction not supported yet"} ·{" "}
-            {document.clauses.length} clauses analysed · risk, statute, and connection review
+            {document.jurisdiction
+              ? `Checked against ${document.jurisdiction} rental law`
+              : "No state rental law checked"}{" "}
+            · {document.clauses.length} clauses reviewed
           </p>
         </div>
-        <span className="demo-chip">Analysis ready</span>
+        {live ? (
+          <button className="secondary-button" onClick={live.onChangeState}>
+            Change state &amp; re-run
+          </button>
+        ) : (
+          <span className="demo-chip">Analysis ready</span>
+        )}
       </div>
 
-      {unexplained > 0 && (
+      {live && !live.explanationsAvailable && (
+        <p className="notice">
+          Risk levels below come from LeaseLens's offline model, which is less accurate than
+          the full AI review. Plain-language explanations need an AI provider, which isn't set
+          up on this server yet — the matching rental law is still shown where we hold it.
+        </p>
+      )}
+
+      {live && live.explanationsAvailable && unexplained > 0 && (
+        <p className="notice">
+          Plain-language explanations could not be generated for {unexplained} of{" "}
+          {document.clauses.length} clauses (the AI provider may have hit its daily limit).
+        </p>
+      )}
+
+      {!live && unexplained > 0 && (
         <p className="notice">
           {unexplained === document.clauses.length
             ? "This saved review has risk labels only — plain-language explanations were not generated for it."
@@ -414,10 +444,11 @@ function AnalysisClause({ clause }: { clause: AnalysedClause }) {
     <li className={`analysis-clause risk-${clause.risk_label.toLowerCase()}`}>
       <div className="risk-rail">
         <span className="clause-index">{clause.clause_id.replace("c", "")}</span>
-        <span className="risk-label">{wording[clause.risk_label] ?? clause.risk_label}</span>
+        <span className="risk-label">{wording[clause.risk_label] ?? "Not assessed"}</span>
         <small>{Math.round(clause.risk_confidence * 100)}% confidence</small>
       </div>
       <div className="analysis-body">
+        {clause.section_heading && <p className="clause-heading-live">{clause.section_heading}</p>}
         <p className="source-clause">{clause.text}</p>
         {clause.error ? (
           // Provider errors carry rate-limit text and an org id. Neither means anything
@@ -469,6 +500,22 @@ function AnalysisClause({ clause }: { clause: AnalysedClause }) {
               )}
             </>
           )
+        )}
+        {!clause.explanation && clause.retrieved_statutes.length > 0 && (
+          <div className="statute-list">
+            {clause.retrieved_statutes.map((statute) => (
+              <div className="statute" key={statute.entry_id}>
+                <strong>Law that may apply · {statute.citation}</strong>
+                <p>“{statute.excerpt_text.length > 320 ? `${statute.excerpt_text.slice(0, 320)}…` : statute.excerpt_text}”</p>
+                <p className="statute-source">
+                  <a href={statute.source_url} target="_blank" rel="noreferrer">
+                    View the official source
+                  </a>{" "}
+                  · last checked {statute.last_verified_date}
+                </p>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </li>
@@ -554,5 +601,45 @@ function Stat({ label, value }: { label: string; value: string }) {
       <span>{label}</span>
       <strong>{value}</strong>
     </div>
+  );
+}
+
+function DocumentReview({
+  document,
+  onUploadAnother,
+}: {
+  document: ParsedDocument;
+  onUploadAnother: () => void;
+}) {
+  const [analysed, setAnalysed] = useState<DemoDocument | null>(null);
+  const [liveState, setLiveState] = useState<LiveAnalysis | null>(null);
+  const [rerun, setRerun] = useState(0);
+
+  return (
+    <>
+      <LiveAnalysisPanel
+        key={rerun}
+        document={document}
+        forceChoose={rerun > 0 && analysed === null}
+        onResult={(result, state) => {
+          setAnalysed(result);
+          setLiveState(state);
+        }}
+      />
+      {analysed && liveState ? (
+        <AnalysisResult
+          document={analysed}
+          live={{
+            explanationsAvailable: liveState.explanations_available,
+            onChangeState: () => {
+              setAnalysed(null);
+              setRerun((n) => n + 1);
+            },
+          }}
+        />
+      ) : (
+        <Result document={document} onUploadAnother={onUploadAnother} />
+      )}
+    </>
   );
 }

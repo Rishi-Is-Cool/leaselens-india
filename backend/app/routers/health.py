@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 from app.config import get_settings
 from app.db import check_database
+from app.llm_client import is_configured as llm_is_configured
 
 router = APIRouter(tags=["health"])
 
@@ -19,6 +20,7 @@ class HealthResponse(BaseModel):
     environment: str
     demo_mode: bool
     retention_hours: int
+    llm_configured: bool
     database: DatabaseHealth
 
 
@@ -34,6 +36,7 @@ def health() -> HealthResponse:
         environment=settings.environment,
         demo_mode=settings.demo_mode,
         retention_hours=settings.retention_hours,
+        llm_configured=llm_is_configured(),
         database=DatabaseHealth(
             connected=db.connected,
             server_version=db.server_version,

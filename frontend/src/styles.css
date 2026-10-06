@@ -170,3 +170,17 @@ footer{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:0 0 32px;color:
 .raw-clause p{margin-top:.5rem!important}
 
 .statute-source { font-size: 11px; color: #7b8c82; }.statute-source a { color: #2f7a55; font-weight: 600; }
+
+/* live analysis */
+.live-panel { margin-bottom: 22px; padding: 20px 22px; border: 1px solid #d6e5dc; border-radius: 14px; background: linear-gradient(180deg, #f4faf6, #fbfdfb); }
+.live-panel h3 { margin: 4px 0 10px; font: 600 22px "Playfair Display", Georgia, serif; color: #1f3d31; }
+.live-hint { margin: 0 0 14px; color: #4d6157; font-size: 13.5px; line-height: 1.6; }
+.state-select { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; color: #4d6157; font-size: 13px; font-weight: 600; }
+.state-select select { padding: 8px 11px; border: 1px solid #c9dccf; border-radius: 8px; background: white; color: #23463a; font: inherit; font-weight: 500; }
+.muted-small { margin: 0 0 14px; color: #7b8c82; font-size: 12px; line-height: 1.55; }
+.primary-button { padding: 10px 18px; border: 0; border-radius: 9px; background: #1d5a43; color: white; font-weight: 700; font-size: 13px; cursor: pointer; transition: .15s ease; }
+.primary-button:hover:not(:disabled) { background: #174a37; transform: translateY(-1px); }
+.primary-button:disabled { opacity: .6; cursor: progress; }
+.progress { height: 8px; margin: 4px 0 12px; border-radius: 99px; background: #e2ede5; overflow: hidden; }
+.progress > div { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #35a06b, #1d5a43); transition: width .5s ease; }
+.clause-heading-live { margin: 0 0 6px; color: #2f7a55; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
