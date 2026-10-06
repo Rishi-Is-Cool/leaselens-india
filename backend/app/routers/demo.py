@@ -11,6 +11,8 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 
+from app.analysis.service import public_error
+
 router = APIRouter(prefix="/analysis", tags=["analysis"])
 
 RAW_PATH = Path(__file__).resolve().parents[3] / "data" / "phase4_raw_results.json"
@@ -55,4 +57,6 @@ def get_analysis_document(filename: str) -> dict:
     document = _sample().get(filename)
     if document is None:
         raise HTTPException(status_code=404, detail="No saved analysis was found for this filename.")
-    return {"filename": filename, **document}
+    # Saved runs hold raw provider errors (rate-limit text, account ids); serve a category.
+    clauses = [{**clause, "error": public_error(clause.get("error"))} for clause in document.get("clauses", [])]
+    return {"filename": filename, **document, "clauses": clauses}

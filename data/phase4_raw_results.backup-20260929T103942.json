@@ -10,7 +10,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198988, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198988, Re"
       },
       {
         "clause_id": "c002",
@@ -20,7 +20,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198985, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198985, Re"
       },
       {
         "clause_id": "c003",
@@ -30,7 +30,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198985, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198985, Re"
       },
       {
         "clause_id": "c004",
@@ -40,7 +40,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198984, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198984, Re"
       },
       {
         "clause_id": "c005",
@@ -50,7 +50,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198982, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198982, Re"
       },
       {
         "clause_id": "c006",
@@ -73,7 +73,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198981, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198981, Re"
       },
       {
         "clause_id": "c007",
@@ -143,7 +143,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198977, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198977, Re"
       },
       {
         "clause_id": "c008",
@@ -224,7 +224,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199500, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199500, Re"
       },
       {
         "clause_id": "c010",
@@ -346,7 +346,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
       },
       {
         "clause_id": "c011",
@@ -387,7 +387,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
       },
       {
         "clause_id": "c012",
@@ -397,7 +397,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199499, Re"
       },
       {
         "clause_id": "c013",
@@ -407,7 +407,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199498, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199498, Re"
       }
     ],
     "cross_clause": []
@@ -423,7 +423,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199399, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199399, Re"
       },
       {
         "clause_id": "c002",
@@ -433,7 +433,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199398, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199398, Re"
       },
       {
         "clause_id": "c003",
@@ -443,7 +443,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199397, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199397, Re"
       },
       {
         "clause_id": "c004",
@@ -453,7 +453,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199397, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199397, Re"
       },
       {
         "clause_id": "c005",
@@ -463,7 +463,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199396, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199396, Re"
       },
       {
         "clause_id": "c006",
@@ -499,7 +499,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199396, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199396, Re"
       },
       {
         "clause_id": "c007",
@@ -509,7 +509,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199395, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199395, Re"
       },
       {
         "clause_id": "c008",
@@ -582,7 +582,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199395, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199395, Re"
       },
       {
         "clause_id": "c009",
@@ -592,7 +592,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199393, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199393, Re"
       },
       {
         "clause_id": "c010",
@@ -662,7 +662,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199392, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199392, Re"
       },
       {
         "clause_id": "c011",
@@ -672,7 +672,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199391, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199391, Re"
       },
       {
         "clause_id": "c012",
@@ -682,7 +682,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199390, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199390, Re"
       }
     ],
     "cross_clause": []
@@ -698,7 +698,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199652, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199652, Re"
       },
       {
         "clause_id": "c002",
@@ -708,7 +708,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199652, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199652, Re"
       },
       {
         "clause_id": "c003",
@@ -718,7 +718,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199651, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199651, Re"
       },
       {
         "clause_id": "c004",
@@ -728,7 +728,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199649, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199649, Re"
       },
       {
         "clause_id": "c005",
@@ -738,7 +738,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199649, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199649, Re"
       },
       {
         "clause_id": "c006",
@@ -748,7 +748,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199648, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199648, Re"
       },
       {
         "clause_id": "c007",
@@ -758,7 +758,7 @@
         "topic": "registration",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Re"
       },
       {
         "clause_id": "c008",
@@ -768,7 +768,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Re"
       },
       {
         "clause_id": "c009",
@@ -778,7 +778,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Re"
       },
       {
         "clause_id": "c010",
@@ -788,7 +788,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199644, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199644, Re"
       },
       {
         "clause_id": "c011",
@@ -798,7 +798,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199643, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199643, Re"
       },
       {
         "clause_id": "c012",
@@ -808,7 +808,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199643, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199643, Re"
       }
     ],
     "cross_clause": []
@@ -824,7 +824,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Re"
       },
       {
         "clause_id": "c002",
@@ -834,7 +834,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199628, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199628, Re"
       },
       {
         "clause_id": "c003",
@@ -844,7 +844,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199625, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199625, Re"
       },
       {
         "clause_id": "c004",
@@ -854,7 +854,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Re"
       },
       {
         "clause_id": "c005",
@@ -864,7 +864,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Re"
       },
       {
         "clause_id": "c006",
@@ -874,7 +874,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199622, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199622, Re"
       },
       {
         "clause_id": "c007",
@@ -884,7 +884,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199620, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199620, Re"
       }
     ],
     "cross_clause": []
@@ -900,7 +900,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199609, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199609, Re"
       },
       {
         "clause_id": "c002",
@@ -910,7 +910,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199609, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199609, Re"
       },
       {
         "clause_id": "c003",
@@ -920,7 +920,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
       },
       {
         "clause_id": "c004",
@@ -930,7 +930,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
       },
       {
         "clause_id": "c005",
@@ -940,7 +940,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199608, Re"
       },
       {
         "clause_id": "c006",
@@ -950,7 +950,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
       },
       {
         "clause_id": "c007",
@@ -960,7 +960,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
       },
       {
         "clause_id": "c008",
@@ -970,7 +970,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
       },
       {
         "clause_id": "c009",
@@ -980,7 +980,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199607, Re"
       },
       {
         "clause_id": "c010",
@@ -990,7 +990,7 @@
         "topic": "notice",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199606, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199606, Re"
       },
       {
         "clause_id": "c011",
@@ -1000,7 +1000,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199606, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199606, Re"
       },
       {
         "clause_id": "c012",
@@ -1010,7 +1010,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199605, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199605, Re"
       }
     ],
     "cross_clause": []
@@ -1026,7 +1026,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199595, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199595, Re"
       },
       {
         "clause_id": "c002",
@@ -1036,7 +1036,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199595, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199595, Re"
       },
       {
         "clause_id": "c003",
@@ -1046,7 +1046,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
       },
       {
         "clause_id": "c004",
@@ -1056,7 +1056,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
       },
       {
         "clause_id": "c005",
@@ -1066,7 +1066,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Re"
       },
       {
         "clause_id": "c006",
@@ -1076,7 +1076,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199593, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199593, Re"
       },
       {
         "clause_id": "c007",
@@ -1086,7 +1086,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199593, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199593, Re"
       },
       {
         "clause_id": "c008",
@@ -1096,7 +1096,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199592, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199592, Re"
       },
       {
         "clause_id": "c009",
@@ -1106,7 +1106,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199592, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199592, Re"
       },
       {
         "clause_id": "c010",
@@ -1116,7 +1116,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199591, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199591, Re"
       }
     ],
     "cross_clause": []
@@ -1132,7 +1132,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199587, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199587, Re"
       },
       {
         "clause_id": "c002",
@@ -1142,7 +1142,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199586, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199586, Re"
       },
       {
         "clause_id": "c003",
@@ -1152,7 +1152,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199585, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199585, Re"
       },
       {
         "clause_id": "c004",
@@ -1162,7 +1162,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199577, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199577, Re"
       },
       {
         "clause_id": "c005",
@@ -1172,7 +1172,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199577, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199577, Re"
       },
       {
         "clause_id": "c006",
@@ -1182,7 +1182,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199576, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199576, Re"
       },
       {
         "clause_id": "c007",
@@ -1192,7 +1192,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199575, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199575, Re"
       },
       {
         "clause_id": "c008",
@@ -1202,7 +1202,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199574, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199574, Re"
       }
     ],
     "cross_clause": []
@@ -1218,7 +1218,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199563, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199563, Re"
       },
       {
         "clause_id": "c002",
@@ -1228,7 +1228,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199562, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199562, Re"
       },
       {
         "clause_id": "c003",
@@ -1238,7 +1238,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199561, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199561, Re"
       },
       {
         "clause_id": "c004",
@@ -1248,7 +1248,7 @@
         "topic": "rent_escalation",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199559, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199559, Re"
       },
       {
         "clause_id": "c005",
@@ -1258,7 +1258,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199558, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199558, Re"
       },
       {
         "clause_id": "c006",
@@ -1268,7 +1268,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199554, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199554, Re"
       },
       {
         "clause_id": "c007",
@@ -1278,7 +1278,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199554, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199554, Re"
       },
       {
         "clause_id": "c008",
@@ -1288,7 +1288,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199553, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199553, Re"
       },
       {
         "clause_id": "c009",
@@ -1298,7 +1298,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199551, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199551, Re"
       },
       {
         "clause_id": "c010",
@@ -1308,7 +1308,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199550, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199550, Re"
       }
     ],
     "cross_clause": []
@@ -1324,7 +1324,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199531, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199531, Re"
       },
       {
         "clause_id": "c002",
@@ -1334,7 +1334,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
       },
       {
         "clause_id": "c003",
@@ -1344,7 +1344,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
       },
       {
         "clause_id": "c004",
@@ -1354,7 +1354,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
       },
       {
         "clause_id": "c005",
@@ -1364,7 +1364,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
       },
       {
         "clause_id": "c006",
@@ -1374,7 +1374,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199530, Re"
       },
       {
         "clause_id": "c007",
@@ -1384,7 +1384,7 @@
         "topic": "notice",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199529, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199529, Re"
       },
       {
         "clause_id": "c008",
@@ -1394,7 +1394,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199529, Re"
+        "error": "explanation generation failed: openai/gpt-oss-120b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199529, Re"
       }
     ],
     "cross_clause": []

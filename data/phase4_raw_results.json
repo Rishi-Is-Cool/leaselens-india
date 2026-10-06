@@ -415,7 +415,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198654, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198654, Reque"
       },
       {
         "clause_id": "c011",
@@ -474,7 +474,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199676, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199676, Reque"
       },
       {
         "clause_id": "c013",
@@ -484,7 +484,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199675, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199675, Reque"
       }
     ],
     "cross_clause": []
@@ -500,7 +500,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
       },
       {
         "clause_id": "c002",
@@ -510,7 +510,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
       },
       {
         "clause_id": "c003",
@@ -520,7 +520,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199671, Reque"
       },
       {
         "clause_id": "c004",
@@ -530,7 +530,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
       },
       {
         "clause_id": "c005",
@@ -540,7 +540,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
       },
       {
         "clause_id": "c006",
@@ -576,7 +576,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199670, Reque"
       },
       {
         "clause_id": "c007",
@@ -586,7 +586,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
       },
       {
         "clause_id": "c008",
@@ -659,7 +659,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
       },
       {
         "clause_id": "c009",
@@ -669,7 +669,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199669, Reque"
       },
       {
         "clause_id": "c010",
@@ -739,7 +739,7 @@
           }
         ],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199668, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199668, Reque"
       },
       {
         "clause_id": "c011",
@@ -749,7 +749,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199668, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199668, Reque"
       },
       {
         "clause_id": "c012",
@@ -759,7 +759,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199667, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199667, Reque"
       }
     ],
     "cross_clause": []
@@ -775,7 +775,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
       },
       {
         "clause_id": "c002",
@@ -785,7 +785,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
       },
       {
         "clause_id": "c003",
@@ -795,7 +795,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199660, Reque"
       },
       {
         "clause_id": "c004",
@@ -805,7 +805,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
       },
       {
         "clause_id": "c005",
@@ -815,7 +815,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
       },
       {
         "clause_id": "c006",
@@ -825,7 +825,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199659, Reque"
       },
       {
         "clause_id": "c007",
@@ -835,7 +835,7 @@
         "topic": "registration",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199658, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199658, Reque"
       },
       {
         "clause_id": "c008",
@@ -845,7 +845,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199658, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199658, Reque"
       },
       {
         "clause_id": "c009",
@@ -855,7 +855,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
       },
       {
         "clause_id": "c010",
@@ -865,7 +865,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
       },
       {
         "clause_id": "c011",
@@ -875,7 +875,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199657, Reque"
       },
       {
         "clause_id": "c012",
@@ -885,7 +885,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199656, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199656, Reque"
       }
     ],
     "cross_clause": []
@@ -901,7 +901,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199648, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199648, Reque"
       },
       {
         "clause_id": "c002",
@@ -911,7 +911,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Reque"
       },
       {
         "clause_id": "c003",
@@ -921,7 +921,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199647, Reque"
       },
       {
         "clause_id": "c004",
@@ -931,7 +931,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Reque"
       },
       {
         "clause_id": "c005",
@@ -941,7 +941,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199646, Reque"
       },
       {
         "clause_id": "c006",
@@ -951,7 +951,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Reque"
       },
       {
         "clause_id": "c007",
@@ -961,7 +961,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199645, Reque"
       }
     ],
     "cross_clause": []
@@ -977,7 +977,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
       },
       {
         "clause_id": "c002",
@@ -987,7 +987,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
       },
       {
         "clause_id": "c003",
@@ -997,7 +997,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199639, Reque"
       },
       {
         "clause_id": "c004",
@@ -1007,7 +1007,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
       },
       {
         "clause_id": "c005",
@@ -1017,7 +1017,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
       },
       {
         "clause_id": "c006",
@@ -1027,7 +1027,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199638, Reque"
       },
       {
         "clause_id": "c007",
@@ -1037,7 +1037,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
       },
       {
         "clause_id": "c008",
@@ -1047,7 +1047,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
       },
       {
         "clause_id": "c009",
@@ -1057,7 +1057,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199637, Reque"
       },
       {
         "clause_id": "c010",
@@ -1067,7 +1067,7 @@
         "topic": "notice",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
       },
       {
         "clause_id": "c011",
@@ -1077,7 +1077,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
       },
       {
         "clause_id": "c012",
@@ -1087,7 +1087,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199636, Reque"
       }
     ],
     "cross_clause": []
@@ -1103,7 +1103,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Reque"
       },
       {
         "clause_id": "c002",
@@ -1113,7 +1113,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199631, Reque"
       },
       {
         "clause_id": "c003",
@@ -1123,7 +1123,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
       },
       {
         "clause_id": "c004",
@@ -1133,7 +1133,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
       },
       {
         "clause_id": "c005",
@@ -1143,7 +1143,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
       },
       {
         "clause_id": "c006",
@@ -1153,7 +1153,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199630, Reque"
       },
       {
         "clause_id": "c007",
@@ -1163,7 +1163,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
       },
       {
         "clause_id": "c008",
@@ -1173,7 +1173,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
       },
       {
         "clause_id": "c009",
@@ -1183,7 +1183,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
       },
       {
         "clause_id": "c010",
@@ -1193,7 +1193,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199629, Reque"
       }
     ],
     "cross_clause": []
@@ -1209,7 +1209,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199625, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199625, Reque"
       },
       {
         "clause_id": "c002",
@@ -1219,7 +1219,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
       },
       {
         "clause_id": "c003",
@@ -1229,7 +1229,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
       },
       {
         "clause_id": "c004",
@@ -1239,7 +1239,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199624, Reque"
       },
       {
         "clause_id": "c005",
@@ -1249,7 +1249,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
       },
       {
         "clause_id": "c006",
@@ -1259,7 +1259,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
       },
       {
         "clause_id": "c007",
@@ -1269,7 +1269,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
       },
       {
         "clause_id": "c008",
@@ -1279,7 +1279,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199623, Reque"
       }
     ],
     "cross_clause": []
@@ -1295,7 +1295,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199619, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199619, Reque"
       },
       {
         "clause_id": "c002",
@@ -1305,7 +1305,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
       },
       {
         "clause_id": "c003",
@@ -1315,7 +1315,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
       },
       {
         "clause_id": "c004",
@@ -1325,7 +1325,7 @@
         "topic": "rent_escalation",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
       },
       {
         "clause_id": "c005",
@@ -1335,7 +1335,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199618, Reque"
       },
       {
         "clause_id": "c006",
@@ -1345,7 +1345,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
       },
       {
         "clause_id": "c007",
@@ -1355,7 +1355,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
       },
       {
         "clause_id": "c008",
@@ -1365,7 +1365,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199617, Reque"
       },
       {
         "clause_id": "c009",
@@ -1375,7 +1375,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199616, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199616, Reque"
       },
       {
         "clause_id": "c010",
@@ -1385,7 +1385,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199616, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199616, Reque"
       }
     ],
     "cross_clause": []
@@ -1401,7 +1401,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
       },
       {
         "clause_id": "c002",
@@ -1411,7 +1411,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
       },
       {
         "clause_id": "c003",
@@ -1421,7 +1421,7 @@
         "topic": "security_deposit",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
       },
       {
         "clause_id": "c004",
@@ -1431,7 +1431,7 @@
         "topic": "maintenance",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199612, Reque"
       },
       {
         "clause_id": "c005",
@@ -1441,7 +1441,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
       },
       {
         "clause_id": "c006",
@@ -1451,7 +1451,7 @@
         "topic": "eviction",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
       },
       {
         "clause_id": "c007",
@@ -1461,7 +1461,7 @@
         "topic": "notice",
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
       },
       {
         "clause_id": "c008",
@@ -1471,7 +1471,7 @@
         "topic": null,
         "retrieved_statutes": [],
         "explanation": null,
-        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kfdhpsp4ewgr97fvxgafac6g` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
+        "error": "explanation generation failed: qwen/qwen3.8-27b hit its free-tier daily limit: {\"error\":{\"message\":\"Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_[redacted]` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199611, Reque"
       }
     ],
     "cross_clause": []

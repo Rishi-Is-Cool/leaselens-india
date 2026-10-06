@@ -47,7 +47,7 @@ def jurisdiction_hint(document: Document) -> dict:
     }
 
 
-def _public_error(raw: str | None) -> str | None:
+def public_error(raw: str | None) -> str | None:
     """Provider errors carry rate-limit text and the account's organisation id, so the
     browser only ever gets a category, never the raw message."""
     if not raw:
@@ -78,7 +78,7 @@ def _serialise(result, headings: dict[str, str | None]) -> dict:
                     {key: statute.get(key) for key in STATUTE_FIELDS} for statute in clause.retrieved_statutes
                 ],
                 "explanation": explanation,
-                "error": _public_error(clause.error),
+                "error": public_error(clause.error),
             }
         )
     return {

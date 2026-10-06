@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from app.analysis.service import _public_error
+from app.analysis.service import public_error
 from app.db import SessionLocal, create_tables
 from app.main import app
 from app.models import Analysis, Document
@@ -143,7 +143,7 @@ def test_the_analysis_is_deleted_with_its_document(uploaded):
     ],
 )
 def test_provider_errors_never_reach_the_browser(raw):
-    public = _public_error(raw)
+    public = public_error(raw)
     assert public
     for leak in ("org_", "qwen", "Rate limit", "429", "HTTP", "model missing"):
         assert leak not in public
