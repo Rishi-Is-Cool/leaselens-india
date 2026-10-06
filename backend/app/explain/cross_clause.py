@@ -64,10 +64,12 @@ def shortlist_candidate_pairs(
 ) -> list[tuple[int, int, float]]:
     """clauses: objects with a `.text` attribute, in document order. Returns (i, j,
     similarity) with i < j, each clause contributing at most `top_k` candidate partners,
-    deduplicated. Embeddings are cached by app.classifier.embeddings.embed."""
+    deduplicated."""
     if len(clauses) < 2:
         return []
-    vectors = embed([c.text for c in clauses])
+    # Never cached: these are an uploaded lease's clauses, and a cache file on disk would
+    # outlive the upload's retention window. Recomputing for one lease takes milliseconds.
+    vectors = embed([c.text for c in clauses], cache=False)
     sim = vectors @ vectors.T
     np.fill_diagonal(sim, -1)
 
