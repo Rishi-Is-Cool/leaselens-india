@@ -6,6 +6,7 @@ import {
   listAnalyses,
   listDocuments,
   uploadDocument,
+  STATIC_DEMO,
   type AnalysedClause,
   type AnalysisSummary,
   type DemoDocument,
@@ -37,8 +38,10 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetchHealth().then(setHealth).catch(() => setHealth(null));
-    void refreshLibrary();
+    if (!STATIC_DEMO) {
+      fetchHealth().then(setHealth).catch(() => setHealth(null));
+      void refreshLibrary();
+    }
     // Surface the pre-analysed sample immediately, so the review panel opens on the
     // Phase 4 output rather than an empty state.
     listAnalyses()
@@ -94,13 +97,15 @@ export default function App() {
           <span className="brand-mark">L</span>
           <span>LeaseLens</span>
         </a>
-        <div className={`status ${dbOk ? "status-ready" : "status-waiting"}`}>
+        <div className={`status ${STATIC_DEMO || dbOk ? "status-ready" : "status-waiting"}`}>
           <i />
-          {health === null
-            ? "Connecting to workspace"
-            : dbOk
-              ? "Workspace ready"
-              : "Database offline"}
+          {STATIC_DEMO
+            ? "Saved demo"
+            : health === null
+              ? "Connecting to workspace"
+              : dbOk
+                ? "Workspace ready"
+                : "Database offline"}
         </div>
       </header>
 
@@ -110,17 +115,31 @@ export default function App() {
             <span className="eyebrow">LEASE REVIEW WORKSPACE</span>
             <h1>Understand what your lease actually says.</h1>
             <p>
-              Upload a lease to pull out every clause, see which ones are worth a closer
-              look, and read a plain-language explanation of each.
+              {STATIC_DEMO
+                ? "Browse real-format sample leases: every clause is flagged by how much attention it deserves, explained in plain language, and checked against the rental law where we have it."
+                : "Upload a lease to pull out every clause, see which ones are worth a closer look, and read a plain-language explanation of each."}
             </p>
           </div>
           <div className="hero-note">
-            <span>Private by design</span>
-            <strong>Files are removed after {health?.retention_hours ?? 24} hours</strong>
+            <span>{STATIC_DEMO ? "Sample leases only" : "Private by design"}</span>
+            <strong>
+              {STATIC_DEMO
+                ? "Nothing you do here is uploaded or stored"
+                : `Files are removed after ${health?.retention_hours ?? 24} hours`}
+            </strong>
           </div>
         </section>
 
-        {health?.demo_mode && (
+        {STATIC_DEMO && (
+          <aside className="demo-banner">
+            <strong>Saved demo of a work in progress.</strong> These are synthetic sample
+            leases reviewed ahead of time, so there is nothing to upload on this page. The
+            full app, which reads a lease you upload, runs locally. Maharashtra is the
+            most complete example. AI-assisted information only, not legal advice.
+          </aside>
+        )}
+
+        {!STATIC_DEMO && health?.demo_mode && (
           <aside className="demo-banner">
             <strong>Demo workspace.</strong> This version extracts lease text and reviews
             it with AI assistance; it does not provide legal advice.
@@ -137,6 +156,7 @@ export default function App() {
             </div>
             <AnalysisLibrary onOpen={openAnalysis} current={analysis?.filename ?? null} />
 
+            {!STATIC_DEMO && (<>
             <div className="library-heading">
               <div>
                 <span className="eyebrow">YOUR DOCUMENTS</span>
@@ -166,6 +186,7 @@ export default function App() {
                 <p className="empty-library">Your uploaded lease reviews will appear here.</p>
               )}
             </div>
+            </>)}
           </aside>
 
           <section className="review-panel">
@@ -176,6 +197,8 @@ export default function App() {
                 document={selected}
                 onUploadAnother={() => inputRef.current?.click()}
               />
+            ) : STATIC_DEMO ? (
+              <p className="notice">Loading the saved review…</p>
             ) : (
               <UploadCard
                 dragging={dragging}
@@ -185,13 +208,15 @@ export default function App() {
                 onDragging={setDragging}
               />
             )}
-            <input
-              ref={inputRef}
-              type="file"
-              accept="application/pdf,image/png,image/jpeg"
-              hidden
-              onChange={(e) => void handleFile(e.target.files?.[0])}
-            />
+            {!STATIC_DEMO && (
+              <input
+                ref={inputRef}
+                type="file"
+                accept="application/pdf,image/png,image/jpeg"
+                hidden
+                onChange={(e) => void handleFile(e.target.files?.[0])}
+              />
+            )}
           </section>
         </section>
       </main>
@@ -419,12 +444,27 @@ function AnalysisClause({ clause }: { clause: AnalysedClause }) {
               )}
               {clause.explanation.statute_support.length > 0 && (
                 <div className="statute-list">
-                  {clause.explanation.statute_support.map((statute) => (
-                    <div className="statute" key={statute.entry_id}>
-                      <strong>The law we checked · {statute.entry_id}</strong>
-                      <p>{statute.how_it_applies}</p>
-                    </div>
-                  ))}
+                  {clause.explanation.statute_support.map((support) => {
+                    // Show the actual provision, not our internal id: the citation and a
+                    // link to the official source are what let a reader verify it.
+                    const statute = clause.retrieved_statutes.find(
+                      (s) => s.entry_id === support.entry_id,
+                    );
+                    return (
+                      <div className="statute" key={support.entry_id}>
+                        <strong>The law we checked · {statute?.citation ?? support.entry_id}</strong>
+                        <p>{support.how_it_applies}</p>
+                        {statute && (
+                          <p className="statute-source">
+                            <a href={statute.source_url} target="_blank" rel="noreferrer">
+                              View the official source
+                            </a>{" "}
+                            · last checked {statute.last_verified_date}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </>

@@ -1,0 +1,1328 @@
+{
+ "01_maharashtra_leave_license_mumbai.pdf": {
+  "jurisdiction": "Maharashtra",
+  "clause_count": 13,
+  "explained_count": 13,
+  "connection_count": 2,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS LEAVE AND LICENSE AGREEMENT is made and executed at Mumbai on this 3rd day of March, 2026, BETWEEN Mr. Ramesh Kulkarni, residing at Flat No. 302, Sai Krupa CHS, S.V. Road, Andheri West, Mumbai - 400058 (hereinafter referred to as the “LICENSOR”) AND Ms. Priya Deshmukh, residing at 14, Green Park Society, Kothrud, Pune - 411038 (hereinafter referred to as the “LICENSEE”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c001",
+     "risk_label": "GREEN",
+     "document_says": "The clause identifies the agreement as a Leave and License Agreement executed in Mumbai on March 3, 2026, between Mr. Ramesh Kulkarni (Licensor) and Ms. Priya Deshmukh (Licensee), including their respective residential addresses.",
+     "concern": "This is standard introductory language that clearly defines the parties and the nature of the agreement, presenting no specific risk or imbalance.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c002",
+    "text": "WHEREAS the Licensor is the absolute owner of Flat No. 604, Om Sai Residency, CTS No. 412/A, Plot No. 9, Andheri West, Mumbai - 400058, admeasuring 620 sq. ft. carpet area (hereinafter referred to as the “SAID PREMISES”), and the Licensee has approached the Licensor to use and occupy the said premises on a leave and license basis, and the Licensor has agreed to grant such leave and license on the terms and conditions recorded hereinafter.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c002",
+     "risk_label": "GREEN",
+     "document_says": "The clause identifies the Licensor as the absolute owner of a specific flat in Mumbai and states that the Licensee has requested to occupy the premises on a leave and license basis, which the Licensor has agreed to grant subject to the terms in the document.",
+     "concern": "This is standard introductory language that establishes the parties' roles and the nature of the occupancy arrangement without imposing unusual restrictions or liabilities.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c003",
+    "text": "The Licensor hereby grants to the Licensee a purely personal, non-transferable license to use and occupy the said premises, and this Agreement does not create any tenancy, lease, or other interest in favour of the Licensee, nor any relationship of landlord and tenant between the parties.",
+    "risk_label": "RED",
+    "risk_confidence": 0.8,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c003",
+     "risk_label": "RED",
+     "document_says": "The document explicitly states that the arrangement is a 'purely personal, non-transferable license' and asserts that it does not create a tenancy, lease, or landlord-tenant relationship.",
+     "concern": "This clause attempts to legally recharacterize the occupancy as a license rather than a lease, which may limit your statutory rights (such as protection from eviction or rent control) that typically apply to tenants. A court might view this as an attempt to bypass mandatory housing protections, especially if the arrangement involves exclusive possession for a fixed term in exchange for payment, which are hallmarks of a tenancy.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c004",
+    "text": "This license shall be for a period of 11 (eleven) months commencing from 1st April 2026 and ending on 28th February 2027, and shall not be renewed or extended automatically.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c004",
+     "risk_label": "GREEN",
+     "document_says": "The agreement is a license for a fixed term of 11 months, starting on April 1, 2026, and ending on February 28, 2027, with no provision for automatic renewal or extension.",
+     "concern": "This is standard, balanced language that clearly defines the duration of the tenancy and explicitly prevents automatic rollover, which helps avoid ambiguity regarding the end date.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c005",
+    "text": "The Licensee shall pay to the Licensor a monthly license fee of Rs. 38,000/- (Rupees Thirty-Eight Thousand only), payable in advance on or before the 5th day of each English calendar month, by NEFT/RTGS to the Licensor's designated bank account.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c005",
+     "risk_label": "GREEN",
+     "document_says": "The tenant is required to pay a monthly fee of Rs. 38,000 in advance by the 5th of each month via NEFT or RTGS to a specific bank account.",
+     "concern": "This is standard, balanced language for a commercial license agreement, specifying a clear payment amount, due date, and method without unusual penalties or ambiguities.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c006",
+    "text": "The Licensee has paid to the Licensor an interest-free refundable security deposit of Rs. 2,00,000/- (Rupees Two Lakhs only), the receipt of which the Licensor hereby acknowledges, to be refunded within 15 days of vacating the said premises, after deducting any amounts lawfully due.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "security_deposit",
+    "retrieved_statutes": [
+     {
+      "entry_id": "MH_SEC_001",
+      "citation": "Section 56(ii), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "Notwithstanding anything contained in this Act, it shall be lawful for,— (ii) the landlord or any person acting or purporting to act on behalf of the landlord to receive any fine, premium or other like sum or deposit or any consideration in respect of the grant, or renewal of a lease of any premises, or for giving his consent to the transfer of a lease to any other person.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25"
+     }
+    ],
+    "explanation": {
+     "clause_id": "c006",
+     "risk_label": "GREEN",
+     "document_says": "The Licensee has paid an interest-free refundable security deposit of Rs. 2,00,000/-, which the Licensor acknowledges. The deposit is to be refunded within 15 days of vacating the premises, after deducting any amounts lawfully due.",
+     "concern": "This is standard and balanced language for a security deposit, specifying a clear refund timeline and the condition for deductions.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c007",
+    "text": "The society maintenance charges shall be borne by the Licensor, while electricity charges as per actual sub-metered consumption shall be borne by the Licensee.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "maintenance",
+    "retrieved_statutes": [
+     {
+      "entry_id": "MH_MAINT_001",
+      "citation": "Section 14, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "14. Landlords’ duty to keep premises in good repair.— (1) Notwithstanding anything contained in any law for the time being in force and in the absence of an agreement to the contrary by the tenant, every landlord shall be bound to keep the premises in good and tenantable repair. (2) If the landlord neglects to make any repairs, which he is bound to make under sub-section (1), within a reasonable time after a notice of fifteen days is served upon him by post or in any other manner by a tenant or jointly by tenants interested in such repairs, such tenant or tenants may themselves make the same and deduct the expenses of such repairs from the rent or otherwise recover them from the landlord. Provided that, where the repairs are jointly made by the tenants, the amount to be deducted or recovered with interest by each tenant shall bear the same proportion as the rent payable by him in respect of his premises bears to the total amount of the expenses incurred for such repairs together with simple interest at fifteen per cent. per annum on such amount: Provided further that, the amount so deducted or recoverable in any year shall not exceed one-fourth of the rent payable by the tenant of that year. (3) For the purpose of calculating the expenses of the repairs made under sub-section (2), the accounts together with the vouchers maintained by the tenants shall be conclusive evidence of such expenditure and shall be binding on the landlord.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_MAINT_002",
+      "citation": "Section 11(2), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(2) A landlord shall also be entitled to make such increase in the rent of the premises as may be reasonable for an improvement or structural alterations of the premises which has been made with the consent of the seventy per cent. of the tenants given in writing. Explanation.— In this sub-section, improvements and alterations do not include the repairs which the landlord is bound to make under sub-section (1) of section 14.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_MAINT_002",
+      "citation": "Section 108(f), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (f) if the lessor neglects to make, within a reasonable time after notice, any repairs which he is bound to make to the property, the lessee may make the same himself, and deduct the expense of such repairs with interest from the rent, or otherwise recover it from the lessor:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_MAINT_003",
+      "citation": "Section 108(m), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (m) the lessee is bound to keep, and on the termination of the lease to restore, the property in as good condition as it was in at the time when he was put in possession, subject only to the changes caused by reasonable wear and tear or irresistible force, and to allow the lessor and his agents, at all reasonable times during the term, to enter upon the property and inspect the condition thereof and give or leave notice of any defect in such condition; and, when such defect has been caused by any act or default on the part of the lessee, his servants or agents, he is bound to make it good within three months after such notice has been given or left:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": {
+     "clause_id": "c007",
+     "risk_label": "GREEN",
+     "document_says": "The Licensor is responsible for society maintenance charges, while the Licensee is responsible for electricity charges based on actual sub-metered consumption.",
+     "concern": "This is standard and balanced language that clearly allocates routine utility and maintenance costs between the parties without imposing unusual burdens on the tenant.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c008",
+    "text": "The Licensee shall use the said premises for residential purposes only and shall not use the same for any commercial, illegal, or immoral purpose, nor create any sub-license or permit any third party to occupy the said premises.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c008",
+     "risk_label": "GREEN",
+     "document_says": "The clause restricts the tenant to using the property solely for residential purposes, explicitly prohibiting commercial, illegal, or immoral uses, and forbids the creation of sub-licenses or allowing any third party to occupy the premises.",
+     "concern": "This is standard and balanced language commonly found in residential leases to ensure the property is used as intended and to prevent unauthorized occupancy.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c009",
+    "text": "This Agreement shall be registered by the Licensor with the office of the Sub-Registrar of Assurances under Section 55 of the Maharashtra Rent Control Act, 1999, and the cost of stamp duty and registration shall be shared equally between the parties unless otherwise agreed in writing.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "registration",
+    "retrieved_statutes": [
+     {
+      "entry_id": "MH_REG_001",
+      "citation": "Section 55, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(1) Notwithstanding anything contained in this Act or any other law for the time being in force, any agreement for leave and licence or letting of any premises, entered into between the landlord and the tenant or the licensee, as the case may be, after the commencement of this Act, shall be in writing and shall be registered under the Registration Act, 1908 (XVI of 1908). (2) The responsibility of getting such agreement registered shall be on the landlord and in the absence of the written registered agreement, the contention of the tenant about the terms and conditions, subject to which a premises have been given to him by the landlord on leave and licence or have been let to him, shall prevail, unless proved otherwise. (3) Any landlord who contravenes the provisions of this section shall, on conviction, be punished with imprisonment which may extend to three months or with fine not exceeding rupees five thousand or with both.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25"
+     },
+     {
+      "entry_id": "CENTRAL_REG_002",
+      "citation": "Section 107, Transfer of Property Act, 1882",
+      "excerpt_text": "Leases how made. A lease of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent, can be made only by a registered instrument. All other leases of immovable property may be made either by a registered instrument or by oral agreement accompanied by delivery of possession. Where a lease of immovable property is made by a registered instrument, such instrument or, where there are more instruments than one, each such instrument shall be executed by both the lessor and the lessee: Provided that the State Government may, from time to time, by notification in the Official Gazette, direct that leases of immovable property, other than leases from year to year, or for any term exceeding one year, or reserving a yearly rent, or any class of such leases, may be made by unregistered instrument or by oral agreement without delivery of possession.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_REG_001",
+      "citation": "Section 17(1)(d), Registration Act, 1908",
+      "excerpt_text": "Documents of which registration is compulsory. (1) The following documents shall be registered, if the property to which they relate is situate in a district in which, and if they have been executed on or after the date on which, Act XVI of 1864, or the Indian Registration Act, 1866, or the Indian Registration Act, 1871, or the Indian Registration Act, 1877, or this Act came or comes into force, namely:— (a) instruments of gift of immovable property; (b) other non-testamentary instruments which purport or operate to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property; (c) non-testamentary instruments which acknowledge the receipt or payment of any consideration on account of the creation, declaration, assignment, limitation or extinction of any such right, title or interest; and (d) leases of immovable property from year to year, or for any term exceeding one year, or reserving a yearly rent; (e) non-testamentary instruments transferring or assigning any decree or order of a Court or any award when such decree or order or award purports or operates to create, declare, assign, limit or extinguish, whether in present or in future, any right, title or interest, whether vested or contingent, of the value of one hundred rupees and upwards, to or in immovable property: Provided that the State Government may, by order published in the Official Gazette, exempt from the operation of this sub-section any leases executed in any district, or part of a district, the terms granted by which do not exceed five years and the annual rents reserved by which do not exceed fifty rupees.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_REG_003",
+      "citation": "Section 49, Registration Act, 1908",
+      "excerpt_text": "Effect of non-registration of documents required to be registered. No document required by section 17 or by any provision of the Transfer of Property Act, 1882 (4 of 1882), to be registered shall— (a) affect any immovable property comprised therein, or (b) confer any power to adopt, or (c) be received as evidence of any transaction affecting such property or conferring such power, unless it has been registered: Provided that an unregistered document affecting immovable property and required by this Act or the Transfer of Property Act, 1882 (4 of 1882), to be registered may be received as evidence of a contract in a suit for specific performance under Chapter II of the Specific Relief Act, 1877, or as evidence of any collateral transaction not required to be effected by registered instrument.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/2190/5/A1908-16.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": {
+     "clause_id": "c009",
+     "risk_label": "GREEN",
+     "document_says": "The agreement must be registered by the Licensor with the Sub-Registrar of Assurances under Section 55 of the Maharashtra Rent Control Act, 1999. The costs for stamp duty and registration are to be shared equally between the parties, unless a different arrangement is agreed upon in writing.",
+     "concern": "This is standard and balanced language. It aligns with the statutory requirement for registration of such agreements in Maharashtra and proposes a fair, 50/50 split of the associated administrative costs, which is a common and reasonable commercial term.",
+     "statute_support": [
+      {
+       "entry_id": "MH_REG_001",
+       "how_it_applies": "Section 55(1) of the Maharashtra Rent Control Act, 1999, mandates that agreements for leave and licence or letting of premises must be in writing and registered. The clause explicitly references this section, confirming the document's compliance with the local statutory requirement for registration."
+      }
+     ],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c010",
+    "text": "Either party may terminate this Agreement by giving one month's prior written notice to the other party. In the event the Licensee defaults in payment of the license fee for two consecutive months, the Licensor shall be entitled to terminate this Agreement forthwith and re-enter the said premises.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.7,
+    "topic": "eviction",
+    "retrieved_statutes": [
+     {
+      "entry_id": "CENTRAL_EVICTION_003",
+      "citation": "Section 106, Transfer of Property Act, 1882",
+      "excerpt_text": "Duration of certain leases in absence of written contract or local usage. (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months’ notice; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days’ notice. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_EVICTION_001",
+      "citation": "Section 15, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "15. No ejectment ordinarily to be made if tenant pays or is ready and willing to pay standard rent and permitted increases.— (1) A landlord shall not be entitled to the recovery of possession of any premises so long as the tenant pays, or is ready and willing to pay, the amount of the standard rent and permitted increases, if any, and observes and performs the other conditions of the tenancy, in so far as they are consistent with the provisions of this Act. (2) No suit for recovery of possession shall be instituted by a landlord against the tenant on the ground of non-payment of the standard rent or permitted increases due, until the expiration of ninety days next after notice in writing of the demand of the standard rent or permitted increases has been served upon the tenant in the manner provided in section 106 of the Transfer of Property Act, 1882 (IV of 1882). (3) No decree for eviction shall be passed by the court in any suit for recovery of possession on the ground of arrears of standard rent and permitted increase if, within a period of ninety days from the date of service of the summons of the suit, the tenant pays or tenders in court the standard rent and permitted increases then due together with simple interest on the amount of arrears at fifteen per cent. per annum; and thereafter continues to pay or tenders in court regularly such standard rent and permitted increases till the suit is finally decided and also pays cost of the suit as directed by the court. (4) Pending the disposal of any suit, the court may, out of any amount paid or tendered by the tenant, pay to the landlord such amount towards the payment of rent or permitted increases due to him as the court thinks fit.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_EVICTION_004",
+      "citation": "Section 111, Transfer of Property Act, 1882",
+      "excerpt_text": "Determination of lease. A lease of immovable property determines— (a) by efflux of the time limited thereby; (b) where such time is limited conditionally on the happening of some event—by the happening of such event; (c) where the interest of the lessor in the property terminates on, or his power to dispose of the same extends only to, the happening of any event—by the happening of such event; (d) in case the interests of the lessee and the lessor in the whole of the property become vested at the same time in one person in the same right; (e) by express surrender; that is to say, in case the lessee yields up his interest under the lease to the lessor, by mutual agreement between them; (f) by implied surrender; (g) by forfeiture; that is to say, (1) in case the lessee breaks an express condition which provides that, on breach thereof, the lessor may re-enter; or (2) in case the lessee renounces his character as such by setting up a title in a third person or by claiming title in himself; or (3) the lessee is adjudicated an insolvent and the lease provides that the lessor may re-enter on the happening of such event; and in any of these cases the lessor or his transferee gives notice in writing to the lessee of his intention to determine the lease; (h) on the expiration of a notice to determine the lease, or to quit, or of intention to quit, the property leased, duly given by one party to the other.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_LICENCE_001",
+      "citation": "Section 24, Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(1) Notwithstanding anything contained in this Act, a licensee in possession or occupation of premises given to him on licence for residence shall deliver possession of such premises to the landlord on expiry of the period of licence; and on the failure of the licensee to so deliver the possession of the licensed premises, a landlord shall be entitled to recover possession of such premises from a licensee, on the expiry of the period of licence, by making an application to the Competent Authority, and, the Competent Authority, on being satisfied that the period of licence has expired, shall pass an order for eviction of a licensee. (2) Any licensee who does not deliver possession of the premises to the landlord on expiry of the period of licence and continues to be in possession of the licensed premises till he is dispossessed by the Competent Authority shall be liable to pay damages at double the rate of the licence fee or charge of the premises fixed under the agreement of licence. (3) The Competent Authority shall not entertain any claim of whatever nature from any other person who is not a licensee according to the agreement of licence. Explanation.—For the purposes of this section,— (a) the expression \"landlord\" includes a successor-in-interest who becomes the landlord of the premises as a result of death of such landlord; but does not include a tenant or a sub-tenant who has given premises on licence; (b) an agreement of licence in writing shall be conclusive evidence of the fact stated therein.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-25"
+     },
+     {
+      "entry_id": "MH_EVICTION_004",
+      "citation": "Section 16(1)(g), 16(2), 16(3), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(g) that the premises are reasonably and bona fide required by the landlord for occupation by himself or by any person for whose benefit the premises are held or where the landlord is a trustee of a public charitable trust that the premises are required for occupation for the purposes of the trust; or (2) No decree for eviction shall be passed on the ground, specified in clause (g) of sub-section (1), if court is satisfied that, having regard to all the circumstances of the case including the question whether other reasonable accommodation is available for the landlord or the tenant, greater hardship would be caused by passing the decree than by refusing to pass it. Where the court is satisfied that no hardship would be caused either to the tenant or to the landlord by passing the decree in respect of such part of the premises, the court shall the decree in respect of such part only. Explanation.— For the purposes of clause (g) of sub-section (1) the expression “landlord” shall not include a rent-farmer or rent-collector or estate-manager. (3) A landlord shall not be entitled to recover possession of any premises under the provisions of clause (g) of sub-section (1) if the premises are let to the Central Government in a cantonment area and such premises, are being used for residence by members of the armed forces of the Union, or their families.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_EVICTION_002",
+      "citation": "Section 16(1)(a), 16(1)(b), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "16. When landlord may recover possession.— (1) Notwithstanding anything contained in this Act but subject to the provisions of section 25, a landlord shall be entitled to recover possession of any premises if the court is satisfied— (a) that the tenant has committed any act contrary to the provisions of clause (o) of section 108 of the Transfer of Property Act, 1882 (IV of 1882); Explanation.— For the purposes of this clause, replacing of tiles or closing of balcony of the premises shall not be regarded as an act of a causing damage to the building or destructive or permanently injurious thereto; or (b) that the tenant has, without the landlord's consent given in writing, erected on the premises any permanent structure; Explanation.— For the purposes of this clause, the expression “permanent structure” does not include the carrying out of any work with the permission, wherever necessary, of the municipal authority, for providing a wooden partition, standing cooking platform in kitchen, door, lattice work of opening of a window necessary for ventilation, a false ceiling, installation of air-conditioner, an exhaust outlet or a smoke chimney; or",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_EVICTION_003",
+      "citation": "Section 16(1)(c), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(c) that the tenant, his agent, servant, persons inducted by tenant or claiming under the tenant or, any person residing with the tenant has been guilty of conduct which is a nuisance or annoyance to the adjoining or neighbouring occupier, or has been convicted of using the premises or allowing the premises to be used for immoral or illegal purposes or that the tenant has in respect of the premises been convicted of an offence of contravention of any of the provisions of clause (a) of sub-section (1) of section 394 or of section 394A of the Mumbai Municipal Corporation Act (Bom. III of 1888) or of sub-section 394 or of section 376 or of section 376A of the Bombay Provincial Municipal Corporations Act, 1949 (Bom. LIX of 1949), or of section 229 of the City of Nagpur Municipal Corporation Act, 1949 (C. P. and Berar II of 1950); or of section 280 or of section 281 of the Maharashtra Municipal Councils, Nagar Panchayats and Industrial Townships Act, 1965 (Mah. XL of 1965); or",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_EVICTION_005",
+      "citation": "Section 16(1)(n), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(n) that the premises have not been used, without reasonable cause for the purpose for which they were let for for a continuous period of six months immediately preceding the date of the suit.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/15817/1/the_maharashtra_rent_control_act_1999.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": {
+     "clause_id": "c010",
+     "risk_label": "YELLOW",
+     "document_says": "The agreement allows either party to terminate the arrangement by providing one month's prior written notice. Additionally, if the Licensee fails to pay the license fee for two consecutive months, the Licensor is entitled to terminate the agreement immediately ('forthwith') and re-enter the premises.",
+     "concern": "The clause grants the Licensor the right to terminate immediately and re-enter upon two months of non-payment without specifying a mandatory notice period or a cure period for the Licensee to remedy the default. While the document labels this a 'licence', if the arrangement is legally treated as a tenancy, a court might view the immediate re-entry right as potentially inconsistent with statutory protections that typically require a landlord to serve a specific notice of demand and allow a period (such as 90 days) for the tenant to pay arrears before eviction proceedings can be initiated. The lack of a defined cure period for the payment default could be a point of contention.",
+     "statute_support": [
+      {
+       "entry_id": "MH_EVICTION_001",
+       "how_it_applies": "This statute outlines that a landlord generally cannot recover possession if the tenant pays or is ready to pay rent, and specifically requires that no suit for recovery on the ground of non-payment be instituted until 90 days after a written notice of demand has been served. This contrasts with the clause's provision for immediate termination and re-entry after two months of default, suggesting that if the relationship is deemed a tenancy, the clause's immediate re-entry mechanism may face legal hurdles."
+      }
+     ],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c011",
+    "text": "The Licensor or his authorised representative shall be entitled to inspect the said premises at reasonable times upon giving 24 hours' prior notice to the Licensee.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "notice",
+    "retrieved_statutes": [
+     {
+      "entry_id": "CENTRAL_EVICTION_003",
+      "citation": "Section 106, Transfer of Property Act, 1882",
+      "excerpt_text": "Duration of certain leases in absence of written contract or local usage. (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months’ notice; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days’ notice. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "MH_NOTICE_001",
+      "citation": "Section 15(2), Maharashtra Rent Control Act, 1999 (Mah. Act No. 18 of 2000)",
+      "excerpt_text": "(2) No suit for recovery of possession shall be instituted by a landlord against the tenant on the ground of non-payment of the standard rent or permitted increases due, until the expiration of ninety days next after notice in writing of the demand of the standard rent or permitted increases has been served upon the tenant in the manner provided in section 106 of the Transfer of Property Act, 1882.",
+      "source_url": "https://maharashtra.gov.in/Upload/PDF/THE_MAHARASHTRA_RENT_CONTROL_ACT.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": {
+     "clause_id": "c011",
+     "risk_label": "GREEN",
+     "document_says": "The landlord (Licensor) or their representative has the right to enter and inspect the property at reasonable times, provided they give the tenant (Licensee) 24 hours' prior notice.",
+     "concern": "This is standard and balanced language. It grants the landlord a reasonable right to inspect the property while protecting the tenant's privacy by requiring advance notice and limiting entry to reasonable times.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c012",
+    "text": "This Agreement shall be governed by the laws applicable in the State of Maharashtra, and the courts at Mumbai alone shall have jurisdiction over any disputes arising herefrom.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c012",
+     "risk_label": "GREEN",
+     "document_says": "The agreement is governed by the laws of the State of Maharashtra, and any disputes must be handled exclusively by the courts in Mumbai.",
+     "concern": "This is standard and balanced language for a lease in that region, as it clearly defines the governing law and the specific location for legal proceedings.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   },
+   {
+    "clause_id": "c013",
+    "text": "IN WITNESS WHEREOF the parties have set their hands on the day, month and year first above written, in the presence of the witnesses named below.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": {
+     "clause_id": "c013",
+     "risk_label": "GREEN",
+     "document_says": "This is a standard execution clause stating that the parties signed the document on the date specified at the beginning of the lease, in the presence of the witnesses listed below.",
+     "concern": "This is standard, balanced language used to formalize the signing of the agreement and does not impose any unusual obligations or risks on the tenant.",
+     "statute_support": [],
+     "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
+    },
+    "error": null
+   }
+  ],
+  "cross_clause": [
+   {
+    "clause_id_a": "c004",
+    "clause_id_b": "c010",
+    "relationship_type": "termination_conditions_and_duration",
+    "explanation": "Clause A establishes a fixed 11-month term that does not renew automatically, while Clause B provides a general right to terminate with one month's notice. Understanding Clause A is crucial for interpreting Clause B because the one-month notice period in Clause B effectively allows either party to exit the agreement at any point, potentially shortening the fixed 11-month term established in Clause A. Additionally, the 'default' termination right in Clause B operates independently of the fixed term, meaning a tenant could be removed before the February 2027 end date specified in Clause A if they miss two payments."
+   },
+   {
+    "clause_id_a": "c006",
+    "clause_id_b": "c010",
+    "relationship_type": "termination_and_deposit_refund",
+    "explanation": "Clause B outlines the conditions under which the agreement can be terminated, including a specific scenario where the Licensor can terminate 'forthwith' for payment default. Clause A states the security deposit is refunded 'after deducting any amounts lawfully due.' Understanding Clause B is necessary to interpret Clause A because a termination for default under Clause B likely triggers the 'amounts lawfully due' (such as unpaid license fees) that can be deducted from the deposit in Clause A, whereas a standard notice termination might not involve such deductions."
+   }
+  ]
+ },
+ "02_delhi_rent_agreement.pdf": {
+  "jurisdiction": "Delhi",
+  "clause_count": 12,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "This Rent Agreement is made at New Delhi on this 10th day of February, 2026, between Mr. Anil Chawla, R/o C-45, Lajpat Nagar-II, New Delhi - 110024 (hereinafter the “Landlord”, which expression shall include his heirs, successors and assigns) AND Mr. Sameer Bhatia, R/o 18, Model Town, Delhi - 110009 (hereinafter the “Tenant”, which expression shall include his heirs, successors and assigns).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "WHEREAS the Landlord is the lawful owner of the second floor of property bearing No. C-45, Lajpat Nagar-II, New Delhi - 110024, and has agreed to let out the same to the Tenant on the following terms and conditions, which both parties accept as binding.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "The second floor comprising two bedrooms, one hall, one kitchen and two bathrooms, together with the right to park one two-wheeler in the common area.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "The tenancy shall run for 11 months from 1st March 2026 to 31st January 2027, renewable thereafter on mutually agreed terms.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "The monthly rent shall be Rs. 32,000/- (Rupees Thirty-Two Thousand only), payable in advance on or before the 7th of every month through bank transfer to the Landlord's account.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "The Tenant has paid a sum of Rs. 96,000/- (Rupees Ninety-Six Thousand only) as an interest-free security deposit, refundable at the time of vacating the premises after adjustment of any dues or damages beyond normal wear and tear.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.92,
+    "topic": "security_deposit",
+    "retrieved_statutes": [
+     {
+      "entry_id": "DL_SEC_001",
+      "citation": "Section 5, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Unlawful charges not to be claimed or received. (1) Subject to the provisions of this Act, no person shall claim or receive any rent in excess of the standard rent, notwithstanding any agreement to the contrary. (2) No person shall, in consideration of the grant, renewal or continuance of a tenancy or sub-tenancy of any premises,-- (a) claim or receive the payment of any sum as premium or pugree or claim or receive any consideration whatsoever, in cash or in kind, in addition to the rent; or (b) except with the previous permission of the Controller, claim or receive the payment of any sum exceeding one month's rent of such premises as rent in advance. (3) It shall not be lawful for the tenant or any other person acting or purporting to act on behalf of the tenant or a sub-tenant to claim or receive any payment in consideration of the relinquishment, transfer or assignment of his tenancy or sub-tenancy, as the case may be, of any premises. (4) Nothing in this section shall apply-- (a) to any payment made in pursuance of an agreement entered into before the 1st day of January, 1939; or (b) to any payment made under an agreement by any person to a landlord for the purpose of financing the construction of the whole or part of any premises on the land belonging to, or taken on lease by, the landlord, if one of the conditions of the agreement is that the landlord is to let to that person the whole or part of the premises when completed for the use of that person or any member of his family: Provided that such payment does not exceed the amount of agreed rent for a period of five years of the whole or part of the premises to be let to such person. Explanation.--For the purposes of clause (b) of this sub-section, a \"member of the family\" of a person means, in the case of an undivided Hindu family, any member of the family of that person and in the case of any other family, the husband, wife, son, daughter, father, mother, brother, sister or any other relative dependent on that person.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "DL_SEC_002",
+      "citation": "Section 27, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Deposit of rent by the tenant. (1) Where the landlord does not accept any rent tendered by the tenant within the time referred to in section 26 or refuses or neglects to deliver a receipt referred to therein or where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may deposit such rent with the Controller in the prescribed manner: Provided that in cases where there is a bona fide doubt as to the person or persons to whom the rent is payable, the tenant may remit such rent to the Controller by postal money order. (2) The deposit shall be accompanied by an application by the tenant containing the following particulars, namely:-- (a) the premises for which the rent is deposited with a description sufficient for identifying the premises; (b) the period for which the rent is deposited; (c) the name and address of the landlord or the person or persons claiming to be entitled to such rent; (d) the reasons and circumstances for which the application for depositing the rent is made; (e) such other particulars as may be prescribed. (3) On such deposit of the rent being made, the Controller shall send in the prescribed manner a copy or copies of the application to the landlord or persons claiming to be entitled to the rent with an endorsement of the date of the deposit. (4) If an application is made for the withdrawal of any deposit of rent, the Controller shall, if satisfied that the applicant is the person entitled to receive the rent deposited, order the amount of the rent to be paid to him in the manner prescribed: Provided that no order for payment of any deposit of rent shall be made by the Controller under this sub-section without giving all persons named by the tenant in his application under sub-section (2) as claiming to be entitled to payment of such rent an opportunity of being heard and such order shall be without prejudice to the rights of such persons to the said rent being decided by a court of competent jurisdiction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "The electricity connection presently stands in the name of the Landlord. The parties agree that the Tenant shall bear all electricity charges as per the sub-meter reading for the duration of the tenancy, and the Landlord shall cooperate in any application the Tenant may make to transfer the connection into the Tenant's name for this period.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "Minor day-to-day repairs shall be carried out by the Tenant at his own cost. Major structural repairs, if required, shall be the responsibility of the Landlord.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "maintenance",
+    "retrieved_statutes": [
+     {
+      "entry_id": "DL_MAINT_001",
+      "citation": "Section 44, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Landlord's duty to keep the premises in good repair. (1) Every landlord shall be bound to keep the premises in good and tenantable repairs. (2) If the landlord neglects or fails to make, within a reasonable time after notice in writing, any repairs which he is bound to make under sub-section (1) the tenant may make the same himself and deduct the expenses of such repairs from the rent or otherwise recover them from the landlord: Provided that the amount so deducted or recoverable in any year shall not exceed one-twelfth of the rent payable by the tenant for that year. (3) Where any repairs without which the premises are not habitable or usable except with undue inconvenience are to be made and the landlord neglects or fails to make them after notice in writing, the tenant may apply to the Controller for permission to make such repairs himself and may submit to the Controller an estimate of the cost of such repairs, and, thereupon, the Controller may, after giving the landlord an opportunity of being heard and after considering such estimate of the cost and making such inquiries as he may consider necessary, by an order in writing, permit the tenant to make such repairs at such cost as may be specified in the order and it shall thereafter be lawful for the tenant to make such repairs himself and to deduct the cost thereof, which shall in no case exceed the amount so specified, from the rent or otherwise recover it from the landlord: Provided that the amount so deducted or recoverable in any year shall not exceed one-half of the rent payable by the tenant for that year: Provided further that if any repairs not covered by the said amount are necessary in the opinion of the Controller, and the tenant agrees to bear the excess cost himself, the Controller may permit the tenant to make such repairs.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_MAINT_002",
+      "citation": "Section 108(f), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (f) if the lessor neglects to make, within a reasonable time after notice, any repairs which he is bound to make to the property, the lessee may make the same himself, and deduct the expense of such repairs with interest from the rent, or otherwise recover it from the lessor:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_MAINT_003",
+      "citation": "Section 108(m), Transfer of Property Act, 1882",
+      "excerpt_text": "Rights and liabilities of lessor and lessee. In the absence of a contract or local usage to the contrary, the lessor and the lessee of immoveable property, as against one another, respectively, possess the rights and are subject to the liabilities mentioned in the rules next following, or such of them as are applicable to the property leased:— (m) the lessee is bound to keep, and on the termination of the lease to restore, the property in as good condition as it was in at the time when he was put in possession, subject only to the changes caused by reasonable wear and tear or irresistible force, and to allow the lessor and his agents, at all reasonable times during the term, to enter upon the property and inspect the condition thereof and give or leave notice of any defect in such condition; and, when such defect has been caused by any act or default on the part of the lessee, his servants or agents, he is bound to make it good within three months after such notice has been given or left:",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "DL_MAINT_004",
+      "citation": "Section 3, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Act not to apply to certain premises. Nothing in this Act shall apply— (a) to any premises belonging to the Government; (b) to any tenancy or other like relationship created by a grant from the Government in respect of the premises taken on lease, or requisitioned, by the Government: Provided that where any premises belonging to Government have been or are lawfully let by any person by virtue of an agreement with the Government or otherwise, then, notwithstanding any judgment, decree or order of any court or other authority, the provisions of this Act shall apply to such tenancy; (c) to any premises, whether residential or not, whose monthly rent exceeds three thousand and five hundred rupees; or (d) to any premises constructed on or after the commencement of the Delhi Rent Control (Amendment) Act, 1988, for a period of ten years from the date of completion of such construction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c009",
+    "text": "The premises shall be used for residential purposes only. The Tenant shall not sublet, assign, or part with possession of the premises or any part thereof without the Landlord's prior written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c010",
+    "text": "Either party wishing to terminate this Agreement shall give one month's written notice to the other. In case of non-payment of rent for two consecutive months, the Landlord may terminate this Agreement without notice and re-enter the premises.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.7,
+    "topic": "eviction",
+    "retrieved_statutes": [
+     {
+      "entry_id": "CENTRAL_EVICTION_003",
+      "citation": "Section 106, Transfer of Property Act, 1882",
+      "excerpt_text": "Duration of certain leases in absence of written contract or local usage. (1) In the absence of a contract or local law or usage to the contrary, a lease of immovable property for agricultural or manufacturing purposes shall be deemed to be a lease from year to year, terminable, on the part of either lessor or lessee, by six months’ notice; and a lease of immovable property for any other purpose shall be deemed to be a lease from month to month, terminable, on the part of either lessor or lessee, by fifteen days’ notice. (2) Notwithstanding anything contained in any other law for the time being in force, the period mentioned in sub-section (1) shall commence from the date of receipt of notice. (3) A notice under sub-section (1) shall not be deemed to be invalid merely because the period mentioned therein falls short of the period specified under that sub-section, where a suit or proceeding is filed after the expiry of the period mentioned in that sub-section. (4) Every notice under sub-section (1) must be in writing, signed by or on behalf of the person giving it, and either be sent by post to the party who is intended to be bound by it or be tendered or delivered personally to such party, or to one of his family or servants at his residence, or (if such tender or delivery is not practicable) affixed to a conspicuous part of the property.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "DL_EVICTION_002",
+      "citation": "Section 14(1), Delhi Rent Control Act, 1958",
+      "excerpt_text": "Protection of tenant against eviction. (1) Notwithstanding anything to the contrary contained in any other law or contract, no order or decree for the recovery of possession of any premises shall be made by any court or Controller in favour of the landlord against a tenant: Provided that the Controller may, on an application made to him in the prescribed manner, make an order for the recovery of possession of the premises on one or more of the following grounds only, namely:— (a) that the tenant has neither paid nor tendered the whole of the arrears of the rent legally recoverable from him within two months of the date on which a notice of demand for the arrears of rent has been served on him by the landlord in the manner provided in section 106 of the Transfer of Property Act, 1882 (4 of 1882); (b) that the tenant has, on or after the 9th day of June, 1952, sub-let, assigned or otherwise parted with the possession of the whole or any part of the premises without obtaining the consent in writing of the landlord; (c) that the tenant has used the premises for a purpose other than that for which they were let— (i) if the premises have been let on or after the 9th day of June, 1952, without obtaining the consent in writing of the landlord; or (ii) if the premises have been let before the said date without obtaining his consent; (d) that the premises were let for use as a residence and neither the tenant nor any member of his family has been residing therein for a period of six months immediately before the date of the filing of the application for the recovery of possession thereof; (e) that the premises are required bona fide by the landlord for occupation as a residence for himself or for any member of his family dependent on him, if he is the owner thereof, or for any person for whose benefit the premises are held and that the landlord or such person has no other reasonably suitable accommodation.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "CENTRAL_EVICTION_004",
+      "citation": "Section 111, Transfer of Property Act, 1882",
+      "excerpt_text": "Determination of lease. A lease of immovable property determines— (a) by efflux of the time limited thereby; (b) where such time is limited conditionally on the happening of some event—by the happening of such event; (c) where the interest of the lessor in the property terminates on, or his power to dispose of the same extends only to, the happening of any event—by the happening of such event; (d) in case the interests of the lessee and the lessor in the whole of the property become vested at the same time in one person in the same right; (e) by express surrender; that is to say, in case the lessee yields up his interest under the lease to the lessor, by mutual agreement between them; (f) by implied surrender; (g) by forfeiture; that is to say, (1) in case the lessee breaks an express condition which provides that, on breach thereof, the lessor may re-enter; or (2) in case the lessee renounces his character as such by setting up a title in a third person or by claiming title in himself; or (3) the lessee is adjudicated an insolvent and the lease provides that the lessor may re-enter on the happening of such event; and in any of these cases the lessor or his transferee gives notice in writing to the lessee of his intention to determine the lease; (h) on the expiration of a notice to determine the lease, or to quit, or of intention to quit, the property leased, duly given by one party to the other.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/14648/1/tpa.pdf",
+      "last_verified_date": "2026-09-26"
+     },
+     {
+      "entry_id": "DL_EVICTION_001",
+      "citation": "Section 3, Delhi Rent Control Act, 1958",
+      "excerpt_text": "Act not to apply to certain premises. Nothing in this Act shall apply— (a) to any premises belonging to the Government; (b) to any tenancy or other like relationship created by a grant from the Government in respect of the premises taken on lease, or requisitioned, by the Government: Provided that where any premises belonging to Government have been or are lawfully let by any person by virtue of an agreement with the Government or otherwise, then, notwithstanding any judgment, decree or order of any court or other authority, the provisions of this Act shall apply to such tenancy; (c) to any premises, whether residential or not, whose monthly rent exceeds three thousand and five hundred rupees; or (d) to any premises constructed on or after the commencement of the Delhi Rent Control (Amendment) Act, 1988, for a period of ten years from the date of completion of such construction.",
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/19223/1/a1958-59.pdf",
+      "last_verified_date": "2026-09-26"
+     }
+    ],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c011",
+    "text": "The Landlord shall have the right to inspect the premises at reasonable hours, with prior intimation to the Tenant.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c012",
+    "text": "IN WITNESS WHEREOF the parties have signed this Agreement on the date first mentioned above, in the presence of the following witnesses.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "03_karnataka_rental_agreement_bangalore.pdf": {
+  "jurisdiction": null,
+  "clause_count": 12,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS RENTAL AGREEMENT is entered into at Bengaluru on this 1st day of April, 2026, BETWEEN Mrs. Lakshmi Rao, residing at No. 27, 4th Cross, Indiranagar, Bengaluru - 560038 (hereinafter the “OWNER”) AND Mr. Arjun Nair, residing at No. 9, 2nd Main, Koramangala 5th Block, Bengaluru - 560095 (hereinafter the “TENANT”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "Flat No. 3B, Third Floor, Silver Oak Apartments, 100 Feet Road, Indiranagar, Bengaluru - 560038, comprising two bedrooms, hall, kitchen, and two bathrooms, along with one covered car parking slot in the basement.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "1. This Agreement is for a period of 11 months commencing from 1st May 2026, and may be renewed thereafter by mutual consent on revised terms.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "2. The Tenant shall pay a monthly rent of Rs. 28,000/- (Rupees Twenty-Eight Thousand only) on or before the 5th of every month.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "3. The Tenant has paid a refundable security deposit of Rs. 1,68,000/- (Rupees One Lakh Sixty-Eight Thousand only), to be refunded within one month of vacating the premises, subject to deductions for damages or dues.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "4. (a) The Tenant shall bear electricity and water charges as per actual consumption. (b) The Owner shall bear the monthly apartment association maintenance charges. (c) Any cable or internet connection charges shall be borne solely by the Tenant.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "The Tenant shall furnish a copy of a valid photo identity proof to the Owner, and the Owner shall get the tenancy registered with the jurisdictional police station as required under local police regulations, prior to the Tenant occupying the premises.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "registration",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "6. The Tenant shall use the premises for residential purposes only and shall not sublet or permit any third party to occupy the premises without the Owner's prior written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c009",
+    "text": "7. The Owner or an authorised representative may inspect the premises once a month with prior appointment.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c010",
+    "text": "8. Either party may terminate this Agreement by giving one month's written notice. Non-payment of rent for two consecutive months shall entitle the Owner to terminate this Agreement and seek immediate vacation of the premises.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.7,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c011",
+    "text": "9. Any dispute arising out of this Agreement shall be subject to the jurisdiction of courts at Bengaluru.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c012",
+    "text": "IN WITNESS WHEREOF the parties hereto have set their respective hands on the day, month and year first above written.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "04_tamil_nadu_lease_agreement_chennai.pdf": {
+  "jurisdiction": null,
+  "clause_count": 7,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "This Lease Agreement is made and entered into at Chennai on this 15th day of January, 2026, between Mr. Karthik Subramaniam, residing at No. 12, Kamaraj Avenue, Adyar, Chennai - 600020, hereinafter referred to as the Lessor, and Ms. Divya Ramanathan, residing at No. 45, Besant Nagar, Chennai - 600090, hereinafter referred to as the Lessee, whereby the Lessor agrees to let out and the Lessee agrees to take on lease the residential premises more particularly described below, on the terms and conditions set out in this Agreement.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "The premises being let out is the first floor portion of the house bearing Door No. 12, Kamaraj Avenue, Adyar, Chennai - 600020, consisting of two bedrooms, a hall, a kitchen and attached bathrooms, together with the right of the Lessee to use the common staircase and one two-wheeler parking space within the compound.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "The lease shall be for a period of eleven months commencing from 1st February 2026 and ending on 31st December 2026, and may be renewed thereafter for a further period as may be mutually agreed between the parties in writing, at a rent to be mutually decided at the time of such renewal.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "The Lessee shall pay to the Lessor a monthly rent of Rs. 22,000/- (Rupees Twenty-Two Thousand only) on or before the 5th day of every English calendar month, and has paid an advance security deposit of Rs. 1,32,000/- (Rupees One Lakh Thirty-Two Thousand only) at the time of signing this Agreement, which shall be refunded by the Lessor to the Lessee at the time of the Lessee vacating the premises, after deducting any amounts due towards rent, electricity, or damage to the premises beyond normal wear and tear.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "The Lessee shall use the premises for residential purposes only and shall not use the same for any commercial or illegal purpose, and shall not sublet, assign or part with possession of the premises or any portion thereof to any other person without the written consent of the Lessor. The Lessee shall be responsible for the electricity charges as per the sub-meter reading, and the Lessor shall be responsible for property tax and any structural repairs that may become necessary during the term of the lease, while minor day-to-day repairs shall be attended to by the Lessee at his or her own cost.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "Either party desiring to terminate this Agreement before the expiry of the lease term shall give the other party one month's prior written notice, and in the event the Lessee fails to pay rent for two consecutive months, the Lessor shall be entitled to terminate this Agreement and take back possession of the premises after due notice. The Lessor or the Lessor's authorised agent shall be entitled to inspect the premises at reasonable times during the day, after giving the Lessee reasonable prior notice.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "Any dispute arising between the parties in connection with this Agreement shall first be attempted to be resolved amicably, failing which the matter shall be subject to the jurisdiction of the courts at Chennai. In witness whereof the parties have set their hands to this Agreement on the day, month and year first above written, in the presence of the witnesses named below.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "05_uttar_pradesh_lease_deed_lucknow.pdf": {
+  "jurisdiction": null,
+  "clause_count": 12,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS LEASE DEED is executed at Lucknow on this 20th day of May, 2026, BETWEEN Mr. Vikram Singh, S/o Late Mr. Harpal Singh, resident of 7, Hazratganj, Lucknow - 226001 (hereinafter called the “LESSOR”, which expression shall unless repugnant to the context include his heirs, legal representatives, and assigns) AND Mr. Suresh Yadav, S/o Mr. Ram Yadav, resident of 22, Gomti Nagar, Lucknow - 226010 (hereinafter called the “LESSEE”, which expression shall unless repugnant to the context include his heirs, legal representatives, and assigns).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "The Lessor is the absolute owner of House No. 7, Hazratganj, Lucknow - 226001, and agrees to lease out the ground floor portion of the said house, comprising two rooms, a kitchen and one bathroom, to the Lessee (hereinafter the “Demised Premises”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "2.1 The term of this lease shall be 11 months, commencing 1st June 2026 and expiring 31st April 2027.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "2.2 The Lessee shall pay a monthly rent of Rs. 12,000/- (Rupees Twelve Thousand only), payable in advance by the 5th of each month.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "2.3 (a) A security deposit of Rs. 36,000/- (Rupees Thirty-Six Thousand only) has been paid by the Lessee, receipt whereof the Lessor acknowledges. (b) The deposit shall be refunded within 15 days of vacation of the Demised Premises, subject to deduction of any dues.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "3.1 The Lessee shall use the Demised Premises for residential purposes only.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "3.2 The Lessee shall not sublet or transfer possession of the Demised Premises without the Lessor's written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "3.3 The Lessee shall bear electricity charges based on actual meter reading; the Lessor shall bear property tax and structural repair costs.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c009",
+    "text": "This lease may be terminated by either party giving one month's written notice to the other. Should the Lessee default in payment of rent for two consecutive months, the Lessor shall be entitled to terminate this Deed and re-enter the Demised Premises after due notice.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c010",
+    "text": "5.1 The Lessor or an authorised representative may inspect the Demised Premises with reasonable prior notice to the Lessee.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "notice",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c011",
+    "text": "5.2 This Deed shall be governed by the laws of India, and courts at Lucknow shall have exclusive jurisdiction over any disputes.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c012",
+    "text": "IN WITNESS WHEREOF the parties have executed this Lease Deed on the date first written above.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "06_west_bengal_tenancy_agreement_kolkata.pdf": {
+  "jurisdiction": null,
+  "clause_count": 10,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS TENANCY AGREEMENT is made at Kolkata on this 12th day of July, 2026, BETWEEN Mrs. Sharmila Bose, residing at 22, Southern Avenue, Kolkata - 700029 (hereinafter the “Landlady”) AND Mr. Debashish Ghosh, residing at 9, Rashbehari Avenue, Kolkata - 700026 (hereinafter the “Tenant”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "WHEREAS the Landlady is the owner of the second floor flat at 22, Southern Avenue, Kolkata - 700029, and has agreed to let out the same to the Tenant on the terms recorded below.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "I. The tenancy shall be for a period of 11 months commencing 1st August 2026 and ending 30th June 2027.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "II. The Tenant shall pay a monthly rent of Rs. 15,000/- (Rupees Fifteen Thousand only), payable in advance by the 7th of every month.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "III. The Tenant has paid a security deposit of Rs. 45,000/- (Rupees Forty-Five Thousand only), refundable at the end of the tenancy after adjustment of dues.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "IV. The Tenant shall bear electricity charges as per meter reading; the Landlady shall bear municipal property tax.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "V. The premises shall be used for residential purposes only, and shall not be sublet without the Landlady's written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "VI. Either party may terminate this Agreement by giving one month's written notice. Default in rent payment for two consecutive months shall entitle the Landlady to terminate this Agreement forthwith.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.7,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c009",
+    "text": "VII. Any dispute shall be subject to the jurisdiction of the courts at Kolkata.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c010",
+    "text": "IN WITNESS WHEREOF the parties have set their hands on the day, month and year first above written.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "07_punjab_rent_deed_chandigarh.pdf": {
+  "jurisdiction": null,
+  "clause_count": 8,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS RENT DEED is made at Chandigarh on this 2nd day of August, 2026, BETWEEN Mr. Harpreet Singh, residing at House No. 1204, Sector 15-B, Chandigarh - 160015 (hereinafter the “Landlord”) AND Ms. Simran Kaur, residing at House No. 3021, Sector 40-D, Chandigarh - 160036 (hereinafter the “Tenant”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "The Landlord lets out House No. 1204, Sector 15-B, Chandigarh - 160015, fully furnished, for a period of 11 months from 15th August 2026 to 14th July 2027.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "The Tenant shall pay a monthly rent of Rs. 25,000/- (Rupees Twenty-Five Thousand only) by the 1st of every month, and has paid a refundable security deposit of Rs. 1,50,000/- (Rupees One Lakh Fifty Thousand only).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "• One split air-conditioner unit in each bedroom • One geyser in each bathroom • Modular kitchen with built-in cabinets • One wardrobe in each bedroom",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "The Tenant shall maintain the fixtures listed above in good working condition and shall be liable for repair costs arising from misuse. The Tenant shall use the premises for residential purposes only and shall not sublet without the Landlord's written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.92,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "Either party may terminate this Deed by giving one month's prior written notice. Non-payment of rent for two consecutive months shall entitle the Landlord to terminate this Deed and re-enter the premises.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "Any dispute arising out of this Deed shall be subject to the jurisdiction of the courts at Chandigarh.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "IN WITNESS WHEREOF the parties have signed this Deed on the date first mentioned above.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "08_rajasthan_leave_license_jaipur.pdf": {
+  "jurisdiction": null,
+  "clause_count": 10,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "THIS LEAVE AND LICENSE AGREEMENT is made at Jaipur on this 9th day of September, 2026, BETWEEN Mr. Govind Sharma, residing at B-14, Malviya Nagar, Jaipur - 302017 (hereinafter the “Licensor”) AND Ms. Anjali Meena, residing at C-7, Vaishali Nagar, Jaipur - 302021 (hereinafter the “Licensee”).",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "1. The Licensor grants the Licensee a leave and license to occupy Flat No. 201, Shyam Enclave, Malviya Nagar, Jaipur - 302017, for residential use only.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "2. This license is for a period of 24 months commencing 1st October 2026, renewable thereafter by mutual consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "The license fee shall increase annually as follows: Year 1 (Oct 2026 – Sep 2027): Rs. 16,000/- per month. Year 2 (Oct 2027 – Sep 2028): Rs. 17,600/- per month, reflecting a 10% annual increase applied at the start of each subsequent year of occupancy.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": "rent_escalation",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "4. The Licensee has paid a security deposit of Rs. 96,000/- (Rupees Ninety-Six Thousand only), refundable within 15 days of vacating the premises.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "5. The Licensee shall bear electricity and water charges; the Licensor shall bear society maintenance and property tax.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "6. The Licensee shall not sublet or permit any third party to occupy the premises without the Licensor's prior written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "7. Either party may terminate this Agreement by giving two months' prior written notice. Default in payment for two consecutive months shall entitle the Licensor to terminate this Agreement and re-enter the premises.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c009",
+    "text": "8. Any dispute shall be subject to the jurisdiction of the courts at Jaipur.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.9,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c010",
+    "text": "IN WITNESS WHEREOF the parties have set their hands on the day, month and year first above written.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ },
+ "09_gujarat_rent_agreement.pdf": {
+  "jurisdiction": null,
+  "clause_count": 8,
+  "explained_count": 0,
+  "connection_count": 0,
+  "clauses": [
+   {
+    "clause_id": "c001",
+    "text": "This Rent Agreement is made at Ahmedabad on this 5th day of June, 2026, between Mr. Nikhil Patel, residing at 8, Navrangpura, Ahmedabad - 380009 (hereinafter the “Owner”) and Mr. Faisal Shaikh, residing at 21, Satellite Road, Ahmedabad - 380015 (hereinafter the “Tenant”), whereby the Owner agrees to rent out and the Tenant agrees to take on rent the premises described below, on the terms set out hereunder.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.98,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c002",
+    "text": "The Owner lets out Flat No. 502, Shreeji Residency, Satellite Road, Ahmedabad - 380015, consisting of two bedrooms, a hall and a kitchen.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c003",
+    "text": "The term of this agreement is 11 months from 1st July 2026 to 31st May 2027; the monthly rent is Rs. 18,500/- (Rupees Eighteen Thousand Five Hundred only), payable by the 5th of every month; a security deposit of Rs. 55,500/- has been paid by the Tenant and is refundable on vacating the premises.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "security_deposit",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c004",
+    "text": "The Tenant shall bear electricity and water charges. The Owner shall bear society maintenance charges.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": "maintenance",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c005",
+    "text": "The Tenant shall use the premises for residential purposes only, and shall not sublet or part with possession without the Owner's written consent.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.95,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c006",
+    "text": "Either party may terminate this agreement by giving one month's prior written notice. Non-payment of rent for two consecutive months shall entitle the Owner to terminate this agreement and re-enter the premises.",
+    "risk_label": "GREEN",
+    "risk_confidence": 0.85,
+    "topic": "eviction",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c007",
+    "text": "(a) The Owner may inspect the premises with 24 hours' prior notice. (b) Any dispute shall be subject to the jurisdiction of courts at Ahmedabad.",
+    "risk_label": "YELLOW",
+    "risk_confidence": 0.8,
+    "topic": "notice",
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   },
+   {
+    "clause_id": "c008",
+    "text": "IN WITNESS WHEREOF the parties have signed this Agreement on the date first mentioned above.",
+    "risk_label": "GREEN",
+    "risk_confidence": 1.0,
+    "topic": null,
+    "retrieved_statutes": [],
+    "explanation": null,
+    "error": "Explanation unavailable for this saved run."
+   }
+  ],
+  "cross_clause": []
+ }
+}

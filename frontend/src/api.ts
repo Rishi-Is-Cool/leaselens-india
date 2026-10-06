@@ -2,6 +2,10 @@
 // server binds IPv4 only, so "localhost" intermittently fails to connect.
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8000";
 
+// The hosted site has no backend: it replays saved analyses bundled with the build, so it
+// cannot sleep, run out of LLM quota, or expose anyone's uploads. Set by .env.production.
+export const STATIC_DEMO = import.meta.env.VITE_STATIC_DEMO === "true";
+
 export type HealthResponse = {
   status: "ok" | "degraded";
   service: string;
@@ -53,13 +57,21 @@ export type Explanation = {
   disclaimer: string;
 };
 
+export type Statute = {
+  entry_id: string;
+  citation: string;
+  excerpt_text: string;
+  source_url: string;
+  last_verified_date: string;
+};
+
 export type AnalysedClause = {
   clause_id: string;
   text: string;
   risk_label: RiskLabel;
   risk_confidence: number;
   topic: string | null;
-  retrieved_statutes: unknown[];
+  retrieved_statutes: Statute[];
   explanation: Explanation | null;
   error: string | null;
 };
@@ -110,12 +122,35 @@ export function fetchDocument(id: string): Promise<ParsedDocument> {
   return request<ParsedDocument>(`/documents/${id}`);
 }
 
-export function listAnalyses(): Promise<AnalysisSummary[]> {
-  return request<AnalysisSummary[]>("/analysis/documents");
+type BundledDocument = Omit<AnalysisSummary, "filename"> & Pick<DemoDocument, "clauses" | "cross_clause">;
+
+let bundled: Promise<Record<string, BundledDocument>> | null = null;
+
+function loadBundled(): Promise<Record<string, BundledDocument>> {
+  bundled ??= fetch("/demo-analysis.json").then((response) => {
+    if (!response.ok) throw new Error(`Saved analyses could not be loaded (HTTP ${response.status})`);
+    return response.json();
+  });
+  return bundled;
 }
 
-export function fetchAnalysis(filename: string): Promise<DemoDocument> {
-  return request<DemoDocument>(`/analysis/documents/${encodeURIComponent(filename)}`);
+export async function listAnalyses(): Promise<AnalysisSummary[]> {
+  if (!STATIC_DEMO) return request<AnalysisSummary[]>("/analysis/documents");
+  const documents = await loadBundled();
+  return Object.entries(documents).map(([filename, d]) => ({
+    filename,
+    jurisdiction: d.jurisdiction,
+    clause_count: d.clause_count,
+    explained_count: d.explained_count,
+    connection_count: d.connection_count,
+  }));
+}
+
+export async function fetchAnalysis(filename: string): Promise<DemoDocument> {
+  if (!STATIC_DEMO) return request<DemoDocument>(`/analysis/documents/${encodeURIComponent(filename)}`);
+  const document = (await loadBundled())[filename];
+  if (!document) throw new Error("No saved analysis was found for this filename.");
+  return { filename, jurisdiction: document.jurisdiction, clauses: document.clauses, cross_clause: document.cross_clause };
 }
 
 export function uploadDocument(file: File): Promise<ParsedDocument> {

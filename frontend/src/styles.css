@@ -168,3 +168,5 @@ footer{width:min(1160px,calc(100% - 48px));margin:0 auto;padding:0 0 32px;color:
 .raw-clause{margin-top:1rem;font-size:.86rem;color:var(--muted)}
 .raw-clause summary{cursor:pointer}
 .raw-clause p{margin-top:.5rem!important}
+
+.statute-source { font-size: 11px; color: #7b8c82; }.statute-source a { color: #2f7a55; font-weight: 600; }
