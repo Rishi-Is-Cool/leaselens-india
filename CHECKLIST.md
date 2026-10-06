@@ -47,7 +47,12 @@ not as they are written.
 - [ ] Tick Phase 1 in `PROGRESS.md` once the above are resolved or consciously deferred
 
 **Phase 7 — deploy and polish**
-- [ ] Deploy: Render (API) + Vercel (frontend) + Supabase (DB); record the live URL
+- [x] **Hosted demo live: https://leaselens-india.vercel.app** (Vercel, backend-free, replays
+      saved analyses; auto-redeploys on every push to master). Regenerate its data with
+      `python backend/scripts/build_demo_analysis.py` whenever the saved analysis changes;
+      a test fails if the bundle goes stale.
+- [ ] Deploy the *full* app (Render API + Supabase) so uploads work publicly; needs the
+      `GET /documents` scoping below first
 - [ ] Opt-in "save to account" option (24h auto-delete is already enforced)
 - [ ] Privacy note visible before upload
 - [ ] Plan for Supabase free-tier pausing after ~7 idle days
@@ -69,4 +74,5 @@ not as they are written.
 - [x] Segmentation 100% (92/92) on 9 synthetic leases; content coverage 99.2% mean
 - [x] 24h upload retention enforced and tested against Supabase
 - [x] Code on GitHub with single-author history; no secrets found in full git history
-- [x] Analysis UI rebuilt and running locally (plain-language labels, statutes, disclaimer)
+- [x] Analysis UI rebuilt (plain-language labels, real statute citations with source links, disclaimer)
+- [x] Public demo link live on Vercel, verified anonymous: no login wall, no API calls, no leaks

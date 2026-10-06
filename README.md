@@ -4,6 +4,11 @@ AI-assisted lease analysis: upload a lease, get clauses segmented, risk-flagged
 (GREEN / YELLOW / RED), and explained with citations traced to a curated statute
 knowledge base.
 
+**Live demo:** https://leaselens-india.vercel.app — a saved-results demo of the full
+pipeline on synthetic sample leases (clause segmentation, risk flags, plain-language
+explanations, statute citations). It has no backend, so nothing can be uploaded there;
+the full upload-and-analyse app runs locally.
+
 > **Not legal advice.** LeaseLens surfaces AI-assisted information and flags
 > *potential* concerns. Laws vary by location and change over time — verify with a
 > qualified professional before acting.
