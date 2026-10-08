@@ -120,3 +120,11 @@ backend-free demo of the saved reviews.
 Statute matching covers **Maharashtra** and **Delhi**, plus central law. Leases from
 other states still get clause splitting, risk levels, explanations and chat. They are
 labelled as having no state law check, and are never answered from the model's memory.
+
+## Team
+
+| | Role |
+| --- | --- |
+| **Maitry Mahesh Mohite** ([@maitry-mohite](https://github.com/maitry-mohite)) | Project lead; clause risk classifier (dataset, LLM baseline, trained model, evaluation) |
+| **Tanvi Yerram** ([@tanviyerram08](https://github.com/tanviyerram08)) | Statute knowledge base and law citations: curated provisions, official source links, retrieval |
+| **Rishikesh Patil** ([@Rishi-Is-Cool](https://github.com/Rishi-Is-Cool)) | Document ingestion and OCR, clause segmentation, explanations and grounding, chat, frontend, deployment |
