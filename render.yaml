@@ -1,28 +1,22 @@
-# Render blueprint for the LeaseLens API.
-# The database is Supabase, not a Render Postgres, so DATABASE_URL is set by hand in the
-# dashboard rather than declared here — it carries a password and must not live in git.
+# Render blueprint for the LeaseLens API (free plan, Docker: the image carries Tesseract
+# for scanned leases, which Render's native Python runtime cannot install).
+# The database is Supabase, not a Render Postgres. Secrets are entered in the dashboard
+# when the blueprint is applied (sync: false) and never live in git.
 services:
   - type: web
     name: leaselens-api
-    runtime: python
+    runtime: docker
     plan: free
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     healthCheckPath: /health
+    autoDeploy: true
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.13.2"
-      - key: ENVIRONMENT
-        value: production
-      - key: DEMO_MODE
-        value: "true"
-      - key: RETENTION_HOURS
-        value: "24"
-      # Set in the dashboard: the Supabase session-pooler URI, scheme rewritten to
-      # postgresql+psycopg://
+      # The Supabase session-pooler URI, scheme rewritten to postgresql+psycopg://
       - key: DATABASE_URL
         sync: false
-      # Set in the dashboard once Vercel has issued the frontend URL.
-      - key: CORS_ORIGINS
+      # Groq key: turns on plain-language explanations, cross-clause links and chat.
+      # The API runs without it (offline risk model + statute matching only).
+      - key: LLM_API_KEY
         sync: false

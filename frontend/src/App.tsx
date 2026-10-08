@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { ACTION_LABELS, ChatDrawer, type QuickAsk } from "./Chat";
 import { LiveAnalysisPanel } from "./LiveAnalysis";
 import {
+  deleteDocument,
   fetchAnalysis,
   fetchDocument,
   fetchHealth,
@@ -10,6 +12,7 @@ import {
   STATIC_DEMO,
   type AnalysedClause,
   type AnalysisSummary,
+  type ChatAction,
   type DemoDocument,
   type HealthResponse,
   type LiveAnalysis,
@@ -22,8 +25,16 @@ type Upload =
   | { phase: "failed"; message: string }
   | { phase: "parsed" };
 
+// A free-tier API sleeps when idle and takes up to a minute or two to wake, so the page
+// keeps trying for a while before calling it offline. Saved samples show meanwhile.
+const HEALTH_RETRY_MS = 6000;
+const HEALTH_ATTEMPTS = 25;
+
+type Server = "connecting" | "waking" | "ready" | "offline";
+
 export default function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null);
+  const [server, setServer] = useState<Server>("connecting");
   const [library, setLibrary] = useState<ParsedDocument[]>([]);
   const [selected, setSelected] = useState<ParsedDocument | null>(null);
   const [analysis, setAnalysis] = useState<DemoDocument | null>(null);
@@ -40,10 +51,36 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (!STATIC_DEMO) {
-      fetchHealth().then(setHealth).catch(() => setHealth(null));
-      void refreshLibrary();
-    }
+    if (STATIC_DEMO) return;
+    let cancelled = false;
+    let timer: number | undefined;
+    let attempts = 0;
+    const poll = async () => {
+      try {
+        const result = await fetchHealth();
+        if (cancelled) return;
+        setHealth(result);
+        setServer(result.database.connected ? "ready" : "offline");
+        if (result.database.connected) void refreshLibrary();
+      } catch {
+        if (cancelled) return;
+        attempts += 1;
+        if (attempts >= HEALTH_ATTEMPTS) {
+          setServer("offline");
+          return;
+        }
+        setServer(attempts === 1 ? "connecting" : "waking");
+        timer = window.setTimeout(poll, HEALTH_RETRY_MS);
+      }
+    };
+    void poll();
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
     // Surface the pre-analysed sample immediately, so the review panel opens on the
     // Phase 4 output rather than an empty state.
     listAnalyses()
@@ -88,7 +125,18 @@ export default function App() {
     }
   }
 
-  const dbOk = health?.database.connected ?? false;
+  const canUpload = !STATIC_DEMO && server === "ready";
+
+  function startNewReview() {
+    setAnalysis(null);
+    setSelected(null);
+    setUpload({ phase: "idle" });
+  }
+
+  async function handleDeleted() {
+    startNewReview();
+    await refreshLibrary();
+  }
 
   return (
     <div className="app-shell">
@@ -97,15 +145,16 @@ export default function App() {
           <span className="brand-mark">L</span>
           <span>LeaseLens</span>
         </a>
-        <div className={`status ${STATIC_DEMO || dbOk ? "status-ready" : "status-waiting"}`}>
+        <div className={`status ${STATIC_DEMO || server === "ready" ? "status-ready" : "status-waiting"}`}>
           <i />
           {STATIC_DEMO
             ? "Saved demo"
-            : health === null
-              ? "Connecting to workspace"
-              : dbOk
-                ? "Workspace ready"
-                : "Database offline"}
+            : {
+                connecting: "Connecting to workspace",
+                waking: "Waking up the server…",
+                ready: "Live · uploads on",
+                offline: health ? "Database offline" : "Server offline",
+              }[server]}
         </div>
       </header>
 
@@ -117,7 +166,7 @@ export default function App() {
             <p>
               {STATIC_DEMO
                 ? "Browse real-format sample leases: every clause is flagged by how much attention it deserves, explained in plain language, and checked against the rental law where we have it."
-                : "Upload a lease to pull out every clause, see which ones are worth a closer look, and read a plain-language explanation of each."}
+                : "Upload an Indian rental agreement to pull out every clause, see which ones deserve a closer look, check them against your state's rental law, and ask questions about it in plain language."}
             </p>
           </div>
           <div className="hero-note">
@@ -139,7 +188,22 @@ export default function App() {
           </aside>
         )}
 
-        {!STATIC_DEMO && health?.demo_mode && (
+        {!STATIC_DEMO && server === "waking" && (
+          <aside className="demo-banner">
+            <strong>Waking up the live server.</strong> It sleeps when nobody has used it for a
+            while and can take a minute or two to start. The saved sample reviews below work
+            right away.
+          </aside>
+        )}
+
+        {!STATIC_DEMO && server === "offline" && (
+          <aside className="demo-banner">
+            <strong>The live server isn't reachable right now</strong>, so uploading is
+            switched off. The saved sample reviews below still work.
+          </aside>
+        )}
+
+        {!STATIC_DEMO && health?.demo_mode && server === "ready" && (
           <aside className="demo-banner">
             <strong>Demo workspace.</strong> This version extracts lease text and reviews
             it with AI assistance; it does not provide legal advice.
@@ -154,9 +218,14 @@ export default function App() {
                 <h2>Reviewed leases</h2>
               </div>
             </div>
+            {canUpload && (
+              <button className="primary-button new-review" onClick={startNewReview}>
+                + Review your own lease
+              </button>
+            )}
             <AnalysisLibrary onOpen={openAnalysis} current={analysis?.filename ?? null} />
 
-            {!STATIC_DEMO && (<>
+            {canUpload && (<>
             <div className="library-heading">
               <div>
                 <span className="eyebrow">YOUR DOCUMENTS</span>
@@ -197,19 +266,25 @@ export default function App() {
                 key={selected.id}
                 document={selected}
                 onUploadAnother={() => inputRef.current?.click()}
+                onDeleted={handleDeleted}
               />
-            ) : STATIC_DEMO ? (
-              <p className="notice">Loading the saved review…</p>
+            ) : !canUpload ? (
+              <p className="notice">
+                {STATIC_DEMO || server === "offline"
+                  ? "Choose a saved review on the left."
+                  : "Connecting to the live server… choose a saved review on the left meanwhile."}
+              </p>
             ) : (
               <UploadCard
                 dragging={dragging}
                 inputRef={inputRef}
                 upload={upload}
+                retentionHours={health?.retention_hours ?? 24}
                 onFile={handleFile}
                 onDragging={setDragging}
               />
             )}
-            {!STATIC_DEMO && (
+            {canUpload && (
               <input
                 ref={inputRef}
                 type="file"
@@ -274,12 +349,14 @@ function UploadCard({
   dragging,
   inputRef,
   upload,
+  retentionHours,
   onFile,
   onDragging,
 }: {
   dragging: boolean;
   inputRef: React.RefObject<HTMLInputElement | null>;
   upload: Upload;
+  retentionHours: number;
   onFile: (file: File | undefined) => void;
   onDragging: (value: boolean) => void;
 }) {
@@ -317,6 +394,21 @@ function UploadCard({
         </p>
       )}
       {upload.phase === "failed" && <p className="notice notice-bad">{upload.message}</p>}
+      <div className="privacy-note">
+        <strong>Before you upload</strong>
+        <ul>
+          <li>
+            Your lease is deleted automatically after {retentionHours} hours, or straight away
+            with “Delete this lease now”. There are no accounts and nothing is kept longer.
+          </li>
+          <li>Only this browser can see what you upload.</li>
+          <li>
+            Clause text is sent to an AI provider to write explanations and answer questions.
+            Remove details you don't want shared (names, ID or bank numbers) before uploading.
+          </li>
+          <li>LeaseLens gives AI-assisted information, not legal advice.</li>
+        </ul>
+      </div>
     </div>
   );
 }
@@ -326,7 +418,12 @@ function AnalysisResult({
   live,
 }: {
   document: DemoDocument;
-  live?: { explanationsAvailable: boolean; onChangeState: () => void };
+  live?: {
+    explanationsAvailable: boolean;
+    onChangeState: () => void;
+    onDelete: () => void;
+    onAsk?: (action: ChatAction, clauseId: string) => void;
+  };
 }) {
   const counts = document.clauses.reduce(
     (acc, clause) => ({ ...acc, [clause.risk_label]: (acc[clause.risk_label] ?? 0) + 1 }),
@@ -349,9 +446,14 @@ function AnalysisResult({
           </p>
         </div>
         {live ? (
-          <button className="secondary-button" onClick={live.onChangeState}>
-            Change state &amp; re-run
-          </button>
+          <div className="header-actions">
+            <button className="secondary-button" onClick={live.onChangeState}>
+              Change state &amp; re-run
+            </button>
+            <button className="danger-button" onClick={live.onDelete}>
+              Delete this lease now
+            </button>
+          </div>
         ) : (
           <span className="demo-chip">Analysis ready</span>
         )}
@@ -403,7 +505,7 @@ function AnalysisResult({
 
       <ol className="analysis-clauses">
         {document.clauses.map((clause) => (
-          <AnalysisClause key={clause.clause_id} clause={clause} />
+          <AnalysisClause key={clause.clause_id} clause={clause} onAsk={live?.onAsk} />
         ))}
       </ol>
 
@@ -431,7 +533,13 @@ function AnalysisResult({
   );
 }
 
-function AnalysisClause({ clause }: { clause: AnalysedClause }) {
+function AnalysisClause({
+  clause,
+  onAsk,
+}: {
+  clause: AnalysedClause;
+  onAsk?: (action: ChatAction, clauseId: string) => void;
+}) {
   // The model emits GREEN/YELLOW/RED, which means nothing to someone reading their own
   // lease, so the rail shows plain wording and keeps the raw label out of the way.
   const wording: Record<string, string> = {
@@ -441,7 +549,7 @@ function AnalysisClause({ clause }: { clause: AnalysedClause }) {
   };
 
   return (
-    <li className={`analysis-clause risk-${clause.risk_label.toLowerCase()}`}>
+    <li id={`clause-${clause.clause_id}`} className={`analysis-clause risk-${clause.risk_label.toLowerCase()}`}>
       <div className="risk-rail">
         <span className="clause-index">{clause.clause_id.replace("c", "")}</span>
         <span className="risk-label">{wording[clause.risk_label] ?? "Not assessed"}</span>
@@ -517,6 +625,15 @@ function AnalysisClause({ clause }: { clause: AnalysedClause }) {
             ))}
           </div>
         )}
+        {onAsk && (
+          <div className="quick-actions">
+            {(Object.keys(ACTION_LABELS) as ChatAction[]).map((action) => (
+              <button key={action} onClick={() => onAsk(action, clause.clause_id)}>
+                {ACTION_LABELS[action]}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </li>
   );
@@ -534,9 +651,11 @@ function RiskStat({ label, value, tone }: { label: string; value: number; tone: 
 function Result({
   document,
   onUploadAnother,
+  onDelete,
 }: {
   document: ParsedDocument;
   onUploadAnother: () => void;
+  onDelete: () => void;
 }) {
   return (
     <div className="result">
@@ -549,9 +668,14 @@ function Result({
             {document.extraction_method === "text" ? "embedded text" : document.extraction_method}
           </p>
         </div>
-        <button className="secondary-button" onClick={onUploadAnother}>
-          Upload another
-        </button>
+        <div className="header-actions">
+          <button className="secondary-button" onClick={onUploadAnother}>
+            Upload another
+          </button>
+          <button className="danger-button" onClick={onDelete}>
+            Delete this lease now
+          </button>
+        </div>
       </div>
 
       <div className="summary">
@@ -607,13 +731,28 @@ function Stat({ label, value }: { label: string; value: string }) {
 function DocumentReview({
   document,
   onUploadAnother,
+  onDeleted,
 }: {
   document: ParsedDocument;
   onUploadAnother: () => void;
+  onDeleted: () => void;
 }) {
   const [analysed, setAnalysed] = useState<DemoDocument | null>(null);
   const [liveState, setLiveState] = useState<LiveAnalysis | null>(null);
   const [rerun, setRerun] = useState(0);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [quickAsk, setQuickAsk] = useState<QuickAsk | null>(null);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+
+  async function remove() {
+    if (!window.confirm(`Delete “${document.filename}” and its review now? This can't be undone.`)) return;
+    try {
+      await deleteDocument(document.id);
+      onDeleted();
+    } catch (error) {
+      setDeleteError((error as Error).message);
+    }
+  }
 
   return (
     <>
@@ -633,12 +772,29 @@ function DocumentReview({
             explanationsAvailable: liveState.explanations_available,
             onChangeState: () => {
               setAnalysed(null);
+              setChatOpen(false);
               setRerun((n) => n + 1);
+            },
+            onDelete: () => void remove(),
+            onAsk: (action, clauseId) => {
+              setChatOpen(true);
+              setQuickAsk((previous) => ({ action, clauseId, nonce: (previous?.nonce ?? 0) + 1 }));
             },
           }}
         />
       ) : (
-        <Result document={document} onUploadAnother={onUploadAnother} />
+        <Result document={document} onUploadAnother={onUploadAnother} onDelete={() => void remove()} />
+      )}
+      {deleteError && <p className="notice notice-bad">{deleteError}</p>}
+      {analysed && liveState && (
+        <ChatDrawer
+          documentId={document.id}
+          jurisdiction={liveState.jurisdiction}
+          llmConfigured={liveState.llm_configured}
+          quickAsk={quickAsk}
+          open={chatOpen}
+          onOpenChange={setChatOpen}
+        />
       )}
     </>
   );

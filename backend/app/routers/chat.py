@@ -12,7 +12,9 @@ from app.analysis.service import public_error
 from app.chat import service as chat
 from app.db import get_session
 from app.llm_client import DailyQuotaExceededError, LLMClient, LLMNotConfiguredError
-from app.models import Analysis, Document
+from app.models import Analysis
+from app.ownership import client_key, owned_document_or_404
+from app.ratelimit import limited
 
 router = APIRouter(prefix="/documents", tags=["chat"])
 
@@ -43,14 +45,14 @@ def get_chat_client() -> LLMClient:
     return LLMClient(max_retries=2)
 
 
-@router.post("/{document_id}/chat")
+@router.post("/{document_id}/chat", dependencies=[Depends(limited("questions", "chat_limit_per_hour"))])
 def ask(
     document_id: uuid.UUID,
     request: ChatRequest,
     session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
 ) -> dict:
-    if session.get(Document, document_id) is None:
-        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found.")
+    owned_document_or_404(session, document_id, owner)
     analysis = session.get(Analysis, document_id)
     if analysis is None or analysis.status != "done" or not analysis.result:
         raise HTTPException(

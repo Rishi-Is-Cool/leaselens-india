@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     retention_hours: int = 24
     # Shown in the UI so nobody mistakes an unfinished pipeline for a finished product.
     demo_mode: bool = False
+    # Per-visitor requests per hour on a public host; 0 turns a limit off (local use, tests).
+    upload_limit_per_hour: int = 0
+    analysis_limit_per_hour: int = 0
+    chat_limit_per_hour: int = 0
 
     @property
     def cors_origin_list(self) -> list[str]:

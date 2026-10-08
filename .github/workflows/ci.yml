@@ -40,3 +40,45 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
+
+  # Builds the image Render deploys and smoke-tests it: boots, reaches Postgres, parses an
+  # upload and runs a review on the ONNX embedding backend, within the free tier's 512 MB.
+  docker:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: leaselens
+          POSTGRES_PASSWORD: leaselens
+          POSTGRES_DB: leaselens
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 10s
+          --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t leaselens-api .
+      - name: Run the container
+        run: |
+          docker run -d --name api --network host --memory 512m \
+            -e PORT=10000 \
+            -e DATABASE_URL=postgresql+psycopg://leaselens:leaselens@localhost:5432/leaselens \
+            leaselens-api
+          for i in $(seq 1 60); do curl -sf localhost:10000/health && break; sleep 2; done
+          curl -sf localhost:10000/health | grep '"connected":true'
+      - name: Upload and review a lease
+        run: |
+          id=$(curl -sf -H 'X-Client-Id: ci' -F 'file=@data/test-leases/01_maharashtra_leave_license_mumbai.pdf;type=application/pdf' \
+            localhost:10000/documents | python3 -c 'import json,sys; print(json.load(sys.stdin)["id"])')
+          curl -sf -H 'X-Client-Id: ci' -H 'Content-Type: application/json' -d '{"jurisdiction":"Maharashtra"}' \
+            localhost:10000/documents/$id/analysis > /dev/null
+          for i in $(seq 1 60); do
+            status=$(curl -sf -H 'X-Client-Id: ci' localhost:10000/documents/$id/analysis | python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])')
+            [ "$status" = done ] && break; sleep 2
+          done
+          [ "$status" = done ]
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:10000/documents/$id)" = 404
+          docker stats --no-stream api
+      - if: failure()
+        run: docker logs api

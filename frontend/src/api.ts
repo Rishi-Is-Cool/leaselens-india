@@ -2,9 +2,30 @@
 // server binds IPv4 only, so "localhost" intermittently fails to connect.
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8000";
 
-// The hosted site has no backend: it replays saved analyses bundled with the build, so it
-// cannot sleep, run out of LLM quota, or expose anyone's uploads. Set by .env.production.
+// A build with no backend at all: only the saved analyses bundled with the site. Without
+// it, the saved analyses still come from the bundle (so they show instantly, even while a
+// free-tier API is waking up) and uploads go to the API.
 export const STATIC_DEMO = import.meta.env.VITE_STATIC_DEMO === "true";
+
+// There are no accounts: a random id kept in this browser marks which uploads are its own,
+// and the API serves a lease only to the browser that uploaded it.
+const CLIENT_ID_KEY = "leaselens-client-id";
+let clientId: string | null = null;
+
+function getClientId(): string {
+  if (clientId) return clientId;
+  try {
+    clientId = localStorage.getItem(CLIENT_ID_KEY);
+    if (!clientId) {
+      clientId = crypto.randomUUID();
+      localStorage.setItem(CLIENT_ID_KEY, clientId);
+    }
+  } catch {
+    // Storage blocked (private mode): uploads still work for this tab's lifetime.
+    clientId ??= crypto.randomUUID();
+  }
+  return clientId;
+}
 
 export type HealthResponse = {
   status: "ok" | "degraded";
@@ -100,20 +121,33 @@ export type AnalysisSummary = {
   connection_count: number;
 };
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, init);
+export class ApiError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+  }
+}
+
+async function request<T>(path: string, init?: RequestInit & { timeoutMs?: number }): Promise<T> {
+  const headers = new Headers(init?.headers);
+  headers.set("X-Client-Id", getClientId());
+  const signal = init?.timeoutMs ? AbortSignal.timeout(init.timeoutMs) : init?.signal;
+  const response = await fetch(`${API_BASE}${path}`, { ...init, headers, signal });
+  if (response.status === 204) return undefined as T;
   if (!response.ok) {
     const detail = await response
       .json()
       .then((b) => b.detail)
       .catch(() => null);
-    throw new Error(detail ?? `Request failed with HTTP ${response.status}`);
+    throw new ApiError(
+      typeof detail === "string" ? detail : `Request failed with HTTP ${response.status}`,
+      response.status,
+    );
   }
   return response.json();
 }
 
-export function fetchHealth(): Promise<HealthResponse> {
-  return request<HealthResponse>("/health");
+export function fetchHealth(timeoutMs = 8000): Promise<HealthResponse> {
+  return request<HealthResponse>("/health", { timeoutMs });
 }
 
 export function listDocuments(): Promise<ParsedDocument[]> {
@@ -122,6 +156,10 @@ export function listDocuments(): Promise<ParsedDocument[]> {
 
 export function fetchDocument(id: string): Promise<ParsedDocument> {
   return request<ParsedDocument>(`/documents/${id}`);
+}
+
+export function deleteDocument(id: string): Promise<void> {
+  return request<void>(`/documents/${id}`, { method: "DELETE" });
 }
 
 type BundledDocument = Omit<AnalysisSummary, "filename"> & Pick<DemoDocument, "clauses" | "cross_clause">;
@@ -137,7 +175,6 @@ function loadBundled(): Promise<Record<string, BundledDocument>> {
 }
 
 export async function listAnalyses(): Promise<AnalysisSummary[]> {
-  if (!STATIC_DEMO) return request<AnalysisSummary[]>("/analysis/documents");
   const documents = await loadBundled();
   return Object.entries(documents).map(([filename, d]) => ({
     filename,
@@ -149,7 +186,6 @@ export async function listAnalyses(): Promise<AnalysisSummary[]> {
 }
 
 export async function fetchAnalysis(filename: string): Promise<DemoDocument> {
-  if (!STATIC_DEMO) return request<DemoDocument>(`/analysis/documents/${encodeURIComponent(filename)}`);
   const document = (await loadBundled())[filename];
   if (!document) throw new Error("No saved analysis was found for this filename.");
   return { filename, jurisdiction: document.jurisdiction, clauses: document.clauses, cross_clause: document.cross_clause };
@@ -193,5 +229,32 @@ export function startLiveAnalysis(documentId: string, jurisdiction: string | nul
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ jurisdiction }),
+  });
+}
+
+// --- Phase 5: questions about one uploaded lease ---
+
+export type ChatAction = "explain_simply" | "why_flagged" | "what_to_check";
+
+export type ChatTurn = { role: "user" | "assistant"; content: string };
+
+export type ChatReply = {
+  question: string;
+  answer: string;
+  cited_clauses: { clause_id: string; section_heading: string | null; snippet: string }[];
+  cited_statutes: Pick<Statute, "entry_id" | "citation" | "source_url" | "last_verified_date">[];
+  out_of_scope: boolean;
+  guarded: boolean;
+  disclaimer: string;
+};
+
+export function askAboutLease(
+  documentId: string,
+  body: { question?: string; action?: ChatAction; clause_id?: string; history: ChatTurn[] },
+): Promise<ChatReply> {
+  return request<ChatReply>(`/documents/${documentId}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
   });
 }

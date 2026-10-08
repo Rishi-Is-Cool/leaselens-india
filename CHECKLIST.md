@@ -34,18 +34,23 @@ not as they are written.
 - [ ] Re-run Phase 4 on the full corpus and keep a clean copy. The only clean data now is
       13 Maharashtra clauses; the 92/92 grounding and 29-connection runs are lost.
 
-**Phase 5 — document-aware chat (not started)**
-- [ ] Chat endpoint scoped to the document + its jurisdiction's statutes
-- [ ] Quick actions: explain simply / why flagged / what to check
-- [ ] Refusal behaviour: other jurisdiction, "is this legal?" — adversarial tests
-- [ ] Chat UI
+**Phase 5 — document-aware chat**
+- [x] Chat endpoint scoped to the document + its jurisdiction's statutes (`b3598d6`)
+- [x] Quick actions: explain simply / why flagged / what to check, on every live clause card
+- [x] Refusal behaviour: other jurisdiction refused before any model call; verdicts,
+      uncited law and invented amounts retried once then replaced (19 tests, fake model)
+- [x] Chat UI: drawer with citation chips (jump to clause / official source), disclaimer,
+      clear messages for no provider, rate limit and network errors. Verified in the
+      browser against a stand-in model
+- [ ] Run the adversarial checks against the real Groq model once a key is added
 
 **Phase 6 — frontend**
 - [ ] Obligation map (tenant must-do / landlord can-do / payments / key dates)
 - [x] Jurisdiction selector: inferred from the lease, confirmed by the user, with an
       "Another state (no law check yet)" option
 - [ ] Highlighting on the document itself
-- [ ] Phone-width check of the new analysis view
+- [x] Phone-width check of the analysis view and chat (375 px: no horizontal scroll,
+      chat goes full-screen)
 
 **Phase 1 leftovers**
 - [ ] OCR quality: the JPG test OCR'd but came out garbled
@@ -58,21 +63,24 @@ not as they are written.
       saved analyses; auto-redeploys on every push to master). Regenerate its data with
       `python backend/scripts/build_demo_analysis.py` whenever the saved analysis changes;
       a test fails if the bundle goes stale.
-- [ ] Deploy the *full* app (Render API + Supabase) so uploads work publicly; needs the
-      `GET /documents` scoping below first
+- [x] Deploy-ready API: `Dockerfile` (Tesseract + ONNX embeddings, ~350 MB peak, fits
+      Render free) and `render.yaml` blueprint. Hugging Face Docker Spaces were tried and
+      now need a paid plan
+- [ ] **You:** create the Render service from the blueprint and enter `DATABASE_URL`
+      (+ `LLM_API_KEY`); then point `frontend/.env.production` at its URL
 - [ ] Opt-in "save to account" option (24h auto-delete is already enforced)
-- [ ] Privacy note visible before upload
+- [x] Privacy note visible before upload, plus "Delete this lease now"
 - [ ] Plan for Supabase free-tier pausing after ~7 idle days
-- [ ] **Scope `GET /documents` before any public deploy.** It lists every recent upload
-      (filename and id) to anyone, and `GET /documents/{id}` returns the full clauses. On
-      a shared host that exposes other people's leases. Needs per-session ownership.
+- [x] **Uploads scoped to the browser that made them** (random client id, stored hashed).
+      Listing, opening, reviewing, chatting and deleting all return 404 to anyone else.
+- [x] Per-visitor hourly limits on uploads / reviews / chat for the public host
 
 ## C. Docs that currently say untrue things
 
 - [ ] `leaselens-complete-handoff.md`: chat endpoint "ready", Phase 6 "complete",
       retention "not enforced", Phase 2 "trained classifier selected", wrong file names,
       116-tests claim
-- [ ] `README.md` still says "Phase 0 (scaffolding)"
+- [x] `README.md` rewritten: features, guardrails, privacy, architecture, deploy
 - [ ] `PROGRESS.md` checklist: Phases 1, 5, 6, 7 unticked or stale
 
 ## D. Done and verified

@@ -27,6 +27,9 @@ class Document(Base):
     title_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     section_headings: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     signature_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
+    # sha256 of the uploading browser's client id (see app.ownership); None for uploads
+    # made without one, which are never listed.
+    owner_key: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     # Hard deletion deadline; see purge_expired_documents.
     expires_at: Mapped[datetime | None] = mapped_column(

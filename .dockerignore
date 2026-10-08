@@ -1,0 +1,13 @@
+.env
+.env.*
+.git
+**/__pycache__
+**/.venv
+**/node_modules
+frontend
+test
+official_format
+lease_synthetic_document
+data/test-leases
+data/*.npy
+data/.llm_cache.jsonl

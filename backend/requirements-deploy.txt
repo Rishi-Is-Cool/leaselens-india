@@ -1,0 +1,21 @@
+# Runtime dependencies for the hosted API (see ../Dockerfile). Same as requirements.txt
+# minus the test tools and PyTorch: embeddings run on ONNX Runtime instead (identical
+# vectors, checked by tests/test_embeddings_backend.py), so the API fits in 512 MB.
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+httpx==0.28.1
+
+pdfplumber==0.11.4
+python-multipart==0.0.20
+pytesseract==0.3.13
+pillow==11.0.0
+
+openpyxl==3.1.5
+scikit-learn==1.9.1
+onnxruntime==1.30.0
+tokenizers==0.23.2
+huggingface_hub==1.33.0

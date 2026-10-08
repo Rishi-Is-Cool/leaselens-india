@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import uuid
 
-from fastapi import APIRouter, BackgroundTasks, Body, Depends, File, HTTPException, UploadFile, status
+from fastapi import APIRouter, BackgroundTasks, Body, Depends, File, HTTPException, Response, UploadFile, status
 from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy.exc import OperationalError
 from sqlalchemy import select
@@ -13,6 +13,8 @@ from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
 from app.ingestion.segment import segment_document
 from app.models import Analysis, Clause, Document
+from app.ownership import client_key, owned_document_or_404
+from app.ratelimit import limited
 from app.retention import expiry_for_new_upload, purge_expired_documents
 
 router = APIRouter(prefix="/documents", tags=["documents"])
@@ -55,10 +57,16 @@ class DocumentSummary(BaseModel):
     clause_count: int
 
 
-@router.post("", response_model=DocumentOut, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "",
+    response_model=DocumentOut,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(limited("uploads", "upload_limit_per_hour"))],
+)
 async def upload_document(
     file: UploadFile = File(...),
     session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
 ) -> DocumentOut:
     # Enforce the retention window on every upload: a free-tier host has no cron.
     purge_expired_documents(session)
@@ -100,6 +108,7 @@ async def upload_document(
         page_count=extracted.page_count,
         extraction_method=extracted.method,
         expires_at=expiry_for_new_upload(),
+        owner_key=owner,
         title_block=parsed.title_block,
         section_headings=parsed.section_headings,
         signature_block=parsed.signature_block,
@@ -129,11 +138,17 @@ async def upload_document(
 
 
 @router.get("", response_model=list[DocumentSummary])
-def list_documents(session: Session = Depends(get_session)) -> list[DocumentSummary]:
-    """Return the latest temporary uploads for the local review screen."""
+def list_documents(
+    session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
+) -> list[DocumentSummary]:
+    """This browser's recent uploads. Never anyone else's: see app.ownership."""
     purge_expired_documents(session)
+    if owner is None:
+        return []
     documents = session.scalars(
         select(Document)
+        .where(Document.owner_key == owner)
         .options(selectinload(Document.clauses))
         .order_by(Document.created_at.desc())
         .limit(12)
@@ -151,11 +166,24 @@ def list_documents(session: Session = Depends(get_session)) -> list[DocumentSumm
 
 
 @router.get("/{document_id}", response_model=DocumentOut)
-def get_document(document_id: uuid.UUID, session: Session = Depends(get_session)) -> DocumentOut:
-    document = session.get(Document, document_id)
-    if document is None:
-        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found.")
-    return _to_out(document)
+def get_document(
+    document_id: uuid.UUID,
+    session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
+) -> DocumentOut:
+    return _to_out(owned_document_or_404(session, document_id, owner))
+
+
+@router.delete("/{document_id}", status_code=status.HTTP_204_NO_CONTENT, response_class=Response, response_model=None)
+def delete_document(
+    document_id: uuid.UUID,
+    session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
+) -> None:
+    """Delete a lease now rather than at the end of the retention window. Its clauses and
+    review go with it (ON DELETE CASCADE)."""
+    session.delete(owned_document_or_404(session, document_id, owner))
+    session.commit()
 
 
 class AnalysisRequest(BaseModel):
@@ -163,29 +191,31 @@ class AnalysisRequest(BaseModel):
     jurisdiction: str | None = None
 
 
-def _document_or_404(session: Session, document_id: uuid.UUID) -> Document:
-    document = session.get(Document, document_id)
-    if document is None:
-        raise HTTPException(status.HTTP_404_NOT_FOUND, "Document not found.")
-    return document
-
-
 @router.get("/{document_id}/analysis")
-def get_analysis(document_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+def get_analysis(
+    document_id: uuid.UUID,
+    session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
+) -> dict:
     """Status, progress and (once done) the result. Before any run it also returns the
     jurisdiction inferred from the lease, which the user confirms before starting."""
-    document = _document_or_404(session, document_id)
+    document = owned_document_or_404(session, document_id, owner)
     return analysis_service.describe(document, session.get(Analysis, document_id))
 
 
-@router.post("/{document_id}/analysis", status_code=status.HTTP_202_ACCEPTED)
+@router.post(
+    "/{document_id}/analysis",
+    status_code=status.HTTP_202_ACCEPTED,
+    dependencies=[Depends(limited("reviews", "analysis_limit_per_hour"))],
+)
 def start_analysis(
     document_id: uuid.UUID,
     background: BackgroundTasks,
     request: AnalysisRequest = Body(default_factory=AnalysisRequest),
     session: Session = Depends(get_session),
+    owner: str | None = Depends(client_key),
 ) -> dict:
-    document = _document_or_404(session, document_id)
+    document = owned_document_or_404(session, document_id, owner)
     try:
         analysis = analysis_service.start(session, document, request.jurisdiction)
     except analysis_service.AnalysisAlreadyRunning as exc:
