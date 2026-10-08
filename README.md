@@ -5,7 +5,7 @@ and LeaseLens splits it into clauses, rates how much attention each one deserves
 it against your state's rental law with links to the official text, explains it in plain
 language, and answers questions about that one lease.
 
-**Live:** https://leaselens-india.vercel.app
+**Live:** https://leaselens-india.vercel.app (API: https://leaselens-api-0adw.onrender.com/docs)
 
 > **Not legal advice.** LeaseLens surfaces AI-assisted information and flags *potential*
 > concerns. It never says a clause is "legal" or "illegal". Laws vary by state and change

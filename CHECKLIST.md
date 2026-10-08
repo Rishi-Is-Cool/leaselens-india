@@ -66,8 +66,8 @@ not as they are written.
 - [x] Deploy-ready API: `Dockerfile` (Tesseract + ONNX embeddings, ~350 MB peak, fits
       Render free) and `render.yaml` blueprint. Hugging Face Docker Spaces were tried and
       now need a paid plan
-- [ ] **You:** create the Render service from the blueprint and enter `DATABASE_URL`
-      (+ `LLM_API_KEY`); then point `frontend/.env.production` at its URL
+- [x] **Full app live:** API on Render (https://leaselens-api-0adw.onrender.com, Supabase
+      connected, Groq configured), frontend on Vercel pointed at it
 - [ ] Opt-in "save to account" option (24h auto-delete is already enforced)
 - [x] Privacy note visible before upload, plus "Delete this lease now"
 - [ ] Plan for Supabase free-tier pausing after ~7 idle days
