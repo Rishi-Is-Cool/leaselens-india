@@ -43,11 +43,20 @@ export function ChatDrawer({
   const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
+  const [slow, setSlow] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
+
+  // The free AI tier has a per-minute token allowance; when it is used up an answer waits
+  // for the next minute, so say so instead of leaving a spinner unexplained.
+  useEffect(() => {
+    if (!busy) return setSlow(false);
+    const timer = window.setTimeout(() => setSlow(true), 8000);
+    return () => window.clearTimeout(timer);
+  }, [busy]);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, busy]);
+  }, [messages, busy, slow]);
 
   // A quick action pressed on a clause card arrives here; the nonce makes a repeat press of
   // the same action on the same clause ask again rather than being ignored.
@@ -151,7 +160,13 @@ export function ChatDrawer({
           ),
         )}
 
-        {busy && <div className="bubble bubble-assistant typing">Reading your lease…</div>}
+        {busy && (
+          <div className="bubble bubble-assistant typing">
+            {slow
+              ? "Still working — the free AI tier is busy right now, so this can take up to a minute."
+              : "Reading your lease…"}
+          </div>
+        )}
       </div>
 
       <form className="chat-input" onSubmit={submit}>

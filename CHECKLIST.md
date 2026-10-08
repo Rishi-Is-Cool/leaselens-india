@@ -42,7 +42,11 @@ not as they are written.
 - [x] Chat UI: drawer with citation chips (jump to clause / official source), disclaimer,
       clear messages for no provider, rate limit and network errors. Verified in the
       browser against a stand-in model
-- [ ] Run the adversarial checks against the real Groq model once a key is added
+- [x] Adversarial checks against the real Groq model on the live site: "is this legal?" and
+      "is clause 3 enforceable?" answered without a verdict, Karnataka refused, citations
+      only from retrieved statutes; live review explained 13/13 clauses with 2 connections
+- [x] Chat latency: prompts cut from ~4,700 to ~1,500 tokens (top 4 statutes, trimmed), so
+      questions stay inside Groq's 8k tokens/minute free tier (77 s → ~2 s)
 
 **Phase 6 — frontend**
 - [ ] Obligation map (tenant must-do / landlord can-do / payments / key dates)

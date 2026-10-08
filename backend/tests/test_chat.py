@@ -207,6 +207,21 @@ def test_unknown_document_is_a_404():
     assert ask(uuid.uuid4(), question="hi").status_code == 404
 
 
+def test_only_the_most_relevant_statutes_are_sent_and_the_anchor_keeps_its_own():
+    def statute(i, topic):
+        return {**DEPOSIT, "entry_id": f"MH_SEC_{i:03d}", "citation": f"Section {i}",
+                "excerpt_text": f"{topic} " * 400}
+    context = [
+        {**CLAUSES[1], "retrieved_statutes": [statute(1, "security deposit refund")]},
+        {**CLAUSES[2], "retrieved_statutes": [statute(i, "eviction notice") for i in range(2, 9)]},
+    ]
+    chosen = chat.select_statutes("When is my deposit refunded?", context, anchor="c002")
+    assert len(chosen) == chat.CONTEXT_STATUTES
+    assert chosen[0]["entry_id"] == "MH_SEC_001"
+    sent = chat.build_messages("q", context, chosen, "Maharashtra", [])[1]["content"]
+    assert len(sent) < 6000, "statute excerpts must be trimmed"
+
+
 @pytest.mark.parametrize(
     "question, jurisdiction, expected",
     [

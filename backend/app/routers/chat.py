@@ -41,8 +41,9 @@ class ChatRequest(BaseModel):
 
 def get_chat_client() -> LLMClient:
     # Few retries: the client's default backoff suits batch runs and would leave a person
-    # waiting minutes on a per-minute rate limit.
-    return LLMClient(max_retries=2)
+    # waiting minutes on a per-minute rate limit. Answers are a short paragraph; a smaller
+    # completion budget leaves more of the per-minute token allowance for the prompt.
+    return LLMClient(max_retries=3, max_tokens=700)
 
 
 @router.post("/{document_id}/chat", dependencies=[Depends(limited("questions", "chat_limit_per_hour"))])

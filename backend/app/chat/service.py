@@ -24,6 +24,11 @@ from app.explain.jurisdiction import infer_jurisdiction
 MAX_QUESTION_CHARS = 1000
 MAX_HISTORY_TURNS = 6
 CONTEXT_CLAUSES = 5
+# The free tier allows ~8,000 tokens a minute. Sending every statute matched to the context
+# clauses (often 10+, ~3,600 tokens) let two questions exhaust it, so only the most
+# relevant few go to the model, each trimmed.
+CONTEXT_STATUTES = 4
+STATUTE_EXCERPT_CHARS = 700
 
 ACTIONS = {
     "explain_simply": "Explain clause {clause_id} in simple, everyday words.",
@@ -127,6 +132,34 @@ def select_clauses(question: str, clauses: list[dict], anchor: str | None, k: in
     return [clauses[i] for i in sorted(chosen)]
 
 
+def select_statutes(question: str, context: list[dict], anchor: str | None,
+                    k: int = CONTEXT_STATUTES) -> list[dict]:
+    """The statutes matched to the context clauses that best fit the question: those of the
+    anchored clause first, then by similarity of their text to the question and anchor."""
+    from app.classifier.embeddings import embed
+
+    by_id: dict[str, dict] = {}
+    for clause in context:
+        for statute in clause.get("retrieved_statutes", []):
+            by_id.setdefault(statute["entry_id"], statute)
+    candidates = list(by_id.values())
+    if len(candidates) <= k:
+        return candidates
+    anchored = {s["entry_id"] for c in context if c["clause_id"] == anchor for s in c.get("retrieved_statutes", [])}
+    query = question + "".join(" " + c["text"] for c in context if c["clause_id"] == anchor)
+    vectors = embed([query] + [f"{s['citation']} {s['excerpt_text']}" for s in candidates], cache=False)
+    similarity = vectors[1:] @ vectors[0]
+    ranked = sorted(range(len(candidates)),
+                    key=lambda i: (candidates[i]["entry_id"] not in anchored, -similarity[i]))
+    return [candidates[i] for i in ranked[:k]]
+
+
+def _excerpt(text: str) -> str:
+    if len(text) <= STATUTE_EXCERPT_CHARS:
+        return text
+    return text[:STATUTE_EXCERPT_CHARS].rsplit(" ", 1)[0] + " …"
+
+
 def build_messages(question: str, context: list[dict], statutes: list[dict], jurisdiction: str | None,
                    history: list[dict]) -> list[dict]:
     lease = "\n\n".join(
@@ -134,7 +167,7 @@ def build_messages(question: str, context: list[dict], statutes: list[dict], jur
         f"{' ' + c['section_heading'] if c.get('section_heading') else ''}\n{c['text']}"
         for c in context
     )
-    law = "\n\n".join(f"[{s['entry_id']}] {s['citation']}\n{s['excerpt_text']}" for s in statutes) or "(none)"
+    law = "\n\n".join(f"[{s['entry_id']}] {s['citation']}\n{_excerpt(s['excerpt_text'])}" for s in statutes) or "(none)"
     state = jurisdiction or "a state LeaseLens holds no rental law for"
     context_block = (
         f"This lease is from {state}.\n\nLEASE EXCERPTS:\n{lease}\n\nSTATUTE EXCERPTS:\n{law}"
@@ -205,11 +238,8 @@ def answer(*, question: str, clauses: list[dict], jurisdiction: str | None, clie
         )
 
     context = select_clauses(question, clauses, anchor)
-    by_id = {}
-    for clause in context:
-        for statute in clause.get("retrieved_statutes", []):
-            by_id.setdefault(statute["entry_id"], statute)
-    statutes = list(by_id.values())
+    statutes = select_statutes(question, context, anchor)
+    by_id = {statute["entry_id"]: statute for statute in statutes}
 
     messages = build_messages(question, context, statutes, jurisdiction, history or [])
     reply, problems = None, []

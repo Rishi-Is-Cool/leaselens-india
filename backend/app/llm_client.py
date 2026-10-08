@@ -96,6 +96,8 @@ class LLMClient:
                     raise DailyQuotaExceededError(
                         f"{self.cfg['model']} hit its free-tier daily limit: {body_text[:200]}"
                     )
+                if attempt == self.max_retries - 1:
+                    break  # waiting out the limit only to give up afterwards helps nobody
                 retry_after = response.headers.get("retry-after")
                 time.sleep(float(retry_after) if retry_after and retry_after.replace(".", "").isdigit() else 5 * 2**attempt)
                 continue
