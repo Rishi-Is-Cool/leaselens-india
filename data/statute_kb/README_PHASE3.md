@@ -29,3 +29,19 @@ Individual statute/source artifacts are retained under `audit_sources/` for trac
 - Coverage suite: PASS; 10/10 representative clauses matched for Maharashtra and Delhi under default retrieval.
 - PostgreSQL: verified in temporary Google Colab (28 rows; 12/9/7 counts; isolation and evidence traceability PASS).
 - See `reports/phase3_final_verification.md` and `PROGRESS.md`.
+
+## How the app uses this knowledge base
+- In this repository the canonical files live at `data/statute_kb/leaselens_statute_kb.json`
+  and `data/statute_kb/leaselens_statute_index.json`; retrieval is
+  `backend/app/statute_kb/retrieval.py`.
+- Coverage: 28 provisions. Maharashtra 12 (Maharashtra Rent Control Act, 1999), Delhi 9
+  (Delhi Rent Control Act, 1958 and Delhi revenue notifications), Central 7 (Transfer of
+  Property Act, 1882; Registration Act, 1908).
+- Every entry carries its official `source_url` and `last_verified_date`. The UI shows both
+  next to each citation ("View the official source · last checked …"), so a reader can
+  check the provision themselves.
+- Retrieval is deterministic and jurisdiction-isolated: a lease reviewed under one state
+  never receives another state's provisions, and only central law is shared.
+- Citations are traceable end to end. Explanations and chat answers may cite only entries
+  retrieved for that lease, and any other citation the model produces is dropped before
+  it is shown.
