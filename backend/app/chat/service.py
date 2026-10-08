@@ -23,7 +23,8 @@ from app.explain.jurisdiction import infer_jurisdiction
 
 MAX_QUESTION_CHARS = 1000
 MAX_HISTORY_TURNS = 6
-CONTEXT_CLAUSES = 5
+CONTEXT_CLAUSES = 6
+FULL_LEASE_CHARS = 6000
 # The free tier allows ~8,000 tokens a minute. Sending every statute matched to the context
 # clauses (often 10+, ~3,600 tokens) let two questions exhaust it, so only the most
 # relevant few go to the model, each trimmed.
@@ -31,12 +32,17 @@ CONTEXT_STATUTES = 4
 STATUTE_EXCERPT_CHARS = 700
 
 ACTIONS = {
-    "explain_simply": "Explain clause {clause_id} in simple, everyday words.",
+    "explain_simply": (
+        "Explain clause {clause_id} in simple, everyday words, with a short example of how it "
+        "would work in practice."
+    ),
     "why_flagged": (
-        "Why was clause {clause_id} rated \"{rating}\"? What in its wording led to that rating?"
+        "Why was clause {clause_id} rated \"{rating}\"? What in its wording led to that rating? "
+        "Give the reasons as bullet points."
     ),
     "what_to_check": (
-        "What should I check, ask about, or try to negotiate before agreeing to clause {clause_id}?"
+        "What should I check, ask about, or try to negotiate before agreeing to clause "
+        "{clause_id}? Give each point as a bullet."
     ),
 }
 RATING_WORDS = {"GREEN": "Looks standard", "YELLOW": "Worth a look", "RED": "Needs attention"}
@@ -47,8 +53,10 @@ as c004), the risk rating the tool gave each, and zero or more statute excerpts 
 lease's state (each tagged with an id such as MH_SEC_001).
 
 Rules, all non-negotiable:
-1. Answer ONLY from the lease and statute excerpts provided. If the answer is not in them,
-   say you cannot tell from this lease. Do not use outside knowledge of laws or other leases.
+1. Answer ONLY from the lease and statute excerpts provided. Do not use outside knowledge
+   of laws or other leases. If the lease does not directly answer the question, say so
+   plainly, then explain what the lease DOES say that is related (for example: no clause
+   allows a rent increase, and the fee is stated as a fixed amount for the term).
 2. If the question is about a different lease or property, a different state's law, or a
    general legal topic not about this lease, set out_of_scope to true and say briefly that
    you can only discuss this lease.
@@ -60,11 +68,34 @@ Rules, all non-negotiable:
 4. List the clause ids you relied on in cited_clauses. Cite a statute ONLY by an id from the
    provided list, in cited_statutes. Never name any Act, Section or law that is not provided.
 5. Do not introduce amounts, dates or periods that do not appear in the excerpts or question.
-6. Write in plain, everyday language for someone who is not a lawyer: a short paragraph, or
-   a few short bullet points. No legal jargon without explaining it.
+6. Write in plain, everyday language for someone who is not a lawyer. No legal jargon
+   without explaining it.
+7. Format "answer" in Markdown, laid out like this (about 80-180 words in total):
+   - First line: the direct answer in one or two sentences, with the key fact in **bold**.
+   - Then 2-4 short bullet points ("- ") with the details that matter, each starting with a
+     **bold label** (for example "- **Notice period:** ...").
+   - Then, when it helps, a line starting with "**Example:**" showing how this plays out in
+     practice, using ONLY the names, amounts, dates and periods written in this lease.
+   - When there is something worth doing, end with a line starting with "**Tip:**".
+   Use "- " bullets only, never numbered lists. No headings, tables or links. Always use
+   this layout, even for short answers.
+
+Example of the layout (for a different lease; never reuse its facts):
+You can get your deposit back **within 30 days of moving out**, minus any unpaid dues.
+- **Amount:** Rs. 50,000, paid when you signed.
+- **Deductions:** the landlord may deduct unpaid rent or repair costs.
+- **Interest:** none is payable on the deposit.
+**Example:** if you leave with all rent paid and no damage, the full Rs. 50,000 should come back within 30 days.
+**Tip:** take dated photos of the flat when you hand over the keys.
 
 Reply with ONLY a JSON object, no other text:
 {"answer": "...", "cited_clauses": ["c004"], "cited_statutes": ["MH_SEC_001"], "out_of_scope": false}"""
+
+FORMAT_REMINDER = (
+    "(Reply in the JSON format. In \"answer\", use the rule 7 layout: a direct answer with the "
+    "key fact in bold, then 2-4 \"- **Label:** ...\" bullets, then an **Example:** line using "
+    "only this lease's figures, and a **Tip:** line if useful.)"
+)
 
 # The explanation guardrail's verdict patterns, plus the affirmative forms a chat question
 # ("is this legal?") invites that an explanation never does.
@@ -73,15 +104,21 @@ VERDICTS = [p for p in UNHEDGED_CONCLUSIONS] + [
     re.compile(r"\b(?:is|are) (?:unlawful|invalid)\b", re.I),
 ]
 ID_TOKEN = re.compile(r"\b(?:c\d{3}|[A-Z]{2,}_[A-Z]+_\d{3})\b")
+# Markdown list markers ("1. ") are layout, not amounts the lease must contain.
+LIST_MARKER = re.compile(r"^\s*\d+[.)]\s", re.M)
+BULLET = re.compile(r"^\s*[-*] ", re.M)
 
 VERDICT_FALLBACK = (
-    "I can't tell you whether this is legal or enforceable — that needs a qualified lawyer who "
-    "can look at your full situation. What I can do is explain what the lease says and point "
-    "out anything that may be worth questioning: try asking what a specific clause means."
+    "I can't tell you whether this is **legal or enforceable**. That needs a qualified lawyer "
+    "who can look at your full situation.\n"
+    "- **What I can do:** explain what any clause says, in plain words.\n"
+    "- **What to look at:** the clauses rated *Needs attention* or *Worth a look* in the review.\n"
+    "**Tip:** try \"Why was this clause rated Needs attention?\" or use the buttons on a clause."
 )
 UNRELIABLE_FALLBACK = (
-    "I couldn't give a reliable answer to that from this lease. Try asking about a specific "
-    "clause, or rephrase the question."
+    "I couldn't give a **reliable answer** to that from this lease.\n"
+    "- **Try:** asking about one specific clause, or rephrasing the question.\n"
+    "- **Or:** use *Explain simply* on the clause you're unsure about."
 )
 
 
@@ -117,7 +154,15 @@ def out_of_scope_state(question: str, jurisdiction: str | None) -> str | None:
 
 
 def select_clauses(question: str, clauses: list[dict], anchor: str | None, k: int = CONTEXT_CLAUSES) -> list[dict]:
-    """The anchored clause first, then those most similar to the question, in lease order."""
+    """The whole lease when it is short; otherwise the anchored clause first, then those most
+    similar to the question. Always in lease order.
+
+    Similarity alone misses wording the question doesn't share: "can the rent go up?"
+    did not retrieve a clause about the "monthly licence fee". Most residential leases fit
+    in about 1,500 tokens, so they are sent whole."""
+    if sum(len(c["text"]) for c in clauses) <= FULL_LEASE_CHARS:
+        return list(clauses)
+
     from app.classifier.embeddings import embed
 
     # Never cached: an uploaded lease's text must not outlive its retention window on disk.
@@ -176,7 +221,9 @@ def build_messages(question: str, context: list[dict], statutes: list[dict], jur
     for turn in history[-MAX_HISTORY_TURNS:]:
         if turn.get("role") in ("user", "assistant") and turn.get("content"):
             messages.append({"role": turn["role"], "content": str(turn["content"])[:MAX_QUESTION_CHARS]})
-    messages.append({"role": "user", "content": question})
+    # Models drift from a layout stated only in the system prompt, most often on short
+    # questions, so the reminder travels with every question.
+    messages.append({"role": "user", "content": f"{question}\n\n{FORMAT_REMINDER}"})
     return messages
 
 
@@ -210,7 +257,7 @@ def violations(reply: dict, question: str, context: list[dict], statutes: list[d
 
     allowed = set(NUMBER_PATTERN.findall(" ".join([question] + [c["text"] for c in context]
                                                   + [s["excerpt_text"] + " " + s["citation"] for s in statutes])))
-    stated = set(NUMBER_PATTERN.findall(ID_TOKEN.sub(" ", text)))
+    stated = set(NUMBER_PATTERN.findall(ID_TOKEN.sub(" ", LIST_MARKER.sub(" ", text))))
     if stated - allowed:
         problems.append("invented_number")
     return problems
@@ -220,7 +267,11 @@ CORRECTIONS = {
     "verdict": "Do not say whether anything is legal, illegal, valid or enforceable. Say a lawyer "
                "can answer that, and explain what the clause says with hedged wording.",
     "uncited_law": "Do not name any Act or Section that is not in the provided statute excerpts.",
-    "invented_number": "Only use amounts, dates and periods that appear in the provided excerpts.",
+    "layout": "Use the rule 7 layout: the direct answer with the key fact in bold, then 2-4 "
+              "\"- **Label:** ...\" bullet points, then an **Example:** line using only this "
+              "lease's figures.",
+    "invented_number": "Only use amounts, dates and periods that appear in the provided excerpts, "
+                       "including in the example.",
 }
 
 
@@ -242,7 +293,9 @@ def answer(*, question: str, clauses: list[dict], jurisdiction: str | None, clie
     by_id = {statute["entry_id"]: statute for statute in statutes}
 
     messages = build_messages(question, context, statutes, jurisdiction, history or [])
-    reply, problems = None, []
+    # A reply that passes every safety check is kept even if its layout is off; a layout
+    # miss earns one rewrite but never replaces a safe answer with a fallback.
+    reply, best, problems = None, None, []
     for _attempt in range(2):
         try:
             content = client.chat(messages)
@@ -255,16 +308,20 @@ def answer(*, question: str, clauses: list[dict], jurisdiction: str | None, clie
             continue
         problems = violations(reply, question, context, statutes)
         if not problems:
-            break
+            best = reply
+            if reply["out_of_scope"] or BULLET.search(reply["answer"]):
+                break
+            problems = ["layout"]
         messages = messages + [
             {"role": "assistant", "content": content},
             {"role": "user", "content": "Rewrite your answer. " + " ".join(
                 CORRECTIONS[p] for p in problems if p in CORRECTIONS)},
         ]
 
-    if reply is None or problems:
+    if best is None:
         fallback = VERDICT_FALLBACK if "verdict" in problems else UNRELIABLE_FALLBACK
         return ChatAnswer(answer=fallback, guarded=True)
+    reply = best
 
     known_clauses = {c["clause_id"]: c for c in context}
     cited_clauses = [

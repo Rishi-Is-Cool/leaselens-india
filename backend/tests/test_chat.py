@@ -56,7 +56,10 @@ class FakeClient:
         return json.dumps(reply)
 
 
-def reply(answer, clauses=(), statutes=(), out_of_scope=False):
+def reply(answer, clauses=(), statutes=(), out_of_scope=False, bullets=True):
+    # Real answers carry bullet points (rule 7); a reply without them earns a layout rewrite.
+    if bullets and "\n- " not in answer:
+        answer += "\n- **Where:** in your lease."
     return {"answer": answer, "cited_clauses": list(clauses), "cited_statutes": list(statutes),
             "out_of_scope": out_of_scope}
 
@@ -205,6 +208,21 @@ def test_malformed_requests_are_rejected(lease, body):
 
 def test_unknown_document_is_a_404():
     assert ask(uuid.uuid4(), question="hi").status_code == 404
+
+
+def test_an_unformatted_answer_is_rewritten_once_and_kept_if_still_plain(lease, model):
+    fake = model(reply("Your deposit comes back within 15 days.", clauses=["c002"], bullets=False),
+                 reply("Within **15 days** of moving out.", clauses=["c002"], bullets=False))
+    body = ask(lease, question="When do I get my deposit back?").json()
+    assert len(fake.sent) == 2 and "layout" not in body["answer"]
+    assert body["answer"] == "Within **15 days** of moving out." and body["guarded"] is False
+
+
+def test_a_safe_plain_answer_survives_an_unsafe_rewrite(lease, model):
+    model(reply("Your deposit comes back within 15 days.", clauses=["c002"], bullets=False),
+          reply("Your deposit comes back within 99 days.\n- **Note:** it is illegal to keep it."))
+    body = ask(lease, question="When do I get my deposit back?").json()
+    assert body["answer"] == "Your deposit comes back within 15 days." and body["guarded"] is False
 
 
 def test_only_the_most_relevant_statutes_are_sent_and_the_anchor_keeps_its_own():
