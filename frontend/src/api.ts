@@ -59,7 +59,11 @@ export type ParsedDocument = {
   title_block: string[];
   section_headings: string[];
   signature_block: string[];
+  highlights: Highlights;
 };
+
+/** clause_id -> line boxes [page, x0, top, x1, bottom], as fractions of the page. */
+export type Highlights = Record<string, number[][]>;
 
 // --- Phase 2-4: risk label, statute evidence, plain-language explanation ---
 
@@ -111,6 +115,9 @@ export type DemoDocument = {
   jurisdiction: string | null;
   clauses: AnalysedClause[];
   cross_clause: CrossClause[];
+  /** Saved samples only: the bundled PDF and where each clause sits on it. */
+  pdf?: string | null;
+  highlights?: Highlights;
 };
 
 export type AnalysisSummary = {
@@ -162,7 +169,8 @@ export function deleteDocument(id: string): Promise<void> {
   return request<void>(`/documents/${id}`, { method: "DELETE" });
 }
 
-type BundledDocument = Omit<AnalysisSummary, "filename"> & Pick<DemoDocument, "clauses" | "cross_clause">;
+type BundledDocument = Omit<AnalysisSummary, "filename"> &
+  Pick<DemoDocument, "clauses" | "cross_clause" | "pdf" | "highlights">;
 
 let bundled: Promise<Record<string, BundledDocument>> | null = null;
 
@@ -188,7 +196,14 @@ export async function listAnalyses(): Promise<AnalysisSummary[]> {
 export async function fetchAnalysis(filename: string): Promise<DemoDocument> {
   const document = (await loadBundled())[filename];
   if (!document) throw new Error("No saved analysis was found for this filename.");
-  return { filename, jurisdiction: document.jurisdiction, clauses: document.clauses, cross_clause: document.cross_clause };
+  return {
+    filename,
+    jurisdiction: document.jurisdiction,
+    clauses: document.clauses,
+    cross_clause: document.cross_clause,
+    pdf: document.pdf,
+    highlights: document.highlights,
+  };
 }
 
 export function uploadDocument(file: File): Promise<ParsedDocument> {

@@ -27,6 +27,9 @@ class Document(Base):
     title_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     section_headings: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
     signature_block: Mapped[list[str]] = mapped_column(ARRAY(Text), default=list)
+    # clause_id -> line boxes [page, x0, top, x1, bottom] as fractions of the page, for
+    # highlighting clauses on the original file (see app.ingestion.layout).
+    highlights: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     # sha256 of the uploading browser's client id (see app.ownership); None for uploads
     # made without one, which are never listed.
     owner_key: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)

@@ -20,7 +20,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -37,7 +38,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": null
    },
    {
     "clause_id": "c003",
@@ -54,7 +56,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "GRANT OF LICENSE"
    },
    {
     "clause_id": "c004",
@@ -71,7 +74,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "TERM"
    },
    {
     "clause_id": "c005",
@@ -88,7 +92,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "LICENSE FEE"
    },
    {
     "clause_id": "c006",
@@ -113,7 +118,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "SECURITY DEPOSIT"
    },
    {
     "clause_id": "c007",
@@ -159,7 +165,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "MAINTENANCE AND OUTGOINGS"
    },
    {
     "clause_id": "c008",
@@ -176,7 +183,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "USER"
    },
    {
     "clause_id": "c009",
@@ -227,7 +235,8 @@
      ],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "REGISTRATION"
    },
    {
     "clause_id": "c010",
@@ -306,7 +315,8 @@
      ],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "TERMINATION"
    },
    {
     "clause_id": "c011",
@@ -338,7 +348,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "INSPECTION"
    },
    {
     "clause_id": "c012",
@@ -355,7 +366,8 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": "GOVERNING LAW"
    },
    {
     "clause_id": "c013",
@@ -372,9 +384,347 @@
      "statute_support": [],
      "disclaimer": "This is AI-assisted information, not legal advice. Laws vary by location and change over time — verify with a qualified professional before acting."
     },
-    "error": null
+    "error": null,
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/01_maharashtra_leave_license_mumbai.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.8852,
+     0.2095
+    ],
+    [
+     1,
+     0.1148,
+     0.2148,
+     0.254,
+     0.2273
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2445,
+     0.8852,
+     0.257
+    ],
+    [
+     1,
+     0.1148,
+     0.2623,
+     0.8852,
+     0.2748
+    ],
+    [
+     1,
+     0.1148,
+     0.2802,
+     0.8852,
+     0.2926
+    ],
+    [
+     1,
+     0.1148,
+     0.298,
+     0.8852,
+     0.3105
+    ],
+    [
+     1,
+     0.1148,
+     0.3158,
+     0.6413,
+     0.3283
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.342,
+     0.3692,
+     0.8852,
+     0.3817
+    ],
+    [
+     1,
+     0.1148,
+     0.3871,
+     0.8852,
+     0.3995
+    ],
+    [
+     1,
+     0.1148,
+     0.4049,
+     0.8852,
+     0.4174
+    ],
+    [
+     1,
+     0.1148,
+     0.4227,
+     0.3276,
+     0.4352
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1948,
+     0.4524,
+     0.8852,
+     0.4649
+    ],
+    [
+     1,
+     0.1148,
+     0.4702,
+     0.8031,
+     0.4827
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.2653,
+     0.4999,
+     0.8852,
+     0.5124
+    ],
+    [
+     1,
+     0.1148,
+     0.5177,
+     0.8852,
+     0.5302
+    ],
+    [
+     1,
+     0.1148,
+     0.5355,
+     0.7084,
+     0.548
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.3307,
+     0.5652,
+     0.8852,
+     0.5777
+    ],
+    [
+     1,
+     0.1148,
+     0.5831,
+     0.8852,
+     0.5955
+    ],
+    [
+     1,
+     0.1148,
+     0.6009,
+     0.8852,
+     0.6133
+    ],
+    [
+     1,
+     0.1148,
+     0.6187,
+     0.3178,
+     0.6312
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.4359,
+     0.6484,
+     0.8852,
+     0.6609
+    ],
+    [
+     1,
+     0.1148,
+     0.6662,
+     0.8852,
+     0.6787
+    ],
+    [
+     1,
+     0.1148,
+     0.684,
+     0.1903,
+     0.6965
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1938,
+     0.7137,
+     0.8852,
+     0.7262
+    ],
+    [
+     1,
+     0.1148,
+     0.7315,
+     0.8852,
+     0.744
+    ],
+    [
+     1,
+     0.1148,
+     0.7493,
+     0.4217,
+     0.7618
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.2835,
+     0.779,
+     0.8852,
+     0.7915
+    ],
+    [
+     1,
+     0.1148,
+     0.7969,
+     0.8852,
+     0.8093
+    ],
+    [
+     1,
+     0.1148,
+     0.8147,
+     0.8852,
+     0.8271
+    ],
+    [
+     1,
+     0.1148,
+     0.8325,
+     0.2491,
+     0.845
+    ]
+   ],
+   "c010": [
+    [
+     1,
+     0.2684,
+     0.8622,
+     0.8852,
+     0.8747
+    ],
+    [
+     1,
+     0.1148,
+     0.88,
+     0.8852,
+     0.8925
+    ],
+    [
+     1,
+     0.1148,
+     0.8978,
+     0.8852,
+     0.9103
+    ],
+    [
+     2,
+     0.1148,
+     0.077,
+     0.3246,
+     0.0895
+    ]
+   ],
+   "c011": [
+    [
+     2,
+     0.2527,
+     0.1067,
+     0.8852,
+     0.1192
+    ],
+    [
+     2,
+     0.1148,
+     0.1246,
+     0.7388,
+     0.137
+    ]
+   ],
+   "c012": [
+    [
+     2,
+     0.3091,
+     0.1543,
+     0.8852,
+     0.1667
+    ],
+    [
+     2,
+     0.1148,
+     0.1721,
+     0.8852,
+     0.1845
+    ],
+    [
+     2,
+     0.1148,
+     0.1899,
+     0.1903,
+     0.2024
+    ]
+   ],
+   "c013": [
+    [
+     2,
+     0.1148,
+     0.2315,
+     0.8852,
+     0.2439
+    ],
+    [
+     2,
+     0.1148,
+     0.2493,
+     0.5433,
+     0.2618
+    ]
+   ]
+  },
   "cross_clause": [
    {
     "clause_id_a": "c004",
@@ -404,7 +754,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -414,7 +765,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c003",
@@ -424,7 +776,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Premises"
    },
    {
     "clause_id": "c004",
@@ -434,7 +787,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Term"
    },
    {
     "clause_id": "c005",
@@ -444,7 +798,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Rent"
    },
    {
     "clause_id": "c006",
@@ -469,7 +824,8 @@
      }
     ],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Security Deposit"
    },
    {
     "clause_id": "c007",
@@ -479,7 +835,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Electricity Meter"
    },
    {
     "clause_id": "c008",
@@ -518,7 +875,8 @@
      }
     ],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Maintenance"
    },
    {
     "clause_id": "c009",
@@ -528,7 +886,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Use of Premises"
    },
    {
     "clause_id": "c010",
@@ -567,7 +926,8 @@
      }
     ],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Notice Period"
    },
    {
     "clause_id": "c011",
@@ -577,7 +937,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Inspection"
    },
    {
     "clause_id": "c012",
@@ -587,9 +948,268 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/02_delhi_rent_agreement.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.8852,
+     0.2095
+    ],
+    [
+     1,
+     0.1148,
+     0.2148,
+     0.3129,
+     0.2273
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2445,
+     0.8852,
+     0.257
+    ],
+    [
+     1,
+     0.1148,
+     0.2623,
+     0.8852,
+     0.2748
+    ],
+    [
+     1,
+     0.1148,
+     0.2802,
+     0.6501,
+     0.2926
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.3336,
+     0.8852,
+     0.3461
+    ],
+    [
+     1,
+     0.1148,
+     0.3514,
+     0.5736,
+     0.3639
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1148,
+     0.4049,
+     0.8852,
+     0.4174
+    ],
+    [
+     1,
+     0.1148,
+     0.4227,
+     0.3991,
+     0.4352
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.4762,
+     0.8852,
+     0.4886
+    ],
+    [
+     1,
+     0.1148,
+     0.494,
+     0.7447,
+     0.5064
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.5474,
+     0.8852,
+     0.5599
+    ],
+    [
+     1,
+     0.1148,
+     0.5652,
+     0.8852,
+     0.5777
+    ],
+    [
+     1,
+     0.1148,
+     0.5831,
+     0.4266,
+     0.5955
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.8852,
+     0.649
+    ],
+    [
+     1,
+     0.1148,
+     0.6543,
+     0.8852,
+     0.6668
+    ],
+    [
+     1,
+     0.1148,
+     0.6721,
+     0.8852,
+     0.6846
+    ],
+    [
+     1,
+     0.1148,
+     0.69,
+     0.5006,
+     0.7024
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.7434,
+     0.8852,
+     0.7559
+    ],
+    [
+     1,
+     0.1148,
+     0.7612,
+     0.5913,
+     0.7737
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.1148,
+     0.8147,
+     0.8852,
+     0.8271
+    ],
+    [
+     1,
+     0.1148,
+     0.8325,
+     0.8852,
+     0.845
+    ],
+    [
+     1,
+     0.1148,
+     0.8503,
+     0.1815,
+     0.8628
+    ]
+   ],
+   "c010": [
+    [
+     2,
+     0.1148,
+     0.077,
+     0.8852,
+     0.0895
+    ],
+    [
+     2,
+     0.1148,
+     0.0949,
+     0.8852,
+     0.1073
+    ],
+    [
+     2,
+     0.1148,
+     0.1127,
+     0.5256,
+     0.1252
+    ]
+   ],
+   "c011": [
+    [
+     2,
+     0.1148,
+     0.1661,
+     0.8852,
+     0.1786
+    ],
+    [
+     2,
+     0.1148,
+     0.184,
+     0.2237,
+     0.1964
+    ]
+   ],
+   "c012": [
+    [
+     2,
+     0.1148,
+     0.2255,
+     0.8852,
+     0.238
+    ],
+    [
+     2,
+     0.1148,
+     0.2433,
+     0.5031,
+     0.2558
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "03_karnataka_rental_agreement_bangalore.pdf": {
@@ -606,7 +1226,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -616,7 +1237,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "SCHEDULE OF PREMISES"
    },
    {
     "clause_id": "c003",
@@ -626,7 +1248,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c004",
@@ -636,7 +1259,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c005",
@@ -646,7 +1270,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c006",
@@ -656,7 +1281,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c007",
@@ -666,7 +1292,8 @@
     "topic": "registration",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Police Verification"
    },
    {
     "clause_id": "c008",
@@ -676,7 +1303,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c009",
@@ -686,7 +1314,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c010",
@@ -696,7 +1325,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c011",
@@ -706,7 +1336,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMS AND CONDITIONS"
    },
    {
     "clause_id": "c012",
@@ -716,9 +1347,254 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/03_karnataka_rental_agreement_bangalore.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.5452,
+     0.2095
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2505,
+     0.8852,
+     0.2629
+    ],
+    [
+     1,
+     0.1148,
+     0.2683,
+     0.8852,
+     0.2808
+    ],
+    [
+     1,
+     0.1148,
+     0.2861,
+     0.2776,
+     0.2986
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.3396,
+     0.8852,
+     0.352
+    ],
+    [
+     1,
+     0.1148,
+     0.3574,
+     0.5511,
+     0.3698
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1148,
+     0.3871,
+     0.8852,
+     0.3995
+    ],
+    [
+     1,
+     0.1148,
+     0.4049,
+     0.3502,
+     0.4174
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.4346,
+     0.8852,
+     0.447
+    ],
+    [
+     1,
+     0.1148,
+     0.4524,
+     0.8852,
+     0.4649
+    ],
+    [
+     1,
+     0.1148,
+     0.4702,
+     0.3717,
+     0.4827
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.4999,
+     0.8852,
+     0.5124
+    ],
+    [
+     1,
+     0.1148,
+     0.5177,
+     0.8852,
+     0.5302
+    ],
+    [
+     1,
+     0.1148,
+     0.5355,
+     0.6149,
+     0.548
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.2868,
+     0.5652,
+     0.8852,
+     0.5777
+    ],
+    [
+     1,
+     0.1148,
+     0.5831,
+     0.8852,
+     0.5955
+    ],
+    [
+     1,
+     0.1148,
+     0.6009,
+     0.6923,
+     0.6133
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.6306,
+     0.8852,
+     0.643
+    ],
+    [
+     1,
+     0.1148,
+     0.6484,
+     0.7407,
+     0.6609
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.1148,
+     0.6781,
+     0.8852,
+     0.6905
+    ],
+    [
+     1,
+     0.1148,
+     0.6959,
+     0.2168,
+     0.7084
+    ]
+   ],
+   "c010": [
+    [
+     1,
+     0.1148,
+     0.7256,
+     0.8852,
+     0.7381
+    ],
+    [
+     1,
+     0.1148,
+     0.7434,
+     0.8852,
+     0.7559
+    ],
+    [
+     1,
+     0.1148,
+     0.7612,
+     0.3972,
+     0.7737
+    ]
+   ],
+   "c011": [
+    [
+     1,
+     0.1148,
+     0.7909,
+     0.8852,
+     0.8034
+    ],
+    [
+     1,
+     0.1148,
+     0.8087,
+     0.2001,
+     0.8212
+    ]
+   ],
+   "c012": [
+    [
+     1,
+     0.1148,
+     0.8503,
+     0.8852,
+     0.8628
+    ],
+    [
+     1,
+     0.1148,
+     0.8681,
+     0.2972,
+     0.8806
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "04_tamil_nadu_lease_agreement_chennai.pdf": {
@@ -735,7 +1611,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -745,7 +1622,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c003",
@@ -755,7 +1633,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c004",
@@ -765,7 +1644,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c005",
@@ -775,7 +1655,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c006",
@@ -785,7 +1666,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c007",
@@ -795,9 +1677,279 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/04_tamil_nadu_lease_agreement_chennai.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.8852,
+     0.2095
+    ],
+    [
+     1,
+     0.1148,
+     0.2148,
+     0.8852,
+     0.2273
+    ],
+    [
+     1,
+     0.1148,
+     0.2327,
+     0.5923,
+     0.2451
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2623,
+     0.8852,
+     0.2748
+    ],
+    [
+     1,
+     0.1148,
+     0.2802,
+     0.8852,
+     0.2926
+    ],
+    [
+     1,
+     0.1148,
+     0.298,
+     0.8852,
+     0.3105
+    ],
+    [
+     1,
+     0.1148,
+     0.3158,
+     0.3962,
+     0.3283
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.3455,
+     0.8852,
+     0.358
+    ],
+    [
+     1,
+     0.1148,
+     0.3633,
+     0.8852,
+     0.3758
+    ],
+    [
+     1,
+     0.1148,
+     0.3811,
+     0.8796,
+     0.3936
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1148,
+     0.4108,
+     0.8852,
+     0.4233
+    ],
+    [
+     1,
+     0.1148,
+     0.4286,
+     0.8852,
+     0.4411
+    ],
+    [
+     1,
+     0.1148,
+     0.4465,
+     0.8852,
+     0.4589
+    ],
+    [
+     1,
+     0.1148,
+     0.4643,
+     0.8852,
+     0.4767
+    ],
+    [
+     1,
+     0.1148,
+     0.4821,
+     0.8852,
+     0.4946
+    ],
+    [
+     1,
+     0.1148,
+     0.4999,
+     0.3492,
+     0.5124
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.5296,
+     0.8852,
+     0.5421
+    ],
+    [
+     1,
+     0.1148,
+     0.5474,
+     0.8852,
+     0.5599
+    ],
+    [
+     1,
+     0.1148,
+     0.5652,
+     0.8852,
+     0.5777
+    ],
+    [
+     1,
+     0.1148,
+     0.5831,
+     0.8852,
+     0.5955
+    ],
+    [
+     1,
+     0.1148,
+     0.6009,
+     0.8852,
+     0.6133
+    ],
+    [
+     1,
+     0.1148,
+     0.6187,
+     0.8852,
+     0.6312
+    ],
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.1893,
+     0.649
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.6662,
+     0.8852,
+     0.6787
+    ],
+    [
+     1,
+     0.1148,
+     0.684,
+     0.8852,
+     0.6965
+    ],
+    [
+     1,
+     0.1148,
+     0.7018,
+     0.8852,
+     0.7143
+    ],
+    [
+     1,
+     0.1148,
+     0.7197,
+     0.8852,
+     0.7321
+    ],
+    [
+     1,
+     0.1148,
+     0.7375,
+     0.8852,
+     0.7499
+    ],
+    [
+     1,
+     0.1148,
+     0.7553,
+     0.2992,
+     0.7678
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.785,
+     0.8852,
+     0.7975
+    ],
+    [
+     1,
+     0.1148,
+     0.8028,
+     0.8852,
+     0.8153
+    ],
+    [
+     1,
+     0.1148,
+     0.8206,
+     0.8852,
+     0.8331
+    ],
+    [
+     1,
+     0.1148,
+     0.8384,
+     0.7031,
+     0.8509
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "05_uttar_pradesh_lease_deed_lucknow.pdf": {
@@ -814,7 +1966,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -824,7 +1977,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "DEMISED PREMISES"
    },
    {
     "clause_id": "c003",
@@ -834,7 +1988,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERM AND RENT"
    },
    {
     "clause_id": "c004",
@@ -844,7 +1999,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERM AND RENT"
    },
    {
     "clause_id": "c005",
@@ -854,7 +2010,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERM AND RENT"
    },
    {
     "clause_id": "c006",
@@ -864,7 +2021,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "OBLIGATIONS OF THE PARTIES"
    },
    {
     "clause_id": "c007",
@@ -874,7 +2032,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "OBLIGATIONS OF THE PARTIES"
    },
    {
     "clause_id": "c008",
@@ -884,7 +2043,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "OBLIGATIONS OF THE PARTIES"
    },
    {
     "clause_id": "c009",
@@ -894,7 +2054,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMINATION"
    },
    {
     "clause_id": "c010",
@@ -904,7 +2065,8 @@
     "topic": "notice",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "MISCELLANEOUS"
    },
    {
     "clause_id": "c011",
@@ -914,7 +2076,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "MISCELLANEOUS"
    },
    {
     "clause_id": "c012",
@@ -924,9 +2087,247 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/05_uttar_pradesh_lease_deed_lucknow.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.8852,
+     0.2095
+    ],
+    [
+     1,
+     0.1148,
+     0.2148,
+     0.8852,
+     0.2273
+    ],
+    [
+     1,
+     0.1148,
+     0.2327,
+     0.7237,
+     0.2451
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2861,
+     0.8852,
+     0.2986
+    ],
+    [
+     1,
+     0.1148,
+     0.3039,
+     0.8852,
+     0.3164
+    ],
+    [
+     1,
+     0.1148,
+     0.3217,
+     0.605,
+     0.3342
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.3752,
+     0.8852,
+     0.3877
+    ],
+    [
+     1,
+     0.1148,
+     0.393,
+     0.159,
+     0.4055
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1148,
+     0.4227,
+     0.8852,
+     0.4352
+    ],
+    [
+     1,
+     0.1148,
+     0.4405,
+     0.4041,
+     0.453
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.4702,
+     0.8852,
+     0.4827
+    ],
+    [
+     1,
+     0.1148,
+     0.488,
+     0.8852,
+     0.5005
+    ],
+    [
+     1,
+     0.1148,
+     0.5058,
+     0.7119,
+     0.5183
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.5593,
+     0.7236,
+     0.5718
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.589,
+     0.8852,
+     0.6015
+    ],
+    [
+     1,
+     0.1148,
+     0.6068,
+     0.3084,
+     0.6193
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.8852,
+     0.649
+    ],
+    [
+     1,
+     0.1148,
+     0.6543,
+     0.4207,
+     0.6668
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.1148,
+     0.7078,
+     0.8852,
+     0.7202
+    ],
+    [
+     1,
+     0.1148,
+     0.7256,
+     0.8852,
+     0.7381
+    ],
+    [
+     1,
+     0.1148,
+     0.7434,
+     0.6825,
+     0.7559
+    ]
+   ],
+   "c010": [
+    [
+     1,
+     0.1148,
+     0.7969,
+     0.8852,
+     0.8093
+    ],
+    [
+     1,
+     0.1148,
+     0.8147,
+     0.41,
+     0.8271
+    ]
+   ],
+   "c011": [
+    [
+     1,
+     0.1148,
+     0.8444,
+     0.8852,
+     0.8568
+    ],
+    [
+     1,
+     0.1148,
+     0.8622,
+     0.3462,
+     0.8747
+    ]
+   ],
+   "c012": [
+    [
+     2,
+     0.1148,
+     0.077,
+     0.8852,
+     0.0895
+    ],
+    [
+     2,
+     0.1148,
+     0.0949,
+     0.1678,
+     0.1073
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "06_west_bengal_tenancy_agreement_kolkata.pdf": {
@@ -943,7 +2344,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -953,7 +2355,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c003",
@@ -963,7 +2366,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c004",
@@ -973,7 +2377,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c005",
@@ -983,7 +2388,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c006",
@@ -993,7 +2399,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c007",
@@ -1003,7 +2410,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c008",
@@ -1013,7 +2421,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c009",
@@ -1023,7 +2432,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c010",
@@ -1033,9 +2443,187 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/06_west_bengal_tenancy_agreement_kolkata.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.1923,
+     0.2095
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2267,
+     0.8727,
+     0.2392
+    ],
+    [
+     1,
+     0.1148,
+     0.2445,
+     0.7983,
+     0.257
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.2742,
+     0.8852,
+     0.2867
+    ],
+    [
+     1,
+     0.1148,
+     0.292,
+     0.2021,
+     0.3045
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1148,
+     0.3217,
+     0.8852,
+     0.3342
+    ],
+    [
+     1,
+     0.1148,
+     0.3396,
+     0.3904,
+     0.352
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.3692,
+     0.8852,
+     0.3817
+    ],
+    [
+     1,
+     0.1148,
+     0.3871,
+     0.5963,
+     0.3995
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.4168,
+     0.8852,
+     0.4292
+    ],
+    [
+     1,
+     0.1148,
+     0.4346,
+     0.2923,
+     0.447
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.4643,
+     0.8852,
+     0.4767
+    ],
+    [
+     1,
+     0.1148,
+     0.4821,
+     0.327,
+     0.4946
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.5118,
+     0.8852,
+     0.5243
+    ],
+    [
+     1,
+     0.1148,
+     0.5296,
+     0.8852,
+     0.5421
+    ],
+    [
+     1,
+     0.1148,
+     0.5474,
+     0.1864,
+     0.5599
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.1148,
+     0.5771,
+     0.6923,
+     0.5896
+    ]
+   ],
+   "c010": [
+    [
+     1,
+     0.1148,
+     0.6187,
+     0.8852,
+     0.6312
+    ],
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.1717,
+     0.649
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "07_punjab_rent_deed_chandigarh.pdf": {
@@ -1052,7 +2640,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -1062,7 +2651,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "PREMISES AND TERM"
    },
    {
     "clause_id": "c003",
@@ -1072,7 +2662,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "RENT AND DEPOSIT"
    },
    {
     "clause_id": "c004",
@@ -1082,7 +2673,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "SCHEDULE OF FIXTURES INCLUDED"
    },
    {
     "clause_id": "c005",
@@ -1092,7 +2684,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "GENERAL CONDITIONS"
    },
    {
     "clause_id": "c006",
@@ -1102,7 +2695,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "TERMINATION"
    },
    {
     "clause_id": "c007",
@@ -1112,7 +2706,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "JURISDICTION"
    },
    {
     "clause_id": "c008",
@@ -1122,9 +2717,176 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/07_punjab_rent_deed_chandigarh.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.3168,
+     0.2095
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2505,
+     0.8852,
+     0.2629
+    ],
+    [
+     1,
+     0.1148,
+     0.2683,
+     0.5982,
+     0.2808
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.3217,
+     0.8852,
+     0.3342
+    ],
+    [
+     1,
+     0.1148,
+     0.3396,
+     0.8852,
+     0.352
+    ],
+    [
+     1,
+     0.1148,
+     0.3574,
+     0.3227,
+     0.3698
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.1433,
+     0.4108,
+     0.4991,
+     0.4233
+    ],
+    [
+     1,
+     0.1433,
+     0.4358,
+     0.3756,
+     0.4482
+    ],
+    [
+     1,
+     0.1433,
+     0.4607,
+     0.4315,
+     0.4732
+    ],
+    [
+     1,
+     0.1433,
+     0.4857,
+     0.3913,
+     0.4981
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.5391,
+     0.8852,
+     0.5516
+    ],
+    [
+     1,
+     0.1148,
+     0.5569,
+     0.8852,
+     0.5694
+    ],
+    [
+     1,
+     0.1148,
+     0.5747,
+     0.5712,
+     0.5872
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.6282,
+     0.8852,
+     0.6407
+    ],
+    [
+     1,
+     0.1148,
+     0.646,
+     0.8852,
+     0.6585
+    ],
+    [
+     1,
+     0.1148,
+     0.6638,
+     0.1913,
+     0.6763
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.7173,
+     0.8786,
+     0.7297
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.7588,
+     0.8511,
+     0.7713
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "08_rajasthan_leave_license_jaipur.pdf": {
@@ -1141,7 +2903,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -1151,7 +2914,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c003",
@@ -1161,7 +2925,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c004",
@@ -1171,7 +2936,8 @@
     "topic": "rent_escalation",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Rent Escalation Schedule"
    },
    {
     "clause_id": "c005",
@@ -1181,7 +2947,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c006",
@@ -1191,7 +2958,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c007",
@@ -1201,7 +2969,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c008",
@@ -1211,7 +2980,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c009",
@@ -1221,7 +2991,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c010",
@@ -1231,9 +3002,194 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/08_rajasthan_leave_license_jaipur.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.208,
+     0.2095
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.1148,
+     0.2267,
+     0.8852,
+     0.2392
+    ],
+    [
+     1,
+     0.1148,
+     0.2445,
+     0.5511,
+     0.257
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.1148,
+     0.2742,
+     0.8852,
+     0.2867
+    ],
+    [
+     1,
+     0.1148,
+     0.292,
+     0.2394,
+     0.3045
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.3488,
+     0.3217,
+     0.8852,
+     0.3342
+    ],
+    [
+     1,
+     0.1321,
+     0.3396,
+     0.8852,
+     0.352
+    ],
+    [
+     1,
+     0.1148,
+     0.3574,
+     0.8325,
+     0.3698
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.3871,
+     0.8852,
+     0.3995
+    ],
+    [
+     1,
+     0.1148,
+     0.4049,
+     0.5158,
+     0.4174
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.1148,
+     0.4346,
+     0.8852,
+     0.447
+    ],
+    [
+     1,
+     0.1148,
+     0.4524,
+     0.3531,
+     0.4649
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.1148,
+     0.4821,
+     0.8852,
+     0.4946
+    ],
+    [
+     1,
+     0.1148,
+     0.4999,
+     0.3623,
+     0.5124
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.5296,
+     0.8852,
+     0.5421
+    ],
+    [
+     1,
+     0.1148,
+     0.5474,
+     0.8852,
+     0.5599
+    ],
+    [
+     1,
+     0.1148,
+     0.5652,
+     0.2874,
+     0.5777
+    ]
+   ],
+   "c009": [
+    [
+     1,
+     0.1148,
+     0.5949,
+     0.6698,
+     0.6074
+    ]
+   ],
+   "c010": [
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.8852,
+     0.649
+    ],
+    [
+     1,
+     0.1148,
+     0.6543,
+     0.1717,
+     0.6668
+    ]
+   ]
+  },
   "cross_clause": []
  },
  "09_gujarat_rent_agreement.pdf": {
@@ -1250,7 +3206,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    },
    {
     "clause_id": "c002",
@@ -1260,7 +3217,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Premises"
    },
    {
     "clause_id": "c003",
@@ -1270,7 +3228,8 @@
     "topic": "security_deposit",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Term and Rent"
    },
    {
     "clause_id": "c004",
@@ -1280,7 +3239,8 @@
     "topic": "maintenance",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Maintenance"
    },
    {
     "clause_id": "c005",
@@ -1290,7 +3250,8 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "USE OF PREMISES"
    },
    {
     "clause_id": "c006",
@@ -1300,7 +3261,8 @@
     "topic": "eviction",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Termination"
    },
    {
     "clause_id": "c007",
@@ -1310,7 +3272,8 @@
     "topic": "notice",
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": "Inspection and Jurisdiction"
    },
    {
     "clause_id": "c008",
@@ -1320,9 +3283,183 @@
     "topic": null,
     "retrieved_statutes": [],
     "explanation": null,
-    "error": "Explanation unavailable for this saved run."
+    "error": "Explanation unavailable for this saved run.",
+    "section_heading": null
    }
   ],
+  "pdf": "/samples/09_gujarat_rent_agreement.pdf",
+  "highlights": {
+   "c001": [
+    [
+     1,
+     0.1148,
+     0.1436,
+     0.8852,
+     0.156
+    ],
+    [
+     1,
+     0.1148,
+     0.1614,
+     0.8852,
+     0.1739
+    ],
+    [
+     1,
+     0.1148,
+     0.1792,
+     0.8852,
+     0.1917
+    ],
+    [
+     1,
+     0.1148,
+     0.197,
+     0.8852,
+     0.2095
+    ],
+    [
+     1,
+     0.1148,
+     0.2148,
+     0.3609,
+     0.2273
+    ]
+   ],
+   "c002": [
+    [
+     1,
+     0.2963,
+     0.2445,
+     0.8852,
+     0.257
+    ],
+    [
+     1,
+     0.1148,
+     0.2623,
+     0.6747,
+     0.2748
+    ]
+   ],
+   "c003": [
+    [
+     1,
+     0.3221,
+     0.292,
+     0.8852,
+     0.3045
+    ],
+    [
+     1,
+     0.1148,
+     0.3099,
+     0.8852,
+     0.3223
+    ],
+    [
+     1,
+     0.1148,
+     0.3277,
+     0.8852,
+     0.3401
+    ],
+    [
+     1,
+     0.1148,
+     0.3455,
+     0.4041,
+     0.358
+    ]
+   ],
+   "c004": [
+    [
+     1,
+     0.3054,
+     0.3752,
+     0.8852,
+     0.3877
+    ],
+    [
+     1,
+     0.1148,
+     0.393,
+     0.3482,
+     0.4055
+    ]
+   ],
+   "c005": [
+    [
+     1,
+     0.1148,
+     0.4465,
+     0.8852,
+     0.4589
+    ],
+    [
+     1,
+     0.1148,
+     0.4643,
+     0.4907,
+     0.4767
+    ]
+   ],
+   "c006": [
+    [
+     1,
+     0.3074,
+     0.494,
+     0.8852,
+     0.5064
+    ],
+    [
+     1,
+     0.1148,
+     0.5118,
+     0.8852,
+     0.5243
+    ],
+    [
+     1,
+     0.1148,
+     0.5296,
+     0.4433,
+     0.5421
+    ]
+   ],
+   "c007": [
+    [
+     1,
+     0.4123,
+     0.5593,
+     0.8852,
+     0.5718
+    ],
+    [
+     1,
+     0.1148,
+     0.5771,
+     0.7511,
+     0.5896
+    ]
+   ],
+   "c008": [
+    [
+     1,
+     0.1148,
+     0.6187,
+     0.8852,
+     0.6312
+    ],
+    [
+     1,
+     0.1148,
+     0.6365,
+     0.1678,
+     0.649
+    ]
+   ]
+  },
   "cross_clause": []
  }
 }

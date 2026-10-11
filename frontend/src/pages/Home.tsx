@@ -1,197 +1,94 @@
 import { Link } from "react-router-dom";
-import { Markdown } from "../components/Markdown";
 
 const SAMPLE = "/samples/maharashtra-leave-license-mumbai";
 
 const STEPS = [
-  {
-    title: "Upload",
-    body: "A PDF, or a scan or phone photo of the agreement. Scanned pages are read with OCR.",
-  },
-  {
-    title: "Every clause, separated",
-    body: "The agreement is split into its individual clauses, so nothing hides in a wall of text.",
-  },
-  {
-    title: "Rated and checked",
-    body: "Each clause is rated by how much attention it deserves and matched to your state's rental law.",
-  },
-  {
-    title: "Ask anything",
-    body: "Get answers about your own agreement, with the clauses and laws they come from.",
-  },
+  { icon: "↑", title: "Upload", body: "A PDF, a scan or a phone photo." },
+  { icon: "◐", title: "See the highlights", body: "Risky clauses lit up on your own document." },
+  { icon: "✦", title: "Ask anything", body: "Plain answers, with the clause and the law." },
 ];
 
-const FEATURES = [
-  {
-    icon: "◐",
-    title: "Clause-by-clause ratings",
-    body: "Looks standard, Worth a look or Needs attention: see straight away which terms to question before you sign.",
-  },
-  {
-    icon: "⚖",
-    title: "The actual law, linked",
-    body: "Maharashtra and Delhi rent control law and central law, each provision linked to its official source with the date we last checked it.",
-  },
-  {
-    icon: "¶",
-    title: "Plain-language explanations",
-    body: "What each clause says and why it matters, written for tenants, not lawyers.",
-  },
-  {
-    icon: "✦",
-    title: "Answers about your lease",
-    body: "Ask “when do I get my deposit back?” and get an answer from your own agreement, with an example and its sources.",
-  },
-  {
-    icon: "↔",
-    title: "Clauses to read together",
-    body: "Finds terms that change each other's meaning, like a notice clause and the deposit deductions it triggers.",
-  },
-  {
-    icon: "◇",
-    title: "Private by design",
-    body: "No account. Only your browser can open your upload, and it is deleted within 24 hours, or right away.",
-  },
+// Lines of the illustrated agreement: [width %, highlight] — "red"/"yellow" light up as the
+// scan passes, the way a real review appears.
+const LINES: [number, string?][] = [
+  [92], [88], [95], [60],
+  [94, "red"], [90, "red"], [72, "red"],
+  [91], [86], [54],
+  [93], [89, "yellow"], [77, "yellow"],
+  [90], [84], [66],
 ];
-
-const DEMO_ANSWER = `You should get your deposit back **within 15 days of vacating**, minus any amounts lawfully due.
-- **Amount:** Rs. 2,00,000, interest-free and refundable.
-- **Deductions:** only amounts lawfully due, such as unpaid licence fees.
-**Example:** if you move out on 28th February 2027 with nothing owed, the full Rs. 2,00,000 should come back within 15 days.`;
 
 export function Home() {
   return (
-    <div className="home">
+    <div className="home home-simple">
       <section className="home-hero">
         <div className="home-hero-copy">
-          <span className="eyebrow">FOR TENANTS IN INDIA</span>
           <h1>
-            Know what your rental agreement says <em>before you sign it.</em>
+            Know what you're signing <em>before you sign it.</em>
           </h1>
-          <p>
-            LeaseLens reads your agreement clause by clause, flags the terms worth questioning,
-            checks them against your state's rent law and answers your questions in plain
-            language.
-          </p>
+          <p>Upload your rental agreement. We highlight the clauses worth questioning, right on the page.</p>
           <div className="hero-actions">
             <Link className="primary-button large" to="/review">
-              Review my lease
+              Check my agreement
             </Link>
             <Link className="secondary-button large" to={SAMPLE}>
-              See a sample review
+              See an example
             </Link>
           </div>
           <ul className="trust-row">
             <li>Free</li>
             <li>No sign-up</li>
-            <li>Deleted within 24 hours</li>
+            <li>Deleted in 24 hours</li>
           </ul>
         </div>
 
-        <div className="home-hero-preview" aria-hidden>
-          <div className="preview-card">
-            <div className="preview-head">
-              <span className="risk-dot red" /> Clause 10 · Termination
-              <span className="preview-badge">Needs attention</span>
+        <div className="hero-demo" aria-hidden>
+          <div className="demo-paper">
+            <div className="demo-file">
+              <span>▤ rent_agreement.pdf</span>
+              <span className="demo-status" />
             </div>
-            <p className="preview-quote">
-              “…in the event the Licensee defaults in payment of the license fee for two
-              consecutive months, the Licensor shall be entitled to terminate this Agreement
-              forthwith and re-enter the said premises.”
-            </p>
-            <div className="preview-why">
-              <span>Why this matters</span>
-              There is no notice period or time to pay arrears before you could be asked to leave.
-            </div>
-            <div className="preview-law">⚖ Section 15, Maharashtra Rent Control Act, 1999 ↗</div>
+            <div className="demo-heading" />
+            {LINES.map(([width, tone], i) => (
+              <div key={i} className={`demo-line ${tone ? `demo-${tone}` : ""}`} style={{ width: `${width}%` }} />
+            ))}
+            <div className="demo-scan" />
           </div>
-          <div className="preview-chat">
-            <div className="msg-bubble">When do I get my deposit back?</div>
-            <div className="preview-answer">
-              <span className="assistant-avatar" aria-hidden>
-                L
-              </span>
-              <div>
-                <Markdown>{DEMO_ANSWER}</Markdown>
-              </div>
+          <div className="demo-card demo-card-red">
+            <span className="risk-dot red" />
+            <div>
+              <strong>Termination</strong>
+              <small>Needs attention · no notice before eviction</small>
+            </div>
+          </div>
+          <div className="demo-card demo-card-yellow">
+            <span className="risk-dot yellow" />
+            <div>
+              <strong>Lock-in period</strong>
+              <small>Worth a look · penalty if you leave early</small>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="home-section">
-        <div className="section-intro">
-          <span className="eyebrow">HOW IT WORKS</span>
-          <h2>From a dense document to clear answers in a few minutes</h2>
-        </div>
-        <ol className="steps">
-          {STEPS.map((step, i) => (
-            <li key={step.title}>
-              <span className="step-number">{i + 1}</span>
-              <h3>{step.title}</h3>
+      <ol className="steps-simple">
+        {STEPS.map((step) => (
+          <li key={step.title}>
+            <span className="step-icon" aria-hidden>
+              {step.icon}
+            </span>
+            <div>
+              <h2>{step.title}</h2>
               <p>{step.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="home-section">
-        <div className="section-intro">
-          <span className="eyebrow">WHAT YOU GET</span>
-          <h2>Everything you'd want to ask a lawyer about, laid out first</h2>
-        </div>
-        <div className="feature-grid">
-          {FEATURES.map((f) => (
-            <article key={f.title} className="feature">
-              <span className="feature-icon" aria-hidden>
-                {f.icon}
-              </span>
-              <h3>{f.title}</h3>
-              <p>{f.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-section safety">
-        <div>
-          <span className="eyebrow">BUILT TO BE CAREFUL</span>
-          <h2>It tells you what to look at, never what's “legal”</h2>
-          <p>
-            Every answer is checked before you see it. LeaseLens won't give a legal verdict, cite a
-            law it didn't actually look up, or invent an amount or date your agreement doesn't
-            contain. It also won't answer from another state's law.
-          </p>
-          <Link className="text-link" to="/how-it-works">
-            How LeaseLens works →
-          </Link>
-        </div>
-        <ul className="safety-list">
-          <li>
-            <strong>Sources on every answer</strong>
-            <span>Each answer links to the clauses and official provisions it used.</span>
+            </div>
           </li>
-          <li>
-            <strong>Your state, confirmed by you</strong>
-            <span>We guess the state from the agreement, and you confirm it before anything is checked.</span>
-          </li>
-          <li>
-            <strong>Honest when unsure</strong>
-            <span>If the agreement doesn't say, the answer says so instead of guessing.</span>
-          </li>
-        </ul>
-      </section>
+        ))}
+      </ol>
 
-      <section className="cta-band">
-        <div>
-          <h2>Signing soon? Read it properly first.</h2>
-          <p>It takes a couple of minutes, and nothing is kept.</p>
-        </div>
-        <Link className="primary-button large" to="/review">
-          Review my lease
-        </Link>
-      </section>
+      <p className="home-footnote">
+        Checks Maharashtra and Delhi rent law, with links to the official text.{" "}
+        <Link to="/how-it-works">How it works</Link>
+      </p>
     </div>
   );
 }

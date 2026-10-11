@@ -20,6 +20,8 @@ from typing import Literal
 
 import pdfplumber
 
+from app.ingestion.layout import Word, ocr_words, pdf_text_words
+
 # A genuinely scanned page yields essentially no extractable words. A sparse but real
 # text page (a signature block, say) can be well under 100 characters, so the threshold
 # is deliberately low and paired with an image check before falling back to OCR.
@@ -52,6 +54,8 @@ class Page:
 @dataclass
 class ExtractedDocument:
     pages: list[Page] = field(default_factory=list)
+    # Every word with its position on the page, for highlighting clauses on the original.
+    words: list[Word] = field(default_factory=list)
 
     @property
     def paragraphs(self) -> list[str]:
@@ -198,7 +202,8 @@ def _locate_tesseract(pytesseract) -> None:
         pytesseract.pytesseract.tesseract_cmd = str(_WINDOWS_TESSERACT)
 
 
-def _ocr_page_image(page) -> str:
+def _ocr(image) -> tuple[str, str]:
+    """Text and word boxes (TSV) from one Tesseract run."""
     try:
         import pytesseract
     except ImportError as exc:  # pragma: no cover - dependency is declared
@@ -207,14 +212,14 @@ def _ocr_page_image(page) -> str:
     _locate_tesseract(pytesseract)
     from pytesseract import TesseractNotFoundError
 
-    image = page.to_image(resolution=300).original
     try:
-        return pytesseract.image_to_string(image)
+        text, tsv = pytesseract.run_and_get_multiple_output(image, extensions=["txt", "tsv"])
     except TesseractNotFoundError as exc:
         raise OcrUnavailableError(
             "The Tesseract OCR binary was not found. Install it and ensure it is on PATH "
             "(Windows: https://github.com/UB-Mannheim/tesseract/wiki)."
         ) from exc
+    return text, tsv
 
 
 def _paragraphs_from_ocr_text(text: str) -> list[str]:
@@ -236,37 +241,33 @@ def extract_pdf(data: bytes, *, allow_ocr: bool = True) -> ExtractedDocument:
             if embedded_chars >= MIN_CHARS_FOR_TEXT_PAGE or not page.images:
                 paragraphs = _group_lines_into_paragraphs(_cluster_words_into_lines(words))
                 document.pages.append(Page(index, paragraphs, "text"))
+                document.words.extend(pdf_text_words(page, index))
                 continue
 
             if not allow_ocr:
                 document.pages.append(Page(index, [], "text"))
                 continue
 
-            paragraphs = _paragraphs_from_ocr_text(_ocr_page_image(page))
-            document.pages.append(Page(index, paragraphs, "ocr"))
+            image = page.to_image(resolution=300).original
+            text, tsv = _ocr(image)
+            document.pages.append(Page(index, _paragraphs_from_ocr_text(text), "ocr"))
+            document.words.extend(ocr_words(tsv, index, *image.size))
 
     return document
 
 
 def extract_image(data: bytes) -> ExtractedDocument:
-    try:
-        import pytesseract
-        from PIL import Image
-    except ImportError as exc:  # pragma: no cover - dependencies are declared
-        raise OcrUnavailableError("pytesseract and Pillow are required for image input") from exc
+    from PIL import Image, ImageOps
 
-    _locate_tesseract(pytesseract)
-    from pytesseract import TesseractNotFoundError
-
-    try:
-        text = pytesseract.image_to_string(Image.open(io.BytesIO(data)))
-    except TesseractNotFoundError as exc:
-        raise OcrUnavailableError(
-            "The Tesseract OCR binary was not found. Install it and ensure it is on PATH "
-            "(Windows: https://github.com/UB-Mannheim/tesseract/wiki)."
-        ) from exc
-
-    return ExtractedDocument(pages=[Page(1, _paragraphs_from_ocr_text(text), "ocr")])
+    # Phone photos are often stored sideways with an EXIF "rotate" flag that browsers
+    # honour. Reading the image upright keeps OCR accurate and the word boxes aligned
+    # with the picture as the reader sees it.
+    image = ImageOps.exif_transpose(Image.open(io.BytesIO(data)))
+    text, tsv = _ocr(image)
+    return ExtractedDocument(
+        pages=[Page(1, _paragraphs_from_ocr_text(text), "ocr")],
+        words=ocr_words(tsv, 1, *image.size),
+    )
 
 
 def extract(data: bytes, content_type: str) -> ExtractedDocument:

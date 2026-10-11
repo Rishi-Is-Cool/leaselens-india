@@ -36,8 +36,22 @@ def test_bundle_has_every_document_with_labels_and_the_clean_sample_explained():
         assert all(c["risk_label"] in {"GREEN", "YELLOW", "RED"} for c in document["clauses"])
 
 
-def test_production_env_selects_the_backend_free_build():
-    env = (ROOT / "frontend" / ".env.production").read_text(encoding="utf-8")
-    assert "VITE_STATIC_DEMO=true" in env
+def test_every_sample_ships_its_pdf_and_a_highlight_for_every_clause():
+    bundle = json.loads(BUNDLE.read_text(encoding="utf-8"))
+    for filename, document in bundle.items():
+        assert document["pdf"] == f"/samples/{filename}"
+        assert (ROOT / "frontend" / "public" / "samples" / filename).exists()
+        assert set(document["highlights"]) == {c["clause_id"] for c in document["clauses"]}
+
+
+def test_production_env_points_at_an_https_api_and_holds_no_secrets():
+    lines = [
+        line.strip()
+        for line in (ROOT / "frontend" / ".env.production").read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.startswith("#")
+    ]
+    settings = dict(line.split("=", 1) for line in lines)
+    assert settings["VITE_API_BASE_URL"].startswith("https://")
+    assert set(settings) <= {"VITE_API_BASE_URL", "VITE_STATIC_DEMO"}
     for secret in ("KEY", "PASSWORD", "TOKEN", "postgresql"):
-        assert secret not in env
+        assert all(secret not in line for line in lines)

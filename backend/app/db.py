@@ -64,6 +64,7 @@ def create_tables() -> None:
     with engine.begin() as conn:
         conn.execute(text("ALTER TABLE clauses ADD COLUMN IF NOT EXISTS clause_number VARCHAR(32)"))
         conn.execute(text("ALTER TABLE documents ADD COLUMN IF NOT EXISTS owner_key VARCHAR(64)"))
+        conn.execute(text("ALTER TABLE documents ADD COLUMN IF NOT EXISTS highlights JSONB"))
         conn.execute(text("CREATE INDEX IF NOT EXISTS ix_documents_owner_key ON documents (owner_key)"))
 
 

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fetchAnalysis, listAnalyses, type AnalysisSummary, type DemoDocument } from "../api";
-import { AnalysisResult } from "../components/AnalysisView";
+import type { DocumentSource } from "../components/DocumentViewer";
+import { Workspace } from "../components/Workspace";
 import { sampleSlug, sampleTitle } from "../samples";
 
 function coverage(item: AnalysisSummary): { label: string; tone: string } {
@@ -21,14 +22,8 @@ export function SamplesIndex() {
   return (
     <div className="page">
       <header className="page-header">
-        <span className="eyebrow">SAMPLE REVIEWS</span>
-        <h1>See a finished review</h1>
-        <p>
-          Synthetic leases written in the formats used across Indian states, reviewed ahead of
-          time. No real person's data is involved. The Maharashtra sample shows everything:
-          ratings, plain-language explanations, the law it was checked against and clauses to
-          read together.
-        </p>
+        <h1>Example reviews</h1>
+        <p>Made-up agreements in each state's real format. Start with Maharashtra: it shows everything.</p>
       </header>
 
       {items === null ? (
@@ -68,11 +63,12 @@ export function SamplesIndex() {
   );
 }
 
-/** /samples/:slug — one saved review. */
+/** /samples/:slug — one saved review, on its PDF. */
 export function SampleReview() {
   const { slug } = useParams();
   const [document, setDocument] = useState<DemoDocument | null>(null);
   const [missing, setMissing] = useState(false);
+  const [pdfFailed, setPdfFailed] = useState(false);
 
   useEffect(() => {
     setDocument(null);
@@ -86,6 +82,11 @@ export function SampleReview() {
       .then(setDocument)
       .catch(() => setMissing(true));
   }, [slug]);
+
+  const source = useMemo<DocumentSource | null>(
+    () => (document?.pdf && !pdfFailed ? { kind: "pdf", data: document.pdf } : null),
+    [document, pdfFailed],
+  );
 
   if (missing)
     return (
@@ -108,34 +109,44 @@ export function SampleReview() {
   const unexplained = document.clauses.filter((c) => !c.explanation).length;
 
   return (
-    <div className="page page-narrow">
-      <nav className="breadcrumb">
-        <Link to="/samples">Sample reviews</Link> <span>/</span> {sampleTitle(document.filename)}
-      </nav>
-      <AnalysisResult
-        document={document}
-        title={sampleTitle(document.filename)}
-        eyebrow="SAMPLE REVIEW · SYNTHETIC LEASE"
-        actions={
-          <Link className="primary-button" to="/review">
-            Review my own lease
-          </Link>
-        }
-        notices={
-          unexplained > 0 ? (
-            <p className="notice">
-              {unexplained === document.clauses.length
-                ? "This sample has risk ratings only; plain-language explanations were not generated for it. The Maharashtra sample shows a complete review."
-                : `Plain-language explanations are missing for ${unexplained} of ${document.clauses.length} clauses in this sample.`}
+    <Workspace
+      header={
+        <>
+          <div className="ws-title">
+            <nav className="breadcrumb">
+              <Link to="/samples">Samples</Link> <span>/</span>
+            </nav>
+            <h1>{sampleTitle(document.filename)}</h1>
+            <p>
+              Synthetic sample ·{" "}
+              {document.jurisdiction ? `checked against ${document.jurisdiction} law` : "no state law check"}
             </p>
-          ) : (
-            <p className="notice">
-              Chat is available on your own uploads: <Link to="/review">upload a lease</Link> to ask
-              questions like “When do I get my deposit back?”
-            </p>
-          )
-        }
-      />
-    </div>
+          </div>
+          <div className="ws-actions">
+            <Link className="primary-button" to="/review">
+              Check my agreement
+            </Link>
+          </div>
+        </>
+      }
+      source={source}
+      highlights={document.highlights ?? {}}
+      textClauses={document.clauses}
+      review={document.clauses}
+      connections={document.cross_clause}
+      onSourceUnavailable={() => setPdfFailed(true)}
+      findingsNotice={
+        unexplained === document.clauses.length ? (
+          <p className="notice">
+            This sample has ratings only. The <Link to="/samples/maharashtra-leave-license-mumbai">Maharashtra sample</Link>{" "}
+            shows full explanations.
+          </p>
+        ) : (
+          <p className="notice">
+            On your own agreement you can also <strong>ask questions</strong>. <Link to="/review">Upload one</Link>.
+          </p>
+        )
+      }
+    />
   );
 }

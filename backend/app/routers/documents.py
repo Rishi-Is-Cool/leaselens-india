@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session, selectinload
 from app.analysis import service as analysis_service
 from app.db import get_session
 from app.ingestion.extract import OcrUnavailableError, extract
+from app.ingestion.layout import locate_clauses
 from app.ingestion.segment import segment_document
 from app.models import Analysis, Clause, Document
 from app.ownership import client_key, owned_document_or_404
@@ -47,6 +48,8 @@ class DocumentOut(BaseModel):
     title_block: list[str]
     section_headings: list[str]
     signature_block: list[str]
+    # clause_id -> [[page, x0, top, x1, bottom], ...], fractions of the page.
+    highlights: dict[str, list[list[float]]]
 
 
 class DocumentSummary(BaseModel):
@@ -112,6 +115,7 @@ async def upload_document(
         title_block=parsed.title_block,
         section_headings=parsed.section_headings,
         signature_block=parsed.signature_block,
+        highlights=locate_clauses(extracted.words, [(c.clause_id, c.text) for c in clauses]),
         clauses=[
             Clause(
                 clause_id=c.clause_id,
@@ -238,5 +242,6 @@ def _to_out(document: Document) -> DocumentOut:
         title_block=document.title_block or [],
         section_headings=document.section_headings or [],
         signature_block=document.signature_block or [],
+        highlights=document.highlights or {},
         clauses=[ClauseOut.model_validate(c) for c in document.clauses],
     )

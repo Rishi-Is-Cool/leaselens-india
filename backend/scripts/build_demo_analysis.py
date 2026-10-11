@@ -10,14 +10,34 @@ would serve (best record per document), minus fields the UI never reads.
 from __future__ import annotations
 
 import json
+import shutil
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from app.ingestion.extract import extract_pdf  # noqa: E402
+from app.ingestion.layout import locate_clauses  # noqa: E402
+from app.ingestion.segment import segment_document  # noqa: E402
 from app.routers.demo import _explained, _sample  # noqa: E402
 
-OUTPUT = Path(__file__).resolve().parents[2] / "frontend" / "public" / "demo-analysis.json"
+ROOT = Path(__file__).resolve().parents[2]
+OUTPUT = ROOT / "frontend" / "public" / "demo-analysis.json"
+# The synthetic sample leases themselves, shown in the document viewer with highlights.
+SOURCE_PDFS = ROOT / "data" / "test-leases"
+PUBLIC_PDFS = ROOT / "frontend" / "public" / "samples"
+
+
+def _from_pdf(filename: str, clauses: list[dict]) -> tuple[dict, dict]:
+    """Where each saved clause sits on the sample PDF, and its heading there (the saved
+    results predate headings being stored)."""
+    source = SOURCE_PDFS / filename
+    if not source.exists():
+        return {}, {}
+    extracted = extract_pdf(source.read_bytes(), allow_ocr=False)
+    headings = {c.text: c.section_heading for c in segment_document(extracted.paragraphs).clauses}
+    located = locate_clauses(extracted.words, [(c["clause_id"], c["text"]) for c in clauses])
+    return located, {c["clause_id"]: headings.get(c["text"]) for c in clauses}
 
 # Failed explanations carry the provider's error text, which includes its rate-limit
 # message and the account's organisation id. None of that belongs in a public file.
@@ -56,12 +76,17 @@ def _clause(clause: dict) -> dict:
 def build() -> dict:
     documents = {}
     for filename, document in sorted(_sample().items()):
+        highlights, headings = _from_pdf(filename, document.get("clauses", []))
         documents[filename] = {
             "jurisdiction": document.get("jurisdiction"),
             "clause_count": len(document.get("clauses", [])),
             "explained_count": _explained(document),
             "connection_count": len(document.get("cross_clause", [])),
-            "clauses": [_clause(c) for c in document.get("clauses", [])],
+            "clauses": [
+                {**_clause(c), "section_heading": headings.get(c["clause_id"])} for c in document.get("clauses", [])
+            ],
+            "pdf": f"/samples/{filename}" if (SOURCE_PDFS / filename).exists() else None,
+            "highlights": highlights,
             "cross_clause": [
                 {
                     key: connection.get(key)
@@ -75,6 +100,10 @@ def build() -> dict:
 
 def main() -> int:
     documents = build()
+    PUBLIC_PDFS.mkdir(parents=True, exist_ok=True)
+    for filename, document in documents.items():
+        if document["pdf"]:
+            shutil.copyfile(SOURCE_PDFS / filename, PUBLIC_PDFS / filename)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(documents, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"wrote {OUTPUT} ({OUTPUT.stat().st_size / 1024:.0f} KB, {len(documents)} documents)")

@@ -52,7 +52,12 @@ not as they are written.
 - [ ] Obligation map (tenant must-do / landlord can-do / payments / key dates)
 - [x] Jurisdiction selector: inferred from the lease, confirmed by the user, with an
       "Another state (no law check yet)" option
-- [ ] Highlighting on the document itself
+- [x] **Highlighting on the document itself.** Every clause is located on the original page
+      by matching its words back to the PDF text layer or Tesseract's word boxes (any state's
+      format; 134/134 clauses on 11 test documents, 12/12 on an OCR'd photo). The review screen
+      shows the real PDF/photo with clauses tinted by rating, a findings list beside it, and
+      chat as a tab. The file stays in the browser (IndexedDB, 24 h); the server never stores it.
+- [x] Home page cut to a headline, an animated scan-and-highlight demo, three steps and one button
 - [x] Phone-width check of the analysis view and chat (375 px: no horizontal scroll,
       chat goes full-screen)
 

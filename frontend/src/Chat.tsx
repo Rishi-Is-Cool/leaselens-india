@@ -27,23 +27,20 @@ type Message =
  * statutes. The server refuses verdicts ("is this legal?") and other states' law; this
  * panel renders what it returns, with the clauses and laws each answer relied on.
  *
- * On wide screens it is docked beside the review; on narrow ones a button opens it as a
- * full-screen sheet.
+ * It lives in a tab beside the document; a source chip selects that clause there.
  */
-export function ChatPanel({
+export function Chat({
   documentId,
   jurisdiction,
   llmConfigured,
   quickAsk,
-  open,
-  onOpenChange,
+  onJumpToClause,
 }: {
   documentId: string;
   jurisdiction: string | null;
   llmConfigured: boolean;
   quickAsk: QuickAsk | null;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
+  onJumpToClause: (clauseId: string) => void;
 }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
@@ -121,34 +118,17 @@ export function ChatPanel({
   }
 
   return (
-    <>
-      <button className="chat-launcher" onClick={() => onOpenChange(true)} aria-hidden={open}>
-        <span className="chat-launcher-icon" aria-hidden>
-          ✦
-        </span>
-        Ask about this lease
-      </button>
-
-      <aside className={`chat-panel ${open ? "chat-open" : ""}`} aria-label="Ask about this lease">
-        <header className="chat-header">
-          <span className="assistant-avatar" aria-hidden>
-            L
+    <div className="chat" aria-label="Ask about this lease">
+        <div className="chat-scope">
+          <span>
+            Answers only from this lease{jurisdiction ? ` and ${jurisdiction} rental law` : ""}
           </span>
-          <div>
-            <h2>Ask LeaseLens</h2>
-            <small>
-              Answers only from this lease{jurisdiction ? ` and ${jurisdiction} rental law` : ""}
-            </small>
-          </div>
           {messages.length > 0 && (
             <button className="text-button" onClick={() => setMessages([])} disabled={busy}>
               New chat
             </button>
           )}
-          <button className="icon-button chat-close" aria-label="Close chat" onClick={() => onOpenChange(false)}>
-            ×
-          </button>
-        </header>
+        </div>
 
         <div className="chat-messages" ref={listRef}>
           {!llmConfigured && (
@@ -188,7 +168,7 @@ export function ChatPanel({
                 <div className="msg-body msg-error">{message.text}</div>
               </div>
             ) : (
-              <Answer key={index} reply={message.reply} />
+              <Answer key={index} reply={message.reply} onJumpToClause={onJumpToClause} />
             ),
           )}
 
@@ -236,12 +216,11 @@ export function ChatPanel({
           </button>
         </form>
         <p className="chat-disclaimer">AI-assisted information, not legal advice. Check important points with a lawyer.</p>
-      </aside>
-    </>
+    </div>
   );
 }
 
-function Answer({ reply }: { reply: ChatReply }) {
+function Answer({ reply, onJumpToClause }: { reply: ChatReply; onJumpToClause: (clauseId: string) => void }) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
@@ -268,7 +247,7 @@ function Answer({ reply }: { reply: ChatReply }) {
             <span className="sources-label">Sources</span>
             <div className="chips">
               {reply.cited_clauses.map((c) => (
-                <button key={c.clause_id} className="chip" title={c.snippet} onClick={() => jumpToClause(c.clause_id)}>
+                <button key={c.clause_id} className="chip" title={c.snippet} onClick={() => onJumpToClause(c.clause_id)}>
                   § Clause {c.clause_id.replace("c", "")}
                   {c.section_heading ? ` · ${c.section_heading}` : ""}
                 </button>
@@ -290,12 +269,4 @@ function Answer({ reply }: { reply: ChatReply }) {
       </div>
     </div>
   );
-}
-
-function jumpToClause(clauseId: string) {
-  const element = document.getElementById(`clause-${clauseId}`);
-  if (!element) return;
-  element.scrollIntoView({ behavior: "smooth", block: "center" });
-  element.classList.add("clause-flash");
-  window.setTimeout(() => element.classList.remove("clause-flash"), 1600);
 }

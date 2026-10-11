@@ -65,6 +65,14 @@ def test_anyone_else_cannot_list_open_review_or_chat_about_it(alice, stranger):
     assert client.delete(f"/documents/{document_id}", headers=as_(stranger)).status_code == 404
 
 
+def test_an_upload_carries_a_highlight_for_every_clause(alice):
+    owner, document_id = alice
+    body = client.get(f"/documents/{document_id}", headers=as_(owner)).json()
+    assert set(body["highlights"]) == {c["clause_id"] for c in body["clauses"]}
+    page, x0, top, x1, bottom = body["highlights"]["c001"][0]
+    assert page == 1 and 0 <= x0 < x1 <= 1 and 0 <= top < bottom <= 1
+
+
 def test_without_a_client_id_nothing_is_listed():
     assert client.get("/documents").json() == []
 
