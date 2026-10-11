@@ -16,6 +16,8 @@ type Props = {
   scanning?: boolean;
   onSelect?: (clauseId: string) => void;
   onUnavailable?: () => void;
+  /** Changes when the viewer is shown again after being hidden (phone tabs), so it re-measures. */
+  layoutKey?: string;
 };
 
 // Boxes are drawn slightly larger than the words they cover, like a highlighter stroke.
@@ -43,7 +45,17 @@ async function bytes(data: Blob | string): Promise<ArrayBuffer> {
 }
 
 /** The original document, page by page, with each clause highlighted where it appears. */
-export function DocumentViewer({ source, highlights, risks, selected, focus, scanning, onSelect, onUnavailable }: Props) {
+export function DocumentViewer({
+  source,
+  highlights,
+  risks,
+  selected,
+  focus,
+  scanning,
+  onSelect,
+  onUnavailable,
+  layoutKey,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
@@ -52,15 +64,23 @@ export function DocumentViewer({ source, highlights, risks, selected, focus, sca
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
-    // Rounded so tiny layout jitter doesn't re-render every page.
-    const measure = (width: number) => setWidth(Math.round(width / 8) * 8);
-    // Measured once straight away too: browsers hold ResizeObserver callbacks while a tab
-    // isn't being painted (opened in the background), which would leave the pages blank.
-    measure(element.clientWidth - parseFloat(getComputedStyle(element).paddingLeft) * 2);
     const observer = new ResizeObserver(([entry]) => measure(entry.contentRect.width));
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
+
+  // Rounded so tiny layout jitter doesn't re-render every page. A hidden viewer measures 0
+  // and keeps its last size instead.
+  function measure(next: number) {
+    if (next > 0) setWidth(Math.round(next / 8) * 8);
+  }
+
+  // Also measured directly on mount and whenever the viewer is shown again: browsers hold
+  // ResizeObserver callbacks while a tab isn't being painted, which would leave pages blank.
+  useEffect(() => {
+    const element = containerRef.current;
+    if (element) measure(element.clientWidth - parseFloat(getComputedStyle(element).paddingLeft) * 2);
+  }, [layoutKey]);
 
   useEffect(() => {
     let cancelled = false;

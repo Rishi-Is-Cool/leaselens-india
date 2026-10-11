@@ -114,6 +114,7 @@ export function Workspace({
       scanning={scanning}
       onSelect={review ? selectFromDocument : undefined}
       onUnavailable={onSourceUnavailable}
+      layoutKey={mobileView}
     />
   ) : (
     <TextDocument
